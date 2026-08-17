@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mi Inicio">
+
+  <title>Mi Inicio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+      background: #f5f5f7;
+      color: #111;
+      padding:
+        calc(env(safe-area-inset-top) + 35px)
+        24px
+        calc(env(safe-area-inset-bottom) + 30px);
+    }
+
+    .header {
+      margin-bottom: 35px;
+    }
+
+    #hora {
+      font-size: 54px;
+      font-weight: 700;
+      letter-spacing: -3px;
+    }
+
+    #saludo {
+      font-size: 28px;
+      font-weight: 650;
+      margin-top: 8px;
+    }
+
+    #modo {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 7px 13px;
+      border-radius: 20px;
+      background: #e5e5ea;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px 16px;
+    }
+
+    .app {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin: auto;
+      margin-bottom: 7px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      background: white;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .selector {
+      position: fixed;
+      bottom: calc(env(safe-area-inset-bottom) + 18px);
+      left: 20px;
+      right: 20px;
+      padding: 6px;
+      display: flex;
+      gap: 4px;
+      background: rgba(230,230,235,.85);
+      backdrop-filter: blur(20px);
+      border-radius: 22px;
+    }
+
+    .selector button {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      padding: 12px 5px;
+      border-radius: 17px;
+      font-weight: 600;
+    }
+
+    .selector button.activo {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div id="hora"></div>
+    <div id="saludo"></div>
+    <div id="modo"></div>
+  </div>
+
+  <div class="apps" id="apps"></div>
+
+  <div class="selector">
+    <button onclick="cambiarModo('trabajo', this)">Trabajo</button>
+    <button onclick="cambiarModo('personal', this)">Personal</button>
+    <button onclick="cambiarModo('noche', this)">Desconexión</button>
+  </div>
+
+<script>
+
+const modos = {
+
+  trabajo: [
+    ["💬","WhatsApp","whatsapp://"],
+    ["👥","Teams","msteams://"],
+    ["✉️","Outlook","ms-outlook://"],
+    ["📅","Calendario","calshow://"],
+    ["🤖","ChatGPT","https://chatgpt.com"],
+    ["📝","Notas","mobilenotes://"]
+  ],
+
+  personal: [
+    ["💬","WhatsApp","whatsapp://"],
+    ["📷","Instagram","instagram://"],
+    ["🖼️","Fotos","photos-redirect://"],
+    ["📝","Notas","mobilenotes://"],
+    ["🎵","Música","music://"],
+    ["⏰","Reloj","clock-alarm://"]
+  ],
+
+  noche: [
+    ["💬","WhatsApp","whatsapp://"],
+    ["📝","Notas","mobilenotes://"],
+    ["⏰","Reloj","clock-alarm://"],
+    ["📚","Libros","ibooks://"],
+    ["🎵","Música","music://"]
+  ]
+
+};
+
+function pintar(modo) {
+
+  const contenedor = document.getElementById("apps");
+  contenedor.innerHTML = "";
+
+  modos[modo].forEach(app => {
+
+    const elemento = document.createElement("div");
+    elemento.className = "app";
+
+    elemento.innerHTML =
+      `<div class="icon">${app[0]}</div>
+       <div>${app[1]}</div>`;
+
+    elemento.onclick = () => {
+      window.location.href = app[2];
+    };
+
+    contenedor.appendChild(elemento);
+  });
+
+  document.getElementById("modo").innerText =
+    modo === "trabajo" ? "Modo trabajo" :
+    modo === "personal" ? "Modo personal" :
+    "Modo desconexión";
+
+  document.querySelectorAll(".selector button")
+    .forEach(b => b.classList.remove("activo"));
+
+}
+
+function cambiarModo(modo, boton) {
+  pintar(modo);
+  boton.classList.add("activo");
+}
+
+function actualizar() {
+
+  const ahora = new Date();
+
+  document.getElementById("hora").innerText =
+    ahora.toLocaleTimeString("es-ES", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+  const hora = ahora.getHours();
+
+  let modo;
+
+  if (hora >= 9 && hora < 19) {
+    modo = "trabajo";
+  } else if (hora >= 19 && hora < 23) {
+    modo = "personal";
+  } else {
+    modo = "noche";
+  }
+
+  document.getElementById("saludo").innerText =
+    hora < 12 ? "Buenos días, Sandra" :
+    hora < 20 ? "Buenas tardes, Sandra" :
+    "Buenas noches, Sandra";
+
+  pintar(modo);
+
+  const botones = document.querySelectorAll(".selector button");
+
+  if (modo === "trabajo") botones[0].classList.add("activo");
+  if (modo === "personal") botones[1].classList.add("activo");
+  if (modo === "noche") botones[2].classList.add("activo");
+}
+
+actualizar();
+setInterval(actualizar, 60000);
+
+</script>
+
+</body>
+</html>

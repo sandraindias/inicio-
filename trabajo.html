@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#f7f5f8">
+
+  <title>Trabajo · Amor al arte</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="apple-touch-icon" href="IMG_9807.png">
+</head>
+
+<body class="routine-page">
+
+<header class="routine-header">
+  <a href="index.html" class="back-button">‹</a>
+
+  <div>
+    <div class="eyebrow">AMOR AL ARTE</div>
+    <h1>💼 Trabajo</h1>
+    <p>08:00 — 15:00 · Foco y acción.</p>
+  </div>
+</header>
+
+
+<section class="slot-timer">
+  <div class="slot-timer-header">
+    <div class="slot-title">Jornada de trabajo</div>
+    <div class="slot-status" id="workStatus">08:00 – 15:00</div>
+  </div>
+
+  <div class="slot-countdown" id="workCountdown">07:00:00</div>
+  <div class="slot-end" id="workTimerText">Tiempo restante</div>
+</section>
+
+
+<section id="fichajeCard" class="card">
+  <div class="card-heading">
+    <div class="heading-left">⏱️ Tiempo Jornada</div>
+  </div>
+
+  <p class="page-subtitle">
+    Ficha tu entrada o salida de la jornada.
+  </p>
+
+  <button class="primary-action"
+          onclick="launchShortcut('Abrir Tiempo Jornada')">
+    Abrir Tiempo Jornada
+  </button>
+</section>
+
+
+<section id="dailyReminder" class="daily">
+  <div class="daily-left">
+    <img class="daily-logo"
+         src="https://api.iconify.design/logos/microsoft-teams.svg">
+
+    <div>
+      <div class="daily-title">Daily en breve</div>
+      <div class="daily-subtitle">09:00 · Reunión</div>
+    </div>
+  </div>
+
+  <button class="daily-button"
+          onclick="launchDirect('msteams://')">
+    Teams
+  </button>
+</section>
+
+
+<section class="card">
+  <div class="pomo-label">POMODORO</div>
+
+  <div class="pomo-layout">
+    <div>
+      <div id="pomoTime" class="pomo-time">25:00</div>
+      <div id="pomoState" class="pomo-state">● Concentración</div>
+    </div>
+
+    <div class="pomo-right">
+      <button id="playButton"
+              class="play-button"
+              onclick="togglePomodoro()">▶</button>
+
+      <div>
+        <div class="sessions">
+          🍅 <span id="sessions">0</span>
+        </div>
+
+        <button class="reset-button"
+                onclick="resetPomodoro()">↻</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="card">
+  <div class="card-heading">
+    <div class="heading-left">📶 Trabajo</div>
+  </div>
+
+  <div class="app-grid">
+
+    <div class="app" onclick="launchShortcut('Abrir WhatsApp')">
+      <div class="icon whatsapp-icon">
+        <img src="https://api.iconify.design/logos/whatsapp-icon.svg">
+      </div>
+      <div class="app-name">WhatsApp</div>
+    </div>
+
+    <div class="app" onclick="launchShortcut('Abrir WhatsApp Business')">
+      <div class="icon business-icon">
+        <img src="https://api.iconify.design/logos/whatsapp-icon.svg">
+        <span class="business-b">B</span>
+      </div>
+      <div class="app-name">WA Business</div>
+    </div>
+
+    <div class="app" onclick="launchDirect('msteams://')">
+      <div class="icon teams-icon">
+        <img src="https://api.iconify.design/logos/microsoft-teams.svg">
+      </div>
+      <div class="app-name">Teams</div>
+    </div>
+
+    <div class="app" onclick="launchDirect('ms-outlook://')">
+      <div class="icon outlook-icon">
+        <img src="https://api.iconify.design/logos/microsoft-outlook.svg">
+      </div>
+      <div class="app-name">Outlook</div>
+    </div>
+
+    <div class="app" onclick="launchShortcut('Abrir Telefono')">
+      <div class="icon phone-icon">☎</div>
+      <div class="app-name">Llamadas</div>
+    </div>
+
+    <div class="app" onclick="launchShortcut('Abrir Tiempo Jornada')">
+      <div class="icon time-icon">
+        <div class="time-check">✓</div>
+      </div>
+      <div class="app-name">Tiempo Jornada</div>
+    </div>
+
+    <div class="app" onclick="openExternalWeb('https://github.com')">
+      <div class="icon github-icon">
+        <img src="https://api.iconify.design/logos/github-icon.svg">
+      </div>
+      <div class="app-name">GitHub</div>
+    </div>
+
+    <div class="app"
+         onclick="launchWithFallback('chatgpt://','https://chatgpt.com')">
+      <div class="icon chatgpt-icon">
+        <img src="https://api.iconify.design/simple-icons/openai.svg">
+      </div>
+      <div class="app-name">ChatGPT</div>
+    </div>
+
+  </div>
+</section>
+
+
+<nav class="bottom-nav three-nav">
+  <a href="index.html">🏠 Inicio</a>
+  <a href="amor-al-arte.html" class="active">🎨 Amor al arte</a>
+  <a href="descubrimiento.html">🪩 Descubrimiento</a>
+</nav>
+
+<script src="common.js"></script>
+
+<script>
+setupCountdown(8,0,15,0,"workCountdown","workStatus","workTimerText");
+setupPomodoro();
+updateDaily();
+setInterval(updateDaily,30000);
+
+function updateDaily(){
+  const el=document.getElementById("dailyReminder");
+  const now=new Date();
+  const minutes=now.getHours()*60+now.getMinutes();
+
+  el.classList.toggle("show", minutes>=530 && minutes<=570);
+}
+</script>
+
+</body>
+</html>

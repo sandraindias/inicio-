@@ -9,35 +9,23 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <meta
-    name="apple-mobile-web-app-capable"
-    content="yes"
-  >
+  <meta name="theme-color" content="#f7f5f8">
+
+  <link rel="stylesheet" href="./css/styles.css">
 
   <title>Trabajo</title>
-
-  <link
-    rel="stylesheet"
-    href="./css/styles.css"
-  >
 </head>
 
-
-<body>
-
+<body class="routine-page work-page">
 
   <!-- CABECERA -->
-
   <header class="routine-header">
 
-    <a
-      href="./index.html"
-      class="back-button"
-    >
+    <a href="./index.html" class="back-button">
       ‹
     </a>
 
-    <div>
+    <div class="routine-header-text">
 
       <div class="eyebrow">
         TU DÍA DE HOY
@@ -56,270 +44,284 @@
   </header>
 
 
+  <!-- CONTADOR -->
+  <section class="work-hero">
 
-  <!-- CONTADOR DE JORNADA -->
+    <div class="work-hero-top">
 
-  <section class="slot-timer">
+      <div>
+        <div class="work-small-title">
+          JORNADA DE TRABAJO
+        </div>
 
-    <div class="slot-timer-header">
-
-      <div class="slot-title">
-        Jornada de trabajo
+        <div id="workStatus" class="work-status">
+          08:00 – 15:00
+        </div>
       </div>
 
-      <div
-        id="workStatus"
-        class="slot-status"
-      >
-        08:00 – 15:00
+      <div class="work-mode-pill">
+        Trabajo
       </div>
 
     </div>
 
-
     <div
       id="workCountdown"
-      class="slot-countdown"
+      class="work-countdown"
     >
       07:00:00
     </div>
 
-
     <div
       id="workTimerText"
-      class="slot-end"
-    ></div>
+      class="work-countdown-text"
+    >
+    </div>
 
   </section>
 
 
-
   <!-- DAILY -->
-
   <section
     id="dailyReminder"
-    class="daily"
+    class="daily-reminder"
   >
 
-    <div class="daily-left">
+    <div class="daily-info">
 
-      <img
-        class="daily-logo"
-        src="https://api.iconify.design/logos/microsoft-teams.svg"
-      >
+      <div class="daily-icon">
+        <img
+          src="https://api.iconify.design/logos/microsoft-teams.svg"
+          alt="Teams"
+        >
+      </div>
 
       <div>
-
-        <div class="daily-title">
+        <strong>
           Daily en breve
-        </div>
+        </strong>
 
-        <div class="daily-subtitle">
+        <span>
           09:00 · Reunión
-        </div>
-
+        </span>
       </div>
 
     </div>
 
-
     <button
-      class="daily-button"
+      class="daily-open"
       onclick="launchDirect('msteams://')"
     >
-      Teams
+      Abrir
     </button>
 
   </section>
 
 
+  <!-- APPS -->
+  <section class="routine-section">
 
-  <!-- APPS DE TRABAJO -->
+    <div class="routine-section-header">
 
-  <section class="card">
+      <div>
+        <div class="eyebrow">
+          ACCESOS RÁPIDOS
+        </div>
 
-    <div
-      class="heading-left"
-      style="margin-bottom:18px"
-    >
-      Tus apps
+        <h2>
+          Para trabajar
+        </h2>
+      </div>
+
     </div>
 
 
-    <div class="app-grid">
-
+    <div class="work-app-grid">
 
       <!-- WHATSAPP -->
-
-      <div
-        class="app"
+      <button
+        class="work-app"
         onclick="launchDirect('whatsapp://')"
       >
 
-        <div class="icon whatsapp-icon">
-
+        <div class="work-app-icon whatsapp-icon">
           <img
             src="https://api.iconify.design/logos/whatsapp-icon.svg"
+            alt=""
           >
-
         </div>
 
-        <div class="app-name">
+        <span>
           WhatsApp
-        </div>
+        </span>
 
-      </div>
-
+      </button>
 
 
       <!-- TEAMS -->
-
-      <div
-        class="app"
+      <button
+        class="work-app"
         onclick="launchDirect('msteams://')"
       >
 
-        <div class="icon teams-icon">
-
+        <div class="work-app-icon">
           <img
             src="https://api.iconify.design/logos/microsoft-teams.svg"
+            alt=""
           >
-
         </div>
 
-        <div class="app-name">
+        <span>
           Teams
-        </div>
+        </span>
 
-      </div>
-
+      </button>
 
 
       <!-- OUTLOOK -->
-
-      <div
-        class="app"
+      <button
+        class="work-app"
         onclick="launchDirect('ms-outlook://')"
       >
 
-        <div class="icon outlook-icon">
-
+        <div class="work-app-icon">
           <img
             src="https://api.iconify.design/logos/microsoft-outlook.svg"
+            alt=""
           >
-
         </div>
 
-        <div class="app-name">
+        <span>
           Outlook
-        </div>
+        </span>
 
-      </div>
-
+      </button>
 
 
       <!-- CALENDARIO -->
-
-      <div
-        class="app"
+      <button
+        class="work-app"
         onclick="launchDirect('calshow://')"
       >
 
-        <div
-          class="icon"
-          style="
-            font-size:28px;
-            background:white;
-          "
-        >
-          📅
+        <div class="work-app-icon calendar-icon">
+          <span>
+            📅
+          </span>
         </div>
 
-        <div class="app-name">
+        <span>
           Calendario
-        </div>
+        </span>
 
-      </div>
-
+      </button>
 
 
       <!-- CHATGPT -->
-
-      <div
-        class="app"
-        onclick="openExternalWeb('https://chatgpt.com')"
+      <button
+        class="work-app"
+        onclick="launchDirect('chatgpt://')"
       >
 
-        <div class="icon chatgpt-icon">
+        <div class="work-app-icon chatgpt-icon">
 
           <img
             src="https://api.iconify.design/simple-icons/openai.svg"
+            alt=""
           >
 
         </div>
 
-        <div class="app-name">
+        <span>
           ChatGPT
-        </div>
+        </span>
 
-      </div>
-
+      </button>
 
 
       <!-- NOTAS -->
-
-      <div
-        class="app"
+      <button
+        class="work-app"
         onclick="launchDirect('mobilenotes://')"
       >
 
-        <div class="icon">
+        <div class="work-app-icon notes-icon">
+          📝
+        </div>
 
-          <div
-            style="
-              width:100%;
-              height:100%;
-              background:white;
-            "
+        <span>
+          Notas
+        </span>
+
+      </button>
+
+
+      <!-- DRIVE -->
+      <button
+        class="work-app"
+        onclick="launchDirect('googledrive://')"
+      >
+
+        <div class="work-app-icon">
+
+          <img
+            src="https://api.iconify.design/logos/google-drive.svg"
+            alt=""
           >
 
-            <div class="notes-yellow"></div>
-
-            <div class="note-line"></div>
-            <div class="note-line"></div>
-            <div class="note-line"></div>
-
-          </div>
-
         </div>
 
-        <div class="app-name">
-          Notas
+        <span>
+          Drive
+        </span>
+
+      </button>
+
+
+      <!-- SHORTCUTS -->
+      <button
+        class="work-app"
+        onclick="launchDirect('shortcuts://')"
+      >
+
+        <div class="work-app-icon shortcuts-icon">
+          ◈
         </div>
 
-      </div>
+        <span>
+          Atajos
+        </span>
 
+      </button>
 
     </div>
 
   </section>
 
 
-
   <!-- TIEMPO JORNADA -->
+  <section class="work-card">
 
-  <section class="card">
+    <div class="work-card-heading">
 
-    <div class="heading-left">
-      ⏱️ Tiempo Jornada
+      <div class="work-card-icon">
+        ⏱️
+      </div>
+
+      <div>
+        <div class="work-card-title">
+          Tiempo Jornada
+        </div>
+
+        <div class="work-card-subtitle">
+          Control de tu jornada laboral
+        </div>
+      </div>
+
     </div>
 
     <button
-      class="primary-action"
-      style="
-        width:100%;
-        margin-top:12px
-      "
+      class="work-main-button"
       onclick="launchShortcut('Abrir Tiempo Jornada')"
     >
       Abrir Tiempo Jornada
@@ -328,18 +330,14 @@
   </section>
 
 
-
   <!-- POMODORO -->
-
-  <section class="card">
+  <section class="work-card pomodoro-card">
 
     <div class="pomo-label">
       POMODORO
     </div>
 
-
     <div class="pomo-layout">
-
 
       <div>
 
@@ -360,19 +358,17 @@
       </div>
 
 
-
-      <div class="pomo-right">
+      <div class="pomo-controls">
 
         <button
           id="playButton"
-          class="play-button"
+          class="pomo-play-button"
           onclick="togglePomodoro()"
         >
           ▶
         </button>
 
-
-        <div>
+        <div class="pomo-session-area">
 
           <div class="sessions">
             🍅
@@ -382,7 +378,7 @@
           </div>
 
           <button
-            class="reset-button"
+            class="pomo-reset"
             onclick="resetPomodoro()"
           >
             ↻
@@ -392,15 +388,12 @@
 
       </div>
 
-
     </div>
 
   </section>
 
 
-
-  <!-- NAVEGACIÓN -->
-
+  <!-- MENÚ INFERIOR -->
   <nav class="bottom-nav">
 
     <a
@@ -408,15 +401,19 @@
       class="nav-item"
     >
       🏠
-      <span>Inicio</span>
+      <span>
+        Inicio
+      </span>
     </a>
 
     <a
       href="./amor-al-arte.html"
-      class="nav-item"
+      class="nav-item active"
     >
       🎨
-      <span>Amor al arte</span>
+      <span>
+        Amor al arte
+      </span>
     </a>
 
     <a
@@ -424,20 +421,19 @@
       class="nav-item"
     >
       🪩
-      <span>Descubrimiento</span>
+      <span>
+        Descubrimiento
+      </span>
     </a>
 
   </nav>
 
 
-
   <script src="./js/routine.js"></script>
-
 
   <script>
 
-    /* CONTADOR 08:00 - 15:00 */
-
+    /* CONTADOR DE TRABAJO */
     setupCountdown(
       8,
       0,
@@ -449,16 +445,12 @@
     );
 
 
-
     /* POMODORO */
-
     setupPomodoro();
 
 
-
-    /* DAILY */
-
-    function updateDaily(){
+    /* DAILY: 08:50 A 09:30 */
+    function updateDailyReminder(){
 
       const now =
         new Date();
@@ -468,38 +460,38 @@
         +
         now.getMinutes();
 
-
       const daily =
         document.getElementById(
           "dailyReminder"
         );
 
+      if(!daily){
+        return;
+      }
 
-      /*
-        Aparece desde
-        08:50 hasta 09:30
-      */
+      const start =
+        8 * 60 + 50;
+
+      const end =
+        9 * 60 + 30;
 
       daily.classList.toggle(
         "show",
-        minutes >= 530
+        minutes >= start
         &&
-        minutes <= 570
+        minutes <= end
       );
 
     }
 
-
-    updateDaily();
-
+    updateDailyReminder();
 
     setInterval(
-      updateDaily,
+      updateDailyReminder,
       30000
     );
 
   </script>
-
 
 </body>
 

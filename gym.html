@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gym · Amor al arte</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="apple-touch-icon" href="IMG_9807.png">
+</head>
+
+<body class="routine-page">
+
+<header class="routine-header">
+<a href="index.html" class="back-button">‹</a>
+<div>
+<div class="eyebrow">AMOR AL ARTE</div>
+<h1>🏋️ Gym</h1>
+<p>15:00 — 17:00 · Entrena y despeja la mente.</p>
+</div>
+</header>
+
+<section class="slot-timer">
+<div class="slot-timer-header">
+<div class="slot-title">Tiempo de Gym</div>
+<div id="gymStatus" class="slot-status">15:00 – 17:00</div>
+</div>
+
+<div id="gymCountdown" class="slot-countdown">02:00:00</div>
+<div id="gymTimerText" class="slot-end"></div>
+</section>
+
+<section class="card">
+<div class="card-heading">
+<div class="heading-left">Tu entrenamiento</div>
+</div>
+
+<div class="app-grid">
+
+<div class="app" onclick="launchShortcut('Abrir WhatsApp')">
+<div class="icon whatsapp-icon">
+<img src="https://api.iconify.design/logos/whatsapp-icon.svg">
+</div>
+<div class="app-name">WhatsApp</div>
+</div>
+
+<div class="app" onclick="launchDirect('music://')">
+<div class="icon music-icon">♪</div>
+<div class="app-name">Música</div>
+</div>
+
+<div class="app" onclick="launchDirect('spotify://')">
+<div class="icon spotify-icon">
+<img src="https://api.iconify.design/logos/spotify-icon.svg">
+</div>
+<div class="app-name">Spotify</div>
+</div>
+
+<div class="app" onclick="launchShortcut('Abrir Fitness')">
+<div class="icon fitness-icon">◎</div>
+<div class="app-name">Fitness</div>
+</div>
+
+<div class="app" onclick="launchShortcut('Abrir My Enjoy')">
+<div class="icon myenjoy-icon">e</div>
+<div class="app-name">My Enjoy</div>
+</div>
+
+<div class="app" onclick="launchDirect('instagram://')">
+<div class="icon instagram-icon">
+<img src="https://api.iconify.design/skill-icons/instagram.svg">
+</div>
+<div class="app-name">Instagram</div>
+</div>
+
+<div class="app" onclick="launchShortcut('Abrir Camara')">
+<div class="icon camera-icon">
+<div class="camera-lens"></div>
+</div>
+<div class="app-name">Cámara</div>
+</div>
+
+<div class="app" onclick="launchDirect('mobilenotes://')">
+<div class="icon notes-icon">
+<div class="notes-yellow"></div>
+<div class="note-line"></div>
+</div>
+<div class="app-name">Notas</div>
+</div>
+
+</div>
+</section>
+
+<nav class="bottom-nav three-nav">
+<a href="index.html">🏠 Inicio</a>
+<a href="amor-al-arte.html" class="active">🎨 Amor al arte</a>
+<a href="descubrimiento.html">🪩 Descubrimiento</a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+setupCountdown(15,0,17,0,"gymCountdown","gymStatus","gymTimerText");
+</script>
+
+</body>
+</html>

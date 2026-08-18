@@ -1418,6 +1418,645 @@ input{
   font-weight:750;
 
 
-  
+}
+
+/* =====================================================
+   TRABAJO
+===================================================== */
+
+.routine-page{
+  max-width:520px;
+  margin:0 auto;
+}
+
+
+/* CABECERA */
+
+.routine-header{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.back-button{
+  width:42px;
+  height:42px;
+
+  flex:0 0 42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.88);
+
+  color:#151622;
+
+  text-decoration:none;
+
+  font-size:38px;
+  font-weight:300;
+  line-height:1;
+
+  box-shadow:
+    0 5px 18px rgba(0,0,0,.055);
+}
+
+.routine-header-text{
+  min-width:0;
+  padding-top:3px;
+}
+
+.routine-header h1{
+  margin:3px 0 0;
+
+  font-size:30px;
+  line-height:1.05;
+
+  letter-spacing:-1.1px;
+}
+
+.routine-header p{
+  margin:7px 0 0;
+
+  color:var(--muted);
+
+  font-size:12px;
+  font-weight:600;
+}
+
+
+/* =====================================================
+   HERO / CONTADOR
+===================================================== */
+
+.work-hero{
+  margin-bottom:14px;
+
+  padding:18px;
+
+  border-radius:27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.97),
+      rgba(255,240,246,.95)
+    );
+
+  border:
+    1px solid
+    rgba(255,174,201,.38);
+
+  box-shadow:
+    0 10px 32px rgba(157,38,80,.075);
+}
+
+.work-hero-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.work-small-title{
+  color:#e93870;
+
+  font-size:9px;
+  font-weight:900;
+
+  letter-spacing:.7px;
+}
+
+.work-status{
+  margin-top:4px;
+
+  color:#72717a;
+
+  font-size:11px;
+  font-weight:750;
+}
+
+.work-mode-pill{
+  padding:7px 11px;
+
+  border-radius:999px;
+
+  background:#ffe1eb;
+
+  color:#e8326b;
+
+  font-size:9px;
+  font-weight:900;
+}
+
+.work-countdown{
+  margin-top:18px;
+
+  font-size:50px;
+  font-weight:520;
+
+  line-height:1;
+
+  letter-spacing:-2.6px;
+}
+
+.work-countdown-text{
+  min-height:14px;
+
+  margin-top:7px;
+
+  color:var(--muted);
+
+  font-size:10px;
+  font-weight:700;
+}
+
+
+/* =====================================================
+   DAILY
+===================================================== */
+
+.daily-reminder{
+  display:none;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin-bottom:14px;
+
+  padding:13px;
+
+  border-radius:21px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0edff,
+      #e8f5ff
+    );
+
+  box-shadow:
+    0 6px 22px rgba(83,71,163,.07);
+}
+
+.daily-reminder.show{
+  display:flex;
+}
+
+.daily-info{
+  min-width:0;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+}
+
+.daily-icon{
+  width:42px;
+  height:42px;
+
+  flex:0 0 42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:13px;
+
+  background:white;
+
+  box-shadow:
+    0 3px 10px rgba(0,0,0,.06);
+}
+
+.daily-icon img{
+  width:29px;
+  height:29px;
+}
+
+.daily-info strong{
+  display:block;
+
+  font-size:12px;
+}
+
+.daily-info span{
+  display:block;
+
+  margin-top:3px;
+
+  color:#77747f;
+
+  font-size:9px;
+}
+
+.daily-open{
+  padding:10px 13px;
+
+  border:0;
+
+  border-radius:13px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:10px;
+  font-weight:850;
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.routine-section{
+  margin-bottom:14px;
+
+  padding:16px;
+
+  border-radius:26px;
+
+  background:rgba(255,255,255,.91);
+
+  box-shadow:
+    0 8px 27px rgba(0,0,0,.05);
+}
+
+.routine-section-header{
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:14px;
+}
+
+.routine-section-header h2{
+  margin:3px 0 0;
+
+  font-size:21px;
+
+  letter-spacing:-.6px;
+}
+
+
+/* =====================================================
+   APPS DE TRABAJO
+===================================================== */
+
+.work-app-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:13px 7px;
+}
+
+.work-app{
+  min-width:0;
+
+  padding:2px 1px 4px;
+
+  border:0;
+
+  background:transparent;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:flex-start;
+
+  gap:7px;
+
+  color:#191920;
+
+  cursor:pointer;
+}
+
+.work-app:active{
+  transform:scale(.94);
+}
+
+.work-app-icon{
+  width:56px;
+  height:56px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  border-radius:15px;
+
+  background:white;
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,.09);
+}
+
+.work-app-icon img{
+  width:82%;
+  height:82%;
+
+  object-fit:contain;
+}
+
+.work-app > span{
+  width:100%;
+
+  overflow:hidden;
+
+  white-space:nowrap;
+
+  text-overflow:ellipsis;
+
+  text-align:center;
+
+  font-size:9px;
+  font-weight:700;
+}
+
+.calendar-icon{
+  background:
+    linear-gradient(
+      145deg,
+      #ff455d,
+      #ff765e
+    );
+
+  color:white;
+
+  font-size:27px;
+}
+
+.chatgpt-icon{
+  background:#111;
+}
+
+.chatgpt-icon img{
+  width:60%;
+  height:60%;
+
+  filter:invert(1);
+}
+
+.notes-icon{
+  background:
+    linear-gradient(
+      to bottom,
+      #ffd942 0,
+      #ffd942 28%,
+      white 28%,
+      white 100%
+    );
+
+  font-size:25px;
+}
+
+.shortcuts-icon{
+  background:
+    linear-gradient(
+      145deg,
+      #7354f5,
+      #ff4080
+    );
+
+  color:white;
+
+  font-size:31px;
+  font-weight:700;
+}
+
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.work-card{
+  margin-bottom:14px;
+
+  padding:16px;
+
+  border-radius:25px;
+
+  background:rgba(255,255,255,.92);
+
+  box-shadow:
+    0 8px 27px rgba(0,0,0,.05);
+}
+
+.work-card-heading{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+}
+
+.work-card-icon{
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:14px;
+
+  background:#fff0f5;
+
+  font-size:21px;
+}
+
+.work-card-title{
+  font-size:13px;
+  font-weight:900;
+}
+
+.work-card-subtitle{
+  margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:9px;
+}
+
+.work-main-button{
+  width:100%;
+
+  margin-top:13px;
+
+  padding:13px;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:11px;
+  font-weight:850;
+}
+
+
+/* =====================================================
+   POMODORO
+===================================================== */
+
+.pomodoro-card{
+  overflow:hidden;
+}
+
+.pomo-label{
+  color:#e93870;
+
+  font-size:9px;
+  font-weight:900;
+
+  letter-spacing:.8px;
+}
+
+.pomo-layout{
+  margin-top:9px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:15px;
+}
+
+.pomo-time{
+  font-size:49px;
+  font-weight:520;
+
+  line-height:1;
+
+  letter-spacing:-2.6px;
+}
+
+.pomo-state{
+  margin-top:7px;
+
+  color:#e93870;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.pomo-controls{
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
+}
+
+.pomo-play-button{
+  width:64px;
+  height:64px;
+
+  border:
+    7px solid
+    #ffdbe6;
+
+  border-radius:50%;
+
+  background:white;
+
+  color:#ff356f;
+
+  font-size:21px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+    0 5px 17px rgba(255,53,111,.10);
+}
+
+.pomo-session-area{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:5px;
+}
+
+.sessions{
+  font-size:11px;
+  font-weight:850;
+}
+
+.pomo-reset{
+  width:28px;
+  height:28px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:#f1eff3;
+
+  color:#444;
+
+  font-size:16px;
+}
+
+
+/* =====================================================
+   AJUSTES IPHONE
+===================================================== */
+
+@media(max-width:390px){
+
+  .work-countdown{
+    font-size:45px;
+  }
+
+  .work-app-icon{
+    width:52px;
+    height:52px;
+  }
+
+  .work-app-grid{
+    gap:
+      12px
+      5px;
+  }
+
+  .pomo-time{
+    font-size:43px;
+  }
+
+  .pomo-play-button{
+    width:58px;
+    height:58px;
+
+    border-width:6px;
+  }
 
 }
+
+
+
+

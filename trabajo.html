@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta
@@ -15,28 +17,54 @@
 <title>Trabajo · Mi Inicio</title>
 
 <style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
 :root{
+
   --bg:#f7f5f8;
-  --card:rgba(255,255,255,.9);
+
+  --card:
+    rgba(255,255,255,.9);
+
   --text:#151622;
+
   --secondary:#73737d;
+
   --pink:#ff356f;
+
   --purple:#7657ec;
+
   --green:#22bd7b;
+
+  --orange:#ff7400;
+
+  --blue:#168bd9;
+
 }
 
 *{
+
   box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
+
+  -webkit-tap-highlight-color:
+    transparent;
+
 }
 
 html,
 body{
+
   margin:0;
+
   min-height:100%;
+
 }
 
 body{
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -48,391 +76,1265 @@ body{
   color:var(--text);
 
   background:
+
     radial-gradient(
       circle at 2% 0%,
       rgba(255,218,230,.78),
       transparent 27%
     ),
+
     radial-gradient(
       circle at 98% 2%,
       rgba(226,218,255,.76),
       transparent 31%
     ),
+
     var(--bg);
 
   padding:
-    calc(env(safe-area-inset-top) + 21px)
+
+    calc(
+      env(safe-area-inset-top)
+      +
+      21px
+    )
+
     16px
-    calc(env(safe-area-inset-bottom) + 180px);
+
+    calc(
+      env(safe-area-inset-bottom)
+      +
+      180px
+    );
+
 }
 
-/* =========================
+button{
+
+  font:inherit;
+
+}
+
+
+/* =====================================================
    ARRIBA
-========================= */
+===================================================== */
 
 .top-actions{
+
   display:flex;
+
   justify-content:flex-end;
+
   gap:8px;
+
   margin-bottom:10px;
+
 }
 
 .top-action{
+
   border:0;
+
   min-height:42px;
+
   padding:0 14px;
+
   border-radius:15px;
-  background:rgba(255,255,255,.84);
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
+
+  background:
+    rgba(255,255,255,.84);
+
+  backdrop-filter:
+    blur(22px);
+
+  -webkit-backdrop-filter:
+    blur(22px);
+
   color:inherit;
+
   font-size:12px;
+
   font-weight:700;
-  box-shadow:0 5px 18px rgba(0,0,0,.05);
+
+  box-shadow:
+    0 5px 18px
+    rgba(0,0,0,.05);
+
 }
 
-/* =========================
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
+
   display:grid;
-  grid-template-columns:minmax(0,1fr) 155px;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    155px;
+
   gap:13px;
+
   align-items:start;
+
   margin-bottom:17px;
+
 }
 
 .greeting{
+
   font-size:18px;
+
 }
 
 .greeting-name{
+
   color:var(--pink);
+
   font-weight:750;
+
 }
 
 .big-time{
+
   margin-top:7px;
+
   font-size:57px;
+
   line-height:.95;
+
   font-weight:520;
+
   letter-spacing:-4px;
+
 }
 
 .date{
+
   margin-top:11px;
+
   color:#33343d;
+
   font-size:14px;
+
   text-transform:capitalize;
+
 }
 
 .mode-pill{
+
   display:inline-flex;
+
   align-items:center;
+
   gap:7px;
+
   margin-top:12px;
+
   padding:7px 12px;
+
   border-radius:999px;
+
   background:#ffe5ee;
+
   color:#e53569;
+
   font-size:11px;
+
   font-weight:850;
+
   text-transform:uppercase;
+
 }
 
 .mode-dot{
+
   width:8px;
+
   height:8px;
+
   border-radius:50%;
+
   background:#27c77a;
+
 }
 
-/* =========================
+
+/* =====================================================
    ENTRETENIMIENTO
-========================= */
+===================================================== */
 
 .entertainment-card{
+
   padding:13px 9px;
+
   border-radius:22px;
-  background:rgba(255,255,255,.88);
-  box-shadow:0 7px 24px rgba(0,0,0,.055);
+
+  background:
+    rgba(255,255,255,.88);
+
+  box-shadow:
+    0 7px 24px
+    rgba(0,0,0,.055);
+
 }
 
 .entertainment-title{
+
   margin-bottom:11px;
+
   font-size:13px;
+
   font-weight:800;
+
 }
 
 .entertainment-grid{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:5px;
+
 }
 
-/* =========================
+
+/* =====================================================
    TARJETAS
-========================= */
+===================================================== */
 
 .card{
+
   margin-bottom:15px;
+
   padding:16px;
+
   border-radius:24px;
+
   background:var(--card);
-  box-shadow:0 8px 27px rgba(0,0,0,.05);
+
+  box-shadow:
+    0 8px 27px
+    rgba(0,0,0,.05);
+
 }
 
 .card-heading{
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:10px;
+
   margin-bottom:15px;
+
 }
 
 .heading-left{
+
   font-size:17px;
+
   font-weight:850;
+
 }
 
-/* =========================
+
+/* =====================================================
+   NUEVO ASISTENTE DE JORNADA
+===================================================== */
+
+.work-routine-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  margin-bottom:15px;
+
+  padding:18px;
+
+  border-radius:25px;
+
+  background:
+    rgba(255,255,255,.94);
+
+  box-shadow:
+    0 8px 27px
+    rgba(0,0,0,.06);
+
+}
+
+.work-routine-top{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+}
+
+.work-routine-label{
+
+  color:var(--pink);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1.2px;
+
+}
+
+.work-routine-title{
+
+  margin-top:5px;
+
+  font-size:23px;
+
+  font-weight:900;
+
+}
+
+.work-routine-time-range{
+
+  margin-top:5px;
+
+  color:var(--secondary);
+
+  font-size:11px;
+
+  font-weight:700;
+
+}
+
+.work-routine-icon{
+
+  width:56px;
+
+  height:56px;
+
+  flex:none;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:#fff1f5;
+
+  font-size:28px;
+
+}
+
+
+/* CONTADOR */
+
+.work-countdown{
+
+  margin-top:16px;
+
+  font-size:48px;
+
+  line-height:1;
+
+  letter-spacing:-3px;
+
+}
+
+.work-message{
+
+  margin-top:9px;
+
+  color:var(--secondary);
+
+  font-size:12px;
+
+  line-height:1.4;
+
+}
+
+
+/* BARRA */
+
+.work-progress{
+
+  height:6px;
+
+  margin-top:15px;
+
+  overflow:hidden;
+
+  border-radius:999px;
+
+  background:#eeeef1;
+
+}
+
+.work-progress-bar{
+
+  width:0%;
+
+  height:100%;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff356f,
+      #ff779d
+    );
+
+  transition:
+    width .5s ease;
+
+}
+
+
+/* AVISO */
+
+.work-alert{
+
+  display:none;
+
+  margin-top:13px;
+
+  padding:11px 12px;
+
+  border-radius:15px;
+
+  background:#fff2c9;
+
+  color:#735c00;
+
+  font-size:11px;
+
+  font-weight:750;
+
+  line-height:1.4;
+
+}
+
+.work-alert.show{
+
+  display:block;
+
+}
+
+
+/* CHECKLIST */
+
+.work-checklist{
+
+  display:grid;
+
+  gap:7px;
+
+  margin-top:15px;
+
+}
+
+.work-check{
+
+  width:100%;
+
+  padding:11px 12px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:#f7f6f8;
+
+  color:#26262d;
+
+  text-align:left;
+
+}
+
+.work-check-circle{
+
+  width:21px;
+
+  height:21px;
+
+  flex:none;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border:2px solid #c9c7cd;
+
+  border-radius:50%;
+
+  color:white;
+
+  font-size:12px;
+
+  font-weight:900;
+
+}
+
+.work-check.done{
+
+  opacity:.58;
+
+}
+
+.work-check.done
+.work-check-circle{
+
+  border-color:#22bd7b;
+
+  background:#22bd7b;
+
+}
+
+.work-check.done
+.work-check-text{
+
+  text-decoration:
+    line-through;
+
+}
+
+
+/* ACCIÓN */
+
+.work-action-button{
+
+  display:none;
+
+  width:100%;
+
+  min-height:48px;
+
+  margin-top:15px;
+
+  border:0;
+
+  border-radius:16px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:13px;
+
+  font-weight:850;
+
+}
+
+.work-action-button.show{
+
+  display:block;
+
+}
+
+
+/* BLOQUES CON OTROS COLORES */
+
+.work-routine-card.meeting{
+
+  background:
+    linear-gradient(
+      145deg,
+      #f3efff,
+      #ffffff
+    );
+
+}
+
+.work-routine-card.meeting
+.work-routine-label{
+
+  color:#6548d8;
+
+}
+
+.work-routine-card.meeting
+.work-routine-icon{
+
+  background:#ebe5ff;
+
+}
+
+.work-routine-card.break{
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf9f4,
+      #ffffff
+    );
+
+}
+
+.work-routine-card.break
+.work-routine-label{
+
+  color:#159978;
+
+}
+
+.work-routine-card.break
+.work-routine-icon{
+
+  background:#ddf5eb;
+
+}
+
+.work-routine-card.gym-prep{
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff3e7,
+      #ffffff
+    );
+
+}
+
+.work-routine-card.gym-prep
+.work-routine-label{
+
+  color:#e66a00;
+
+}
+
+.work-routine-card.gym-prep
+.work-routine-icon{
+
+  background:#ffe4cb;
+
+}
+
+.work-routine-card.finished{
+
+  background:
+    linear-gradient(
+      145deg,
+      #e9f8f1,
+      #ffffff
+    );
+
+}
+
+.work-routine-card.finished
+.work-routine-label{
+
+  color:#14845e;
+
+}
+
+
+/* =====================================================
+   MODAL AVISO
+===================================================== */
+
+.work-modal{
+
+  position:fixed;
+
+  z-index:9000;
+
+  inset:0;
+
+  display:none;
+
+  align-items:flex-end;
+
+  background:
+    rgba(0,0,0,.26);
+
+  backdrop-filter:
+    blur(6px);
+
+  -webkit-backdrop-filter:
+    blur(6px);
+
+}
+
+.work-modal.show{
+
+  display:flex;
+
+}
+
+.work-modal-sheet{
+
+  width:100%;
+
+  padding:
+    18px
+    20px
+    calc(
+      env(safe-area-inset-bottom)
+      +
+      24px
+    );
+
+  border-radius:
+    28px
+    28px
+    0
+    0;
+
+  background:white;
+
+}
+
+.modal-handle{
+
+  width:43px;
+
+  height:5px;
+
+  margin:
+    0
+    auto
+    18px;
+
+  border-radius:999px;
+
+  background:#ddd;
+
+}
+
+.modal-icon{
+
+  font-size:39px;
+
+}
+
+.modal-label{
+
+  margin-top:12px;
+
+  color:var(--pink);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+}
+
+.modal-title{
+
+  margin-top:5px;
+
+  font-size:27px;
+
+  font-weight:900;
+
+}
+
+.modal-text{
+
+  margin-top:7px;
+
+  color:var(--secondary);
+
+  font-size:13px;
+
+  line-height:1.45;
+
+}
+
+.modal-buttons{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1.5fr;
+
+  gap:8px;
+
+  margin-top:18px;
+
+}
+
+.modal-buttons button{
+
+  min-height:48px;
+
+  border:0;
+
+  border-radius:15px;
+
+  font-weight:850;
+
+}
+
+.modal-later{
+
+  background:#efedf1;
+
+}
+
+.modal-open{
+
+  background:#111;
+
+  color:white;
+
+}
+
+
+/* =====================================================
    APPS
-========================= */
+===================================================== */
 
 .app-grid{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:19px 8px;
+
 }
 
 .app{
+
   min-width:0;
+
   text-align:center;
+
   cursor:pointer;
+
 }
 
 .icon{
+
   position:relative;
+
   width:56px;
+
   height:56px;
+
   margin:auto;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   overflow:hidden;
+
   border-radius:15px;
+
   background:white;
-  box-shadow:0 4px 13px rgba(0,0,0,.10);
+
+  box-shadow:
+    0 4px 13px
+    rgba(0,0,0,.10);
+
 }
 
 .icon img{
+
   width:100%;
+
   height:100%;
+
   object-fit:contain;
+
 }
 
 .app-name{
+
   margin-top:6px;
+
   overflow:hidden;
+
   white-space:nowrap;
+
   text-overflow:ellipsis;
+
   font-size:10px;
+
 }
 
-/* =========================
+
+/* =====================================================
    ICONOS
-========================= */
+===================================================== */
 
 .whatsapp-icon{
+
   background:#25D366;
+
 }
 
 .whatsapp-icon img{
+
   width:78%;
+
   height:78%;
+
 }
 
 .business-icon{
+
   background:#25D366;
+
 }
 
 .business-b{
+
   position:absolute;
+
   right:8px;
+
   bottom:5px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+
   width:18px;
+
   height:18px;
-  border:2px solid #25D366;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border:
+    2px solid #25D366;
+
   border-radius:50%;
+
   background:white;
+
   color:#159447;
+
   font-size:11px;
+
   font-weight:900;
+
 }
 
 .phone-icon{
-  background:linear-gradient(145deg,#5be36e,#23c844);
+
+  background:
+    linear-gradient(
+      145deg,
+      #5be36e,
+      #23c844
+    );
+
   color:white;
+
   font-size:29px;
+
 }
 
 .time-icon{
-  background:linear-gradient(145deg,#56c9a4,#159978);
+
+  background:
+    linear-gradient(
+      145deg,
+      #56c9a4,
+      #159978
+    );
+
 }
 
 .time-check{
+
   width:33px;
+
   height:33px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
-  border:4px solid #202d2b;
+
+  border:
+    4px solid #202d2b;
+
   border-radius:50%;
+
   color:#202d2b;
+
   font-size:20px;
+
   font-weight:900;
+
 }
 
 .music-icon{
-  background:linear-gradient(145deg,#ff3157,#ff5c6e);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff3157,
+      #ff5c6e
+    );
+
   color:white;
+
   font-size:31px;
+
 }
 
 .spotify-icon{
+
   background:#111;
+
 }
 
 .spotify-icon img{
+
   width:83%;
+
   height:83%;
+
 }
 
 .youtube-icon{
+
   background:white;
+
 }
 
 .youtube-icon img{
+
   width:83%;
+
   height:83%;
+
 }
 
 .chatgpt-icon{
+
   background:#111;
+
 }
 
 .chatgpt-icon img{
+
   width:72%;
+
   height:72%;
+
   filter:invert(1);
+
 }
 
 .github-icon img,
 .teams-icon img,
 .outlook-icon img,
 .safari-icon img{
+
   width:88%;
+
   height:88%;
+
 }
 
 .nuki-icon{
+
   background:#050505;
+
 }
 
 .nuki-ring{
+
   width:36px;
+
   height:36px;
-  border:3px solid white;
+
+  border:
+    3px solid white;
+
   border-radius:50%;
+
 }
 
 .wibox-icon{
-  background:linear-gradient(#37a6df,#168acb);
+
+  background:
+    linear-gradient(
+      #37a6df,
+      #168acb
+    );
+
   color:white;
+
   font-size:27px;
+
   font-weight:900;
+
 }
 
-/* =========================
+
+/* =====================================================
    APPLE
-========================= */
+===================================================== */
 
 .calendar-icon{
+
   display:block;
+
   padding-top:5px;
+
   background:white;
+
 }
 
 .cal-day{
+
   color:#e52e39;
+
   font-size:9px;
+
   font-weight:900;
+
 }
 
 .cal-number{
+
   color:#111;
+
   font-size:28px;
+
   line-height:32px;
+
 }
 
 .clock-icon{
+
   background:white;
+
 }
 
 .clock-face{
+
   width:43px;
+
   height:43px;
+
   border-radius:50%;
-  border:2px solid #111;
+
+  border:
+    2px solid #111;
+
   position:relative;
+
 }
 
 .clock-face:before{
+
   content:"";
+
   position:absolute;
+
   width:2px;
+
   height:13px;
+
   left:20px;
+
   top:8px;
+
   background:#111;
-  transform:rotate(15deg);
-  transform-origin:bottom;
+
+  transform:
+    rotate(15deg);
+
+  transform-origin:
+    bottom;
+
 }
 
 .clock-face:after{
+
   content:"";
+
   position:absolute;
+
   width:13px;
+
   height:2px;
+
   left:20px;
+
   top:20px;
+
   background:#111;
-  transform:rotate(35deg);
-  transform-origin:left;
+
+  transform:
+    rotate(35deg);
+
+  transform-origin:
+    left;
+
 }
 
 .notes-icon{
+
   display:block;
+
   background:white;
+
 }
 
 .notes-yellow{
+
   height:14px;
+
   background:#ffd93f;
+
 }
 
 .note-line{
+
   height:1px;
-  margin:7px 7px 0;
+
+  margin:
+    7px
+    7px
+    0;
+
   background:#d6d6d6;
+
 }
 
 .find-icon{
+
   background:
+
     radial-gradient(
       circle,
       #216be6 0 13%,
@@ -441,40 +1343,75 @@ body{
       #e5f4ec 47% 59%,
       white 60%
     );
+
 }
 
 .messages-icon{
-  background:linear-gradient(#65ed73,#23c745);
+
+  background:
+    linear-gradient(
+      #65ed73,
+      #23c745
+    );
+
   color:white;
+
   font-size:27px;
+
 }
 
 .password-icon{
+
   background:#202020;
+
   color:white;
+
   font-size:25px;
+
 }
 
 .mail-icon{
-  background:linear-gradient(#78beff,#2487eb);
+
+  background:
+    linear-gradient(
+      #78beff,
+      #2487eb
+    );
+
   color:white;
+
   font-size:27px;
+
 }
 
 .photos-icon{
+
   background:white;
+
   font-size:30px;
+
 }
 
 .camera-icon{
-  background:linear-gradient(#ececec,#bfc2c6);
+
+  background:
+    linear-gradient(
+      #ececec,
+      #bfc2c6
+    );
+
 }
 
 .camera-lens{
+
   width:34px;
+
   height:34px;
+
   border-radius:50%;
+
   background:
+
     radial-gradient(
       circle,
       #161c24 0 18%,
@@ -483,270 +1420,274 @@ body{
       #83878f 56% 62%,
       #222 63%
     );
+
 }
 
-/* =========================
+
+/* =====================================================
    GOOGLE
-========================= */
+===================================================== */
 
 .gmail-icon img,
 .drive-icon img,
 .auth-icon img,
 .docs-icon img{
+
   width:78%;
+
   height:78%;
+
 }
 
-/* =========================
-   POMODORO
-========================= */
 
-.pomo-label{
-  color:var(--pink);
-  font-size:14px;
-  font-weight:900;
-}
-
-.pomo-layout{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top:12px;
-}
-
-.pomo-time{
-  font-size:44px;
-  letter-spacing:-2px;
-}
-
-.pomo-state{
-  display:inline-flex;
-  margin-top:8px;
-  padding:6px 10px;
-  border-radius:999px;
-  background:#ffe5ed;
-  font-size:11px;
-}
-
-.pomo-right{
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-
-.play-button{
-  width:72px;
-  height:72px;
-  border-radius:50%;
-  border:7px solid #ffdbe6;
-  background:white;
-  color:var(--pink);
-  font-size:26px;
-}
-
-.reset-button{
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:50%;
-  background:white;
-}
-
-.sessions{
-  text-align:center;
-  color:var(--secondary);
-  font-size:11px;
-  margin-bottom:7px;
-}
-
-/* =========================
-   DAILY
-========================= */
-
-.daily{
-  display:none;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:15px;
-  padding:14px;
-  border-radius:20px;
-  background:#f1edff;
-}
-
-.daily.show{
-  display:flex;
-}
-
-.daily-left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.daily-logo{
-  width:38px;
-}
-
-.daily-title{
-  color:#4530c9;
-  font-size:14px;
-  font-weight:850;
-}
-
-.daily-subtitle{
-  color:#777;
-  font-size:11px;
-}
-
-.daily-button{
-  border:0;
-  border-radius:13px;
-  padding:9px 12px;
-  background:#7657ec;
-  color:white;
-}
-
-/* =========================
+/* =====================================================
    DESPLEGABLES
-========================= */
+===================================================== */
 
 .chevron{
+
   width:32px;
+
   height:32px;
+
   border:0;
+
   border-radius:50%;
+
   background:#f0f0f3;
+
   font-size:18px;
+
   transition:.3s;
+
 }
 
 .chevron.open{
-  transform:rotate(180deg);
+
+  transform:
+    rotate(180deg);
+
 }
 
 .collapsible{
+
   max-height:900px;
+
   overflow:hidden;
+
   opacity:1;
+
   transition:.3s;
+
 }
 
 .collapsible.closed{
+
   max-height:0;
+
   opacity:0;
+
 }
 
-/* =========================
+
+/* =====================================================
    BLOQUEO
-========================= */
+===================================================== */
 
 .lock-screen{
+
   position:fixed;
+
   inset:0;
+
   z-index:9999;
+
   display:none;
+
   align-items:center;
+
   justify-content:center;
+
   background:#f5f3f7;
+
   text-align:center;
+
 }
 
 .lock-screen.show{
+
   display:flex;
+
 }
 
 .lock-title{
+
   font-size:30px;
+
   font-weight:900;
+
 }
 
 .unlock-button{
+
   margin-top:20px;
-  padding:15px 40px;
+
+  padding:
+    15px
+    40px;
+
   border:0;
+
   border-radius:16px;
+
   background:#111;
+
   color:white;
+
 }
 
-/* =========================
+
+/* =====================================================
    NAV
-========================= */
+===================================================== */
 
 .bottom-nav{
+
   position:fixed;
+
   z-index:100;
+
   left:14px;
+
   right:14px;
-  bottom:calc(env(safe-area-inset-bottom) + 18px);
+
+  bottom:
+    calc(
+      env(safe-area-inset-bottom)
+      +
+      18px
+    );
 
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
   gap:6px;
 
   padding:6px;
+
   border-radius:25px;
 
-  background:rgba(248,248,250,.94);
-  backdrop-filter:blur(28px);
-  -webkit-backdrop-filter:blur(28px);
+  background:
+    rgba(248,248,250,.94);
 
-  box-shadow:0 7px 31px rgba(0,0,0,.12);
+  backdrop-filter:
+    blur(28px);
+
+  -webkit-backdrop-filter:
+    blur(28px);
+
+  box-shadow:
+    0 7px 31px
+    rgba(0,0,0,.12);
+
 }
 
 .bottom-nav button{
-  border:0;
-  min-height:52px;
-  border-radius:19px;
-  font-weight:750;
-  background:transparent;
-}
 
-.bottom-nav button.active{
-  background:#ffe4ed;
-  color:#ff2866;
+  border:0;
+
+  min-height:52px;
+
+  border-radius:19px;
+
+  font-weight:750;
+
+  background:transparent;
+
 }
 
 .current-nav.active{
+
   background:#111 !important;
+
   color:white !important;
+
 }
 
-/* =========================
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
 @media(max-width:390px){
 
   body{
+
     padding-left:13px;
+
     padding-right:13px;
+
     padding-bottom:
-      calc(env(safe-area-inset-bottom) + 175px);
+
+      calc(
+        env(safe-area-inset-bottom)
+        +
+        175px
+      );
+
   }
 
   .hero{
-    grid-template-columns:minmax(0,1fr) 142px;
+
+    grid-template-columns:
+      minmax(0,1fr)
+      142px;
+
     gap:9px;
+
   }
 
   .big-time{
+
     font-size:50px;
+
   }
 
   .icon{
+
     width:51px;
+
     height:51px;
+
   }
+
+  .work-countdown{
+
+    font-size:43px;
+
+  }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- BLOQUEO -->
 
-<div id="lockScreen" class="lock-screen">
+<!-- =====================================================
+     BLOQUEO
+===================================================== -->
+
+<div
+  id="lockScreen"
+  class="lock-screen"
+>
 
   <div>
 
@@ -770,7 +1711,75 @@ body{
 </div>
 
 
-<!-- ARRIBA -->
+<!-- =====================================================
+     AVISO / PERMISO
+===================================================== -->
+
+<div
+  id="workModal"
+  class="work-modal"
+>
+
+  <div class="work-modal-sheet">
+
+    <div class="modal-handle">
+    </div>
+
+    <div
+      id="modalIcon"
+      class="modal-icon"
+    >
+      🟣
+    </div>
+
+    <div
+      id="modalLabel"
+      class="modal-label"
+    >
+      AHORA
+    </div>
+
+    <div
+      id="modalTitle"
+      class="modal-title"
+    >
+      Daily
+    </div>
+
+    <div
+      id="modalText"
+      class="modal-text"
+    >
+      Es hora de entrar en Teams.
+    </div>
+
+    <div class="modal-buttons">
+
+      <button
+        class="modal-later"
+        onclick="closeWorkModal()"
+      >
+        Ahora no
+      </button>
+
+      <button
+        id="modalOpenButton"
+        class="modal-open"
+        onclick="runModalAction()"
+      >
+        Abrir Teams
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     ARRIBA
+===================================================== -->
 
 <div class="top-actions">
 
@@ -797,7 +1806,9 @@ body{
 </div>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <div class="hero">
 
@@ -827,7 +1838,8 @@ body{
 
     <div class="mode-pill">
 
-      <span class="mode-dot"></span>
+      <span class="mode-dot">
+      </span>
 
       <span>
         Trabajo
@@ -847,6 +1859,7 @@ body{
     </div>
 
     <div class="entertainment-grid">
+
 
       <div
         class="app"
@@ -912,108 +1925,108 @@ body{
 </div>
 
 
-<!-- DAILY -->
+<!-- =====================================================
+     ASISTENTE DE JORNADA
+===================================================== -->
 
-<div
-  id="dailyReminder"
-  class="daily"
+<section
+  id="workRoutineCard"
+  class="work-routine-card"
 >
 
-  <div class="daily-left">
-
-    <img
-      class="daily-logo"
-      src="https://api.iconify.design/logos/microsoft-teams.svg"
-      alt="Teams"
-    >
+  <div class="work-routine-top">
 
     <div>
 
-      <div class="daily-title">
-        Daily en breve
+      <div
+        id="workBlockLabel"
+        class="work-routine-label"
+      >
+        AHORA
       </div>
 
-      <div class="daily-subtitle">
-        09:00 · Reunión
+      <div
+        id="workBlockTitle"
+        class="work-routine-title"
+      >
+        Arranque del día
+      </div>
+
+      <div
+        id="workBlockRange"
+        class="work-routine-time-range"
+      >
+        08:00 – 08:50
       </div>
 
     </div>
 
+
+    <div
+      id="workBlockIcon"
+      class="work-routine-icon"
+    >
+      🌅
+    </div>
+
   </div>
+
+
+  <div
+    id="workCountdown"
+    class="work-countdown"
+  >
+    00:50:00
+  </div>
+
+
+  <div
+    id="workBlockMessage"
+    class="work-message"
+  >
+    Empieza poniendo el día en orden.
+  </div>
+
+
+  <div class="work-progress">
+
+    <div
+      id="workProgressBar"
+      class="work-progress-bar"
+    >
+    </div>
+
+  </div>
+
+
+  <div
+    id="workAlert"
+    class="work-alert"
+  >
+  </div>
+
+
+  <div
+    id="workChecklist"
+    class="work-checklist"
+  >
+  </div>
+
 
   <button
-    class="daily-button"
-    onclick="launchDirect('msteams://')"
+    id="workActionButton"
+    class="work-action-button"
+    onclick="runCurrentWorkAction()"
   >
-    Teams
+    Abrir
   </button>
 
-</div>
+</section>
 
 
-<!-- POMODORO -->
-
-<div class="card">
-
-  <div class="pomo-label">
-    POMODORO
-  </div>
-
-  <div class="pomo-layout">
-
-    <div>
-
-      <div
-        id="pomoTime"
-        class="pomo-time"
-      >
-        25:00
-      </div>
-
-      <div
-        id="pomoState"
-        class="pomo-state"
-      >
-        ● Concentración
-      </div>
-
-    </div>
-
-
-    <div class="pomo-right">
-
-      <button
-        id="playButton"
-        class="play-button"
-        onclick="togglePomodoro()"
-      >
-        ▶
-      </button>
-
-      <div>
-
-        <div class="sessions">
-          🍅
-          <span id="sessions">0</span>
-        </div>
-
-        <button
-          class="reset-button"
-          onclick="resetPomodoro()"
-        >
-          ↻
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- CONECTIVIDAD -->
+<!-- =====================================================
+     CONECTIVIDAD
+===================================================== -->
 
 <section class="card">
 
@@ -1245,7 +2258,9 @@ body{
 </section>
 
 
-<!-- IPHONE -->
+<!-- =====================================================
+     IPHONE
+===================================================== -->
 
 <section class="card">
 
@@ -1475,7 +2490,9 @@ body{
 </section>
 
 
-<!-- GOOGLE -->
+<!-- =====================================================
+     GOOGLE
+===================================================== -->
 
 <section class="card">
 
@@ -1509,8 +2526,6 @@ body{
     <div class="app-grid">
 
 
-      <!-- GMAIL -->
-
       <div
         class="app"
         onclick="launchDirect('googlegmail://')"
@@ -1531,8 +2546,6 @@ body{
 
       </div>
 
-
-      <!-- DRIVE -->
 
       <div
         class="app"
@@ -1555,8 +2568,6 @@ body{
       </div>
 
 
-      <!-- AUTHENTICATOR -->
-
       <div
         class="app"
         onclick="launchDirect('googleauthenticator://')"
@@ -1577,8 +2588,6 @@ body{
 
       </div>
 
-
-      <!-- DOCUMENTOS -->
 
       <div
         class="app"
@@ -1607,7 +2616,9 @@ body{
 </section>
 
 
-<!-- PUERTAS -->
+<!-- =====================================================
+     PUERTAS
+===================================================== -->
 
 <section class="card">
 
@@ -1622,8 +2633,6 @@ body{
 
   <div class="app-grid">
 
-
-    <!-- NUKI -->
 
     <div
       class="app"
@@ -1643,8 +2652,6 @@ body{
 
     </div>
 
-
-    <!-- WI-BOX -->
 
     <div
       class="app"
@@ -1666,7 +2673,9 @@ body{
 </section>
 
 
-<!-- NAVEGACIÓN -->
+<!-- =====================================================
+     NAVEGACIÓN
+===================================================== -->
 
 <nav class="bottom-nav">
 
@@ -1689,29 +2698,333 @@ body{
 
 <script>
 
-/* =========================
+/* =====================================================
+   HORARIO DE TRABAJO
+===================================================== */
+
+const workBlocks = [
+
+  {
+
+    id:"start",
+
+    start:480,
+
+    end:530,
+
+    range:"08:00 – 08:50",
+
+    label:"ARRANQUE DEL DÍA",
+
+    title:"Pon el día en orden",
+
+    icon:"🌅",
+
+    type:"focus",
+
+    message:
+      "Empieza por revisar y organizar antes de meterte en tareas grandes.",
+
+    tasks:[
+
+      "Revisar agenda",
+
+      "Añadir tareas",
+
+      "Revisar correos electrónicos",
+
+      "Revisar PTS"
+
+    ],
+
+    action:{
+      type:"shortcut",
+      value:"Abrir Tiempo Jornada",
+      label:"✓ Abrir Tiempo Jornada"
+    }
+
+  },
+
+
+  {
+
+    id:"daily",
+
+    start:530,
+
+    end:570,
+
+    range:"08:50 – 09:30",
+
+    label:"DAILY",
+
+    title:"Reunión de equipo",
+
+    icon:"🟣",
+
+    type:"meeting",
+
+    message:
+      "Deja el bloque anterior. Es momento de la daily.",
+
+    tasks:[
+      "Entrar en Teams",
+      "Tener a mano lo pendiente de hoy"
+    ],
+
+    action:{
+      type:"direct",
+      value:"msteams://",
+      label:"Abrir Teams"
+    }
+
+  },
+
+
+  {
+
+    id:"communication",
+
+    start:570,
+
+    end:630,
+
+    range:"09:30 – 10:30",
+
+    label:"BLOQUE DE RESPUESTA",
+
+    title:"WhatsApp, correos y urgentes",
+
+    icon:"💬",
+
+    type:"focus",
+
+    message:
+      "Saca ahora todo lo que depende de responder, avisar o resolver rápido.",
+
+    tasks:[
+
+      "Enviar WhatsApp pendientes",
+
+      "Responder correos",
+
+      "Resolver tareas urgentes"
+
+    ]
+
+  },
+
+
+  {
+
+    id:"breakfast",
+
+    start:630,
+
+    end:660,
+
+    range:"10:30 – 11:00",
+
+    label:"DESCANSO",
+
+    title:"Desayuno",
+
+    icon:"☕",
+
+    type:"break",
+
+    message:
+      "Para de verdad. Desayuna y despeja un poco la cabeza.",
+
+    tasks:[]
+
+  },
+
+
+  {
+
+    id:"kit",
+
+    start:660,
+
+    end:780,
+
+    range:"11:00 – 13:00",
+
+    label:"FOCO",
+
+    title:"Kit Digital",
+
+    icon:"💻",
+
+    type:"focus",
+
+    message:
+      "Este es el bloque largo. Prioriza las tareas de Kit Digital.",
+
+    tasks:[
+
+      "Justificaciones",
+
+      "Subsanaciones",
+
+      "Clientes",
+
+      "Tareas y seguimientos de Kit Digital"
+
+    ]
+
+  },
+
+
+  {
+
+    id:"midbreak",
+
+    start:780,
+
+    end:795,
+
+    range:"13:00 – 13:15",
+
+    label:"PAUSA",
+
+    title:"15 minutos de descanso",
+
+    icon:"🌿",
+
+    type:"break",
+
+    message:
+      "Levántate, cambia de sitio y desconecta estos quince minutos.",
+
+    tasks:[]
+
+  },
+
+
+  {
+
+    id:"other",
+
+    start:795,
+
+    end:885,
+
+    range:"13:15 – 14:45",
+
+    label:"ÚLTIMO BLOQUE",
+
+    title:"Otras tareas",
+
+    icon:"🎯",
+
+    type:"focus",
+
+    message:
+      "Ahora sí: resto de tareas, proyectos y pendientes que no sean Kit Digital.",
+
+    tasks:[
+
+      "Resto de tareas pendientes",
+
+      "Proyectos",
+
+      "Organización",
+
+      "Dejar mañana preparado"
+
+    ]
+
+  },
+
+
+  {
+
+    id:"gymprep",
+
+    start:885,
+
+    end:900,
+
+    range:"14:45 – 15:00",
+
+    label:"CIERRA EL TRABAJO",
+
+    title:"Prepara el Gym",
+
+    icon:"🥤",
+
+    type:"gym-prep",
+
+    message:
+      "No empieces nada nuevo. Cierra, recoge y cambia el chip.",
+
+    tasks:[
+
+      "Tomar creatina",
+
+      "Tomar preentreno",
+
+      "Recoger tus cosas",
+
+      "Dejar preparado lo urgente de mañana"
+
+    ]
+
+  }
+
+];
+
+
+/* =====================================================
+   ESTADO
+===================================================== */
+
+let currentWorkBlock =
+  null;
+
+
+let modalAction =
+  null;
+
+
+let lastRenderedBlock =
+  null;
+
+
+/* =====================================================
    ABRIR APPS
-========================= */
+===================================================== */
 
 function navigateExternal(url){
 
   const link =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
+
 
   link.href =
     url;
 
+
   link.style.display =
     "none";
+
 
   document.body.appendChild(
     link
   );
 
+
   link.click();
 
+
   setTimeout(
-    ()=>link.remove(),
+    ()=>{
+      link.remove();
+    },
     500
   );
 
@@ -1730,9 +3043,13 @@ function launchDirect(url){
 function launchShortcut(name){
 
   navigateExternal(
+
     "shortcuts://run-shortcut?name="
     +
-    encodeURIComponent(name)
+    encodeURIComponent(
+      name
+    )
+
   );
 
 }
@@ -1741,22 +3058,30 @@ function launchShortcut(name){
 function openExternalWeb(url){
 
   const link =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
+
 
   link.href =
     url;
 
+
   link.target =
     "_blank";
 
+
   link.rel =
     "noopener";
+
 
   document.body.appendChild(
     link
   );
 
+
   link.click();
+
 
   link.remove();
 
@@ -1775,7 +3100,9 @@ function launchWithFallback(
 
   function visibility(){
 
-    if(document.hidden){
+    if(
+      document.hidden
+    ){
 
       leftPage =
         true;
@@ -1794,7 +3121,9 @@ function launchWithFallback(
   );
 
 
-  if(directUrl){
+  if(
+    directUrl
+  ){
 
     navigateExternal(
       directUrl
@@ -1806,14 +3135,18 @@ function launchWithFallback(
   setTimeout(
     ()=>{
 
-      if(leftPage){
+      if(
+        leftPage
+      ){
 
         return;
 
       }
 
 
-      if(shortcutName){
+      if(
+        shortcutName
+      ){
 
         launchShortcut(
           shortcutName
@@ -1824,7 +3157,9 @@ function launchWithFallback(
       }
 
 
-      if(webUrl){
+      if(
+        webUrl
+      ){
 
         openExternalWeb(
           webUrl
@@ -1839,9 +3174,1306 @@ function launchWithFallback(
 }
 
 
-/* =========================
-   HORA
-========================= */
+/* =====================================================
+   FECHA
+===================================================== */
+
+function todayKey(){
+
+  const now =
+    new Date();
+
+
+  return (
+
+    now.getFullYear()
+    +
+    "-"
+    +
+    String(
+      now.getMonth()+1
+    ).padStart(
+      2,
+      "0"
+    )
+    +
+    "-"
+    +
+    String(
+      now.getDate()
+    ).padStart(
+      2,
+      "0"
+    )
+
+  );
+
+}
+
+
+/* =====================================================
+   BLOQUE ACTUAL
+===================================================== */
+
+function getCurrentWorkBlock(now){
+
+  const minutes =
+
+    now.getHours()
+    *
+    60
+
+    +
+
+    now.getMinutes();
+
+
+  return workBlocks.find(
+
+    block =>
+
+      minutes >= block.start
+
+      &&
+
+      minutes < block.end
+
+  );
+
+}
+
+
+/* =====================================================
+   FORMATO CONTADOR
+===================================================== */
+
+function formatDuration(seconds){
+
+  const h =
+    Math.floor(
+      seconds / 3600
+    );
+
+
+  const m =
+    Math.floor(
+      (seconds % 3600)
+      /
+      60
+    );
+
+
+  const s =
+    seconds % 60;
+
+
+  return (
+
+    String(h)
+      .padStart(
+        2,
+        "0"
+      )
+
+    +
+
+    ":"
+
+    +
+
+    String(m)
+      .padStart(
+        2,
+        "0"
+      )
+
+    +
+
+    ":"
+
+    +
+
+    String(s)
+      .padStart(
+        2,
+        "0"
+      )
+
+  );
+
+}
+
+
+/* =====================================================
+   CHECKLIST
+===================================================== */
+
+function checklistKey(
+  blockId,
+  index
+){
+
+  return (
+
+    "miInicio-work-"
+    +
+    todayKey()
+    +
+    "-"
+    +
+    blockId
+    +
+    "-"
+    +
+    index
+
+  );
+
+}
+
+
+function renderChecklist(block){
+
+  const container =
+    document.getElementById(
+      "workChecklist"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  if(
+    !block.tasks
+    ||
+    block.tasks.length === 0
+  ){
+
+    return;
+
+  }
+
+
+  block.tasks.forEach(
+    (
+      task,
+      index
+    )=>{
+
+      const done =
+
+        localStorage.getItem(
+          checklistKey(
+            block.id,
+            index
+          )
+        )
+        ===
+        "1";
+
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.className =
+        "work-check"
+        +
+        (
+          done
+          ?
+          " done"
+          :
+          ""
+        );
+
+
+      button.innerHTML =
+
+        '<span class="work-check-circle">'
+        +
+        (
+          done
+          ?
+          "✓"
+          :
+          ""
+        )
+        +
+        "</span>"
+        +
+        '<span class="work-check-text">'
+        +
+        task
+        +
+        "</span>";
+
+
+      button.onclick =
+        ()=>{
+
+          const key =
+            checklistKey(
+              block.id,
+              index
+            );
+
+
+          const currentlyDone =
+
+            localStorage.getItem(
+              key
+            )
+            ===
+            "1";
+
+
+          if(
+            currentlyDone
+          ){
+
+            localStorage.removeItem(
+              key
+            );
+
+          }
+
+          else{
+
+            localStorage.setItem(
+              key,
+              "1"
+            );
+
+          }
+
+
+          renderChecklist(
+            block
+          );
+
+        };
+
+
+      container.appendChild(
+        button
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   ACCIÓN PRINCIPAL
+===================================================== */
+
+function renderAction(block){
+
+  const button =
+    document.getElementById(
+      "workActionButton"
+    );
+
+
+  if(
+    !block
+    ||
+    !block.action
+  ){
+
+    button.classList.remove(
+      "show"
+    );
+
+
+    button.textContent =
+      "";
+
+
+    return;
+
+  }
+
+
+  button.textContent =
+    block.action.label;
+
+
+  button.classList.add(
+    "show"
+  );
+
+}
+
+
+function runCurrentWorkAction(){
+
+  if(
+    !currentWorkBlock
+    ||
+    !currentWorkBlock.action
+  ){
+
+    return;
+
+  }
+
+
+  runAction(
+    currentWorkBlock.action
+  );
+
+}
+
+
+function runAction(action){
+
+  if(
+    action.type
+    ===
+    "direct"
+  ){
+
+    launchDirect(
+      action.value
+    );
+
+    return;
+
+  }
+
+
+  if(
+    action.type
+    ===
+    "shortcut"
+  ){
+
+    launchShortcut(
+      action.value
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   AVISOS SEGÚN TIEMPO RESTANTE
+===================================================== */
+
+function updateCountdownAlert(seconds){
+
+  const alert =
+    document.getElementById(
+      "workAlert"
+    );
+
+
+  alert.classList.remove(
+    "show"
+  );
+
+
+  alert.textContent =
+    "";
+
+
+  if(
+    !currentWorkBlock
+  ){
+
+    return;
+
+  }
+
+
+  if(
+    seconds <= 60
+  ){
+
+    alert.textContent =
+      "⏰ Queda 1 minuto. Termina lo que estás haciendo y cambia de bloque.";
+
+
+    alert.classList.add(
+      "show"
+    );
+
+
+    return;
+
+  }
+
+
+  if(
+    seconds <= 300
+  ){
+
+    alert.textContent =
+      "⏳ Quedan 5 minutos. Ve cerrando este bloque.";
+
+
+    alert.classList.add(
+      "show"
+    );
+
+
+    return;
+
+  }
+
+
+  if(
+    seconds <= 600
+  ){
+
+    alert.textContent =
+      "🕐 Quedan 10 minutos. No empieces nada nuevo.";
+
+
+    alert.classList.add(
+      "show"
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   RENDER DEL BLOQUE
+===================================================== */
+
+function renderWorkBlock(
+  block,
+  now
+){
+
+  const card =
+    document.getElementById(
+      "workRoutineCard"
+    );
+
+
+  currentWorkBlock =
+    block;
+
+
+  card.className =
+    "work-routine-card"
+    +
+    (
+      block.type
+      ?
+      " "
+      +
+      block.type
+      :
+      ""
+    );
+
+
+  document.getElementById(
+    "workBlockLabel"
+  ).textContent =
+    block.label;
+
+
+  document.getElementById(
+    "workBlockTitle"
+  ).textContent =
+    block.title;
+
+
+  document.getElementById(
+    "workBlockRange"
+  ).textContent =
+    block.range;
+
+
+  document.getElementById(
+    "workBlockIcon"
+  ).textContent =
+    block.icon;
+
+
+  document.getElementById(
+    "workBlockMessage"
+  ).textContent =
+    block.message;
+
+
+  const endDate =
+    new Date(
+      now
+    );
+
+
+  endDate.setHours(
+
+    Math.floor(
+      block.end / 60
+    ),
+
+    block.end % 60,
+
+    0,
+
+    0
+
+  );
+
+
+  const seconds =
+
+    Math.max(
+
+      0,
+
+      Math.floor(
+
+        (
+          endDate
+          -
+          now
+        )
+        /
+        1000
+
+      )
+
+    );
+
+
+  document.getElementById(
+    "workCountdown"
+  ).textContent =
+    formatDuration(
+      seconds
+    );
+
+
+  const totalSeconds =
+
+    (
+      block.end
+      -
+      block.start
+    )
+    *
+    60;
+
+
+  const progress =
+
+    totalSeconds > 0
+
+    ?
+
+    (
+      (
+        totalSeconds
+        -
+        seconds
+      )
+      /
+      totalSeconds
+    )
+    *
+    100
+
+    :
+
+    100;
+
+
+  document.getElementById(
+    "workProgressBar"
+  ).style.width =
+
+    Math.min(
+      100,
+      Math.max(
+        0,
+        progress
+      )
+    )
+    +
+    "%";
+
+
+  updateCountdownAlert(
+    seconds
+  );
+
+
+  if(
+    lastRenderedBlock
+    !==
+    block.id
+  ){
+
+    renderChecklist(
+      block
+    );
+
+
+    renderAction(
+      block
+    );
+
+
+    lastRenderedBlock =
+      block.id;
+
+  }
+
+}
+
+
+/* =====================================================
+   ANTES DE LAS 08:00
+===================================================== */
+
+function renderBeforeWork(){
+
+  currentWorkBlock =
+    null;
+
+
+  lastRenderedBlock =
+    null;
+
+
+  const card =
+    document.getElementById(
+      "workRoutineCard"
+    );
+
+
+  card.className =
+    "work-routine-card";
+
+
+  document.getElementById(
+    "workBlockLabel"
+  ).textContent =
+    "ANTES DE EMPEZAR";
+
+
+  document.getElementById(
+    "workBlockTitle"
+  ).textContent =
+    "Todavía no toca trabajar";
+
+
+  document.getElementById(
+    "workBlockRange"
+  ).textContent =
+    "La jornada empieza a las 08:00";
+
+
+  document.getElementById(
+    "workBlockIcon"
+  ).textContent =
+    "🌤️";
+
+
+  document.getElementById(
+    "workCountdown"
+  ).textContent =
+    "--:--:--";
+
+
+  document.getElementById(
+    "workBlockMessage"
+  ).textContent =
+    "Cuando lleguen las 08:00 te recordaré que fiches y empezará el primer bloque.";
+
+
+  document.getElementById(
+    "workProgressBar"
+  ).style.width =
+    "0%";
+
+
+  document.getElementById(
+    "workAlert"
+  ).classList.remove(
+    "show"
+  );
+
+
+  document.getElementById(
+    "workChecklist"
+  ).innerHTML =
+    "";
+
+
+  document.getElementById(
+    "workActionButton"
+  ).classList.remove(
+    "show"
+  );
+
+}
+
+
+/* =====================================================
+   FIN DE JORNADA
+===================================================== */
+
+function renderFinished(){
+
+  currentWorkBlock = {
+
+    id:"finished",
+
+    action:{
+
+      type:"shortcut",
+
+      value:
+        "Abrir Tiempo Jornada",
+
+      label:
+        "✓ Fichar salida"
+
+    }
+
+  };
+
+
+  lastRenderedBlock =
+    "finished";
+
+
+  const card =
+    document.getElementById(
+      "workRoutineCard"
+    );
+
+
+  card.className =
+    "work-routine-card finished";
+
+
+  document.getElementById(
+    "workBlockLabel"
+  ).textContent =
+    "FIN DE JORNADA";
+
+
+  document.getElementById(
+    "workBlockTitle"
+  ).textContent =
+    "Trabajo terminado";
+
+
+  document.getElementById(
+    "workBlockRange"
+  ).textContent =
+    "15:00";
+
+
+  document.getElementById(
+    "workBlockIcon"
+  ).textContent =
+    "🏁";
+
+
+  document.getElementById(
+    "workCountdown"
+  ).textContent =
+    "00:00:00";
+
+
+  document.getElementById(
+    "workBlockMessage"
+  ).textContent =
+    "Ficha la salida antes de irte. Después toca Gym.";
+
+
+  document.getElementById(
+    "workProgressBar"
+  ).style.width =
+    "100%";
+
+
+  document.getElementById(
+    "workAlert"
+  ).textContent =
+    "🏋️ Siguiente parada: Gym.";
+
+
+  document.getElementById(
+    "workAlert"
+  ).classList.add(
+    "show"
+  );
+
+
+  document.getElementById(
+    "workChecklist"
+  ).innerHTML =
+    "";
+
+
+  renderAction(
+    currentWorkBlock
+  );
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+function showWorkModal(
+  icon,
+  label,
+  title,
+  text,
+  buttonText,
+  action
+){
+
+  document.getElementById(
+    "modalIcon"
+  ).textContent =
+    icon;
+
+
+  document.getElementById(
+    "modalLabel"
+  ).textContent =
+    label;
+
+
+  document.getElementById(
+    "modalTitle"
+  ).textContent =
+    title;
+
+
+  document.getElementById(
+    "modalText"
+  ).textContent =
+    text;
+
+
+  document.getElementById(
+    "modalOpenButton"
+  ).textContent =
+    buttonText;
+
+
+  modalAction =
+    action;
+
+
+  document.getElementById(
+    "workModal"
+  ).classList.add(
+    "show"
+  );
+
+}
+
+
+function closeWorkModal(){
+
+  document.getElementById(
+    "workModal"
+  ).classList.remove(
+    "show"
+  );
+
+}
+
+
+function runModalAction(){
+
+  if(
+    modalAction
+  ){
+
+    runAction(
+      modalAction
+    );
+
+  }
+
+
+  closeWorkModal();
+
+}
+
+
+/* =====================================================
+   AVISOS AUTOMÁTICOS
+===================================================== */
+
+function checkAutomaticPrompts(now){
+
+  const minutes =
+
+    now.getHours()
+    *
+    60
+
+    +
+
+    now.getMinutes();
+
+
+  const seconds =
+    now.getSeconds();
+
+
+  const today =
+    todayKey();
+
+
+  /*
+    Entrada.
+    Se activa al entrar en la franja
+    de 08:00.
+  */
+
+  if(
+    minutes >= 480
+    &&
+    minutes < 485
+  ){
+
+    const key =
+      "miInicio-prompt-entry-"
+      +
+      today;
+
+
+    if(
+      !sessionStorage.getItem(
+        key
+      )
+    ){
+
+      sessionStorage.setItem(
+        key,
+        "1"
+      );
+
+
+      showWorkModal(
+
+        "🟢",
+
+        "08:00 · EMPIEZA LA JORNADA",
+
+        "¿Fichamos entrada?",
+
+        "Antes de empezar, abre Tiempo Jornada y ficha tu entrada.",
+
+        "Abrir Tiempo Jornada",
+
+        {
+          type:"shortcut",
+          value:"Abrir Tiempo Jornada"
+        }
+
+      );
+
+    }
+
+  }
+
+
+  /*
+    Daily.
+  */
+
+  if(
+    minutes >= 530
+    &&
+    minutes < 535
+  ){
+
+    const key =
+      "miInicio-prompt-daily-"
+      +
+      today;
+
+
+    if(
+      !sessionStorage.getItem(
+        key
+      )
+    ){
+
+      sessionStorage.setItem(
+        key,
+        "1"
+      );
+
+
+      showWorkModal(
+
+        "🟣",
+
+        "08:50 · DAILY",
+
+        "¿Entramos en Teams?",
+
+        "Ha terminado el primer bloque. Es hora de la reunión de equipo.",
+
+        "Abrir Teams",
+
+        {
+          type:"direct",
+          value:"msteams://"
+        }
+
+      );
+
+    }
+
+  }
+
+
+  /*
+    Creatina + preentreno.
+  */
+
+  if(
+    minutes >= 885
+    &&
+    minutes < 890
+  ){
+
+    const key =
+      "miInicio-prompt-gymprep-"
+      +
+      today;
+
+
+    if(
+      !sessionStorage.getItem(
+        key
+      )
+    ){
+
+      sessionStorage.setItem(
+        key,
+        "1"
+      );
+
+
+      showWorkModal(
+
+        "🥤",
+
+        "14:45 · ÚLTIMOS 15 MIN",
+
+        "Creatina + preentreno",
+
+        "No empieces nada más. Toma la creatina, el preentreno y ve recogiendo.",
+
+        "Vale",
+
+        null
+
+      );
+
+    }
+
+  }
+
+
+  /*
+    Fichar salida.
+  */
+
+  if(
+    minutes >= 900
+    &&
+    minutes < 905
+  ){
+
+    const key =
+      "miInicio-prompt-exit-"
+      +
+      today;
+
+
+    if(
+      !sessionStorage.getItem(
+        key
+      )
+    ){
+
+      sessionStorage.setItem(
+        key,
+        "1"
+      );
+
+
+      showWorkModal(
+
+        "🏁",
+
+        "15:00 · FIN",
+
+        "¿Fichamos salida?",
+
+        "La jornada ha terminado. Ficha antes de irte al Gym.",
+
+        "Abrir Tiempo Jornada",
+
+        {
+          type:"shortcut",
+          value:"Abrir Tiempo Jornada"
+        }
+
+      );
+
+    }
+
+  }
+
+}
+
+
+/* =====================================================
+   ACTUALIZAR ASISTENTE
+===================================================== */
+
+function updateWorkRoutine(now){
+
+  const minutes =
+
+    now.getHours()
+    *
+    60
+
+    +
+
+    now.getMinutes();
+
+
+  if(
+    minutes < 480
+  ){
+
+    renderBeforeWork();
+
+    return;
+
+  }
+
+
+  if(
+    minutes >= 900
+  ){
+
+    renderFinished();
+
+    return;
+
+  }
+
+
+  const block =
+    getCurrentWorkBlock(
+      now
+    );
+
+
+  if(
+    block
+  ){
+
+    renderWorkBlock(
+      block,
+      now
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   SALUDO Y RELOJ
+===================================================== */
+
+function updateGreeting(now){
+
+  const hour =
+    now.getHours();
+
+
+  let greeting =
+    "Buenos días";
+
+
+  let icon =
+    "☀️";
+
+
+  if(
+    hour >= 14
+    &&
+    hour < 21
+  ){
+
+    greeting =
+      "Buenas tardes";
+
+
+    icon =
+      "🌤️";
+
+  }
+
+
+  if(
+    hour >= 21
+    ||
+    hour < 6
+  ){
+
+    greeting =
+      "Buenas noches";
+
+
+    icon =
+      "🌙";
+
+  }
+
+
+  document.getElementById(
+    "greeting"
+  ).innerHTML =
+
+    icon
+    +
+    " "
+    +
+    greeting
+    +
+    ', <span class="greeting-name">Sandra</span>';
+
+}
+
 
 function updateClock(){
 
@@ -1879,7 +4511,6 @@ function updateClock(){
   document.getElementById(
     "calendarDay"
   ).textContent =
-
     now.getDate();
 
 
@@ -1888,120 +4519,21 @@ function updateClock(){
   );
 
 
-  updateDaily(
+  updateWorkRoutine(
+    now
+  );
+
+
+  checkAutomaticPrompts(
     now
   );
 
 }
 
 
-/* =========================
-   SALUDO
-========================= */
-
-function updateGreeting(now){
-
-  const hour =
-    now.getHours();
-
-
-  let greeting =
-    "Buenos días";
-
-
-  let icon =
-    "☀️";
-
-
-  if(
-    hour >= 14
-    &&
-    hour < 21
-  ){
-
-    greeting =
-      "Buenas tardes";
-
-    icon =
-      "🌤️";
-
-  }
-
-
-  if(
-    hour >= 21
-    ||
-    hour < 6
-  ){
-
-    greeting =
-      "Buenas noches";
-
-    icon =
-      "🌙";
-
-  }
-
-
-  document.getElementById(
-    "greeting"
-  ).innerHTML =
-
-    icon
-    +
-    " "
-    +
-    greeting
-    +
-    ', <span class="greeting-name">Sandra</span>';
-
-}
-
-
-/* =========================
-   DAILY
-========================= */
-
-function updateDaily(now){
-
-  const h =
-    now.getHours();
-
-
-  const m =
-    now.getMinutes();
-
-
-  const active =
-
-    (
-      h === 8
-      &&
-      m >= 50
-    )
-
-    ||
-
-    (
-      h === 9
-      &&
-      m <= 30
-    );
-
-
-  document.getElementById(
-    "dailyReminder"
-  ).classList.toggle(
-    "show",
-    active
-  );
-
-}
-
-
-/* =========================
+/* =====================================================
    DESPLEGABLES
-========================= */
+===================================================== */
 
 function toggleSection(
   sectionId,
@@ -2024,246 +4556,9 @@ function toggleSection(
 }
 
 
-/* =========================
-   POMODORO
-========================= */
-
-let pomoSeconds =
-  25 * 60;
-
-
-let pomoRunning =
-  false;
-
-
-let pomoBreak =
-  false;
-
-
-let pomoInterval =
-  null;
-
-
-let sessions =
-  Number(
-    localStorage.getItem(
-      "pomodoroSessions"
-    )
-    ||
-    0
-  );
-
-
-document.getElementById(
-  "sessions"
-).textContent =
-  sessions;
-
-
-function drawPomodoro(){
-
-  const m =
-    Math.floor(
-      pomoSeconds / 60
-    );
-
-
-  const s =
-    pomoSeconds % 60;
-
-
-  document.getElementById(
-    "pomoTime"
-  ).textContent =
-
-    String(m)
-      .padStart(
-        2,
-        "0"
-      )
-
-    +
-
-    ":"
-
-    +
-
-    String(s)
-      .padStart(
-        2,
-        "0"
-      );
-
-}
-
-
-function togglePomodoro(){
-
-  if(pomoRunning){
-
-    clearInterval(
-      pomoInterval
-    );
-
-
-    pomoRunning =
-      false;
-
-
-    document.getElementById(
-      "playButton"
-    ).textContent =
-      "▶";
-
-
-    return;
-
-  }
-
-
-  pomoRunning =
-    true;
-
-
-  document.getElementById(
-    "playButton"
-  ).textContent =
-    "Ⅱ";
-
-
-  pomoInterval =
-    setInterval(
-      ()=>{
-
-        pomoSeconds--;
-
-
-        drawPomodoro();
-
-
-        if(
-          pomoSeconds <= 0
-        ){
-
-          clearInterval(
-            pomoInterval
-          );
-
-
-          pomoRunning =
-            false;
-
-
-          if(!pomoBreak){
-
-            sessions++;
-
-
-            localStorage.setItem(
-              "pomodoroSessions",
-              sessions
-            );
-
-
-            document.getElementById(
-              "sessions"
-            ).textContent =
-              sessions;
-
-
-            pomoBreak =
-              true;
-
-
-            pomoSeconds =
-              5 * 60;
-
-
-            document.getElementById(
-              "pomoState"
-            ).textContent =
-              "● Descanso";
-
-          }
-
-          else{
-
-            pomoBreak =
-              false;
-
-
-            pomoSeconds =
-              25 * 60;
-
-
-            document.getElementById(
-              "pomoState"
-            ).textContent =
-              "● Concentración";
-
-          }
-
-
-          document.getElementById(
-            "playButton"
-          ).textContent =
-            "▶";
-
-
-          drawPomodoro();
-
-        }
-
-      },
-      1000
-    );
-
-}
-
-
-/* =========================
-   RESET POMODORO
-========================= */
-
-function resetPomodoro(){
-
-  clearInterval(
-    pomoInterval
-  );
-
-
-  pomoRunning =
-    false;
-
-
-  pomoBreak =
-    false;
-
-
-  pomoSeconds =
-    25 * 60;
-
-
-  document.getElementById(
-    "playButton"
-  ).textContent =
-    "▶";
-
-
-  document.getElementById(
-    "pomoState"
-  ).textContent =
-    "● Concentración";
-
-
-  drawPomodoro();
-
-}
-
-
-/* =========================
+/* =====================================================
    BLOQUEO
-========================= */
+===================================================== */
 
 function lockApp(){
 
@@ -2287,13 +4582,11 @@ function unlockApp(){
 }
 
 
-/* =========================
-   INICIO
-========================= */
+/* =====================================================
+   ARRANQUE
+===================================================== */
 
 updateClock();
-
-drawPomodoro();
 
 
 setInterval(
@@ -2304,4 +4597,5 @@ setInterval(
 </script>
 
 </body>
+
 </html>

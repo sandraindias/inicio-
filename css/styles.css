@@ -1,0 +1,1153 @@
+:root{
+  --bg:#f7f5f8;
+  --card:rgba(255,255,255,.92);
+  --text:#151622;
+  --muted:#73737d;
+
+  --pink:#ff356f;
+  --purple:#7657ec;
+  --green:#22bd7b;
+  --orange:#ff7400;
+  --blue:#168bd9;
+}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+  margin:0;
+  min-height:100%;
+}
+
+body{
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  color:var(--text);
+
+  background:
+
+    radial-gradient(
+      circle at 2% 0%,
+      rgba(255,218,230,.78),
+      transparent 27%
+    ),
+
+    radial-gradient(
+      circle at 98% 2%,
+      rgba(226,218,255,.76),
+      transparent 31%
+    ),
+
+    var(--bg);
+
+  padding:
+    calc(env(safe-area-inset-top) + 20px)
+    16px
+    calc(env(safe-area-inset-bottom) + 125px);
+
+}
+
+button,
+input{
+  font:inherit;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    150px;
+
+  gap:12px;
+
+  align-items:start;
+
+  margin-bottom:18px;
+
+}
+
+.greeting{
+
+  font-size:18px;
+
+}
+
+.greeting strong{
+
+  color:var(--pink);
+
+}
+
+.big-time{
+
+  margin-top:7px;
+
+  font-size:55px;
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+
+  font-weight:520;
+
+}
+
+.today-date{
+
+  margin-top:10px;
+
+  font-size:14px;
+
+  text-transform:capitalize;
+
+}
+
+
+/* =====================================================
+   CICLO + LUNA
+===================================================== */
+
+.context-row{
+
+  display:flex;
+
+  gap:7px;
+
+  margin-top:12px;
+
+}
+
+.context-pill{
+
+  min-width:0;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  padding:8px 9px;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:rgba(255,255,255,.72);
+
+}
+
+.context-pill span:last-child{
+
+  min-width:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  text-align:left;
+
+}
+
+.context-pill b{
+
+  font-size:10px;
+
+}
+
+.context-pill small{
+
+  margin-top:2px;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+  overflow:hidden;
+
+  white-space:nowrap;
+
+  text-overflow:ellipsis;
+
+}
+
+.context-icon{
+
+  font-size:18px;
+
+}
+
+
+/* =====================================================
+   ENTRETENIMIENTO
+===================================================== */
+
+.entertainment-card{
+
+  padding:12px 8px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,.9);
+
+  box-shadow:
+    0 7px 24px rgba(0,0,0,.055);
+
+}
+
+.entertainment-title{
+
+  margin-bottom:10px;
+
+  font-size:12px;
+
+  font-weight:850;
+
+}
+
+.entertainment-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:4px;
+
+}
+
+.mini-app{
+
+  padding:0;
+
+  border:0;
+
+  background:transparent;
+
+  text-align:center;
+
+}
+
+.mini-app small{
+
+  display:block;
+
+  margin-top:4px;
+
+  font-size:8px;
+
+}
+
+.mini-icon{
+
+  width:43px;
+
+  height:43px;
+
+  margin:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  background:white;
+
+  box-shadow:
+    0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.mini-icon img{
+
+  width:88%;
+
+  height:88%;
+
+}
+
+.music-icon{
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff3157,
+      #ff5c6e
+    );
+
+  color:white;
+
+  font-size:25px;
+
+}
+
+.spotify-icon{
+
+  background:#111;
+
+}
+
+
+/* =====================================================
+   GENERALES
+===================================================== */
+
+.eyebrow{
+
+  color:var(--pink);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:.7px;
+
+}
+
+.section-header{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  margin-bottom:13px;
+
+}
+
+.section-header h2{
+
+  margin:3px 0 0;
+
+  font-size:23px;
+
+}
+
+.text-link{
+
+  color:#444;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  text-decoration:none;
+
+}
+
+
+/* =====================================================
+   CALENDARIO
+===================================================== */
+
+.calendar-layout{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    190px;
+
+  gap:12px;
+
+  align-items:start;
+
+  margin-bottom:18px;
+
+}
+
+.calendar-card,
+.suggestions-card{
+
+  padding:15px;
+
+  border-radius:24px;
+
+  background:var(--card);
+
+  box-shadow:
+    0 8px 27px rgba(0,0,0,.05);
+
+}
+
+.calendar-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  margin-bottom:12px;
+
+}
+
+.calendar-header h1{
+
+  margin:2px 0 0;
+
+  font-size:29px;
+
+  text-transform:capitalize;
+
+}
+
+.month-moon{
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  text-align:right;
+
+}
+
+.calendar-weekdays,
+.calendar-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(7,1fr);
+
+  gap:5px;
+
+}
+
+.calendar-weekdays span{
+
+  padding:4px 0;
+
+  text-align:center;
+
+  color:#9997a0;
+
+  font-size:9px;
+
+  font-weight:900;
+
+}
+
+.calendar-day{
+
+  position:relative;
+
+  min-height:52px;
+
+  padding:6px;
+
+  border-radius:13px;
+
+  background:#f8f7fa;
+
+}
+
+.calendar-day.other-month{
+
+  opacity:.27;
+
+}
+
+.calendar-day.today{
+
+  background:#111;
+
+  color:white;
+
+}
+
+.day-number{
+
+  font-size:11px;
+
+  font-weight:850;
+
+}
+
+.day-events{
+
+  margin-top:4px;
+
+  display:flex;
+
+  gap:2px;
+
+  flex-wrap:wrap;
+
+}
+
+.day-event-icon{
+
+  font-size:8px;
+
+}
+
+.moon-day{
+
+  position:absolute;
+
+  top:5px;
+
+  right:5px;
+
+  font-size:8px;
+
+}
+
+.calendar-legend{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:10px;
+
+  color:#777;
+
+  font-size:8px;
+
+}
+
+
+/* =====================================================
+   SUGERENCIAS
+===================================================== */
+
+.suggestions-card h2{
+
+  margin:
+    4px
+    0
+    12px;
+
+  font-size:19px;
+
+}
+
+.suggestion-list{
+
+  display:grid;
+
+  gap:8px;
+
+}
+
+.suggestion{
+
+  padding:10px;
+
+  border-radius:15px;
+
+  background:#faf8fb;
+
+}
+
+.suggestion b{
+
+  display:block;
+
+  font-size:11px;
+
+}
+
+.suggestion small{
+
+  display:block;
+
+  margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:9px;
+
+  line-height:1.35;
+
+}
+
+
+/* =====================================================
+   TU DÍA
+===================================================== */
+
+.day-section{
+
+  margin-bottom:20px;
+
+}
+
+.life-mode-badge{
+
+  padding:7px 10px;
+
+  border-radius:999px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+.day-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:11px;
+
+}
+
+.day-card{
+
+  position:relative;
+
+  min-height:125px;
+
+  padding:14px;
+
+  border-radius:22px;
+
+  background:white;
+
+  border:2px solid #eee;
+
+}
+
+.day-card.now{
+
+  box-shadow:
+    0 9px 26px rgba(0,0,0,.10);
+
+}
+
+.now-badge{
+
+  position:absolute;
+
+  right:9px;
+
+  top:9px;
+
+  padding:5px 7px;
+
+  border-radius:999px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:7px;
+
+  font-weight:900;
+
+}
+
+.day-hours{
+
+  font-size:12px;
+
+  font-weight:900;
+
+}
+
+.day-title{
+
+  margin-top:8px;
+
+  font-size:17px;
+
+  font-weight:900;
+
+}
+
+.day-desc{
+
+  margin-top:6px;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+}
+
+.work{
+
+  border-color:#ffc5d7;
+
+}
+
+.work .day-hours,
+.work .day-title{
+
+  color:#e93870;
+
+}
+
+.gym{
+
+  border-color:#ffd1ae;
+
+}
+
+.gym .day-hours,
+.gym .day-title{
+
+  color:#ff6b00;
+
+}
+
+.personal{
+
+  border-color:#bde9d7;
+
+}
+
+.personal .day-hours,
+.personal .day-title{
+
+  color:#1aa878;
+
+}
+
+.ocio{
+
+  border-color:#d9ccff;
+
+}
+
+.ocio .day-hours,
+.ocio .day-title{
+
+  color:#7d59e5;
+
+}
+
+.walk{
+
+  border-color:#bbddfb;
+
+}
+
+.walk .day-hours,
+.walk .day-title{
+
+  color:#1987d3;
+
+}
+
+.sleep{
+
+  border-color:#c8d4ff;
+
+}
+
+.sleep .day-hours,
+.sleep .day-title{
+
+  color:#3451bd;
+
+}
+
+
+/* =====================================================
+   DESCUBRIMIENTO
+===================================================== */
+
+.discovery-section{
+
+  margin-bottom:20px;
+
+}
+
+.discovery-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:9px;
+
+}
+
+.discovery-card{
+
+  min-height:110px;
+
+  padding:13px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:5px;
+
+  border-radius:20px;
+
+  background:white;
+
+  color:var(--text);
+
+  text-decoration:none;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.04);
+
+}
+
+.discovery-card span{
+
+  font-size:23px;
+
+}
+
+.discovery-card b{
+
+  font-size:11px;
+
+}
+
+.discovery-card small{
+
+  color:var(--muted);
+
+  font-size:9px;
+
+  line-height:1.35;
+
+}
+
+
+/* =====================================================
+   CICLO SHEET
+===================================================== */
+
+.sheet-backdrop{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:999;
+
+  display:none;
+
+  align-items:flex-end;
+
+  background:rgba(0,0,0,.2);
+
+}
+
+.sheet-backdrop.show{
+
+  display:flex;
+
+}
+
+.sheet{
+
+  width:100%;
+
+  padding:
+    13px
+    20px
+    calc(env(safe-area-inset-bottom) + 25px);
+
+  border-radius:
+    28px
+    28px
+    0
+    0;
+
+  background:white;
+
+}
+
+.sheet-handle{
+
+  width:45px;
+
+  height:5px;
+
+  margin:
+    0
+    auto
+    15px;
+
+  border-radius:999px;
+
+  background:#dedde1;
+
+}
+
+.sheet h2{
+
+  margin:0;
+
+}
+
+.muted{
+
+  color:var(--muted);
+
+  font-size:12px;
+
+}
+
+.cycle-status{
+
+  margin-top:15px;
+
+  padding:15px;
+
+  border-radius:18px;
+
+  background:#fff4f8;
+
+}
+
+.cycle-status small{
+
+  color:var(--pink);
+
+  font-size:9px;
+
+  font-weight:900;
+
+}
+
+.cycle-status strong{
+
+  display:block;
+
+  margin-top:5px;
+
+  font-size:18px;
+
+}
+
+.cycle-status p{
+
+  margin:
+    8px
+    0
+    0;
+
+  color:#62616a;
+
+  font-size:11px;
+
+  line-height:1.4;
+
+}
+
+.sheet-actions{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:8px;
+
+  margin-top:12px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+  padding:13px;
+
+  border:0;
+
+  border-radius:15px;
+
+  font-size:11px;
+
+  font-weight:850;
+
+}
+
+.primary-btn{
+
+  background:#111;
+
+  color:white;
+
+}
+
+.secondary-btn{
+
+  background:#efedf1;
+
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.bottom-nav{
+
+  position:fixed;
+
+  z-index:100;
+
+  left:13px;
+  right:13px;
+
+  bottom:
+    calc(
+      env(safe-area-inset-bottom)
+      + 15px
+    );
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:5px;
+
+  padding:6px;
+
+  border-radius:25px;
+
+  background:rgba(250,250,251,.94);
+
+  backdrop-filter:blur(28px);
+
+  box-shadow:
+    0 7px 31px rgba(0,0,0,.12);
+
+}
+
+.nav-item{
+
+  min-height:52px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:5px;
+
+  border-radius:19px;
+
+  color:#686873;
+
+  text-decoration:none;
+
+  font-size:10px;
+
+  font-weight:800;
+
+}
+
+.nav-item.active{
+
+  background:#ffe4ed;
+
+  color:#ff2866;
+
+}
+
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media(max-width:600px){
+
+  .calendar-layout{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .suggestions-card{
+
+    order:2;
+
+  }
+
+  .discovery-grid{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+}
+
+@media(max-width:390px){
+
+  body{
+
+    padding-left:12px;
+
+    padding-right:12px;
+
+  }
+
+  .hero{
+
+    grid-template-columns:
+      minmax(0,1fr)
+      137px;
+
+    gap:8px;
+
+  }
+
+  .big-time{
+
+    font-size:48px;
+
+  }
+
+  .calendar-day{
+
+    min-height:46px;
+
+    padding:5px;
+
+  }
+
+}

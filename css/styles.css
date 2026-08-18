@@ -1149,5 +1149,274 @@ input{
     padding:5px;
 
   }
+  /* =====================================================
+   AMOR AL ARTE - PANTALLA SEGÚN HORA
+===================================================== */
+
+.aal-mode{
+  display:none;
+}
+
+.aal-card{
+
+  margin-bottom:14px;
+
+  padding:16px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,.92);
+
+  box-shadow:
+    0 8px 27px rgba(0,0,0,.05);
+
+}
+
+.aal-top{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+}
+
+.aal-top h1{
+
+  margin:4px 0 0;
+
+  font-size:27px;
+
+}
+
+.aal-hours{
+
+  padding:7px 9px;
+
+  border-radius:999px;
+
+  background:#f1eff3;
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+.aal-countdown{
+
+  margin-top:18px;
+
+  font-size:48px;
+
+  font-weight:500;
+
+  letter-spacing:-2px;
+
+}
+
+.aal-app-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:9px;
+
+}
+
+.aal-app-grid button{
+
+  min-height:79px;
+
+  padding:9px 5px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:5px;
+
+  border:0;
+
+  border-radius:17px;
+
+  background:#f8f7fa;
+
+  font-size:9px;
+
+  font-weight:800;
+
+}
+
+.aal-app-grid button span{
+
+  font-size:25px;
+
+}
+
+.aal-alert{
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  margin-bottom:12px;
+
+  padding:13px;
+
+  border-radius:18px;
+
+  background:#eafaf2;
+
+}
+
+.aal-alert div:first-child{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+.aal-alert strong{
+
+  font-size:12px;
+
+}
+
+.aal-alert small{
+
+  margin-top:3px;
+
+  color:#777;
+
+  font-size:9px;
+
+}
+
+.aal-alert button{
+
+  padding:9px 11px;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:10px;
+
+  font-weight:850;
+
+}
+
+.purple-alert{
+
+  background:#f1edff;
+
+}
+
+.pomo-box{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+}
+
+.pomo-big{
+
+  font-size:47px;
+
+  letter-spacing:-2px;
+
+}
+
+.pomo-play{
+
+  width:68px;
+
+  height:68px;
+
+  border:7px solid #ffdce6;
+
+  border-radius:50%;
+
+  background:white;
+
+  color:#ff356f;
+
+  font-size:24px;
+
+}
+
+.project-actions{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:8px;
+
+}
+
+.project-actions button{
+
+  min-height:70px;
+
+  border:0;
+
+  border-radius:17px;
+
+  background:#f7f5f8;
+
+  font-size:11px;
+
+  font-weight:800;
+
+}
+
+.night-list{
+
+  display:grid;
+
+  gap:8px;
+
+  margin-top:15px;
+
+}
+
+.night-list div{
+
+  padding:13px;
+
+  border-radius:15px;
+
+  background:#f8f7fa;
+
+  font-size:12px;
+
+  font-weight:750;
+
+}
+  
 
 }

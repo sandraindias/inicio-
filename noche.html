@@ -1,1 +1,280 @@
-<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'><link rel='stylesheet' href='./css/styles.css'><title>Noche</title></head><body><header class='routine-header'><a href='./index.html' class='back-button'>‹</a><div><div class='eyebrow'>AMOR AL ARTE</div><h1>🌙 Noche</h1><p>22:40 → · Se acabó por hoy.</p></div></header><section class='card'><div class='night-list'><div>🚿 Ducha</div><div>🧴 Skincare</div><div>🪥 Dientes</div><div>👗 Preparar ropa</div><div>🎒 Preparar mañana</div><div>⏰ Revisar alarma</div><div>📱 Móvil fuera</div><div>🌙 A dormir</div></div></section><nav class="bottom-nav"><a href="./index.html" class="nav-item">🏠 <span>Inicio</span></a><a href="./amor-al-arte.html" class="nav-item">🎨 <span>Amor al arte</span></a><a href="./descubrimiento.html" class="nav-item">🪩 <span>Descubrimiento</span></a></nav><script>document.querySelectorAll('.nav-item')[1].classList.add('active')</script><script src='./js/routine.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>Noche · Mi Inicio</title>
+
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+<div id="lockScreen" class="lock-screen">
+  <div>
+    <div style="font-size:50px;">🔒</div>
+    <div class="lock-title">Mi Inicio</div>
+
+    <button
+      class="unlock-button"
+      onclick="unlockApp()"
+    >
+      Volver a entrar
+    </button>
+  </div>
+</div>
+
+<div class="top-actions">
+
+  <button
+    class="top-action"
+    onclick="lockApp()"
+  >
+    🔒 Bloquear
+  </button>
+
+  <a
+    class="top-action"
+    href="./amor-al-arte.html"
+    style="display:flex;align-items:center;text-decoration:none;color:inherit;"
+  >
+    ← Salir
+  </a>
+
+</div>
+
+<div class="hero">
+
+  <div>
+
+    <div id="greeting" class="greeting">
+      🌙 Buenas noches,
+      <span class="greeting-name">
+        Sandra
+      </span>
+    </div>
+
+    <div
+      id="bigTime"
+      class="big-time"
+    >
+      22:40
+    </div>
+
+    <div
+      id="date"
+      class="date"
+    ></div>
+
+    <div class="mode-pill">
+      <span class="mode-dot"></span>
+      <span>Noche</span>
+    </div>
+
+  </div>
+
+  <div class="entertainment-card">
+
+    <div class="entertainment-title">
+      ★ Entretenimiento
+    </div>
+
+    <div class="entertainment-grid">
+
+      <div
+        class="app"
+        onclick="launchDirect('music://')"
+      >
+        <div class="icon music-icon">♪</div>
+        <div class="app-name">Música</div>
+      </div>
+
+      <div
+        class="app"
+        onclick="launchDirect('spotify://')"
+      >
+        <div class="icon spotify-icon">
+          <img src="https://api.iconify.design/logos/spotify-icon.svg">
+        </div>
+        <div class="app-name">Spotify</div>
+      </div>
+
+      <div
+        class="app"
+        onclick="launchDirect('youtube://')"
+      >
+        <div class="icon youtube-icon">
+          <img src="https://api.iconify.design/logos/youtube-icon.svg">
+        </div>
+        <div class="app-name">YouTube</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="card">
+
+  <div class="page-title">
+    Ala guapa.
+  </div>
+
+  <div class="page-subtitle">
+    A ducharte, skincare, dientes y a dormir.
+  </div>
+
+  <div class="ideas">
+
+    <div class="idea">
+      🚿 Ducha
+    </div>
+
+    <div class="idea">
+      🧴 Skincare
+    </div>
+
+    <div class="idea">
+      🪥 Dientes
+    </div>
+
+    <div class="idea">
+      🎒 Preparar mañana
+    </div>
+
+    <div class="idea">
+      🌙 A dormir
+    </div>
+
+  </div>
+
+</div>
+
+<nav class="bottom-nav">
+
+  <button
+    onclick="window.location.href='./amor-al-arte.html'"
+  >
+    🏠 Inicio
+  </button>
+
+  <button
+    class="current-nav active"
+  >
+    🌙 Noche
+  </button>
+
+</nav>
+
+<script>
+
+function navigateExternal(url){
+
+  const link=
+    document.createElement("a");
+
+  link.href=url;
+  link.style.display="none";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  setTimeout(
+    ()=>link.remove(),
+    500
+  );
+}
+
+function launchDirect(url){
+  navigateExternal(url);
+}
+
+function updateClock(){
+
+  const now=new Date();
+
+  document.getElementById(
+    "bigTime"
+  ).textContent=
+    now.toLocaleTimeString(
+      "es-ES",
+      {
+        hour:"2-digit",
+        minute:"2-digit"
+      }
+    );
+
+  document.getElementById(
+    "date"
+  ).textContent=
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+      }
+    );
+
+  updateGreeting(now);
+}
+
+function updateGreeting(now){
+
+  const hour=now.getHours();
+
+  let greeting="Buenos días";
+  let icon="☀️";
+
+  if(hour>=14 && hour<21){
+    greeting="Buenas tardes";
+    icon="🌤️";
+  }
+
+  if(hour>=21 || hour<6){
+    greeting="Buenas noches";
+    icon="🌙";
+  }
+
+  document.getElementById(
+    "greeting"
+  ).innerHTML=
+    icon+
+    " "+
+    greeting+
+    ', <span class="greeting-name">Sandra</span>';
+}
+
+function lockApp(){
+  document.getElementById(
+    "lockScreen"
+  ).classList.add("show");
+}
+
+function unlockApp(){
+  document.getElementById(
+    "lockScreen"
+  ).classList.remove("show");
+}
+
+updateClock();
+
+setInterval(
+  updateClock,
+  1000
+);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mi Inicio">
+
+<link rel="apple-touch-icon" href="./IMG_9807.png">
+<link rel="icon" type="image/png" href="./IMG_9807.png">
+
+<link rel="stylesheet" href="./css/styles.css">
+
+<title>Amor al arte</title>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CABECERA
+===================================================== -->
+
+<header class="hero">
+
+  <div>
+
+    <div class="greeting">
+
+      🎨
+      <strong>
+        Amor al arte
+      </strong>
+
+    </div>
+
+
+    <div
+      id="bigTime"
+      class="big-time"
+    >
+      08:00
+    </div>
+
+
+    <div
+      id="todayDate"
+      class="today-date"
+    ></div>
+
+
+    <div class="context-row">
+
+      <div class="context-pill">
+
+        <span class="context-icon">
+          🎯
+        </span>
+
+        <span>
+
+          <b id="currentModeLabel">
+            Trabajo
+          </b>
+
+          <small id="currentModeHours">
+            08:00 – 15:00
+          </small>
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ENTRETENIMIENTO -->
+
+  <div class="entertainment-card">
+
+    <div class="entertainment-title">
+      ★ Entretenimiento
+    </div>
+
+
+    <div class="entertainment-grid">
+
+
+      <button
+        class="mini-app"
+        onclick="launchDirect('music://')"
+      >
+
+        <span class="mini-icon music-icon">
+          ♪
+        </span>
+
+        <small>
+          Música
+        </small>
+
+      </button>
+
+
+      <button
+        class="mini-app"
+        onclick="launchDirect('spotify://')"
+      >
+
+        <span class="mini-icon spotify-icon">
+
+          <img
+            src="https://api.iconify.design/logos/spotify-icon.svg"
+          >
+
+        </span>
+
+        <small>
+          Spotify
+        </small>
+
+      </button>
+
+
+      <button
+        class="mini-app"
+        onclick="launchDirect('youtube://')"
+      >
+
+        <span class="mini-icon">
+
+          <img
+            src="https://api.iconify.design/logos/youtube-icon.svg"
+          >
+
+        </span>
+
+        <small>
+          YouTube
+        </small>
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     TRABAJO
+===================================================== -->
+
+<section
+  id="mode-work"
+  class="aal-mode"
+>
+
+
+  <!-- FICHAJE -->
+
+  <div
+    id="clockAlert"
+    class="aal-alert"
+  >
+
+    <div>
+
+      <strong id="clockAlertTitle">
+        🟢 Fichar entrada
+      </strong>
+
+      <small>
+        Tiempo Jornada
+      </small>
+
+    </div>
+
+
+    <button
+      onclick="launchShortcut('Abrir Tiempo Jornada')"
+    >
+      Abrir
+    </button>
+
+  </div>
+
+
+  <!-- DAILY -->
+
+  <div
+    id="dailyAlert"
+    class="aal-alert purple-alert"
+  >
+
+    <div>
+
+      <strong>
+        💬 Daily en breve
+      </strong>
+
+      <small>
+        09:00 · Reunión de equipo
+      </small>
+
+    </div>
+
+
+    <button
+      onclick="launchDirect('msteams://')"
+    >
+      Teams
+    </button>
+
+  </div>
+
+
+  <!-- CONTADOR JORNADA -->
+
+  <section class="aal-card">
+
+    <div class="aal-top">
+
+      <div>
+
+        <div class="eyebrow">
+          TRABAJO
+        </div>
+
+        <h1>
+          Jornada laboral
+        </h1>
+
+      </div>
+
+
+      <span class="aal-hours">
+        08:00 – 15:00
+      </span>
+
+    </div>
+
+
+    <div
+      id="workCountdown"
+      class="aal-countdown"
+    >
+      07:00:00
+    </div>
+
+
+    <div class="section-sub">
+      Tiempo restante de jornada
+    </div>
+
+  </section>
+
+
+  <!-- POMODORO -->
+
+  <section class="aal-card">
+
+    <div class="eyebrow">
+      CONCENTRACIÓN
+    </div>
+
+    <h2>
+      Pomodoro
+    </h2>
+
+
+    <div class="pomo-box">
+
+      <div>
+
+        <div
+          id="pomoTime"
+          class="pomo-big"
+        >
+          25:00
+        </div>
+
+        <div
+          id="pomoState"
+          class="section-sub"
+        >
+          Concentración
+        </div>
+
+      </div>
+
+
+      <button
+        id="pomoButton"
+        class="pomo-play"
+        onclick="togglePomodoro()"
+      >
+        ▶
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- APPS -->
+
+  <section class="aal-card">
+
+    <div class="eyebrow">
+      ACCESOS
+    </div>
+
+    <h2>
+      Trabajo
+    </h2>
+
+
+    <div class="aal-app-grid">
+
+
+      <button
+        onclick="launchShortcut('Abrir WhatsApp')"
+      >
+        <span>💬</span>
+        WhatsApp
+      </button>
+
+
+      <button
+        onclick="launchShortcut('Abrir WhatsApp Business')"
+      >
+        <span>🟢</span>
+        WA Business
+      </button>
+
+
+      <button
+        onclick="launchDirect('msteams://')"
+      >
+        <span>👥</span>
+        Teams
+      </button>
+
+
+      <button
+        onclick="launchDirect('ms-outlook://')"
+      >
+        <span>📧</span>
+        Outlook
+      </button>
+
+
+      <button
+        onclick="launchShortcut('Abrir Tiempo Jornada')"
+      >
+        <span>⏱</span>
+        Jornada
+      </button>
+
+
+      <button
+        onclick="openWeb('https://github.com')"
+      >
+        <span>🐙</span>
+        GitHub
+      </button>
+
+
+      <button
+        onclick="openWeb('https://chatgpt.com')"
+      >
+        <span>◉</span>
+        ChatGPT
+      </button>
+
+
+      <button
+        onclick="openWeb('https://www.google.com')"
+      >
+        <span>🧭</span>
+        Safari
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+</section>
+
+
+<!-- =====================================================
+     GYM
+===================================================== -->
+
+<section
+  id="mode-gym"
+  class="aal-mode"
+>
+
+  <section class="aal-card">
+
+    <div class="aal-top">
+
+      <div>
+
+        <div class="eyebrow">
+          AHORA
+        </div>
+
+        <h1>
+          🏋️ Gym
+        </h1>
+
+      </div>
+
+
+      <span class="aal-hours">
+        15:00 – 17:00
+      </span>
+
+    </div>
+
+
+    <div
+      id="gymCountdown"
+      class="aal-countdown"
+    ></div>
+
+  </section>
+
+
+  <section class="aal-card">
+
+    <h2>
+      Lo que necesitas
+    </h2>
+
+
+    <div class="aal-app-grid">
+
+      <button onclick="launchShortcut('Abrir WhatsApp')">
+        <span>💬</span>
+        WhatsApp
+      </button>
+
+      <button onclick="launchDirect('music://')">
+        <span>🎵</span>
+        Música
+      </button>
+
+      <button onclick="launchDirect('spotify://')">
+        <span>🎧</span>
+        Spotify
+      </button>
+
+      <button onclick="launchDirect('googledrive://')">
+        <span>📁</span>
+        Drive
+      </button>
+
+      <button onclick="launchDirect('googlesheets://')">
+        <span>📊</span>
+        Sheets
+      </button>
+
+      <button onclick="launchDirect('instagram://')">
+        <span>📸</span>
+        Instagram
+      </button>
+
+      <button onclick="launchDirect('tiktok://')">
+        <span>🎶</span>
+        TikTok
+      </button>
+
+      <button onclick="launchShortcut('Abrir My Enjoy')">
+        <span>🏋️</span>
+        My Enjoy
+      </button>
+
+    </div>
+
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     MI TIEMPO
+===================================================== -->
+
+<section
+  id="mode-personal"
+  class="aal-mode"
+>
+
+  <section class="aal-card">
+
+    <div class="aal-top">
+
+      <div>
+
+        <div class="eyebrow">
+          PROYECTOS
+        </div>
+
+        <h1>
+          ✨ Mi tiempo
+        </h1>
+
+      </div>
+
+
+      <span class="aal-hours">
+        17:00 – 20:30
+      </span>
+
+    </div>
+
+
+    <div
+      id="personalCountdown"
+      class="aal-countdown"
+    ></div>
+
+
+    <p class="section-sub">
+      Este rato es para adelantar tus proyectos, aprender y crear.
+    </p>
+
+  </section>
+
+
+  <section class="aal-card">
+
+    <h2>
+      ¿Qué quieres avanzar?
+    </h2>
+
+
+    <div class="project-actions">
+
+      <button>
+        💻 Proyecto digital
+      </button>
+
+      <button>
+        📚 Aprender algo
+      </button>
+
+      <button>
+        💡 Investigar
+      </button>
+
+      <button>
+        🎨 Crear
+      </button>
+
+    </div>
+
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     OCIO
+===================================================== -->
+
+<section
+  id="mode-ocio"
+  class="aal-mode"
+>
+
+  <section class="aal-card">
+
+    <div class="aal-top">
+
+      <div>
+
+        <div class="eyebrow">
+          SIN CULPA
+        </div>
+
+        <h1>
+          📱 Ocio
+        </h1>
+
+      </div>
+
+
+      <span class="aal-hours">
+        20:30 – 21:30
+      </span>
+
+    </div>
+
+
+    <div
+      id="ocioCountdown"
+      class="aal-countdown"
+    ></div>
+
+
+    <p class="section-sub">
+      Si quieres enredar, este es tu momento.
+    </p>
+
+  </section>
+
+
+  <section class="aal-card">
+
+    <h2>
+      También puedes…
+    </h2>
+
+
+    <div class="suggestion-list">
+
+      <div class="suggestion">
+        📖 Leer un rato
+      </div>
+
+      <div class="suggestion">
+        👗 Investigar moda de algún año concreto
+      </div>
+
+      <div class="suggestion">
+        🌍 Descubrir algo sobre el mundo
+      </div>
+
+      <div class="suggestion">
+        🎨 Hacer algo creativo
+      </div>
+
+    </div>
+
+
+    <div class="strong-message">
+      Y ve mentalizándote que vas a ir a andar.
+      No es una elección, es una decisión.
+    </div>
+
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     ANDAR
+===================================================== -->
+
+<section
+  id="mode-walk"
+  class="aal-mode"
+>
+
+  <section class="aal-card">
+
+    <div class="aal-top">
+
+      <div>
+
+        <div class="eyebrow">
+          DESCONECTA
+        </div>
+
+        <h1>
+          👟 Andar
+        </h1>
+
+      </div>
+
+
+      <span class="aal-hours">
+        21:30 – 22:40
+      </span>
+
+    </div>
+
+
+    <div
+      id="walkCountdown"
+      class="aal-countdown"
+    ></div>
+
+  </section>
+
+
+  <section class="aal-card">
+
+    <div class="aal-app-grid">
+
+      <button onclick="launchDirect('strava://')">
+        <span>🏃</span>
+        Strava
+      </button>
+
+      <button onclick="launchDirect('music://')">
+        <span>🎵</span>
+        Música
+      </button>
+
+      <button onclick="launchDirect('spotify://')">
+        <span>🎧</span>
+        Spotify
+      </button>
+
+      <button onclick="launchShortcut('Abrir Fitness')">
+        <span>⭕</span>
+        Fitness
+      </button>
+
+    </div>
+
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     NOCHE
+===================================================== -->
+
+<section
+  id="mode-sleep"
+  class="aal-mode"
+>
+
+  <section class="aal-card">
+
+    <div class="eyebrow">
+      CIERRE
+    </div>
+
+    <h1>
+      🌙 Ala guapa
+    </h1>
+
+    <p class="section-sub">
+      A ducharte, skincare, dientes y a dormir.
+    </p>
+
+
+    <div class="night-list">
+
+      <div>
+        🚿 Ducha
+      </div>
+
+      <div>
+        🧴 Skincare
+      </div>
+
+      <div>
+        🪥 Dientes
+      </div>
+
+      <div>
+        🎒 Preparar mañana
+      </div>
+
+      <div>
+        🌙 A dormir
+      </div>
+
+    </div>
+
+  </section>
+
+</section>
+
+
+</main>
+
+
+<nav class="bottom-nav">
+
+  <a
+    href="./index.html"
+    class="nav-item"
+  >
+    🏠
+    <span>Inicio</span>
+  </a>
+
+  <a
+    href="./amor-al-arte.html"
+    class="nav-item active"
+  >
+    🎨
+    <span>Amor al arte</span>
+  </a>
+
+  <a
+    href="./descubrimiento.html"
+    class="nav-item"
+  >
+    🪩
+    <span>Descubrimiento</span>
+  </a>
+
+</nav>
+
+
+<script>
+
+const modes = {
+
+  work:{
+    start:480,
+    end:900,
+    label:"Trabajo",
+    hours:"08:00 – 15:00"
+  },
+
+  gym:{
+    start:900,
+    end:1020,
+    label:"Gym",
+    hours:"15:00 – 17:00"
+  },
+
+  personal:{
+    start:1020,
+    end:1230,
+    label:"Mi tiempo",
+    hours:"17:00 – 20:30"
+  },
+
+  ocio:{
+    start:1230,
+    end:1290,
+    label:"Ocio",
+    hours:"20:30 – 21:30"
+  },
+
+  walk:{
+    start:1290,
+    end:1360,
+    label:"Andar",
+    hours:"21:30 – 22:40"
+  },
+
+  sleep:{
+    start:1360,
+    end:1440,
+    label:"Noche",
+    hours:"22:40 →"
+  }
+
+};
+
+
+function getMode(){
+
+  const now =
+    new Date();
+
+  const minutes =
+    now.getHours() * 60
+    +
+    now.getMinutes();
+
+
+  if(minutes >= 480 && minutes < 900)
+    return "work";
+
+  if(minutes >= 900 && minutes < 1020)
+    return "gym";
+
+  if(minutes >= 1020 && minutes < 1230)
+    return "personal";
+
+  if(minutes >= 1230 && minutes < 1290)
+    return "ocio";
+
+  if(minutes >= 1290 && minutes < 1360)
+    return "walk";
+
+  return "sleep";
+
+}
+
+
+function showCurrentMode(){
+
+  document
+    .querySelectorAll(
+      ".aal-mode"
+    )
+    .forEach(
+      page =>
+        page.style.display =
+          "none"
+    );
+
+
+  const mode =
+    getMode();
+
+
+  document.getElementById(
+    "mode-" + mode
+  ).style.display =
+    "block";
+
+
+  document.getElementById(
+    "currentModeLabel"
+  ).textContent =
+    modes[mode].label;
+
+
+  document.getElementById(
+    "currentModeHours"
+  ).textContent =
+    modes[mode].hours;
+
+}
+
+
+function updateClock(){
+
+  const now =
+    new Date();
+
+
+  bigTime.textContent =
+    now.toLocaleTimeString(
+      "es-ES",
+      {
+        hour:"2-digit",
+        minute:"2-digit"
+      }
+    );
+
+
+  todayDate.textContent =
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+      }
+    );
+
+}
+
+
+function countdown(
+  mode,
+  elementId
+){
+
+  const now =
+    new Date();
+
+
+  const data =
+    modes[mode];
+
+
+  const end =
+    new Date();
+
+
+  end.setHours(
+    Math.floor(
+      data.end / 60
+    ),
+    data.end % 60,
+    0,
+    0
+  );
+
+
+  const seconds =
+    Math.max(
+      0,
+      Math.floor(
+        (end - now)
+        /
+        1000
+      )
+    );
+
+
+  const h =
+    Math.floor(
+      seconds / 3600
+    );
+
+
+  const m =
+    Math.floor(
+      (seconds % 3600)
+      /
+      60
+    );
+
+
+  const s =
+    seconds % 60;
+
+
+  const element =
+    document.getElementById(
+      elementId
+    );
+
+
+  if(element){
+
+    element.textContent =
+
+      String(h)
+        .padStart(2,"0")
+
+      +
+
+      ":"
+
+      +
+
+      String(m)
+        .padStart(2,"0")
+
+      +
+
+      ":"
+
+      +
+
+      String(s)
+        .padStart(2,"0");
+
+  }
+
+}
+
+
+function updateCountdowns(){
+
+  countdown(
+    "work",
+    "workCountdown"
+  );
+
+  countdown(
+    "gym",
+    "gymCountdown"
+  );
+
+  countdown(
+    "personal",
+    "personalCountdown"
+  );
+
+  countdown(
+    "ocio",
+    "ocioCountdown"
+  );
+
+  countdown(
+    "walk",
+    "walkCountdown"
+  );
+
+}
+
+
+function updateAlerts(){
+
+  const now =
+    new Date();
+
+  const day =
+    now.getDay();
+
+  const minutes =
+    now.getHours() * 60
+    +
+    now.getMinutes();
+
+
+  const laboral =
+    day >= 1
+    &&
+    day <= 5;
+
+
+  const clock =
+    document.getElementById(
+      "clockAlert"
+    );
+
+
+  const daily =
+    document.getElementById(
+      "dailyAlert"
+    );
+
+
+  clock.style.display =
+    "none";
+
+
+  daily.style.display =
+    "none";
+
+
+  if(
+    laboral
+    &&
+    minutes >= 475
+    &&
+    minutes <= 490
+  ){
+
+    clock.style.display =
+      "flex";
+
+    clockAlertTitle.textContent =
+      "🟢 Fichar entrada";
+
+  }
+
+
+  if(
+    laboral
+    &&
+    minutes >= 895
+    &&
+    minutes <= 910
+  ){
+
+    clock.style.display =
+      "flex";
+
+    clockAlertTitle.textContent =
+      "🔴 Fichar salida";
+
+  }
+
+
+  if(
+    laboral
+    &&
+    minutes >= 530
+    &&
+    minutes <= 570
+  ){
+
+    daily.style.display =
+      "flex";
+
+  }
+
+}
+
+
+function launchDirect(url){
+
+  window.location.href =
+    url;
+
+}
+
+
+function launchShortcut(name){
+
+  window.location.href =
+
+    "shortcuts://run-shortcut?name="
+
+    +
+
+    encodeURIComponent(name);
+
+}
+
+
+function openWeb(url){
+
+  window.open(
+    url,
+    "_blank"
+  );
+
+}
+
+
+/* POMODORO */
+
+let pomoSeconds =
+  25 * 60;
+
+let pomoRunning =
+  false;
+
+let pomoInterval =
+  null;
+
+
+function drawPomodoro(){
+
+  const minutes =
+    Math.floor(
+      pomoSeconds / 60
+    );
+
+
+  const seconds =
+    pomoSeconds % 60;
+
+
+  pomoTime.textContent =
+
+    String(minutes)
+      .padStart(2,"0")
+
+    +
+
+    ":"
+
+    +
+
+    String(seconds)
+      .padStart(2,"0");
+
+}
+
+
+function togglePomodoro(){
+
+  if(pomoRunning){
+
+    clearInterval(
+      pomoInterval
+    );
+
+    pomoRunning =
+      false;
+
+    pomoButton.textContent =
+      "▶";
+
+    return;
+
+  }
+
+
+  pomoRunning =
+    true;
+
+  pomoButton.textContent =
+    "Ⅱ";
+
+
+  pomoInterval =
+    setInterval(
+      () => {
+
+        pomoSeconds--;
+
+        drawPomodoro();
+
+
+        if(
+          pomoSeconds <= 0
+        ){
+
+          clearInterval(
+            pomoInterval
+          );
+
+          pomoSeconds =
+            25 * 60;
+
+          pomoRunning =
+            false;
+
+          pomoButton.textContent =
+            "▶";
+
+          drawPomodoro();
+
+        }
+
+      },
+      1000
+    );
+
+}
+
+
+/* ARRANQUE */
+
+updateClock();
+
+showCurrentMode();
+
+updateCountdowns();
+
+updateAlerts();
+
+drawPomodoro();
+
+
+setInterval(
+  () => {
+
+    updateClock();
+
+    showCurrentMode();
+
+    updateCountdowns();
+
+    updateAlerts();
+
+  },
+  1000
+);
+
+</script>
+
+</body>
+
+</html>

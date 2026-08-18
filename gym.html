@@ -1,819 +1,472 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+>
 
-  <meta name="theme-color" content="#f8f6f9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mi Inicio">
 
-  <title>Gym · Mi Inicio</title>
+<title>Gym · Mi Inicio</title>
 
-  <link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/styles.css">
 </head>
 
-<body class="trabajo-page gym-page">
+<body>
 
-  <main class="trabajo-shell">
+<div id="lockScreen" class="lock-screen">
+  <div>
+    <div style="font-size:50px;">🔒</div>
+    <div class="lock-title">Mi Inicio</div>
 
-    <!-- ==================================================
-         CABECERA
-    =================================================== -->
+    <button
+      class="unlock-button"
+      onclick="unlockApp()"
+    >
+      Volver a entrar
+    </button>
+  </div>
+</div>
 
-    <header class="trabajo-header">
+<div class="top-actions">
 
-      <div class="trabajo-header-main">
+  <button
+    class="top-action"
+    onclick="lockApp()"
+  >
+    🔒 Bloquear
+  </button>
 
-        <div class="trabajo-greeting">
-          ☀️ Buenos días,
-          <strong>Sandra</strong>
-        </div>
+  <a
+    class="top-action"
+    href="./amor-al-arte.html"
+    style="display:flex;align-items:center;text-decoration:none;color:inherit;"
+  >
+    ← Salir
+  </a>
 
-        <div
-          class="trabajo-time"
-          id="currentTime"
-        >
-          14:03
-        </div>
+</div>
 
-        <div
-          class="trabajo-date"
-          id="currentDate"
-        >
-          Martes, 18 de Agosto
-        </div>
+<div class="hero">
 
-        <div class="trabajo-mode-pill">
-          <span></span>
-          GYM
-        </div>
+  <div>
 
-      </div>
+    <div id="greeting" class="greeting">
+      ☀️ Buenos días,
+      <span class="greeting-name">Sandra</span>
+    </div>
 
+    <div id="bigTime" class="big-time">
+      15:00
+    </div>
 
-      <!-- PARTE DERECHA -->
+    <div id="date" class="date"></div>
 
-      <div class="trabajo-header-side">
+    <div class="mode-pill">
+      <span class="mode-dot"></span>
+      <span>Gym</span>
+    </div>
 
-        <div class="trabajo-top-actions">
+  </div>
 
-          <button
-            class="mini-action"
-            type="button"
-            onclick="openShortcut('Bloquear')"
-          >
-            🔒 Bloquear
-          </button>
+  <div class="entertainment-card">
 
-          <a
-            href="./amor-al-arte.html"
-            class="mini-action"
-          >
-            ← Salir
-          </a>
+    <div class="entertainment-title">
+      ★ Entretenimiento
+    </div>
 
-        </div>
+    <div class="entertainment-grid">
 
-
-        <!-- ENTRETENIMIENTO -->
-
-        <section class="entertainment-mini">
-
-          <div class="entertainment-title">
-            ★ Entretenimiento
-          </div>
-
-          <div class="entertainment-apps">
-
-            <!-- MÚSICA -->
-
-            <button
-              class="entertainment-app"
-              type="button"
-              onclick="openShortcut('Musica')"
-            >
-              <span class="entertainment-icon music">
-                ♪
-              </span>
-
-              <small>
-                Música
-              </small>
-            </button>
-
-
-            <!-- SPOTIFY -->
-
-            <button
-              class="entertainment-app"
-              type="button"
-              onclick="openApp('spotify://')"
-            >
-              <span class="entertainment-icon">
-                <img
-                  src="https://api.iconify.design/logos/spotify-icon.svg"
-                  alt="Spotify"
-                >
-              </span>
-
-              <small>
-                Spotify
-              </small>
-            </button>
-
-
-            <!-- YOUTUBE -->
-
-            <button
-              class="entertainment-app"
-              type="button"
-              onclick="openURL('https://youtube.com')"
-            >
-              <span class="entertainment-icon">
-                <img
-                  src="https://api.iconify.design/logos/youtube-icon.svg"
-                  alt="YouTube"
-                >
-              </span>
-
-              <small>
-                YouTube
-              </small>
-            </button>
-
-          </div>
-
-        </section>
-
-      </div>
-
-    </header>
-
-
-
-    <!-- ==================================================
-         TIEMPO DE GYM
-    =================================================== -->
-
-    <section class="work-panel pomodoro-panel">
-
-      <div class="pomodoro-left">
-
-        <div class="section-title">
-          Tiempo de Gym
-        </div>
-
-        <div
-          id="gymTime"
-          class="pomodoro-time"
-        >
-          02:00:00
-        </div>
-
-        <div
-          id="gymStatus"
-          class="pomodoro-status focus"
-        >
-          <span></span>
-          Todavía no ha empezado
-        </div>
-
-      </div>
-
-
-      <div class="pomodoro-side">
-
-        <div
-          id="gymState"
-          class="trabajo-mode-pill"
-        >
-          Pendiente
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         APPS GYM
-    =================================================== -->
-
-    <section class="work-panel app-section">
-
-      <h2 class="section-title">
-        Gym
-      </h2>
-
-      <p
-        style="
-          margin:-7px 0 18px;
-          color:#77747d;
-          font-size:10px;
-        "
+      <div
+        class="app"
+        onclick="launchDirect('music://')"
       >
-        Entrena tu cuerpo y despeja la cabeza.
-      </p>
-
-
-      <div class="app-grid">
-
-        <!-- WHATSAPP -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('whatsapp://')"
-        >
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/logos/whatsapp-icon.svg"
-              alt="WhatsApp"
-            >
-          </span>
-
-          <span class="app-name">
-            WhatsApp
-          </span>
-        </button>
-
-
-
-        <!-- MÚSICA -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Musica')"
-        >
-          <span
-            class="app-icon"
-            style="
-              background:#ff375f;
-              color:white;
-              font-size:25px;
-            "
-          >
-            ♪
-          </span>
-
-          <span class="app-name">
-            Música
-          </span>
-        </button>
-
-
-
-        <!-- SPOTIFY -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('spotify://')"
-        >
-          <span
-            class="app-icon"
-            style="background:#050505;"
-          >
-            <img
-              src="https://api.iconify.design/logos/spotify-icon.svg"
-              alt="Spotify"
-              style="
-                width:82%;
-                height:82%;
-              "
-            >
-          </span>
-
-          <span class="app-name">
-            Spotify
-          </span>
-        </button>
-
-
-
-        <!-- DRIVE -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Drive')"
-        >
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/logos/google-drive.svg"
-              alt="Drive"
-            >
-          </span>
-
-          <span class="app-name">
-            Drive
-          </span>
-        </button>
-
-
-
-        <!-- HOJAS DE CÁLCULO -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Hojas de calculo')"
-        >
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/logos/google-sheets.svg"
-              alt="Hojas de cálculo"
-            >
-          </span>
-
-          <span class="app-name">
-            Hojas cálculo
-          </span>
-        </button>
-
-
-
-        <!-- CÁMARA -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Camara')"
-        >
-          <span class="app-icon camera-ios">
-            ◉
-          </span>
-
-          <span class="app-name">
-            Cámara
-          </span>
-        </button>
-
-
-
-        <!-- NOTAS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Notas')"
-        >
-          <span class="app-icon notes-ios">
-            ▤
-          </span>
-
-          <span class="app-name">
-            Notas
-          </span>
-        </button>
-
-
-
-        <!-- FOTOS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Fotos')"
-        >
-          <span class="app-icon photos-ios">
-            🌈
-          </span>
-
-          <span class="app-name">
-            Fotos
-          </span>
-        </button>
-
-
-
-        <!-- INSTAGRAM -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('instagram://')"
-        >
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/skill-icons/instagram.svg"
-              alt="Instagram"
-            >
-          </span>
-
-          <span class="app-name">
-            Instagram
-          </span>
-        </button>
-
-
-
-        <!-- TIKTOK -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('TikTok')"
-        >
-          <span
-            class="app-icon"
-            style="background:#050505;"
-          >
-            <img
-              src="https://api.iconify.design/logos/tiktok-icon.svg"
-              alt="TikTok"
-              style="
-                width:73%;
-                height:73%;
-              "
-            >
-          </span>
-
-          <span class="app-name">
-            TikTok
-          </span>
-        </button>
-
-
-
-        <!-- FITNESS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Fitness')"
-        >
-          <span
-            class="app-icon"
-            style="
-              background:#111;
-              color:white;
-              font-size:29px;
-            "
-          >
-            ◎
-          </span>
-
-          <span class="app-name">
-            Fitness
-          </span>
-        </button>
-
-
-
-        <!-- MY ENJOY -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('My Enjoy')"
-        >
-          <span
-            class="app-icon"
-            style="
-              background:#f04b42;
-              color:white;
-              font-size:27px;
-              font-weight:800;
-            "
-          >
-            e
-          </span>
-
-          <span class="app-name">
-            My Enjoy
-          </span>
-        </button>
-
+        <div class="icon music-icon">♪</div>
+        <div class="app-name">Música</div>
       </div>
 
-    </section>
+      <div
+        class="app"
+        onclick="launchDirect('spotify://')"
+      >
+        <div class="icon spotify-icon">
+          <img src="https://api.iconify.design/logos/spotify-icon.svg">
+        </div>
+        <div class="app-name">Spotify</div>
+      </div>
 
+      <div
+        class="app"
+        onclick="launchDirect('youtube://')"
+      >
+        <div class="icon youtube-icon">
+          <img src="https://api.iconify.design/logos/youtube-icon.svg">
+        </div>
+        <div class="app-name">YouTube</div>
+      </div>
 
-    <div class="trabajo-bottom-space"></div>
+    </div>
 
-  </main>
+  </div>
 
+</div>
 
+<div class="slot-timer">
 
-  <!-- ==================================================
-       MENÚ INFERIOR
-  =================================================== -->
+  <div class="slot-timer-header">
 
-  <nav class="work-bottom-nav">
+    <div class="slot-title">
+      Tiempo de Gym
+    </div>
 
-    <a
-      href="./index.html"
-      class="work-nav-item"
+    <div
+      id="gymTimerStatus"
+      class="slot-status"
     >
-      🏠 Inicio
-    </a>
+      15:00 – 17:00
+    </div>
 
-    <a
-      href="./gym.html"
-      class="work-nav-item active"
+  </div>
+
+  <div
+    id="gymCountdown"
+    class="slot-countdown"
+  >
+    02:00:00
+  </div>
+
+  <div
+    id="gymTimerText"
+    class="slot-end"
+  ></div>
+
+</div>
+
+<div class="card">
+
+  <div class="page-title">
+    Gym
+  </div>
+
+  <div class="page-subtitle">
+    Entrena tu cuerpo y despeja la cabeza.
+  </div>
+
+  <div class="app-grid">
+
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir WhatsApp')"
     >
-      🏋️ Gym
-    </a>
+      <div class="icon whatsapp-icon">
+        <img src="https://api.iconify.design/logos/whatsapp-icon.svg">
+      </div>
+      <div class="app-name">WhatsApp</div>
+    </div>
 
-  </nav>
+    <div
+      class="app"
+      onclick="launchDirect('music://')"
+    >
+      <div class="icon music-icon">♪</div>
+      <div class="app-name">Música</div>
+    </div>
 
+    <div
+      class="app"
+      onclick="launchDirect('spotify://')"
+    >
+      <div class="icon spotify-icon">
+        <img src="https://api.iconify.design/logos/spotify-icon.svg">
+      </div>
+      <div class="app-name">Spotify</div>
+    </div>
 
+    <div
+      class="app"
+      onclick="launchDirect('googledrive://')"
+    >
+      <div class="icon drive-icon">
+        <img src="https://api.iconify.design/logos/google-drive.svg">
+      </div>
+      <div class="app-name">Drive</div>
+    </div>
 
-  <!-- ==================================================
-       JAVASCRIPT
-  =================================================== -->
+    <div
+      class="app"
+      onclick="launchDirect('googlesheets://')"
+    >
+      <div class="icon sheets-icon">S</div>
+      <div class="app-name">Hojas cálculo</div>
+    </div>
 
-  <script>
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir Camara')"
+    >
+      <div class="icon camera-icon">
+        <div class="camera-lens"></div>
+      </div>
+      <div class="app-name">Cámara</div>
+    </div>
 
-    /* ==================================================
-       HORA / FECHA
-    ================================================== */
+    <div
+      class="app"
+      onclick="launchDirect('mobilenotes://')"
+    >
+      <div class="icon notes-icon">
+        <div class="notes-yellow"></div>
+        <div class="note-line"></div>
+      </div>
+      <div class="app-name">Notas</div>
+    </div>
 
-    function updateClock() {
+    <div
+      class="app"
+      onclick="launchDirect('photos-redirect://')"
+    >
+      <div class="icon photos-icon">🌈</div>
+      <div class="app-name">Fotos</div>
+    </div>
 
-      const now =
-        new Date();
+    <div
+      class="app"
+      onclick="launchDirect('instagram://')"
+    >
+      <div class="icon instagram-icon">
+        <img src="https://api.iconify.design/skill-icons/instagram.svg">
+      </div>
+      <div class="app-name">Instagram</div>
+    </div>
 
-      document.getElementById(
-        "currentTime"
-      ).textContent =
-        now.toLocaleTimeString(
-          "es-ES",
-          {
-            hour: "2-digit",
-            minute: "2-digit"
-          }
-        );
+    <div
+      class="app"
+      onclick="launchDirect('tiktok://')"
+    >
+      <div class="icon tiktok-icon">
+        <img src="https://api.iconify.design/logos/tiktok-icon.svg">
+      </div>
+      <div class="app-name">TikTok</div>
+    </div>
 
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir Fitness')"
+    >
+      <div class="icon fitness-icon">◎</div>
+      <div class="app-name">Fitness</div>
+    </div>
 
-      const date =
-        now.toLocaleDateString(
-          "es-ES",
-          {
-            weekday: "long",
-            day: "numeric",
-            month: "long"
-          }
-        );
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir My Enjoy')"
+    >
+      <div class="icon myenjoy-icon">e</div>
+      <div class="app-name">My Enjoy</div>
+    </div>
 
+  </div>
 
-      document.getElementById(
-        "currentDate"
-      ).textContent =
-        date.charAt(0).toUpperCase()
-        +
-        date.slice(1);
+</div>
 
+<nav class="bottom-nav">
 
-      updateGreeting(now);
+  <button
+    onclick="window.location.href='./amor-al-arte.html'"
+  >
+    🏠 Inicio
+  </button>
 
-      updateGymTimer(now);
+  <button
+    class="current-nav active"
+  >
+    🏋️ Gym
+  </button>
 
-    }
+</nav>
 
+<script>
 
+function navigateExternal(url){
+  const link=document.createElement("a");
+  link.href=url;
+  link.style.display="none";
+  document.body.appendChild(link);
+  link.click();
 
-    function updateGreeting(now) {
+  setTimeout(
+    ()=>link.remove(),
+    500
+  );
+}
 
-      const hour =
-        now.getHours();
+function launchDirect(url){
+  navigateExternal(url);
+}
 
-      let text =
-        "Buenos días";
+function launchShortcut(name){
+  navigateExternal(
+    "shortcuts://run-shortcut?name="
+    +
+    encodeURIComponent(name)
+  );
+}
 
-      let emoji =
-        "☀️";
+function updateClock(){
 
+  const now=new Date();
 
-      if (
-        hour >= 14
-        &&
-        hour < 21
-      ) {
-
-        text =
-          "Buenas tardes";
-
-        emoji =
-          "🌤️";
-
+  document.getElementById(
+    "bigTime"
+  ).textContent=
+    now.toLocaleTimeString(
+      "es-ES",
+      {
+        hour:"2-digit",
+        minute:"2-digit"
       }
-
-
-      if (
-        hour >= 21
-        ||
-        hour < 6
-      ) {
-
-        text =
-          "Buenas noches";
-
-        emoji =
-          "🌙";
-
-      }
-
-
-      document.querySelector(
-        ".trabajo-greeting"
-      ).innerHTML =
-        `${emoji} ${text}, <strong>Sandra</strong>`;
-
-    }
-
-
-
-    /* ==================================================
-       TEMPORIZADOR GYM
-
-       Franja:
-       15:00 - 17:00
-    ================================================== */
-
-    function updateGymTimer(now) {
-
-      const start =
-        new Date(now);
-
-      start.setHours(
-        15,
-        0,
-        0,
-        0
-      );
-
-
-      const end =
-        new Date(now);
-
-      end.setHours(
-        17,
-        0,
-        0,
-        0
-      );
-
-
-      const timer =
-        document.getElementById(
-          "gymTime"
-        );
-
-      const status =
-        document.getElementById(
-          "gymStatus"
-        );
-
-      const state =
-        document.getElementById(
-          "gymState"
-        );
-
-
-      let milliseconds;
-
-
-      /* ANTES DEL GYM */
-
-      if (now < start) {
-
-        milliseconds =
-          end - start;
-
-        status.innerHTML =
-          "<span></span>Todavía no ha empezado";
-
-        state.textContent =
-          "Pendiente";
-
-      }
-
-
-      /* DURANTE EL GYM */
-
-      else if (
-        now >= start
-        &&
-        now < end
-      ) {
-
-        milliseconds =
-          end - now;
-
-        status.innerHTML =
-          "<span></span>Tiempo restante";
-
-        state.textContent =
-          "En marcha";
-
-      }
-
-
-      /* DESPUÉS */
-
-      else {
-
-        timer.textContent =
-          "00:00:00";
-
-        status.innerHTML =
-          "<span></span>Terminado por hoy";
-
-        state.textContent =
-          "Finalizado";
-
-        return;
-
-      }
-
-
-      const totalSeconds =
-        Math.max(
-          0,
-          Math.floor(
-            milliseconds / 1000
-          )
-        );
-
-
-      const hours =
-        Math.floor(
-          totalSeconds / 3600
-        );
-
-      const minutes =
-        Math.floor(
-          (totalSeconds % 3600) / 60
-        );
-
-      const seconds =
-        totalSeconds % 60;
-
-
-      timer.textContent =
-        `${String(hours).padStart(2, "0")}:`
-        +
-        `${String(minutes).padStart(2, "0")}:`
-        +
-        `${String(seconds).padStart(2, "0")}`;
-
-    }
-
-
-
-    /* ==================================================
-       ABRIR APP
-    ================================================== */
-
-    function openApp(url) {
-
-      window.location.href =
-        url;
-
-    }
-
-
-
-    function openURL(url) {
-
-      window.location.href =
-        url;
-
-    }
-
-
-
-    /* ==================================================
-       ATAJOS IPHONE
-    ================================================== */
-
-    function openShortcut(name) {
-
-      const encoded =
-        encodeURIComponent(name);
-
-      window.location.href =
-        `shortcuts://run-shortcut?name=${encoded}`;
-
-    }
-
-
-
-    updateClock();
-
-    setInterval(
-      updateClock,
-      1000
     );
 
-  </script>
+  document.getElementById(
+    "date"
+  ).textContent=
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+      }
+    );
+
+  updateGreeting(now);
+  updateGymTimer(now);
+}
+
+function updateGreeting(now){
+
+  const hour=now.getHours();
+
+  let greeting="Buenos días";
+  let icon="☀️";
+
+  if(hour>=14 && hour<21){
+    greeting="Buenas tardes";
+    icon="🌤️";
+  }
+
+  if(hour>=21 || hour<6){
+    greeting="Buenas noches";
+    icon="🌙";
+  }
+
+  document.getElementById(
+    "greeting"
+  ).innerHTML=
+    icon+
+    " "+
+    greeting+
+    ', <span class="greeting-name">Sandra</span>';
+}
+
+function formatDuration(seconds){
+
+  const h=Math.floor(seconds/3600);
+  const m=Math.floor((seconds%3600)/60);
+  const s=seconds%60;
+
+  return(
+    String(h).padStart(2,"0")
+    +":"
+    +String(m).padStart(2,"0")
+    +":"
+    +String(s).padStart(2,"0")
+  );
+}
+
+function updateGymTimer(now){
+
+  const current=
+    now.getHours()*60+
+    now.getMinutes();
+
+  const start=900;
+  const end=1020;
+
+  const countdown=
+    document.getElementById("gymCountdown");
+
+  const status=
+    document.getElementById("gymTimerStatus");
+
+  const text=
+    document.getElementById("gymTimerText");
+
+  if(current<start){
+
+    countdown.textContent="02:00:00";
+    status.textContent="Pendiente";
+    text.textContent="Todavía no ha empezado";
+    return;
+  }
+
+  if(current>=start && current<end){
+
+    const endDate=new Date();
+
+    endDate.setHours(
+      17,
+      0,
+      0,
+      0
+    );
+
+    const seconds=
+      Math.max(
+        0,
+        Math.floor(
+          (endDate-now)/1000
+        )
+      );
+
+    countdown.textContent=
+      formatDuration(seconds);
+
+    status.textContent="Ahora";
+    text.textContent="Tiempo restante";
+    return;
+  }
+
+  countdown.textContent="00:00:00";
+  status.textContent="Finalizado";
+  text.textContent="Terminado por hoy";
+}
+
+function lockApp(){
+  document.getElementById(
+    "lockScreen"
+  ).classList.add("show");
+}
+
+function unlockApp(){
+  document.getElementById(
+    "lockScreen"
+  ).classList.remove("show");
+}
+
+updateClock();
+
+setInterval(
+  updateClock,
+  1000
+);
+
+</script>
 
 </body>
 </html>

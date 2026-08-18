@@ -1,0 +1,1 @@
+Mantén IMG_9807.png en la raíz del repositorio.

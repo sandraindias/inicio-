@@ -1,1 +1,3268 @@
-<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no'><link rel='stylesheet' href='./css/styles.css'><link rel='apple-touch-icon' href='./IMG_9807.png'><title>Mi Inicio</title></head><body><header class='hero'><div><div class='greeting'>☀️ Buenos días, <strong>Sandra</strong></div><div id='bigTime' class='big-time'>18:00</div><div id='todayDate' class='today-date'></div><div class='context-row'><button class='context-pill' onclick='openCyclePanel()'><span class='context-icon'>🌸</span><span><b id='cycleMiniTitle'>Ciclo</b><small id='cycleMiniText'>Sin registrar</small></span></button><div class='context-pill'><span id='moonMiniIcon' class='context-icon'>🌙</span><span><b>Luna</b><small id='moonMiniText'>Calculando…</small></span></div></div></div><div class='entertainment-card'><div class='entertainment-title'>★ Entretenimiento</div><div class='entertainment-grid'><button class='mini-app' onclick="launchDirect('music://')"><span class='mini-icon music-icon'>♪</span><small>Música</small></button><button class='mini-app' onclick="launchDirect('spotify://')"><span class='mini-icon spotify-icon'><img src='https://api.iconify.design/logos/spotify-icon.svg'></span><small>Spotify</small></button><button class='mini-app' onclick="launchDirect('youtube://')"><span class='mini-icon'><img src='https://api.iconify.design/logos/youtube-icon.svg'></span><small>YouTube</small></button></div></div></header><main><section class='calendar-layout'><article class='calendar-card'><div class='calendar-header'><div><div class='eyebrow'>CALENDARIO</div><h1 id='calendarTitle'>Agosto</h1></div><div id='monthMoon' class='month-moon'></div></div><div class='calendar-weekdays'><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div><div id='calendarGrid' class='calendar-grid'></div><div class='calendar-legend'><span>🎂 Cumple</span><span>🎉 Festivo</span><span>💗 Especial</span><span>🌙 Luna</span></div></article><aside class='suggestions-card'><div class='eyebrow'>SUGERENCIAS</div><h2>Planes del momento</h2><div id='suggestionList' class='suggestion-list'></div></aside></section><section class='day-section'><div class='section-header'><div><div class='eyebrow'>HOY</div><h2>Tu día de hoy</h2></div><span id='lifeModeBadge' class='life-mode-badge'>🎨 Amor al arte</span></div><div id='dayGrid' class='day-grid'></div></section><section class='discovery-section'><div class='section-header'><div><div class='eyebrow'>DESCUBRIMIENTO</div><h2>Lo que existe fuera de tu rutina</h2></div><a href='./descubrimiento.html'>Ver todo →</a></div><div class='discovery-grid'><a class='discovery-card' href='./descubrimiento.html#conmigo'><span>💗</span><b>Cita conmigo</b><small>Ideas para disfrutar sola</small></a><a class='discovery-card' href='./descubrimiento.html#amigos'><span>👯</span><b>Amigos</b><small>Planes y escapadas</small></a><a class='discovery-card' href='./descubrimiento.html#familia'><span>👨‍👩‍👧</span><b>Familia</b><small>Tiempo compartido</small></a><a class='discovery-card' href='./descubrimiento.html#viajes'><span>🧳</span><b>Escapadas</b><small>Descubrir sitios</small></a></div></section></main><div id='cyclePanel' class='sheet-backdrop' onclick='closeCyclePanel(event)'><section class='sheet'><div class='sheet-handle'></div><h2>🌸 Mi ciclo</h2><div class='cycle-status'><strong id='cyclePhase'>Sin registrar</strong><p id='cycleAdvice'>Marca el primer día.</p></div><div class='sheet-actions'><button class='primary-btn' onclick='registerPeriodToday()'>Hoy me ha bajado</button><button class='secondary-btn' onclick='clearPeriod()'>Borrar registro</button></div></section></div><nav class="bottom-nav"><a href="./index.html" class="nav-item">🏠 <span>Inicio</span></a><a href="./amor-al-arte.html" class="nav-item">🎨 <span>Amor al arte</span></a><a href="./descubrimiento.html" class="nav-item">🪩 <span>Descubrimiento</span></a></nav><script>document.querySelector('.nav-item').classList.add('active')</script><script src='./js/data.js'></script><script src='./js/calendar.js'></script><script src='./js/common.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mi Inicio">
+
+<link rel="apple-touch-icon" href="./IMG_9807.png">
+
+<title>Mi Inicio</title>
+
+
+<style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+:root{
+
+  --bg:#f7f5f8;
+  --card:rgba(255,255,255,.92);
+
+  --text:#151622;
+  --muted:#777680;
+
+  --pink:#ff356f;
+  --purple:#7657ec;
+  --green:#20ae7c;
+  --orange:#ff7200;
+  --blue:#178bd6;
+
+}
+
+
+*{
+
+  box-sizing:border-box;
+
+  -webkit-tap-highlight-color:
+    transparent;
+
+}
+
+
+html,
+body{
+
+  margin:0;
+
+  min-height:100%;
+
+}
+
+
+body{
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  color:var(--text);
+
+  background:
+
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(255,218,230,.78),
+      transparent 27%
+    ),
+
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(226,218,255,.76),
+      transparent 32%
+    ),
+
+    var(--bg);
+
+
+  padding:
+
+    calc(env(safe-area-inset-top) + 20px)
+
+    14px
+
+    calc(env(safe-area-inset-bottom) + 125px);
+
+}
+
+
+button{
+
+  font:inherit;
+
+}
+
+
+/* =====================================================
+   CABECERA
+===================================================== */
+
+.hero{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    145px;
+
+  gap:12px;
+
+  align-items:start;
+
+  margin-bottom:17px;
+
+}
+
+
+.greeting{
+
+  font-size:18px;
+
+}
+
+
+.greeting strong{
+
+  color:var(--pink);
+
+}
+
+
+.big-time{
+
+  margin-top:6px;
+
+  font-size:54px;
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+
+  font-weight:520;
+
+}
+
+
+.today-date{
+
+  margin-top:10px;
+
+  font-size:13px;
+
+  text-transform:capitalize;
+
+}
+
+
+/* =====================================================
+   CICLO + LUNA
+===================================================== */
+
+.context-row{
+
+  display:flex;
+
+  gap:7px;
+
+  margin-top:12px;
+
+}
+
+
+.context-pill{
+
+  min-width:0;
+
+  padding:8px 9px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:
+    rgba(255,255,255,.75);
+
+}
+
+
+.context-pill span:last-child{
+
+  min-width:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  text-align:left;
+
+}
+
+
+.context-pill b{
+
+  font-size:10px;
+
+}
+
+
+.context-pill small{
+
+  margin-top:2px;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+}
+
+
+/* =====================================================
+   ENTRETENIMIENTO
+===================================================== */
+
+.entertainment-card{
+
+  padding:11px 7px;
+
+  border-radius:21px;
+
+  background:
+    rgba(255,255,255,.92);
+
+  box-shadow:
+    0 7px 24px
+    rgba(0,0,0,.05);
+
+}
+
+
+.entertainment-title{
+
+  margin-bottom:9px;
+
+  font-size:11px;
+
+  font-weight:850;
+
+}
+
+
+.entertainment-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:4px;
+
+}
+
+
+.mini-app{
+
+  padding:0;
+
+  border:0;
+
+  background:transparent;
+
+  text-align:center;
+
+}
+
+
+.mini-icon{
+
+  width:42px;
+
+  height:42px;
+
+  margin:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  overflow:hidden;
+
+  border-radius:12px;
+
+  background:white;
+
+  box-shadow:
+    0 3px 10px
+    rgba(0,0,0,.08);
+
+}
+
+
+.mini-icon img{
+
+  width:88%;
+
+  height:88%;
+
+  object-fit:contain;
+
+}
+
+
+.music-icon{
+
+  color:white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff3157,
+      #ff5c6e
+    );
+
+  font-size:25px;
+
+}
+
+
+.spotify-icon{
+
+  background:#111;
+
+}
+
+
+.mini-app small{
+
+  display:block;
+
+  margin-top:4px;
+
+  font-size:8px;
+
+}
+
+
+/* =====================================================
+   TITULOS
+===================================================== */
+
+.eyebrow{
+
+  color:var(--pink);
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:.8px;
+
+}
+
+
+.section-title{
+
+  margin:
+    3px
+    0
+    13px;
+
+  font-size:24px;
+
+  font-weight:900;
+
+}
+
+
+/* =====================================================
+   CALENDARIO
+===================================================== */
+
+.calendar-layout{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    180px;
+
+  gap:11px;
+
+  align-items:start;
+
+  margin-bottom:19px;
+
+}
+
+
+.calendar-card,
+.suggestions-card{
+
+  padding:14px;
+
+  border-radius:23px;
+
+  background:var(--card);
+
+  box-shadow:
+    0 8px 27px
+    rgba(0,0,0,.05);
+
+}
+
+
+.calendar-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  gap:10px;
+
+  margin-bottom:12px;
+
+}
+
+
+.calendar-title{
+
+  margin:2px 0 0;
+
+  font-size:29px;
+
+  text-transform:capitalize;
+
+}
+
+
+.moon-title{
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  text-align:right;
+
+}
+
+
+.calendar-weekdays,
+.calendar-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(7,1fr);
+
+  gap:5px;
+
+}
+
+
+.calendar-weekdays span{
+
+  padding:3px;
+
+  text-align:center;
+
+  color:#9997a0;
+
+  font-size:8px;
+
+  font-weight:900;
+
+}
+
+
+.calendar-day{
+
+  position:relative;
+
+  min-width:0;
+
+  min-height:61px;
+
+  padding:6px;
+
+  border:0;
+
+  border-radius:13px;
+
+  background:#f7f6f9;
+
+  color:var(--text);
+
+  text-align:left;
+
+  cursor:pointer;
+
+  overflow:visible;
+
+}
+
+
+.calendar-day.other-month{
+
+  opacity:.27;
+
+}
+
+
+.calendar-day.today{
+
+  color:white;
+
+  background:#111;
+
+}
+
+
+.day-number{
+
+  font-size:10px;
+
+  font-weight:900;
+
+}
+
+
+/*
+  IMPORTANTE:
+  intencionadamente NO cortamos
+  los textos para que pueda verse
+  el nombre aunque sobresalga.
+*/
+
+.calendar-notes{
+
+  position:relative;
+
+  z-index:4;
+
+  margin-top:5px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:2px;
+
+  overflow:visible;
+
+  white-space:nowrap;
+
+}
+
+
+.birthday-label{
+
+  color:#d24f7a;
+
+  font-size:7px;
+
+  font-weight:850;
+
+  overflow:visible;
+
+}
+
+
+.calendar-day.today
+.birthday-label{
+
+  color:#ffd2e1;
+
+}
+
+
+.user-note{
+
+  display:inline-block;
+
+  width:max-content;
+
+  max-width:95px;
+
+  padding:
+    2px
+    4px;
+
+  border-radius:5px;
+
+  background:#fff1ad;
+
+  color:#655400;
+
+  font-size:7px;
+
+  font-weight:850;
+
+  overflow:visible;
+
+}
+
+
+.calendar-day.today
+.user-note{
+
+  background:#fff;
+
+  color:#111;
+
+}
+
+
+.moon-day{
+
+  position:absolute;
+
+  top:5px;
+
+  right:5px;
+
+  font-size:7px;
+
+}
+
+
+.calendar-help{
+
+  margin-top:11px;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+  line-height:1.4;
+
+}
+
+
+/* =====================================================
+   SUGERENCIAS
+===================================================== */
+
+.suggestions-card h2{
+
+  margin:
+    4px
+    0
+    11px;
+
+  font-size:18px;
+
+}
+
+
+.suggestion-list{
+
+  display:grid;
+
+  gap:8px;
+
+}
+
+
+.suggestion{
+
+  padding:10px;
+
+  border-radius:14px;
+
+  background:#f9f8fa;
+
+}
+
+
+.suggestion strong{
+
+  display:block;
+
+  font-size:10px;
+
+}
+
+
+.suggestion small{
+
+  display:block;
+
+  margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+  line-height:1.35;
+
+}
+
+
+/* =====================================================
+   TU DÍA
+===================================================== */
+
+.day-section{
+
+  margin-bottom:20px;
+
+}
+
+
+.day-heading{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:end;
+
+  gap:10px;
+
+  margin-bottom:12px;
+
+}
+
+
+.day-heading h2{
+
+  margin:3px 0 0;
+
+  font-size:24px;
+
+}
+
+
+.day-heading small{
+
+  color:var(--muted);
+
+  font-size:9px;
+
+}
+
+
+.day-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:10px;
+
+}
+
+
+.day-card{
+
+  position:relative;
+
+  min-height:122px;
+
+  padding:14px;
+
+  display:block;
+
+  border-radius:21px;
+
+  border:2px solid #eee;
+
+  background:white;
+
+  color:inherit;
+
+  text-decoration:none;
+
+}
+
+
+.day-card.now{
+
+  box-shadow:
+    0 9px 26px
+    rgba(0,0,0,.10);
+
+}
+
+
+.now-badge{
+
+  position:absolute;
+
+  top:8px;
+
+  right:8px;
+
+  padding:
+    4px
+    7px;
+
+  border-radius:999px;
+
+  color:white;
+
+  background:#111;
+
+  font-size:7px;
+
+  font-weight:900;
+
+}
+
+
+.day-hours{
+
+  font-size:12px;
+
+  font-weight:900;
+
+}
+
+
+.day-name{
+
+  margin-top:8px;
+
+  font-size:17px;
+
+  font-weight:900;
+
+}
+
+
+.day-description{
+
+  margin-top:6px;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+}
+
+
+.work{
+
+  border-color:#ffc5d7;
+
+}
+
+.work .day-hours,
+.work .day-name{
+
+  color:#e93870;
+
+}
+
+
+.gym{
+
+  border-color:#ffd1ae;
+
+}
+
+.gym .day-hours,
+.gym .day-name{
+
+  color:#ff6b00;
+
+}
+
+
+.personal{
+
+  border-color:#bde9d7;
+
+}
+
+.personal .day-hours,
+.personal .day-name{
+
+  color:#1aa878;
+
+}
+
+
+.ocio{
+
+  border-color:#d9ccff;
+
+}
+
+.ocio .day-hours,
+.ocio .day-name{
+
+  color:#7d59e5;
+
+}
+
+
+.walk{
+
+  border-color:#bbddfb;
+
+}
+
+.walk .day-hours,
+.walk .day-name{
+
+  color:#1987d3;
+
+}
+
+
+.sleep{
+
+  border-color:#c8d4ff;
+
+}
+
+.sleep .day-hours,
+.sleep .day-name{
+
+  color:#3451bd;
+
+}
+
+
+/* =====================================================
+   DESCUBRIMIENTO
+===================================================== */
+
+.discovery-preview{
+
+  margin-bottom:20px;
+
+  padding:16px;
+
+  border-radius:23px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff,
+      #f5efff
+    );
+
+  box-shadow:
+    0 7px 24px
+    rgba(0,0,0,.04);
+
+}
+
+
+.discovery-top{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+}
+
+
+.discovery-preview h2{
+
+  margin:
+    3px
+    0
+    0;
+
+  font-size:23px;
+
+}
+
+
+.discovery-days{
+
+  margin-top:13px;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:9px;
+
+}
+
+
+.weekend-day{
+
+  min-height:78px;
+
+  padding:13px;
+
+  border-radius:17px;
+
+  background:white;
+
+}
+
+
+.weekend-day b{
+
+  font-size:13px;
+
+}
+
+
+.weekend-day small{
+
+  display:block;
+
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:9px;
+
+}
+
+
+/* =====================================================
+   CICLO
+===================================================== */
+
+.sheet-backdrop{
+
+  position:fixed;
+
+  z-index:999;
+
+  inset:0;
+
+  display:none;
+
+  align-items:flex-end;
+
+  background:
+    rgba(0,0,0,.22);
+
+}
+
+
+.sheet-backdrop.show{
+
+  display:flex;
+
+}
+
+
+.sheet{
+
+  width:100%;
+
+  padding:
+    16px
+    20px
+    calc(
+      env(safe-area-inset-bottom)
+      +
+      25px
+    );
+
+  border-radius:
+    28px
+    28px
+    0
+    0;
+
+  background:white;
+
+}
+
+
+.sheet-handle{
+
+  width:44px;
+
+  height:5px;
+
+  margin:
+    0
+    auto
+    15px;
+
+  border-radius:999px;
+
+  background:#ddd;
+
+}
+
+
+.sheet h2{
+
+  margin:0;
+
+}
+
+
+.sheet p{
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  line-height:1.45;
+
+}
+
+
+.cycle-box{
+
+  padding:14px;
+
+  border-radius:17px;
+
+  background:#fff3f7;
+
+}
+
+
+.cycle-box strong{
+
+  display:block;
+
+  font-size:17px;
+
+}
+
+
+.sheet-buttons{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:8px;
+
+  margin-top:12px;
+
+}
+
+
+.sheet-buttons button{
+
+  padding:13px;
+
+  border:0;
+
+  border-radius:14px;
+
+  font-size:11px;
+
+  font-weight:850;
+
+}
+
+
+.primary{
+
+  color:white;
+
+  background:#111;
+
+}
+
+
+.secondary{
+
+  background:#efedf1;
+
+}
+
+
+/* =====================================================
+   MENÚ INFERIOR
+===================================================== */
+
+.bottom-nav{
+
+  position:fixed;
+
+  z-index:100;
+
+  left:13px;
+  right:13px;
+
+  bottom:
+    calc(
+      env(safe-area-inset-bottom)
+      +
+      15px
+    );
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:5px;
+
+  padding:6px;
+
+  border-radius:24px;
+
+  background:
+    rgba(250,250,251,.94);
+
+  backdrop-filter:
+    blur(28px);
+
+  box-shadow:
+    0 7px 31px
+    rgba(0,0,0,.12);
+
+}
+
+
+.nav-item{
+
+  min-height:50px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:5px;
+
+  border-radius:18px;
+
+  color:#686873;
+
+  text-decoration:none;
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+
+.nav-item.active{
+
+  color:#ff2866;
+
+  background:#ffe4ed;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:600px){
+
+  .calendar-layout{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+
+@media(max-width:390px){
+
+  body{
+
+    padding-left:12px;
+    padding-right:12px;
+
+  }
+
+  .hero{
+
+    grid-template-columns:
+      minmax(0,1fr)
+      136px;
+
+    gap:8px;
+
+  }
+
+  .big-time{
+
+    font-size:48px;
+
+  }
+
+  .calendar-day{
+
+    min-height:56px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CABECERA
+===================================================== -->
+
+<header class="hero">
+
+
+  <div>
+
+    <div class="greeting">
+
+      ☀️ Buenos días,
+      <strong>Sandra</strong>
+
+    </div>
+
+
+    <div
+      id="bigTime"
+      class="big-time"
+    >
+      21:00
+    </div>
+
+
+    <div
+      id="todayDate"
+      class="today-date"
+    ></div>
+
+
+    <div class="context-row">
+
+
+      <button
+        class="context-pill"
+        onclick="openCycle()"
+      >
+
+        <span>
+          🌸
+        </span>
+
+        <span>
+
+          <b id="cycleTitle">
+            Ciclo
+          </b>
+
+          <small id="cycleSubtitle">
+            Sin registrar
+          </small>
+
+        </span>
+
+      </button>
+
+
+      <div class="context-pill">
+
+        <span id="moonIcon">
+          🌙
+        </span>
+
+        <span>
+
+          <b>
+            Luna
+          </b>
+
+          <small id="moonText">
+            Calculando…
+          </small>
+
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- ENTRETENIMIENTO -->
+
+  <div class="entertainment-card">
+
+    <div class="entertainment-title">
+      ★ Entretenimiento
+    </div>
+
+
+    <div class="entertainment-grid">
+
+
+      <button
+        class="mini-app"
+        onclick="openApp('music://')"
+      >
+
+        <span class="mini-icon music-icon">
+          ♪
+        </span>
+
+        <small>
+          Música
+        </small>
+
+      </button>
+
+
+      <button
+        class="mini-app"
+        onclick="openApp('spotify://')"
+      >
+
+        <span class="mini-icon spotify-icon">
+
+          <img
+            src="https://api.iconify.design/logos/spotify-icon.svg"
+            alt="Spotify"
+          >
+
+        </span>
+
+        <small>
+          Spotify
+        </small>
+
+      </button>
+
+
+      <button
+        class="mini-app"
+        onclick="openApp('youtube://')"
+      >
+
+        <span class="mini-icon">
+
+          <img
+            src="https://api.iconify.design/logos/youtube-icon.svg"
+            alt="YouTube"
+          >
+
+        </span>
+
+        <small>
+          YouTube
+        </small>
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     CALENDARIO
+===================================================== -->
+
+<section class="calendar-layout">
+
+
+  <article class="calendar-card">
+
+
+    <div class="calendar-header">
+
+
+      <div>
+
+        <div class="eyebrow">
+          CALENDARIO
+        </div>
+
+        <h1
+          id="calendarTitle"
+          class="calendar-title"
+        >
+          Agosto de 2026
+        </h1>
+
+      </div>
+
+
+      <div
+        id="calendarMoon"
+        class="moon-title"
+      ></div>
+
+
+    </div>
+
+
+    <div class="calendar-weekdays">
+
+      <span>L</span>
+      <span>M</span>
+      <span>X</span>
+      <span>J</span>
+      <span>V</span>
+      <span>S</span>
+      <span>D</span>
+
+    </div>
+
+
+    <div
+      id="calendarGrid"
+      class="calendar-grid"
+    ></div>
+
+
+    <div class="calendar-help">
+
+      Toca cualquier día para escribir una nota breve.
+      Los cumpleaños aparecen directamente con el nombre.
+
+    </div>
+
+
+  </article>
+
+
+
+  <!-- SUGERENCIAS -->
+
+  <aside class="suggestions-card">
+
+    <div class="eyebrow">
+      SUGERENCIAS
+    </div>
+
+    <h2>
+      Planes del momento
+    </h2>
+
+
+    <div class="suggestion-list">
+
+
+      <div class="suggestion">
+
+        <strong>
+          💦 Ruidera / Vva
+        </strong>
+
+        <small>
+          Última semana del mes.
+        </small>
+
+      </div>
+
+
+      <div class="suggestion">
+
+        <strong>
+          📸 Álbum de agosto
+        </strong>
+
+        <small>
+          Ordenar las fotos del mes.
+        </small>
+
+      </div>
+
+
+      <div class="suggestion">
+
+        <strong>
+          🌅 Plan al aire libre
+        </strong>
+
+        <small>
+          Aprovechar las tardes de verano.
+        </small>
+
+      </div>
+
+
+    </div>
+
+  </aside>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     TU DÍA DE HOY
+===================================================== -->
+
+<section class="day-section">
+
+
+  <div class="day-heading">
+
+    <div>
+
+      <div class="eyebrow">
+        HOY
+      </div>
+
+      <h2>
+        Tu día de hoy
+      </h2>
+
+    </div>
+
+
+    <small>
+      Pulsa para entrar
+    </small>
+
+  </div>
+
+
+  <div class="day-grid">
+
+
+    <a
+      href="./trabajo.html"
+      class="day-card work"
+      data-start="480"
+      data-end="900"
+    >
+
+      <div class="day-hours">
+        08:00 – 15:00
+      </div>
+
+      <div class="day-name">
+        💼 Trabajo
+      </div>
+
+      <div class="day-description">
+        Momento de foco y acción.
+      </div>
+
+    </a>
+
+
+    <a
+      href="./gym.html"
+      class="day-card gym"
+      data-start="900"
+      data-end="1020"
+    >
+
+      <div class="day-hours">
+        15:00 – 17:00
+      </div>
+
+      <div class="day-name">
+        🏋️ Gym
+      </div>
+
+      <div class="day-description">
+        Entrena y despeja la mente.
+      </div>
+
+    </a>
+
+
+    <a
+      href="./mi-tiempo.html"
+      class="day-card personal"
+      data-start="1020"
+      data-end="1230"
+    >
+
+      <div class="day-hours">
+        17:00 – 20:30
+      </div>
+
+      <div class="day-name">
+        ✨ Mi tiempo
+      </div>
+
+      <div class="day-description">
+        Adelanta tus proyectos.
+      </div>
+
+    </a>
+
+
+    <a
+      href="./ocio.html"
+      class="day-card ocio"
+      data-start="1230"
+      data-end="1290"
+    >
+
+      <div class="day-hours">
+        20:30 – 21:30
+      </div>
+
+      <div class="day-name">
+        📱 Ocio
+      </div>
+
+      <div class="day-description">
+        Tu rato para enredar.
+      </div>
+
+    </a>
+
+
+    <a
+      href="./andar.html"
+      class="day-card walk"
+      data-start="1290"
+      data-end="1360"
+    >
+
+      <div class="day-hours">
+        21:30 – 22:40
+      </div>
+
+      <div class="day-name">
+        👟 Andar
+      </div>
+
+      <div class="day-description">
+        Muévete y desconecta.
+      </div>
+
+    </a>
+
+
+    <a
+      href="./noche.html"
+      class="day-card sleep"
+      data-start="1360"
+      data-end="1440"
+    >
+
+      <div class="day-hours">
+        22:40 →
+      </div>
+
+      <div class="day-name">
+        🌙 Noche
+      </div>
+
+      <div class="day-description">
+        Cierra el día.
+      </div>
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DESCUBRIMIENTO
+===================================================== -->
+
+<section class="discovery-preview">
+
+
+  <div class="discovery-top">
+
+
+    <div>
+
+      <div class="eyebrow">
+        DESCUBRIMIENTO
+      </div>
+
+      <h2>
+        Sábados y domingos
+      </h2>
+
+    </div>
+
+
+    <a
+      href="./descubrimiento.html"
+      style="
+        font-size:10px;
+        font-weight:850;
+      "
+    >
+      Ver →
+    </a>
+
+
+  </div>
+
+
+  <div class="discovery-days">
+
+
+    <div class="weekend-day">
+
+      <b>
+        🪩 Sábado
+      </b>
+
+      <small>
+        Fuera de rutina.
+      </small>
+
+    </div>
+
+
+    <div class="weekend-day">
+
+      <b>
+        ✨ Domingo
+      </b>
+
+      <small>
+        Tiempo para descubrir.
+      </small>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     CICLO
+===================================================== -->
+
+<div
+  id="cyclePanel"
+  class="sheet-backdrop"
+  onclick="closeCycle(event)"
+>
+
+
+  <section class="sheet">
+
+
+    <div class="sheet-handle">
+    </div>
+
+
+    <h2>
+      🌸 Mi ciclo
+    </h2>
+
+
+    <p>
+      Solo como referencia para organizar energía,
+      planes y descanso.
+    </p>
+
+
+    <div class="cycle-box">
+
+      <strong id="cyclePhase">
+        Sin registrar
+      </strong>
+
+      <p id="cycleAdvice">
+        Marca el primer día cuando te baje.
+      </p>
+
+    </div>
+
+
+    <div class="sheet-buttons">
+
+
+      <button
+        class="primary"
+        onclick="periodToday()"
+      >
+        Hoy me ha bajado
+      </button>
+
+
+      <button
+        class="secondary"
+        onclick="clearPeriod()"
+      >
+        Borrar
+      </button>
+
+
+    </div>
+
+
+  </section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MENÚ
+===================================================== -->
+
+<nav class="bottom-nav">
+
+
+  <a
+    href="./index.html"
+    class="nav-item active"
+  >
+    🏠
+    <span>Inicio</span>
+  </a>
+
+
+  <a
+    href="./amor-al-arte.html"
+    class="nav-item"
+  >
+    🎨
+    <span>Amor al arte</span>
+  </a>
+
+
+  <a
+    href="./descubrimiento.html"
+    class="nav-item"
+  >
+    🪩
+    <span>Descubrimiento</span>
+  </a>
+
+
+</nav>
+
+
+
+<script>
+
+/* =====================================================
+   DATOS DE CUMPLEAÑOS / EVENTOS
+===================================================== */
+
+const events = [
+
+  {
+    date:"01-03",
+    label:"🎂 Juampa"
+  },
+
+  {
+    date:"01-06",
+    label:"🎂 Tita Juli"
+  },
+
+  {
+    date:"01-16",
+    label:"🎂 Mete"
+  },
+
+  {
+    date:"02-10",
+    label:"🎂 Fate"
+  },
+
+  {
+    date:"03-05",
+    label:"🎂 Tita Dolo"
+  },
+
+  {
+    date:"03-07",
+    label:"🎂 Tito Manolo"
+  },
+
+  {
+    date:"04-11",
+    label:"🎂 Roci"
+  },
+
+  {
+    date:"04-23",
+    label:"🎂 Yayo José"
+  },
+
+  {
+    date:"04-30",
+    label:"🎂 Yaya Rosario"
+  },
+
+  {
+    date:"05-18",
+    label:"🎂 Papá"
+  },
+
+  {
+    date:"06-20",
+    label:"🎂 Daniel · Karim"
+  },
+
+  {
+    date:"06-22",
+    label:"🎂 Mi cumple · José A"
+  },
+
+  {
+    date:"06-24",
+    label:"🎂 Tata Rosi"
+  },
+
+  {
+    date:"06-30",
+    label:"🎂 Marido"
+  },
+
+  {
+    date:"08-11",
+    label:"🎂 Malva"
+  },
+
+  {
+    date:"08-14",
+    label:"🎂 Manuel"
+  },
+
+  {
+    date:"08-27",
+    label:"🎂 María"
+  },
+
+  {
+    date:"09-16",
+    label:"🎂 Yayo Eugenio"
+  },
+
+  {
+    date:"09-20",
+    label:"🎂 Paula"
+  },
+
+  {
+    date:"09-21",
+    label:"🎂 Mami"
+  },
+
+  {
+    date:"11-11",
+    label:"🎂 Julia"
+  },
+
+  {
+    date:"11-28",
+    label:"🎂 Vero · Evita"
+  },
+
+  {
+    date:"12-02",
+    label:"🎂 Yaya Manuela"
+  },
+
+  {
+    date:"12-03",
+    label:"🎂 Aby"
+  },
+
+  {
+    date:"12-05",
+    label:"🎂 Jose"
+  },
+
+  {
+    date:"12-24",
+    label:"🎂 Irene"
+  },
+
+  {
+    date:"12-30",
+    label:"🎂 Mi Rubia"
+  }
+
+];
+
+
+
+/* =====================================================
+   RELOJ
+===================================================== */
+
+function updateClock(){
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "bigTime"
+  ).textContent =
+
+    now.toLocaleTimeString(
+      "es-ES",
+      {
+        hour:"2-digit",
+        minute:"2-digit"
+      }
+    );
+
+
+  document.getElementById(
+    "todayDate"
+  ).textContent =
+
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+      }
+    );
+
+}
+
+
+
+/* =====================================================
+   LUNA
+===================================================== */
+
+function moonPhase(date){
+
+  const known =
+    new Date(
+      Date.UTC(
+        2000,
+        0,
+        6,
+        18,
+        14
+      )
+    );
+
+
+  const cycle =
+    29.53058867;
+
+
+  const age =
+
+    (
+      (
+        (
+          date
+          -
+          known
+        )
+        /
+        86400000
+      )
+      %
+      cycle
+      +
+      cycle
+    )
+    %
+    cycle;
+
+
+  if(
+    age < 1.85
+    ||
+    age >= 27.68
+  ){
+
+    return{
+      icon:"🌑",
+      name:"Luna nueva"
+    };
+
+  }
+
+
+  if(age < 5.54){
+
+    return{
+      icon:"🌒",
+      name:"Creciente"
+    };
+
+  }
+
+
+  if(age < 9.23){
+
+    return{
+      icon:"🌓",
+      name:"Cuarto creciente"
+    };
+
+  }
+
+
+  if(age < 12.92){
+
+    return{
+      icon:"🌔",
+      name:"Gibosa creciente"
+    };
+
+  }
+
+
+  if(age < 16.61){
+
+    return{
+      icon:"🌕",
+      name:"Luna llena"
+    };
+
+  }
+
+
+  if(age < 20.30){
+
+    return{
+      icon:"🌖",
+      name:"Gibosa menguante"
+    };
+
+  }
+
+
+  if(age < 23.99){
+
+    return{
+      icon:"🌗",
+      name:"Cuarto menguante"
+    };
+
+  }
+
+
+  return{
+    icon:"🌘",
+    name:"Menguante"
+  };
+
+}
+
+
+
+/* =====================================================
+   CALENDARIO
+===================================================== */
+
+function getEvents(
+  month,
+  day
+){
+
+  const key =
+
+    String(month)
+      .padStart(2,"0")
+
+    +
+
+    "-"
+
+    +
+
+    String(day)
+      .padStart(2,"0");
+
+
+  return events.filter(
+    item =>
+      item.date === key
+  );
+
+}
+
+
+function noteKey(
+  year,
+  month,
+  day
+){
+
+  return (
+    "calendar-note-"
+    +
+    year
+    +
+    "-"
+    +
+    month
+    +
+    "-"
+    +
+    day
+  );
+
+}
+
+
+function editDay(
+  year,
+  month,
+  day
+){
+
+  const key =
+    noteKey(
+      year,
+      month,
+      day
+    );
+
+
+  const current =
+    localStorage.getItem(
+      key
+    )
+    ||
+    "";
+
+
+  const value =
+    prompt(
+      "Escribe una nota breve para el "
+      +
+      day
+      +
+      "/"
+      +
+      month
+      +
+      ":\n\nEj.: Regalo María · Pelu · Cena",
+      current
+    );
+
+
+  if(value === null){
+
+    return;
+
+  }
+
+
+  const clean =
+    value
+      .trim()
+      .slice(
+        0,
+        24
+      );
+
+
+  if(clean){
+
+    localStorage.setItem(
+      key,
+      clean
+    );
+
+  }
+
+  else{
+
+    localStorage.removeItem(
+      key
+    );
+
+  }
+
+
+  renderCalendar();
+
+}
+
+
+function renderCalendar(){
+
+  const now =
+    new Date();
+
+
+  const year =
+    now.getFullYear();
+
+
+  const month =
+    now.getMonth();
+
+
+  const monthNumber =
+    month + 1;
+
+
+  document.getElementById(
+    "calendarTitle"
+  ).textContent =
+
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        month:"long",
+        year:"numeric"
+      }
+    );
+
+
+  const moonNow =
+    moonPhase(
+      now
+    );
+
+
+  document.getElementById(
+    "calendarMoon"
+  ).innerHTML =
+
+    moonNow.icon
+
+    +
+
+    "<br>"
+
+    +
+
+    moonNow.name;
+
+
+  document.getElementById(
+    "moonIcon"
+  ).textContent =
+    moonNow.icon;
+
+
+  document.getElementById(
+    "moonText"
+  ).textContent =
+    moonNow.name;
+
+
+  const grid =
+    document.getElementById(
+      "calendarGrid"
+    );
+
+
+  grid.innerHTML =
+    "";
+
+
+  const first =
+    new Date(
+      year,
+      month,
+      1
+    );
+
+
+  const days =
+    new Date(
+      year,
+      month + 1,
+      0
+    )
+    .getDate();
+
+
+  const start =
+    (
+      first.getDay()
+      +
+      6
+    )
+    %
+    7;
+
+
+  const previousDays =
+    new Date(
+      year,
+      month,
+      0
+    )
+    .getDate();
+
+
+  for(
+    let index = 0;
+    index < 42;
+    index++
+  ){
+
+    let day;
+
+    let cellMonth =
+      month;
+
+    let cellYear =
+      year;
+
+    let outside =
+      false;
+
+
+    if(index < start){
+
+      day =
+        previousDays
+        -
+        start
+        +
+        index
+        +
+        1;
+
+
+      cellMonth--;
+
+
+      outside =
+        true;
+
+    }
+
+    else if(
+      index >=
+      start + days
+    ){
+
+      day =
+        index
+        -
+        start
+        -
+        days
+        +
+        1;
+
+
+      cellMonth++;
+
+
+      outside =
+        true;
+
+    }
+
+    else{
+
+      day =
+        index
+        -
+        start
+        +
+        1;
+
+    }
+
+
+    if(cellMonth < 0){
+
+      cellMonth =
+        11;
+
+      cellYear--;
+
+    }
+
+
+    if(cellMonth > 11){
+
+      cellMonth =
+        0;
+
+      cellYear++;
+
+    }
+
+
+    const realMonth =
+      cellMonth + 1;
+
+
+    const button =
+      document.createElement(
+        "button"
+      );
+
+
+    button.className =
+      "calendar-day";
+
+
+    if(outside){
+
+      button
+        .classList
+        .add(
+          "other-month"
+        );
+
+    }
+
+
+    if(
+      !outside
+      &&
+      day === now.getDate()
+    ){
+
+      button
+        .classList
+        .add(
+          "today"
+        );
+
+    }
+
+
+    button.setAttribute(
+      "aria-label",
+      "Día "
+      +
+      day
+      +
+      ". Pulsa para añadir una nota."
+    );
+
+
+    button.onclick =
+      () =>
+        editDay(
+          cellYear,
+          realMonth,
+          day
+        );
+
+
+    let html =
+
+      '<div class="day-number">'
+      +
+      day
+      +
+      "</div>";
+
+
+    const dayMoon =
+      moonPhase(
+        new Date(
+          cellYear,
+          cellMonth,
+          day
+        )
+      );
+
+
+    if(
+      [
+        "Luna nueva",
+        "Cuarto creciente",
+        "Luna llena",
+        "Cuarto menguante"
+      ]
+      .includes(
+        dayMoon.name
+      )
+    ){
+
+      html +=
+
+        '<span class="moon-day">'
+        +
+        dayMoon.icon
+        +
+        "</span>";
+
+    }
+
+
+    html +=
+      '<div class="calendar-notes">';
+
+
+    const dayEvents =
+      getEvents(
+        realMonth,
+        day
+      );
+
+
+    dayEvents.forEach(
+      event => {
+
+        html +=
+
+          '<span class="birthday-label">'
+          +
+          event.label
+          +
+          "</span>";
+
+      }
+    );
+
+
+    const stored =
+      localStorage.getItem(
+        noteKey(
+          cellYear,
+          realMonth,
+          day
+        )
+      );
+
+
+    if(stored){
+
+      html +=
+
+        '<span class="user-note">'
+        +
+        escapeHtml(
+          stored
+        )
+        +
+        "</span>";
+
+    }
+
+
+    html +=
+      "</div>";
+
+
+    button.innerHTML =
+      html;
+
+
+    grid.appendChild(
+      button
+    );
+
+  }
+
+}
+
+
+function escapeHtml(text){
+
+  const div =
+    document.createElement(
+      "div"
+    );
+
+
+  div.textContent =
+    text;
+
+
+  return div.innerHTML;
+
+}
+
+
+
+/* =====================================================
+   FRANJA ACTUAL
+===================================================== */
+
+function markCurrentSlot(){
+
+  const now =
+    new Date();
+
+
+  const minutes =
+
+    now.getHours()
+    *
+    60
+
+    +
+
+    now.getMinutes();
+
+
+  document
+    .querySelectorAll(
+      ".day-card"
+    )
+    .forEach(
+      card => {
+
+        card
+          .classList
+          .remove(
+            "now"
+          );
+
+
+        const start =
+          Number(
+            card.dataset.start
+          );
+
+
+        const end =
+          Number(
+            card.dataset.end
+          );
+
+
+        if(
+          minutes >= start
+          &&
+          (
+            end === 1440
+            ||
+            minutes < end
+          )
+        ){
+
+          card
+            .classList
+            .add(
+              "now"
+            );
+
+
+          const badge =
+            document.createElement(
+              "span"
+            );
+
+
+          badge.className =
+            "now-badge";
+
+
+          badge.textContent =
+            "Ahora";
+
+
+          card.appendChild(
+            badge
+          );
+
+        }
+
+      }
+    );
+
+}
+
+
+
+/* =====================================================
+   CICLO
+===================================================== */
+
+function getCycle(){
+
+  const saved =
+    localStorage.getItem(
+      "periodStart"
+    );
+
+
+  if(!saved){
+
+    return null;
+
+  }
+
+
+  const start =
+    new Date(
+      saved
+      +
+      "T12:00:00"
+    );
+
+
+  const today =
+    new Date();
+
+
+  const elapsed =
+    Math.max(
+      0,
+      Math.floor(
+        (
+          today
+          -
+          start
+        )
+        /
+        86400000
+      )
+    );
+
+
+  const day =
+    (
+      elapsed
+      %
+      28
+    )
+    +
+    1;
+
+
+  if(day <= 5){
+
+    return{
+      day,
+      phase:"Menstruación",
+      icon:"🌹",
+      advice:
+        "Baja el ritmo si lo necesitas y prioriza comodidad."
+    };
+
+  }
+
+
+  if(day <= 13){
+
+    return{
+      day,
+      phase:"Fase folicular",
+      icon:"🌱",
+      advice:
+        "Puede ir aumentando tu energía."
+    };
+
+  }
+
+
+  if(day <= 16){
+
+    return{
+      day,
+      phase:"Ovulatoria estimada",
+      icon:"🌸",
+      advice:
+        "Puedes encontrarte con más energía o ganas de socializar."
+    };
+
+  }
+
+
+  return{
+    day,
+    phase:"Fase lútea",
+    icon:"🌙",
+    advice:
+      "Deja margen y ajusta los planes a cómo te encuentres."
+  };
+
+}
+
+
+function updateCycle(){
+
+  const data =
+    getCycle();
+
+
+  if(!data){
+
+    document.getElementById(
+      "cycleTitle"
+    ).textContent =
+      "Ciclo";
+
+
+    document.getElementById(
+      "cycleSubtitle"
+    ).textContent =
+      "Sin registrar";
+
+
+    document.getElementById(
+      "cyclePhase"
+    ).textContent =
+      "Sin registrar";
+
+
+    document.getElementById(
+      "cycleAdvice"
+    ).textContent =
+      "Marca el primer día cuando te baje.";
+
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    "cycleTitle"
+  ).textContent =
+
+    data.icon
+    +
+    " Día "
+    +
+    data.day;
+
+
+  document.getElementById(
+    "cycleSubtitle"
+  ).textContent =
+    data.phase;
+
+
+  document.getElementById(
+    "cyclePhase"
+  ).textContent =
+
+    "Día "
+    +
+    data.day
+    +
+    " · "
+    +
+    data.phase;
+
+
+  document.getElementById(
+    "cycleAdvice"
+  ).textContent =
+
+    data.advice
+    +
+    " Es solo una orientación personal.";
+
+}
+
+
+function periodToday(){
+
+  const date =
+    new Date();
+
+
+  const year =
+    date.getFullYear();
+
+
+  const month =
+    String(
+      date.getMonth() + 1
+    )
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  const day =
+    String(
+      date.getDate()
+    )
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  localStorage.setItem(
+    "periodStart",
+    year
+    +
+    "-"
+    +
+    month
+    +
+    "-"
+    +
+    day
+  );
+
+
+  updateCycle();
+
+}
+
+
+function clearPeriod(){
+
+  localStorage.removeItem(
+    "periodStart"
+  );
+
+
+  updateCycle();
+
+}
+
+
+function openCycle(){
+
+  document.getElementById(
+    "cyclePanel"
+  )
+  .classList
+  .add(
+    "show"
+  );
+
+}
+
+
+function closeCycle(event){
+
+  if(
+    event.target.id
+    ===
+    "cyclePanel"
+  ){
+
+    document.getElementById(
+      "cyclePanel"
+    )
+    .classList
+    .remove(
+      "show"
+    );
+
+  }
+
+}
+
+
+
+/* =====================================================
+   APPS
+===================================================== */
+
+function openApp(url){
+
+  const link =
+    document.createElement(
+      "a"
+    );
+
+
+  link.href =
+    url;
+
+
+  link.style.display =
+    "none";
+
+
+  document.body.appendChild(
+    link
+  );
+
+
+  link.click();
+
+
+  setTimeout(
+    () =>
+      link.remove(),
+    500
+  );
+
+}
+
+
+
+/* =====================================================
+   ARRANQUE
+===================================================== */
+
+updateClock();
+
+renderCalendar();
+
+updateCycle();
+
+markCurrentSlot();
+
+
+setInterval(
+  updateClock,
+  1000
+);
+
+
+setInterval(
+  markCurrentSlot,
+  60000
+);
+
+</script>
+
+
+</body>
+
+</html>

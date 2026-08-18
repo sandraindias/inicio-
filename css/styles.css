@@ -1,2062 +1,1021 @@
-:root{
-  --bg:#f7f5f8;
-  --card:rgba(255,255,255,.92);
-  --text:#151622;
-  --muted:#73737d;
+/* =========================================================
+   MI INICIO — STYLES
+   Base limpia
+========================================================= */
 
-  --pink:#ff356f;
-  --purple:#7657ec;
-  --green:#22bd7b;
-  --orange:#ff7400;
-  --blue:#168bd9;
+:root {
+  --bg: #f7f5f8;
+  --card: rgba(255, 255, 255, 0.94);
+  --text: #17171c;
+  --muted: #6f6c75;
+
+  --pink: #ff376f;
+  --pink-soft: #ffe1eb;
+  --pink-light: #fff1f6;
+
+  --blue-soft: #eeeaff;
+
+  --shadow:
+    0 8px 28px rgba(38, 25, 35, 0.055);
+
+  --radius: 24px;
 }
 
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-html,
-body{
-  margin:0;
-  min-height:100%;
+html {
+  min-height: 100%;
+  background: var(--bg);
 }
 
-body{
+body {
+  margin: 0;
+
+  min-height: 100vh;
 
   font-family:
     -apple-system,
     BlinkMacSystemFont,
     "SF Pro Display",
+    "SF Pro Text",
     "Helvetica Neue",
     Arial,
     sans-serif;
 
-  color:var(--text);
+  color: var(--text);
 
   background:
-
     radial-gradient(
-      circle at 2% 0%,
-      rgba(255,218,230,.78),
-      transparent 27%
+      circle at 7% 0%,
+      rgba(255, 213, 228, 0.72),
+      transparent 28%
     ),
-
     radial-gradient(
-      circle at 98% 2%,
-      rgba(226,218,255,.76),
-      transparent 31%
+      circle at 95% 2%,
+      rgba(222, 216, 255, 0.72),
+      transparent 29%
     ),
-
     var(--bg);
 
-  padding:
-    calc(env(safe-area-inset-top) + 20px)
-    16px
-    calc(env(safe-area-inset-bottom) + 125px);
-
+  -webkit-font-smoothing: antialiased;
 }
 
 button,
-input{
-  font:inherit;
+a {
+  font: inherit;
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-  display:grid;
-
-  grid-template-columns:
-    minmax(0,1fr)
-    150px;
-
-  gap:12px;
-
-  align-items:start;
-
-  margin-bottom:18px;
-
-}
-
-.greeting{
-
-  font-size:18px;
-
-}
-
-.greeting strong{
-
-  color:var(--pink);
-
-}
-
-.big-time{
-
-  margin-top:7px;
-
-  font-size:55px;
-
-  line-height:.95;
-
-  letter-spacing:-4px;
-
-  font-weight:520;
-
-}
-
-.today-date{
-
-  margin-top:10px;
-
-  font-size:14px;
-
-  text-transform:capitalize;
-
-}
-
-
-/* =====================================================
-   CICLO + LUNA
-===================================================== */
-
-.context-row{
-
-  display:flex;
-
-  gap:7px;
-
-  margin-top:12px;
-
-}
-
-.context-pill{
-
-  min-width:0;
-
-  display:flex;
-
-  align-items:center;
-
-  gap:7px;
-
-  padding:8px 9px;
-
-  border:0;
-
-  border-radius:15px;
-
-  background:rgba(255,255,255,.72);
-
-}
-
-.context-pill span:last-child{
-
-  min-width:0;
-
-  display:flex;
-
-  flex-direction:column;
-
-  text-align:left;
-
-}
-
-.context-pill b{
-
-  font-size:10px;
-
-}
-
-.context-pill small{
-
-  margin-top:2px;
-
-  color:var(--muted);
-
-  font-size:8px;
-
-  overflow:hidden;
-
-  white-space:nowrap;
-
-  text-overflow:ellipsis;
-
-}
-
-.context-icon{
-
-  font-size:18px;
-
-}
-
-
-/* =====================================================
-   ENTRETENIMIENTO
-===================================================== */
-
-.entertainment-card{
-
-  padding:12px 8px;
-
-  border-radius:22px;
-
-  background:rgba(255,255,255,.9);
-
-  box-shadow:
-    0 7px 24px rgba(0,0,0,.055);
-
-}
-
-.entertainment-title{
-
-  margin-bottom:10px;
-
-  font-size:12px;
-
-  font-weight:850;
-
-}
-
-.entertainment-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:4px;
-
-}
-
-.mini-app{
-
-  padding:0;
-
-  border:0;
-
-  background:transparent;
-
-  text-align:center;
-
-}
-
-.mini-app small{
-
-  display:block;
-
-  margin-top:4px;
-
-  font-size:8px;
-
-}
-
-.mini-icon{
-
-  width:43px;
-
-  height:43px;
-
-  margin:auto;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  border-radius:12px;
-
-  overflow:hidden;
-
-  background:white;
-
-  box-shadow:
-    0 3px 10px rgba(0,0,0,.08);
-
-}
-
-.mini-icon img{
-
-  width:88%;
-
-  height:88%;
-
-}
-
-.music-icon{
-
-  background:
-    linear-gradient(
-      145deg,
-      #ff3157,
-      #ff5c6e
-    );
-
-  color:white;
-
-  font-size:25px;
-
-}
-
-.spotify-icon{
-
-  background:#111;
-
-}
-
-
-/* =====================================================
-   GENERALES
-===================================================== */
-
-.eyebrow{
-
-  color:var(--pink);
-
-  font-size:10px;
-
-  font-weight:900;
-
-  letter-spacing:.7px;
-
-}
-
-.section-header{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:10px;
-
-  margin-bottom:13px;
-
-}
-
-.section-header h2{
-
-  margin:3px 0 0;
-
-  font-size:23px;
-
-}
-
-.text-link{
-
-  color:#444;
-
-  font-size:11px;
-
-  font-weight:800;
-
-  text-decoration:none;
-
-}
-
-
-/* =====================================================
-   CALENDARIO
-===================================================== */
-
-.calendar-layout{
-
-  display:grid;
-
-  grid-template-columns:
-    minmax(0,1fr)
-    190px;
-
-  gap:12px;
-
-  align-items:start;
-
-  margin-bottom:18px;
-
-}
-
-.calendar-card,
-.suggestions-card{
-
-  padding:15px;
-
-  border-radius:24px;
-
-  background:var(--card);
-
-  box-shadow:
-    0 8px 27px rgba(0,0,0,.05);
-
-}
-
-.calendar-header{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:flex-start;
-
-  margin-bottom:12px;
-
-}
-
-.calendar-header h1{
-
-  margin:2px 0 0;
-
-  font-size:29px;
-
-  text-transform:capitalize;
-
-}
-
-.month-moon{
-
-  color:var(--muted);
-
-  font-size:11px;
-
-  text-align:right;
-
-}
-
-.calendar-weekdays,
-.calendar-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(7,1fr);
-
-  gap:5px;
-
-}
-
-.calendar-weekdays span{
-
-  padding:4px 0;
-
-  text-align:center;
-
-  color:#9997a0;
-
-  font-size:9px;
-
-  font-weight:900;
-
-}
-
-.calendar-day{
-
-  position:relative;
-
-  min-height:52px;
-
-  padding:6px;
-
-  border-radius:13px;
-
-  background:#f8f7fa;
-
-}
-
-.calendar-day.other-month{
-
-  opacity:.27;
-
-}
-
-.calendar-day.today{
-
-  background:#111;
-
-  color:white;
-
-}
-
-.day-number{
-
-  font-size:11px;
-
-  font-weight:850;
-
-}
-
-.day-events{
-
-  margin-top:4px;
-
-  display:flex;
-
-  gap:2px;
-
-  flex-wrap:wrap;
-
-}
-
-.day-event-icon{
-
-  font-size:8px;
-
-}
-
-.moon-day{
-
-  position:absolute;
-
-  top:5px;
-
-  right:5px;
-
-  font-size:8px;
-
-}
-
-.calendar-legend{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:9px;
-
-  margin-top:10px;
-
-  color:#777;
-
-  font-size:8px;
-
-}
-
-
-/* =====================================================
-   SUGERENCIAS
-===================================================== */
-
-.suggestions-card h2{
-
-  margin:
-    4px
-    0
-    12px;
-
-  font-size:19px;
-
-}
-
-.suggestion-list{
-
-  display:grid;
-
-  gap:8px;
-
-}
-
-.suggestion{
-
-  padding:10px;
-
-  border-radius:15px;
-
-  background:#faf8fb;
-
-}
-
-.suggestion b{
-
-  display:block;
-
-  font-size:11px;
-
-}
-
-.suggestion small{
-
-  display:block;
-
-  margin-top:3px;
-
-  color:var(--muted);
-
-  font-size:9px;
-
-  line-height:1.35;
-
-}
-
-
-/* =====================================================
-   TU DÍA
-===================================================== */
-
-.day-section{
-
-  margin-bottom:20px;
-
-}
-
-.life-mode-badge{
-
-  padding:7px 10px;
-
-  border-radius:999px;
-
-  background:#111;
-
-  color:white;
-
-  font-size:9px;
-
-  font-weight:850;
-
-}
-
-.day-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:11px;
-
-}
-
-.day-card{
-
-  position:relative;
-
-  min-height:125px;
-
-  padding:14px;
-
-  border-radius:22px;
-
-  background:white;
-
-  border:2px solid #eee;
-
-}
-
-.day-card.now{
-
-  box-shadow:
-    0 9px 26px rgba(0,0,0,.10);
-
-}
-
-.now-badge{
-
-  position:absolute;
-
-  right:9px;
-
-  top:9px;
-
-  padding:5px 7px;
-
-  border-radius:999px;
-
-  background:#111;
-
-  color:white;
-
-  font-size:7px;
-
-  font-weight:900;
-
-}
-
-.day-hours{
-
-  font-size:12px;
-
-  font-weight:900;
-
-}
-
-.day-title{
-
-  margin-top:8px;
-
-  font-size:17px;
-
-  font-weight:900;
-
-}
-
-.day-desc{
-
-  margin-top:6px;
-
-  color:var(--muted);
-
-  font-size:10px;
-
-}
-
-.work{
-
-  border-color:#ffc5d7;
-
-}
-
-.work .day-hours,
-.work .day-title{
-
-  color:#e93870;
-
-}
-
-.gym{
-
-  border-color:#ffd1ae;
-
-}
-
-.gym .day-hours,
-.gym .day-title{
-
-  color:#ff6b00;
-
-}
-
-.personal{
-
-  border-color:#bde9d7;
-
-}
-
-.personal .day-hours,
-.personal .day-title{
-
-  color:#1aa878;
-
-}
-
-.ocio{
-
-  border-color:#d9ccff;
-
-}
-
-.ocio .day-hours,
-.ocio .day-title{
-
-  color:#7d59e5;
-
-}
-
-.walk{
-
-  border-color:#bbddfb;
-
-}
-
-.walk .day-hours,
-.walk .day-title{
-
-  color:#1987d3;
-
-}
-
-.sleep{
-
-  border-color:#c8d4ff;
-
-}
-
-.sleep .day-hours,
-.sleep .day-title{
-
-  color:#3451bd;
-
-}
-
-
-/* =====================================================
-   DESCUBRIMIENTO
-===================================================== */
-
-.discovery-section{
-
-  margin-bottom:20px;
-
-}
-
-.discovery-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:9px;
-
-}
-
-.discovery-card{
-
-  min-height:110px;
-
-  padding:13px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:5px;
-
-  border-radius:20px;
-
-  background:white;
-
-  color:var(--text);
-
-  text-decoration:none;
-
-  box-shadow:
-    0 6px 20px rgba(0,0,0,.04);
-
-}
-
-.discovery-card span{
-
-  font-size:23px;
-
-}
-
-.discovery-card b{
-
-  font-size:11px;
-
-}
-
-.discovery-card small{
-
-  color:var(--muted);
-
-  font-size:9px;
-
-  line-height:1.35;
-
+button {
+  cursor: pointer;
 }
-
-
-/* =====================================================
-   CICLO SHEET
-===================================================== */
-
-.sheet-backdrop{
 
-  position:fixed;
-
-  inset:0;
-
-  z-index:999;
-
-  display:none;
-
-  align-items:flex-end;
-
-  background:rgba(0,0,0,.2);
-
+a {
+  color: inherit;
+  text-decoration: none;
 }
-
-.sheet-backdrop.show{
-
-  display:flex;
 
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.sheet{
 
-  width:100%;
+/* =========================================================
+   PÁGINA TRABAJO
+========================================================= */
 
+.trabajo-page {
   padding:
-    13px
-    20px
-    calc(env(safe-area-inset-bottom) + 25px);
-
-  border-radius:
-    28px
-    28px
-    0
-    0;
-
-  background:white;
-
+    calc(18px + env(safe-area-inset-top))
+    14px
+    calc(105px + env(safe-area-inset-bottom));
 }
 
-.sheet-handle{
-
-  width:45px;
-
-  height:5px;
-
-  margin:
-    0
-    auto
-    15px;
-
-  border-radius:999px;
-
-  background:#dedde1;
-
-}
-
-.sheet h2{
-
-  margin:0;
-
-}
-
-.muted{
-
-  color:var(--muted);
-
-  font-size:12px;
-
-}
-
-.cycle-status{
-
-  margin-top:15px;
-
-  padding:15px;
-
-  border-radius:18px;
-
-  background:#fff4f8;
-
-}
-
-.cycle-status small{
-
-  color:var(--pink);
-
-  font-size:9px;
-
-  font-weight:900;
-
-}
-
-.cycle-status strong{
-
-  display:block;
-
-  margin-top:5px;
-
-  font-size:18px;
-
-}
-
-.cycle-status p{
-
-  margin:
-    8px
-    0
-    0;
-
-  color:#62616a;
-
-  font-size:11px;
-
-  line-height:1.4;
-
-}
-
-.sheet-actions{
-
-  display:grid;
-
-  grid-template-columns:
-    1fr
-    1fr;
-
-  gap:8px;
-
-  margin-top:12px;
-
-}
-
-.primary-btn,
-.secondary-btn{
-
-  padding:13px;
-
-  border:0;
-
-  border-radius:15px;
-
-  font-size:11px;
-
-  font-weight:850;
-
-}
-
-.primary-btn{
-
-  background:#111;
-
-  color:white;
-
-}
-
-.secondary-btn{
-
-  background:#efedf1;
-
+.trabajo-shell {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 
-/* =====================================================
-   NAV
-===================================================== */
+/* =========================================================
+   CABECERA
+========================================================= */
 
-.bottom-nav{
+.trabajo-header {
+  position: relative;
 
-  position:fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
-  z-index:100;
+  gap: 14px;
 
-  left:13px;
-  right:13px;
+  min-height: 180px;
 
-  bottom:
-    calc(
-      env(safe-area-inset-bottom)
-      + 15px
-    );
+  padding: 7px 0 12px;
+}
 
-  display:grid;
+.trabajo-header-main {
+  flex: 1;
+  min-width: 0;
+  padding-top: 10px;
+}
 
-  grid-template-columns:
-    repeat(3,1fr);
+.trabajo-greeting {
+  font-size: 17px;
+  font-weight: 500;
 
-  gap:5px;
+  line-height: 1.2;
 
-  padding:6px;
+  white-space: nowrap;
+}
 
-  border-radius:25px;
+.trabajo-greeting strong {
+  color: var(--pink);
+  font-weight: 800;
+}
 
-  background:rgba(250,250,251,.94);
+.trabajo-time {
+  margin-top: 5px;
 
-  backdrop-filter:blur(28px);
+  font-size: clamp(46px, 12vw, 64px);
+  font-weight: 400;
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+}
+
+.trabajo-date {
+  margin-top: 10px;
+
+  color: #48464e;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-transform: capitalize;
+}
+
+.trabajo-mode-pill {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 14px;
+
+  padding: 6px 11px;
+
+  border-radius: 999px;
+
+  background: var(--pink-light);
+
+  color: var(--pink);
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 0.25px;
+}
+
+.trabajo-mode-pill span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2bd48b;
+}
+
+
+/* =========================================================
+   CABECERA DERECHA
+========================================================= */
+
+.trabajo-header-side {
+  width: 146px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 8px;
+}
+
+.trabajo-top-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 5px;
+}
+
+.mini-action {
+  min-height: 33px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 9px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #1770db;
+
+  font-size: 9px;
+  font-weight: 800;
 
   box-shadow:
-    0 7px 31px rgba(0,0,0,.12);
-
-}
-
-.nav-item{
-
-  min-height:52px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:5px;
-
-  border-radius:19px;
-
-  color:#686873;
-
-  text-decoration:none;
-
-  font-size:10px;
-
-  font-weight:800;
-
-}
-
-.nav-item.active{
-
-  background:#ffe4ed;
-
-  color:#ff2866;
-
+    0 4px 15px rgba(0, 0, 0, 0.035);
 }
 
 
-/* =====================================================
-   MÓVIL
-===================================================== */
+/* =========================================================
+   ENTRETENIMIENTO
+========================================================= */
 
-@media(max-width:600px){
+.entertainment-mini {
+  padding: 9px 8px 8px;
 
-  .calendar-layout{
+  border-radius: 19px;
 
-    grid-template-columns:1fr;
+  background: rgba(255, 255, 255, 0.94);
 
-  }
-
-  .suggestions-card{
-
-    order:2;
-
-  }
-
-  .discovery-grid{
-
-    grid-template-columns:
-      repeat(2,1fr);
-
-  }
-
+  box-shadow: var(--shadow);
 }
 
-@media(max-width:390px){
+.entertainment-title {
+  margin-bottom: 7px;
 
-  body{
-
-    padding-left:12px;
-
-    padding-right:12px;
-
-  }
-
-  .hero{
-
-    grid-template-columns:
-      minmax(0,1fr)
-      137px;
-
-    gap:8px;
-
-  }
-
-  .big-time{
-
-    font-size:48px;
-
-  }
-
-  .calendar-day{
-
-    min-height:46px;
-
-    padding:5px;
-
-  }
-  }
-  /* =====================================================
-   AMOR AL ARTE - PANTALLA SEGÚN HORA
-===================================================== */
-
-.aal-mode{
-  display:none;
+  font-size: 10px;
+  font-weight: 850;
 }
 
-.aal-card{
+.entertainment-apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  margin-bottom:14px;
-
-  padding:16px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.92);
-
-  box-shadow:
-    0 8px 27px rgba(0,0,0,.05);
-
+  gap: 3px;
 }
 
-.aal-top{
+.entertainment-app {
+  min-width: 0;
 
-  display:flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  align-items:flex-start;
+  gap: 4px;
 
-  justify-content:space-between;
+  padding: 0;
 
-  gap:10px;
+  border: 0;
 
+  background: transparent;
+
+  color: var(--text);
 }
 
-.aal-top h1{
+.entertainment-icon {
+  width: 42px;
+  height: 42px;
 
-  margin:4px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  font-size:27px;
+  overflow: hidden;
 
+  border-radius: 11px;
+
+  background: white;
 }
 
-.aal-hours{
+.entertainment-icon img {
+  width: 100%;
+  height: 100%;
 
-  padding:7px 9px;
-
-  border-radius:999px;
-
-  background:#f1eff3;
-
-  font-size:9px;
-
-  font-weight:850;
-
+  object-fit: contain;
 }
 
-.aal-countdown{
-
-  margin-top:18px;
-
-  font-size:48px;
-
-  font-weight:500;
-
-  letter-spacing:-2px;
-
-}
-
-.aal-app-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:9px;
-
-}
-
-.aal-app-grid button{
-
-  min-height:79px;
-
-  padding:9px 5px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:5px;
-
-  border:0;
-
-  border-radius:17px;
-
-  background:#f8f7fa;
-
-  font-size:9px;
-
-  font-weight:800;
-
-}
-
-.aal-app-grid button span{
-
-  font-size:25px;
-
-}
-
-.aal-alert{
-
-  display:none;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:10px;
-
-  margin-bottom:12px;
-
-  padding:13px;
-
-  border-radius:18px;
-
-  background:#eafaf2;
-
-}
-
-.aal-alert div:first-child{
-
-  display:flex;
-
-  flex-direction:column;
-
-}
-
-.aal-alert strong{
-
-  font-size:12px;
-
-}
-
-.aal-alert small{
-
-  margin-top:3px;
-
-  color:#777;
-
-  font-size:9px;
-
-}
-
-.aal-alert button{
-
-  padding:9px 11px;
-
-  border:0;
-
-  border-radius:12px;
-
-  background:#111;
-
-  color:white;
-
-  font-size:10px;
-
-  font-weight:850;
-
-}
-
-.purple-alert{
-
-  background:#f1edff;
-
-}
-
-.pomo-box{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-}
-
-.pomo-big{
-
-  font-size:47px;
-
-  letter-spacing:-2px;
-
-}
-
-.pomo-play{
-
-  width:68px;
-
-  height:68px;
-
-  border:7px solid #ffdce6;
-
-  border-radius:50%;
-
-  background:white;
-
-  color:#ff356f;
-
-  font-size:24px;
-
-}
-
-.project-actions{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:8px;
-
-}
-
-.project-actions button{
-
-  min-height:70px;
-
-  border:0;
-
-  border-radius:17px;
-
-  background:#f7f5f8;
-
-  font-size:11px;
-
-  font-weight:800;
-
-}
-
-.night-list{
-
-  display:grid;
-
-  gap:8px;
-
-  margin-top:15px;
-
-}
-
-.night-list div{
-
-  padding:13px;
-
-  border-radius:15px;
-
-  background:#f8f7fa;
-
-  font-size:12px;
-
-  font-weight:750;
-
-
-}
-
-/* =====================================================
-   TRABAJO
-===================================================== */
-
-.routine-page{
-  max-width:520px;
-  margin:0 auto;
-}
-
-
-/* CABECERA */
-
-.routine-header{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  margin-bottom:18px;
-}
-
-.back-button{
-  width:42px;
-  height:42px;
-
-  flex:0 0 42px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,.88);
-
-  color:#151622;
-
-  text-decoration:none;
-
-  font-size:38px;
-  font-weight:300;
-  line-height:1;
-
-  box-shadow:
-    0 5px 18px rgba(0,0,0,.055);
-}
-
-.routine-header-text{
-  min-width:0;
-  padding-top:3px;
-}
-
-.routine-header h1{
-  margin:3px 0 0;
-
-  font-size:30px;
-  line-height:1.05;
-
-  letter-spacing:-1.1px;
-}
-
-.routine-header p{
-  margin:7px 0 0;
-
-  color:var(--muted);
-
-  font-size:12px;
-  font-weight:600;
-}
-
-
-/* =====================================================
-   HERO / CONTADOR
-===================================================== */
-
-.work-hero{
-  margin-bottom:14px;
-
-  padding:18px;
-
-  border-radius:27px;
-
+.entertainment-icon.music {
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.97),
-      rgba(255,240,246,.95)
+      #ff315d,
+      #ff557b
     );
 
-  border:
-    1px solid
-    rgba(255,174,201,.38);
+  color: white;
 
-  box-shadow:
-    0 10px 32px rgba(157,38,80,.075);
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.work-hero-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:12px;
-}
+.entertainment-app small {
+  max-width: 100%;
 
-.work-small-title{
-  color:#e93870;
+  overflow: hidden;
 
-  font-size:9px;
-  font-weight:900;
+  color: #37353d;
 
-  letter-spacing:.7px;
-}
+  font-size: 7px;
 
-.work-status{
-  margin-top:4px;
-
-  color:#72717a;
-
-  font-size:11px;
-  font-weight:750;
-}
-
-.work-mode-pill{
-  padding:7px 11px;
-
-  border-radius:999px;
-
-  background:#ffe1eb;
-
-  color:#e8326b;
-
-  font-size:9px;
-  font-weight:900;
-}
-
-.work-countdown{
-  margin-top:18px;
-
-  font-size:50px;
-  font-weight:520;
-
-  line-height:1;
-
-  letter-spacing:-2.6px;
-}
-
-.work-countdown-text{
-  min-height:14px;
-
-  margin-top:7px;
-
-  color:var(--muted);
-
-  font-size:10px;
-  font-weight:700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 
-/* =====================================================
-   DAILY
-===================================================== */
+/* =========================================================
+   TARJETAS GENERALES
+========================================================= */
 
-.daily-reminder{
-  display:none;
+.work-panel {
+  width: 100%;
 
-  align-items:center;
-  justify-content:space-between;
+  margin-bottom: 13px;
 
-  gap:12px;
+  padding: 15px;
 
-  margin-bottom:14px;
+  border-radius: var(--radius);
 
-  padding:13px;
+  background: var(--card);
 
-  border-radius:21px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f0edff,
-      #e8f5ff
-    );
-
-  box-shadow:
-    0 6px 22px rgba(83,71,163,.07);
-}
-
-.daily-reminder.show{
-  display:flex;
-}
-
-.daily-info{
-  min-width:0;
-
-  display:flex;
-  align-items:center;
-
-  gap:10px;
-}
-
-.daily-icon{
-  width:42px;
-  height:42px;
-
-  flex:0 0 42px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:13px;
-
-  background:white;
-
-  box-shadow:
-    0 3px 10px rgba(0,0,0,.06);
-}
-
-.daily-icon img{
-  width:29px;
-  height:29px;
-}
-
-.daily-info strong{
-  display:block;
-
-  font-size:12px;
-}
-
-.daily-info span{
-  display:block;
-
-  margin-top:3px;
-
-  color:#77747f;
-
-  font-size:9px;
-}
-
-.daily-open{
-  padding:10px 13px;
-
-  border:0;
-
-  border-radius:13px;
-
-  background:#111;
-
-  color:white;
-
-  font-size:10px;
-  font-weight:850;
+  box-shadow: var(--shadow);
 }
 
 
-/* =====================================================
-   SECCIONES
-===================================================== */
+/* =========================================================
+   POMODORO
+========================================================= */
 
-.routine-section{
-  margin-bottom:14px;
+.pomodoro-panel {
+  min-height: 128px;
 
-  padding:16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  border-radius:26px;
+  gap: 20px;
 
-  background:rgba(255,255,255,.91);
-
-  box-shadow:
-    0 8px 27px rgba(0,0,0,.05);
+  padding: 17px 18px;
 }
 
-.routine-section-header{
-  display:flex;
+.panel-accent-title {
+  color: var(--pink);
 
-  align-items:center;
-  justify-content:space-between;
+  font-size: 17px;
+  font-weight: 900;
 
-  margin-bottom:14px;
+  letter-spacing: -0.3px;
 }
 
-.routine-section-header h2{
-  margin:3px 0 0;
+.pomodoro-time {
+  margin-top: 11px;
 
-  font-size:21px;
+  font-size: 44px;
+  font-weight: 400;
 
-  letter-spacing:-.6px;
+  line-height: 0.95;
+
+  letter-spacing: -2.3px;
+}
+
+.pomodoro-status {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 10px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: var(--pink-soft);
+
+  color: #3f3b43;
+
+  font-size: 9px;
+}
+
+.pomodoro-status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #191921;
+}
+
+.pomodoro-right {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.pomodoro-play {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 0 0 3px;
+
+  border: 6px solid #ffd6e2;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: var(--pink);
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.pomodoro-play:active {
+  transform: scale(0.95);
+}
+
+.pomodoro-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.pomodoro-count {
+  font-size: 9px;
+}
+
+.pomodoro-reset {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #1985ff;
+
+  font-size: 16px;
 }
 
 
-/* =====================================================
-   APPS DE TRABAJO
-===================================================== */
+/* =========================================================
+   CABECERAS DE SECCIÓN
+========================================================= */
 
-.work-app-grid{
-  display:grid;
+.app-section {
+  padding: 15px 15px 17px;
+}
+
+.section-title {
+  margin: 0 0 13px;
+
+  font-size: 15px;
+  font-weight: 850;
+
+  letter-spacing: -0.3px;
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.section-heading-row .section-title {
+  margin: 0;
+}
+
+.collapse-button {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 28px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #f3f3f5;
+
+  color: #177df4;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.clickable-heading {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CUADRÍCULA DE APPS
+========================================================= */
+
+.app-grid {
+  display: grid;
 
   grid-template-columns:
-    repeat(4,minmax(0,1fr));
+    repeat(4, minmax(0, 1fr));
 
-  gap:13px 7px;
+  column-gap: 12px;
+  row-gap: 17px;
+
+  transition:
+    opacity 0.2s ease,
+    max-height 0.25s ease;
 }
 
-.work-app{
-  min-width:0;
+.app-item {
+  min-width: 0;
 
-  padding:2px 1px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  border:0;
+  gap: 6px;
 
-  background:transparent;
+  padding: 0;
 
-  display:flex;
+  border: 0;
 
-  flex-direction:column;
+  background: transparent;
 
-  align-items:center;
-  justify-content:flex-start;
-
-  gap:7px;
-
-  color:#191920;
-
-  cursor:pointer;
+  color: var(--text);
 }
 
-.work-app:active{
-  transform:scale(.94);
+.app-item:active {
+  transform: scale(0.94);
 }
 
-.work-app-icon{
-  width:56px;
-  height:56px;
+.app-icon {
+  width: 48px;
+  height: 48px;
 
-  display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  align-items:center;
-  justify-content:center;
+  overflow: hidden;
 
-  overflow:hidden;
+  border-radius: 12px;
 
-  border-radius:15px;
-
-  background:white;
+  background: white;
 
   box-shadow:
-    0 4px 14px rgba(0,0,0,.09);
+    0 4px 11px rgba(0, 0, 0, 0.07);
 }
 
-.work-app-icon img{
-  width:82%;
-  height:82%;
+.app-icon img {
+  width: 100%;
+  height: 100%;
 
-  object-fit:contain;
+  object-fit: contain;
 }
 
-.work-app > span{
-  width:100%;
+.app-name {
+  width: 100%;
 
-  overflow:hidden;
+  overflow: hidden;
 
-  white-space:nowrap;
+  color: #27252c;
 
-  text-overflow:ellipsis;
+  text-align: center;
 
-  text-align:center;
+  font-size: 8px;
+  font-weight: 500;
 
-  font-size:9px;
-  font-weight:700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.calendar-icon{
+
+/* =========================================================
+   ICONOS PERSONALIZADOS
+========================================================= */
+
+.custom-icon {
+  font-weight: 800;
+}
+
+
+/* LLAMADAS */
+
+.calls-icon {
   background:
     linear-gradient(
       145deg,
-      #ff455d,
-      #ff765e
+      #28dd6c,
+      #3cca68
     );
 
-  color:white;
-
-  font-size:27px;
+  font-size: 23px;
 }
 
-.chatgpt-icon{
-  background:#111;
+
+/* TIEMPO JORNADA */
+
+.jornada-icon {
+  background:
+    linear-gradient(
+      145deg,
+      #60c9b8,
+      #35a996
+    );
+
+  color: #083d37;
+
+  font-size: 27px;
+
+  border-radius: 13px;
 }
 
-.chatgpt-icon img{
-  width:60%;
-  height:60%;
 
-  filter:invert(1);
+/* GITHUB */
+
+.github-icon {
+  background: #050505;
 }
 
-.notes-icon{
+.github-icon img {
+  width: 67%;
+  height: 67%;
+
+  filter: invert(1);
+}
+
+
+/* CHATGPT */
+
+.chatgpt-icon {
+  background: #080808;
+}
+
+.chatgpt-icon img {
+  width: 65%;
+  height: 65%;
+
+  filter: invert(1);
+}
+
+
+/* =========================================================
+   ICONOS IPHONE
+========================================================= */
+
+.calendar-ios {
+  position: relative;
+
+  flex-direction: column;
+
+  background: white;
+
+  color: #111;
+}
+
+.calendar-month {
+  margin-top: 2px;
+
+  color: #ff2f49;
+
+  font-size: 7px;
+  font-weight: 850;
+}
+
+.calendar-day {
+  margin-top: -1px;
+
+  font-size: 23px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.clock-icon {
+  border: 2px solid #111;
+
+  background: white;
+
+  font-size: 37px;
+  font-weight: 300;
+}
+
+.notes-ios {
+  justify-content: flex-end;
+
+  padding-bottom: 7px;
+
   background:
     linear-gradient(
       to bottom,
-      #ffd942 0,
-      #ffd942 28%,
-      white 28%,
+      #ffd83e 0,
+      #ffd83e 25%,
+      white 25%,
       white 100%
     );
 
-  font-size:25px;
+  color: #d5d5d5;
+
+  font-size: 25px;
 }
 
-.shortcuts-icon{
+.messages-ios {
   background:
     linear-gradient(
       145deg,
-      #7354f5,
-      #ff4080
+      #53e66f,
+      #22c850
     );
 
-  color:white;
+  color: white;
 
-  font-size:31px;
-  font-weight:700;
+  font-size: 35px;
+}
+
+.passwords-ios {
+  background: #1b1b1d;
+
+  font-size: 21px;
+}
+
+.mail-ios {
+  background:
+    linear-gradient(
+      145deg,
+      #58b6ff,
+      #238ee8
+    );
+
+  color: white;
+
+  font-size: 25px;
+}
+
+.photos-ios {
+  background: white;
+
+  font-size: 24px;
+}
+
+.camera-ios {
+  background:
+    linear-gradient(
+      145deg,
+      #c9ced5,
+      #8c949e
+    );
+
+  color: #20252b;
+
+  font-size: 33px;
 }
 
 
-/* =====================================================
-   TARJETAS
-===================================================== */
+/* =========================================================
+   GOOGLE
+========================================================= */
 
-.work-card{
-  margin-bottom:14px;
+.compact-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
-  padding:16px;
+.collapsible-content.collapsed {
+  display: none;
+}
 
-  border-radius:25px;
 
-  background:rgba(255,255,255,.92);
+/* =========================================================
+   PUERTAS
+========================================================= */
+
+.doors-grid {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+.nuki-icon {
+  background: #050505;
+
+  color: white;
+
+  border-radius: 13px;
+
+  font-size: 39px;
+  font-weight: 200;
+}
+
+.wibox-icon {
+  background:
+    linear-gradient(
+      145deg,
+      #2bb8e9,
+      #278bd5
+    );
+
+  color: white;
+
+  font-size: 23px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN INFERIOR
+========================================================= */
+
+.work-bottom-nav {
+  position: fixed;
+
+  left: 50%;
+  bottom:
+    calc(10px + env(safe-area-inset-bottom));
+
+  z-index: 100;
+
+  width: calc(100% - 28px);
+  max-width: 720px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 5px;
+
+  padding: 4px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
 
   box-shadow:
-    0 8px 27px rgba(0,0,0,.05);
+    0 8px 28px rgba(0, 0, 0, 0.09);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  transform: translateX(-50%);
 }
 
-.work-card-heading{
-  display:flex;
-  align-items:center;
+.work-nav-item {
+  min-height: 45px;
 
-  gap:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  color: #1675e8;
+
+  font-size: 9px;
+  font-weight: 800;
 }
 
-.work-card-icon{
-  width:42px;
-  height:42px;
+.work-nav-item.active {
+  background: #090909;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:14px;
-
-  background:#fff0f5;
-
-  font-size:21px;
+  color: white;
 }
 
-.work-card-title{
-  font-size:13px;
-  font-weight:900;
-}
-
-.work-card-subtitle{
-  margin-top:3px;
-
-  color:var(--muted);
-
-  font-size:9px;
-}
-
-.work-main-button{
-  width:100%;
-
-  margin-top:13px;
-
-  padding:13px;
-
-  border:0;
-
-  border-radius:15px;
-
-  background:#111;
-
-  color:white;
-
-  font-size:11px;
-  font-weight:850;
+.trabajo-bottom-space {
+  height: 40px;
 }
 
 
-/* =====================================================
-   POMODORO
-===================================================== */
+/* =========================================================
+   IPHONE PEQUEÑO
+========================================================= */
 
-.pomodoro-card{
-  overflow:hidden;
-}
+@media (max-width: 390px) {
 
-.pomo-label{
-  color:#e93870;
-
-  font-size:9px;
-  font-weight:900;
-
-  letter-spacing:.8px;
-}
-
-.pomo-layout{
-  margin-top:9px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:space-between;
-
-  gap:15px;
-}
-
-.pomo-time{
-  font-size:49px;
-  font-weight:520;
-
-  line-height:1;
-
-  letter-spacing:-2.6px;
-}
-
-.pomo-state{
-  margin-top:7px;
-
-  color:#e93870;
-
-  font-size:10px;
-  font-weight:800;
-}
-
-.pomo-controls{
-  display:flex;
-
-  align-items:center;
-
-  gap:9px;
-}
-
-.pomo-play-button{
-  width:64px;
-  height:64px;
-
-  border:
-    7px solid
-    #ffdbe6;
-
-  border-radius:50%;
-
-  background:white;
-
-  color:#ff356f;
-
-  font-size:21px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  box-shadow:
-    0 5px 17px rgba(255,53,111,.10);
-}
-
-.pomo-session-area{
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  gap:5px;
-}
-
-.sessions{
-  font-size:11px;
-  font-weight:850;
-}
-
-.pomo-reset{
-  width:28px;
-  height:28px;
-
-  border:0;
-
-  border-radius:50%;
-
-  background:#f1eff3;
-
-  color:#444;
-
-  font-size:16px;
-}
-
-
-/* =====================================================
-   AJUSTES IPHONE
-===================================================== */
-
-@media(max-width:390px){
-
-  .work-countdown{
-    font-size:45px;
+  .trabajo-page {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
-  .work-app-icon{
-    width:52px;
-    height:52px;
+  .trabajo-header {
+    gap: 8px;
   }
 
-  .work-app-grid{
-    gap:
-      12px
-      5px;
+  .trabajo-header-side {
+    width: 136px;
   }
 
-  .pomo-time{
-    font-size:43px;
+  .trabajo-greeting {
+    font-size: 15px;
   }
 
-  .pomo-play-button{
-    width:58px;
-    height:58px;
-
-    border-width:6px;
+  .trabajo-time {
+    font-size: 48px;
   }
 
+  .trabajo-date {
+    font-size: 12px;
+  }
+
+  .entertainment-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .app-grid {
+    column-gap: 8px;
+  }
+
+  .app-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .pomodoro-time {
+    font-size: 40px;
+  }
+
+  .pomodoro-play {
+    width: 57px;
+    height: 57px;
+
+    border-width: 5px;
+  }
 }
 
 
+/* =========================================================
+   PANTALLAS MUY ESTRECHAS
+========================================================= */
 
+@media (max-width: 350px) {
 
+  .trabajo-header-side {
+    width: 124px;
+  }
+
+  .trabajo-greeting {
+    font-size: 14px;
+  }
+
+  .trabajo-time {
+    font-size: 44px;
+  }
+
+  .app-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .app-name {
+    font-size: 7px;
+  }
+
+  .entertainment-icon {
+    width: 36px;
+    height: 36px;
+  }
+}

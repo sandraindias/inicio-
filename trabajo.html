@@ -1,1179 +1,1657 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+<meta charset="UTF-8">
 
-  <meta name="theme-color" content="#f8f6f9">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+>
 
-  <title>Trabajo · Mi Inicio</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mi Inicio">
 
-  <link rel="stylesheet" href="./css/styles.css">
+<title>Trabajo · Mi Inicio</title>
+
+<link rel="stylesheet" href="./css/styles.css">
+
 </head>
 
-<body class="trabajo-page">
+<body>
 
-  <main class="trabajo-shell">
 
-    <!-- ==================================================
-         CABECERA
-    =================================================== -->
+<!-- =====================================================
+     BLOQUEO
+===================================================== -->
 
-    <header class="trabajo-header">
+<div
+  id="lockScreen"
+  class="lock-screen"
+>
+  <div>
 
-      <div class="trabajo-header-main">
+    <div style="font-size:50px;">
+      🔒
+    </div>
 
-        <div class="trabajo-greeting">
-          ☀️ Buenos días,
-          <strong>Sandra</strong>
-        </div>
+    <div class="lock-title">
+      Mi Inicio
+    </div>
 
-        <div
-          class="trabajo-time"
-          id="currentTime"
-        >
-          13:48
-        </div>
-
-        <div
-          class="trabajo-date"
-          id="currentDate"
-        >
-          Martes, 18 de Agosto
-        </div>
-
-        <div class="trabajo-mode-pill">
-          <span></span>
-          TRABAJO
-        </div>
-
-      </div>
-
-
-      <!-- ACCIONES DERECHA -->
-
-      <div class="trabajo-header-side">
-
-        <div class="trabajo-top-actions">
-
-          <button
-            class="mini-action"
-            type="button"
-            onclick="openShortcut('Bloquear iPhone')"
-          >
-            🔒 Bloquear
-          </button>
-
-          <a
-            href="./index.html"
-            class="mini-action"
-          >
-            ← Salir
-          </a>
-
-        </div>
-
-
-        <!-- ENTRETENIMIENTO -->
-
-        <section class="entertainment-mini">
-
-          <div class="entertainment-title">
-            ★ Entretenimiento
-          </div>
-
-          <div class="entertainment-apps">
-
-            <button
-              class="entertainment-app"
-              type="button"
-              onclick="openApp('music://')"
-            >
-              <span class="entertainment-icon music">
-                ♪
-              </span>
-
-              <small>
-                Música
-              </small>
-            </button>
-
-
-            <button
-              class="entertainment-app"
-              type="button"
-              onclick="openApp('spotify://')"
-            >
-              <span class="entertainment-icon">
-                <img
-                  src="https://api.iconify.design/logos/spotify-icon.svg"
-                  alt="Spotify"
-                >
-              </span>
-
-              <small>
-                Spotify
-              </small>
-            </button>
-
-
-            <button
-              class="entertainment-app"
-              type="button"
-              onclick="openApp('youtube://')"
-            >
-              <span class="entertainment-icon">
-                <img
-                  src="https://api.iconify.design/logos/youtube-icon.svg"
-                  alt="YouTube"
-                >
-              </span>
-
-              <small>
-                YouTube
-              </small>
-            </button>
-
-          </div>
-
-        </section>
-
-      </div>
-
-    </header>
-
-
-
-    <!-- ==================================================
-         POMODORO
-    =================================================== -->
-
-    <section class="work-panel pomodoro-panel">
-
-      <div class="pomodoro-left">
-
-        <div class="panel-accent-title">
-          POMODORO
-        </div>
-
-        <div
-          id="pomoTime"
-          class="pomodoro-time"
-        >
-          25:00
-        </div>
-
-        <div
-          id="pomoState"
-          class="pomodoro-status focus"
-        >
-          <span></span>
-          Concentración
-        </div>
-
-      </div>
-
-
-      <div class="pomodoro-right">
-
-        <button
-          id="pomoPlay"
-          class="pomodoro-play"
-          type="button"
-          onclick="togglePomodoro()"
-        >
-          ▶
-        </button>
-
-
-        <div class="pomodoro-side">
-
-          <div class="pomodoro-count">
-            🍅
-            <span id="pomoSessions">
-              0
-            </span>
-          </div>
-
-          <button
-            class="pomodoro-reset"
-            type="button"
-            onclick="resetPomodoro()"
-          >
-            ↻
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         CONECTIVIDAD
-    =================================================== -->
-
-    <section class="work-panel app-section">
-
-      <h2 class="section-title">
-        📶 Conectividad
-      </h2>
-
-
-      <div class="app-grid">
-
-        <!-- WHATSAPP -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('whatsapp://')"
-        >
-
-          <span class="app-icon">
-
-            <img
-              src="https://api.iconify.design/logos/whatsapp-icon.svg"
-              alt="WhatsApp"
-            >
-
-          </span>
-
-          <span class="app-name">
-            WhatsApp
-          </span>
-
-        </button>
-
-
-
-        <!-- WHATSAPP BUSINESS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('whatsapp-business://')"
-        >
-
-          <span class="app-icon">
-
-            <img
-              src="https://api.iconify.design/logos/whatsapp-icon.svg"
-              alt="WA Business"
-            >
-
-          </span>
-
-          <span class="app-name">
-            WA Business
-          </span>
-
-        </button>
-
-
-
-        <!-- LLAMADAS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('tel://')"
-        >
-
-          <span class="app-icon custom-icon calls-icon">
-            ☎️
-          </span>
-
-          <span class="app-name">
-            Llamadas
-          </span>
-
-        </button>
-
-
-
-        <!-- TEAMS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('msteams://')"
-        >
-
-          <span class="app-icon">
-
-            <img
-              src="https://api.iconify.design/logos/microsoft-teams.svg"
-              alt="Teams"
-            >
-
-          </span>
-
-          <span class="app-name">
-            Teams
-          </span>
-
-        </button>
-
-
-
-        <!-- TIEMPO JORNADA -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Abrir Tiempo Jornada')"
-        >
-
-          <span class="app-icon custom-icon jornada-icon">
-            ✓
-          </span>
-
-          <span class="app-name">
-            Tiempo Jornada
-          </span>
-
-        </button>
-
-
-
-        <!-- OUTLOOK -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('ms-outlook://')"
-        >
-
-          <span class="app-icon">
-
-            <img
-              src="https://api.iconify.design/logos/microsoft-outlook.svg"
-              alt="Outlook"
-            >
-
-          </span>
-
-          <span class="app-name">
-            Outlook
-          </span>
-
-        </button>
-
-
-
-        <!-- GITHUB -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openURL('https://github.com/')"
-        >
-
-          <span class="app-icon github-icon">
-
-            <img
-              src="https://api.iconify.design/simple-icons/github.svg"
-              alt="GitHub"
-            >
-
-          </span>
-
-          <span class="app-name">
-            GitHub
-          </span>
-
-        </button>
-
-
-
-        <!-- CHATGPT -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('chatgpt://')"
-        >
-
-          <span class="app-icon chatgpt-icon">
-
-            <img
-              src="https://api.iconify.design/simple-icons/openai.svg"
-              alt="ChatGPT"
-            >
-
-          </span>
-
-          <span class="app-name">
-            ChatGPT
-          </span>
-
-        </button>
-
-
-
-        <!-- SAFARI -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openURL('https://www.google.com/')"
-        >
-
-          <span class="app-icon">
-
-            <img
-              src="https://api.iconify.design/logos/safari.svg"
-              alt="Safari"
-            >
-
-          </span>
-
-          <span class="app-name">
-            Safari
-          </span>
-
-        </button>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         IPHONE
-    =================================================== -->
-
-    <section class="work-panel app-section">
-
-      <div class="section-heading-row">
-
-        <h2 class="section-title">
-          📱 iPhone
-        </h2>
-
-        <button
-          class="collapse-button"
-          type="button"
-          onclick="toggleSection('iphoneApps', this)"
-        >
-          ˄
-        </button>
-
-      </div>
-
-
-      <div
-        id="iphoneApps"
-        class="app-grid collapsible-content"
-      >
-
-        <!-- CALENDARIO -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('calshow://')"
-        >
-
-          <span class="app-icon calendar-ios">
-
-            <span class="calendar-month">
-              HOY
-            </span>
-
-            <span
-              class="calendar-day"
-              id="calendarDay"
-            >
-              18
-            </span>
-
-          </span>
-
-          <span class="app-name">
-            Calendario
-          </span>
-
-        </button>
-
-
-
-        <!-- RELOJ -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('clock-alarm://')"
-        >
-
-          <span class="app-icon clock-icon">
-            ◷
-          </span>
-
-          <span class="app-name">
-            Reloj
-          </span>
-
-        </button>
-
-
-
-        <!-- NOTAS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('mobilenotes://')"
-        >
-
-          <span class="app-icon notes-ios">
-            ▤
-          </span>
-
-          <span class="app-name">
-            Notas
-          </span>
-
-        </button>
-
-
-
-        <!-- BUSCAR -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('findmy://')"
-        >
-
-          <span class="app-icon">
-
-            <img
-              src="https://api.iconify.design/fluent-emoji-flat/direct-hit.svg"
-              alt="Buscar"
-            >
-
-          </span>
-
-          <span class="app-name">
-            Buscar
-          </span>
-
-        </button>
-
-
-
-        <!-- MENSAJES -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('sms://')"
-        >
-
-          <span class="app-icon messages-ios">
-            ●
-          </span>
-
-          <span class="app-name">
-            Mensajes
-          </span>
-
-        </button>
-
-
-
-        <!-- CONTRASEÑAS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Abrir Contraseñas')"
-        >
-
-          <span class="app-icon passwords-ios">
-            🔑
-          </span>
-
-          <span class="app-name">
-            Contraseñas
-          </span>
-
-        </button>
-
-
-
-        <!-- MAIL -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('message://')"
-        >
-
-          <span class="app-icon mail-ios">
-            ✉
-          </span>
-
-          <span class="app-name">
-            Mail
-          </span>
-
-        </button>
-
-
-
-        <!-- FOTOS -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('photos-redirect://')"
-        >
-
-          <span class="app-icon photos-ios">
-            🌈
-          </span>
-
-          <span class="app-name">
-            Fotos
-          </span>
-
-        </button>
-
-
-
-        <!-- CÁMARA -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('camera://')"
-        >
-
-          <span class="app-icon camera-ios">
-            ◉
-          </span>
-
-          <span class="app-name">
-            Cámara
-          </span>
-
-        </button>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         GOOGLE
-    =================================================== -->
-
-    <section class="work-panel app-section compact-section">
-
-      <div
-        class="section-heading-row clickable-heading"
-        onclick="toggleSection('googleApps', document.getElementById('googleToggle'))"
-      >
-
-        <h2 class="section-title">
-          🌈 Google
-        </h2>
-
-        <button
-          id="googleToggle"
-          class="collapse-button"
-          type="button"
-        >
-          ˅
-        </button>
-
-      </div>
-
-
-      <div
-        id="googleApps"
-        class="app-grid collapsible-content collapsed"
-      >
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('googledrive://')"
-        >
-
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/logos/google-drive.svg"
-              alt="Drive"
-            >
-          </span>
-
-          <span class="app-name">
-            Drive
-          </span>
-
-        </button>
-
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openURL('https://docs.google.com/spreadsheets/')"
-        >
-
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/logos/google-sheets.svg"
-              alt="Sheets"
-            >
-          </span>
-
-          <span class="app-name">
-            Hojas
-          </span>
-
-        </button>
-
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openURL('https://calendar.google.com/')"
-        >
-
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/logos/google-calendar.svg"
-              alt="Calendar"
-            >
-          </span>
-
-          <span class="app-name">
-            Calendar
-          </span>
-
-        </button>
-
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openURL('https://www.google.com/')"
-        >
-
-          <span class="app-icon">
-            <img
-              src="https://api.iconify.design/logos/google-icon.svg"
-              alt="Google"
-            >
-          </span>
-
-          <span class="app-name">
-            Google
-          </span>
-
-        </button>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         PUERTAS
-    =================================================== -->
-
-    <section class="work-panel app-section">
-
-      <h2 class="section-title">
-        🚪 Puertas
-      </h2>
-
-
-      <div class="app-grid doors-grid">
-
-        <!-- NUKI -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openApp('nuki://')"
-        >
-
-          <span class="app-icon nuki-icon">
-            ◯
-          </span>
-
-          <span class="app-name">
-            Nuki
-          </span>
-
-        </button>
-
-
-
-        <!-- WI BOX -->
-
-        <button
-          class="app-item"
-          type="button"
-          onclick="openShortcut('Abrir Wi-Box')"
-        >
-
-          <span class="app-icon wibox-icon">
-            W
-          </span>
-
-          <span class="app-name">
-            Wi-Box
-          </span>
-
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <div class="trabajo-bottom-space"></div>
-
-  </main>
-
-
-
-  <!-- ==================================================
-       NAVEGACIÓN INFERIOR
-  =================================================== -->
-
-  <nav class="work-bottom-nav">
-
-    <a
-      href="./index.html"
-      class="work-nav-item"
+    <button
+      class="unlock-button"
+      onclick="unlockApp()"
     >
-      🏠 Inicio
-    </a>
+      Volver a entrar
+    </button>
 
-    <a
-      href="./trabajo.html"
-      class="work-nav-item active"
+  </div>
+</div>
+
+
+
+<!-- =====================================================
+     ARRIBA
+===================================================== -->
+
+<div class="top-actions">
+
+  <button
+    class="top-action"
+    onclick="lockApp()"
+  >
+    🔒 Bloquear
+  </button>
+
+  <a
+    class="top-action"
+    href="./amor-al-arte.html"
+    style="
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      color:inherit;
+    "
+  >
+    ← Salir
+  </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+  <div>
+
+    <div
+      id="greeting"
+      class="greeting"
     >
-      💼 Trabajo
-    </a>
-
-  </nav>
-
-
-
-  <!-- ==================================================
-       JAVASCRIPT
-  =================================================== -->
-
-  <script>
-
-    /* ==========================================
-       HORA Y FECHA
-    ========================================== */
-
-    function updateClock(){
-
-      const now = new Date();
-
-      const time =
-        now.toLocaleTimeString(
-          "es-ES",
-          {
-            hour: "2-digit",
-            minute: "2-digit"
-          }
-        );
-
-      const date =
-        now.toLocaleDateString(
-          "es-ES",
-          {
-            weekday: "long",
-            day: "numeric",
-            month: "long"
-          }
-        );
-
-      document.getElementById(
-        "currentTime"
-      ).textContent = time;
+      ☀️ Buenos días,
+      <span class="greeting-name">
+        Sandra
+      </span>
+    </div>
 
 
-      document.getElementById(
-        "currentDate"
-      ).textContent =
-        date.charAt(0).toUpperCase()
-        +
-        date.slice(1);
+    <div
+      id="bigTime"
+      class="big-time"
+    >
+      08:00
+    </div>
 
 
-      document.getElementById(
-        "calendarDay"
-      ).textContent =
-        now.getDate();
+    <div
+      id="date"
+      class="date"
+    ></div>
 
 
-      updateGreeting(now);
+    <div class="mode-pill">
+
+      <span class="mode-dot"></span>
+
+      <span>
+        Trabajo
+      </span>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ENTRETENIMIENTO -->
+
+  <div class="entertainment-card">
+
+    <div class="entertainment-title">
+      ★ Entretenimiento
+    </div>
+
+
+    <div class="entertainment-grid">
+
+
+      <!-- MÚSICA -->
+
+      <div
+        class="app"
+        onclick="launchDirect('music://')"
+      >
+
+        <div class="icon music-icon">
+          ♪
+        </div>
+
+        <div class="app-name">
+          Música
+        </div>
+
+      </div>
+
+
+
+      <!-- SPOTIFY -->
+
+      <div
+        class="app"
+        onclick="launchDirect('spotify://')"
+      >
+
+        <div class="icon spotify-icon">
+
+          <img
+            src="https://api.iconify.design/logos/spotify-icon.svg"
+            alt="Spotify"
+          >
+
+        </div>
+
+        <div class="app-name">
+          Spotify
+        </div>
+
+      </div>
+
+
+
+      <!-- YOUTUBE -->
+
+      <div
+        class="app"
+        onclick="launchDirect('youtube://')"
+      >
+
+        <div class="icon youtube-icon">
+
+          <img
+            src="https://api.iconify.design/logos/youtube-icon.svg"
+            alt="YouTube"
+          >
+
+        </div>
+
+        <div class="app-name">
+          YouTube
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DAILY
+===================================================== -->
+
+<div
+  id="dailyReminder"
+  class="daily"
+>
+
+  <div class="daily-left">
+
+    <img
+      class="daily-logo"
+      src="https://api.iconify.design/logos/microsoft-teams.svg"
+      alt="Teams"
+    >
+
+
+    <div>
+
+      <div class="daily-title">
+        Daily en breve
+      </div>
+
+      <div class="daily-subtitle">
+        09:00 · Reunión
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="daily-button"
+    onclick="launchDirect('msteams://')"
+  >
+    Teams
+  </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     POMODORO
+===================================================== -->
+
+<div class="card">
+
+  <div class="pomo-label">
+    POMODORO
+  </div>
+
+
+  <div class="pomo-layout">
+
+    <div>
+
+      <div
+        id="pomoTime"
+        class="pomo-time"
+      >
+        25:00
+      </div>
+
+
+      <div
+        id="pomoState"
+        class="pomo-state"
+      >
+        ● Concentración
+      </div>
+
+    </div>
+
+
+
+    <div class="pomo-right">
+
+      <button
+        id="playButton"
+        class="play-button"
+        onclick="togglePomodoro()"
+      >
+        ▶
+      </button>
+
+
+      <div>
+
+        <div class="sessions">
+          🍅
+          <span id="sessions">
+            0
+          </span>
+        </div>
+
+
+        <button
+          class="reset-button"
+          onclick="resetPomodoro()"
+        >
+          ↻
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CONECTIVIDAD
+===================================================== -->
+
+<section class="card">
+
+  <div class="card-heading">
+
+    <div class="heading-left">
+      📶 Conectividad
+    </div>
+
+  </div>
+
+
+  <div class="app-grid">
+
+
+    <!-- WHATSAPP -->
+
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir WhatsApp')"
+    >
+
+      <div class="icon whatsapp-icon">
+
+        <img
+          src="https://api.iconify.design/logos/whatsapp-icon.svg"
+          alt="WhatsApp"
+        >
+
+      </div>
+
+      <div class="app-name">
+        WhatsApp
+      </div>
+
+    </div>
+
+
+
+    <!-- WHATSAPP BUSINESS -->
+
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir WhatsApp Business')"
+    >
+
+      <div class="icon business-icon">
+
+        <img
+          src="https://api.iconify.design/logos/whatsapp-icon.svg"
+          style="width:82%;height:82%;"
+          alt="WhatsApp Business"
+        >
+
+        <span class="business-b">
+          B
+        </span>
+
+      </div>
+
+      <div class="app-name">
+        WA Business
+      </div>
+
+    </div>
+
+
+
+    <!-- LLAMADAS -->
+
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir Telefono')"
+    >
+
+      <div class="icon phone-icon">
+        ☎
+      </div>
+
+      <div class="app-name">
+        Llamadas
+      </div>
+
+    </div>
+
+
+
+    <!-- TEAMS -->
+
+    <div
+      class="app"
+      onclick="launchDirect('msteams://')"
+    >
+
+      <div class="icon teams-icon">
+
+        <img
+          src="https://api.iconify.design/logos/microsoft-teams.svg"
+          alt="Teams"
+        >
+
+      </div>
+
+      <div class="app-name">
+        Teams
+      </div>
+
+    </div>
+
+
+
+    <!-- TIEMPO JORNADA -->
+
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir Tiempo Jornada')"
+    >
+
+      <div class="icon time-icon">
+
+        <div class="time-check">
+          ✓
+        </div>
+
+      </div>
+
+      <div class="app-name">
+        Tiempo Jornada
+      </div>
+
+    </div>
+
+
+
+    <!-- OUTLOOK -->
+
+    <div
+      class="app"
+      onclick="launchDirect('ms-outlook://')"
+    >
+
+      <div class="icon outlook-icon">
+
+        <img
+          src="https://api.iconify.design/logos/microsoft-outlook.svg"
+          alt="Outlook"
+        >
+
+      </div>
+
+      <div class="app-name">
+        Outlook
+      </div>
+
+    </div>
+
+
+
+    <!-- GITHUB -->
+
+    <div
+      class="app"
+      onclick="openExternalWeb('https://github.com')"
+    >
+
+      <div class="icon github-icon">
+
+        <img
+          src="https://api.iconify.design/logos/github-icon.svg"
+          alt="GitHub"
+        >
+
+      </div>
+
+      <div class="app-name">
+        GitHub
+      </div>
+
+    </div>
+
+
+
+    <!-- CHATGPT -->
+
+    <div
+      class="app"
+      onclick="launchWithFallback(
+        'chatgpt://',
+        null,
+        'https://chatgpt.com'
+      )"
+    >
+
+      <div class="icon chatgpt-icon">
+
+        <img
+          src="https://api.iconify.design/simple-icons/openai.svg"
+          alt="ChatGPT"
+        >
+
+      </div>
+
+      <div class="app-name">
+        ChatGPT
+      </div>
+
+    </div>
+
+
+
+    <!-- SAFARI -->
+
+    <div
+      class="app"
+      onclick="openExternalWeb('https://www.google.com')"
+    >
+
+      <div class="icon safari-icon">
+
+        <img
+          src="https://api.iconify.design/logos/safari.svg"
+          alt="Safari"
+        >
+
+      </div>
+
+      <div class="app-name">
+        Safari
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IPHONE
+===================================================== -->
+
+<section class="card">
+
+  <div class="card-heading">
+
+    <div class="heading-left">
+      📱 iPhone
+    </div>
+
+
+    <button
+      id="iphoneArrow"
+      class="chevron open"
+      onclick="toggleSection(
+        'iphoneApps',
+        'iphoneArrow'
+      )"
+    >
+      ⌄
+    </button>
+
+  </div>
+
+
+
+  <div
+    id="iphoneApps"
+    class="collapsible"
+  >
+
+    <div class="app-grid">
+
+
+      <!-- CALENDARIO -->
+
+      <div
+        class="app"
+        onclick="launchDirect('calshow://')"
+      >
+
+        <div class="icon calendar-icon">
+
+          <div class="cal-day">
+            HOY
+          </div>
+
+          <div
+            id="calendarDay"
+            class="cal-number"
+          >
+            18
+          </div>
+
+        </div>
+
+        <div class="app-name">
+          Calendario
+        </div>
+
+      </div>
+
+
+
+      <!-- RELOJ -->
+
+      <div
+        class="app"
+        onclick="launchDirect('clock-alarm://')"
+      >
+
+        <div class="icon clock-icon">
+
+          <div class="clock-face"></div>
+
+        </div>
+
+        <div class="app-name">
+          Reloj
+        </div>
+
+      </div>
+
+
+
+      <!-- NOTAS -->
+
+      <div
+        class="app"
+        onclick="launchDirect('mobilenotes://')"
+      >
+
+        <div class="icon notes-icon">
+
+          <div class="notes-yellow"></div>
+
+          <div class="note-line"></div>
+          <div class="note-line"></div>
+          <div class="note-line"></div>
+
+        </div>
+
+        <div class="app-name">
+          Notas
+        </div>
+
+      </div>
+
+
+
+      <!-- BUSCAR -->
+
+      <div
+        class="app"
+        onclick="launchShortcut('Abrir Buscar')"
+      >
+
+        <div class="icon find-icon"></div>
+
+        <div class="app-name">
+          Buscar
+        </div>
+
+      </div>
+
+
+
+      <!-- MENSAJES -->
+
+      <div
+        class="app"
+        onclick="launchDirect('sms://')"
+      >
+
+        <div class="icon messages-icon">
+          ●
+        </div>
+
+        <div class="app-name">
+          Mensajes
+        </div>
+
+      </div>
+
+
+
+      <!-- CONTRASEÑAS -->
+
+      <div
+        class="app"
+        onclick="launchShortcut('Abrir Contrasenas')"
+      >
+
+        <div class="icon password-icon">
+          🔑
+        </div>
+
+        <div class="app-name">
+          Contraseñas
+        </div>
+
+      </div>
+
+
+
+      <!-- MAIL -->
+
+      <div
+        class="app"
+        onclick="launchShortcut('Abrir Mail')"
+      >
+
+        <div class="icon mail-icon">
+          ✉
+        </div>
+
+        <div class="app-name">
+          Mail
+        </div>
+
+      </div>
+
+
+
+      <!-- FOTOS -->
+
+      <div
+        class="app"
+        onclick="launchDirect('photos-redirect://')"
+      >
+
+        <div class="icon photos-icon">
+          🌈
+        </div>
+
+        <div class="app-name">
+          Fotos
+        </div>
+
+      </div>
+
+
+
+      <!-- CÁMARA -->
+
+      <div
+        class="app"
+        onclick="launchShortcut('Abrir Camara')"
+      >
+
+        <div class="icon camera-icon">
+
+          <div class="camera-lens"></div>
+
+        </div>
+
+        <div class="app-name">
+          Cámara
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GOOGLE
+===================================================== -->
+
+<section class="card">
+
+  <div class="card-heading">
+
+    <div class="heading-left">
+      🌈 Google
+    </div>
+
+
+    <button
+      id="googleArrow"
+      class="chevron open"
+      onclick="toggleSection(
+        'googleApps',
+        'googleArrow'
+      )"
+    >
+      ⌄
+    </button>
+
+  </div>
+
+
+
+  <div
+    id="googleApps"
+    class="collapsible"
+  >
+
+    <div class="app-grid">
+
+
+      <!-- GMAIL -->
+
+      <div
+        class="app"
+        onclick="launchDirect('googlegmail://')"
+      >
+
+        <div class="icon gmail-icon">
+
+          <img
+            src="https://api.iconify.design/logos/google-gmail.svg"
+            alt="Gmail"
+          >
+
+        </div>
+
+        <div class="app-name">
+          Gmail
+        </div>
+
+      </div>
+
+
+
+      <!-- DRIVE -->
+
+      <div
+        class="app"
+        onclick="launchDirect('googledrive://')"
+      >
+
+        <div class="icon drive-icon">
+
+          <img
+            src="https://api.iconify.design/logos/google-drive.svg"
+            alt="Drive"
+          >
+
+        </div>
+
+        <div class="app-name">
+          Drive
+        </div>
+
+      </div>
+
+
+
+      <!-- AUTHENTICATOR -->
+
+      <div
+        class="app"
+        onclick="launchDirect('googleauthenticator://')"
+      >
+
+        <div class="icon auth-icon">
+
+          <img
+            src="https://api.iconify.design/logos/google-icon.svg"
+            alt="Authenticator"
+          >
+
+        </div>
+
+        <div class="app-name">
+          Authenticator
+        </div>
+
+      </div>
+
+
+
+      <!-- DOCUMENTOS -->
+
+      <div
+        class="app"
+        onclick="launchDirect('googledocs://')"
+      >
+
+        <div class="icon docs-icon">
+
+          <img
+            src="https://api.iconify.design/logos/google-drive.svg"
+            alt="Documentos"
+          >
+
+        </div>
+
+        <div class="app-name">
+          Documentos
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PUERTAS
+===================================================== -->
+
+<section class="card">
+
+  <div class="card-heading">
+
+    <div class="heading-left">
+      🚪 Puertas
+    </div>
+
+  </div>
+
+
+  <div class="app-grid">
+
+
+    <!-- NUKI -->
+
+    <div
+      class="app"
+      onclick="launchDirect('nuki://')"
+    >
+
+      <div class="icon nuki-icon">
+
+        <div class="nuki-ring"></div>
+
+      </div>
+
+      <div class="app-name">
+        Nuki
+      </div>
+
+    </div>
+
+
+
+    <!-- WI BOX -->
+
+    <div
+      class="app"
+      onclick="launchShortcut('Abrir WiBox')"
+    >
+
+      <div class="icon wibox-icon">
+        W
+      </div>
+
+      <div class="app-name">
+        Wi-Box
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NAVEGACIÓN
+===================================================== -->
+
+<nav class="bottom-nav">
+
+  <button
+    onclick="window.location.href='./amor-al-arte.html'"
+  >
+    🏠 Inicio
+  </button>
+
+
+  <button
+    class="current-nav active"
+  >
+    💼 Trabajo
+  </button>
+
+</nav>
+
+
+
+<script>
+
+/* =====================================================
+   LANZADOR
+===================================================== */
+
+function navigateExternal(url){
+
+  const link =
+    document.createElement("a");
+
+  link.href = url;
+
+  link.style.display =
+    "none";
+
+  document.body.appendChild(
+    link
+  );
+
+  link.click();
+
+
+  setTimeout(
+    () => link.remove(),
+    500
+  );
+
+}
+
+
+function launchDirect(url){
+
+  navigateExternal(
+    url
+  );
+
+}
+
+
+function launchShortcut(name){
+
+  const url =
+    "shortcuts://run-shortcut?name="
+    +
+    encodeURIComponent(
+      name
+    );
+
+  navigateExternal(
+    url
+  );
+
+}
+
+
+function launchWithFallback(
+  directUrl,
+  shortcutName = null,
+  webUrl = null
+){
+
+  let leftPage =
+    false;
+
+
+  function visibility(){
+
+    if(
+      document.hidden
+    ){
+
+      leftPage =
+        true;
 
     }
 
-
-    function updateGreeting(now){
-
-      const hour =
-        now.getHours();
-
-      let greeting =
-        "Buenos días";
-
-      let emoji =
-        "☀️";
+  }
 
 
-      if(hour >= 14 && hour < 21){
+  document.addEventListener(
+    "visibilitychange",
+    visibility,
+    {
+      once:true
+    }
+  );
 
-        greeting =
-          "Buenas tardes";
 
-        emoji =
-          "🌤️";
+  if(
+    directUrl
+  ){
+
+    navigateExternal(
+      directUrl
+    );
+
+  }
+
+
+  setTimeout(
+    () => {
+
+      if(
+        leftPage
+      ){
+        return;
+      }
+
+
+      if(
+        shortcutName
+      ){
+
+        launchShortcut(
+          shortcutName
+        );
+
+        return;
 
       }
 
 
-      if(hour >= 21 || hour < 6){
+      if(
+        webUrl
+      ){
 
-        greeting =
-          "Buenas noches";
-
-        emoji =
-          "🌙";
+        openExternalWeb(
+          webUrl
+        );
 
       }
 
+    },
+    900
+  );
 
-      document.querySelector(
-        ".trabajo-greeting"
-      ).innerHTML =
-        `${emoji} ${greeting}, <strong>Sandra</strong>`;
-
-    }
+}
 
 
-    updateClock();
+function openExternalWeb(url){
 
-    setInterval(
-      updateClock,
-      30000
+  const link =
+    document.createElement("a");
+
+  link.href =
+    url;
+
+  link.target =
+    "_blank";
+
+  link.rel =
+    "noopener";
+
+
+  document.body.appendChild(
+    link
+  );
+
+  link.click();
+
+  link.remove();
+
+}
+
+
+
+/* =====================================================
+   RELOJ
+===================================================== */
+
+function updateClock(){
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "bigTime"
+  ).textContent =
+    now.toLocaleTimeString(
+      "es-ES",
+      {
+        hour:"2-digit",
+        minute:"2-digit"
+      }
     );
 
 
-
-    /* ==========================================
-       ABRIR APPS
-    ========================================== */
-
-    function openApp(url){
-
-      window.location.href =
-        url;
-
-    }
-
-
-    function openURL(url){
-
-      window.location.href =
-        url;
-
-    }
-
-
-    function openShortcut(name){
-
-      const encoded =
-        encodeURIComponent(name);
-
-      window.location.href =
-        `shortcuts://run-shortcut?name=${encoded}`;
-
-    }
-
-
-
-    /* ==========================================
-       SECCIONES PLEGABLES
-    ========================================== */
-
-    function toggleSection(id, button){
-
-      const section =
-        document.getElementById(id);
-
-      if(!section){
-        return;
+  document.getElementById(
+    "date"
+  ).textContent =
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
       }
-
-      const collapsed =
-        section.classList.toggle(
-          "collapsed"
-        );
-
-      if(button){
-
-        button.textContent =
-          collapsed
-            ? "˅"
-            : "˄";
-
-      }
-
-    }
+    );
 
 
+  document.getElementById(
+    "calendarDay"
+  ).textContent =
+    now.getDate();
 
-    /* ==========================================
-       POMODORO
-    ========================================== */
 
-    let pomoSeconds =
-      25 * 60;
+  updateGreeting(
+    now
+  );
 
-    let pomoRunning =
+
+  updateDaily(
+    now
+  );
+
+}
+
+
+
+/* =====================================================
+   SALUDO
+===================================================== */
+
+function updateGreeting(now){
+
+  const hour =
+    now.getHours();
+
+
+  let greeting =
+    "Buenos días";
+
+  let icon =
+    "☀️";
+
+
+  if(
+    hour >= 14
+    &&
+    hour < 21
+  ){
+
+    greeting =
+      "Buenas tardes";
+
+    icon =
+      "🌤️";
+
+  }
+
+
+  if(
+    hour >= 21
+    ||
+    hour < 6
+  ){
+
+    greeting =
+      "Buenas noches";
+
+    icon =
+      "🌙";
+
+  }
+
+
+  document.getElementById(
+    "greeting"
+  ).innerHTML =
+    icon
+    +
+    " "
+    +
+    greeting
+    +
+    ', <span class="greeting-name">Sandra</span>';
+
+}
+
+
+
+/* =====================================================
+   DAILY
+   08:50 - 09:30
+===================================================== */
+
+function updateDaily(now){
+
+  const h =
+    now.getHours();
+
+  const m =
+    now.getMinutes();
+
+
+  const active =
+
+    (
+      h === 8
+      &&
+      m >= 50
+    )
+
+    ||
+
+    (
+      h === 9
+      &&
+      m <= 30
+    );
+
+
+  document.getElementById(
+    "dailyReminder"
+  ).classList.toggle(
+    "show",
+    active
+  );
+
+}
+
+
+
+/* =====================================================
+   DESPLEGABLES
+===================================================== */
+
+function toggleSection(
+  sectionId,
+  arrowId
+){
+
+  document.getElementById(
+    sectionId
+  ).classList.toggle(
+    "closed"
+  );
+
+
+  document.getElementById(
+    arrowId
+  ).classList.toggle(
+    "open"
+  );
+
+}
+
+
+
+/* =====================================================
+   POMODORO
+===================================================== */
+
+let pomoSeconds =
+  25 * 60;
+
+let pomoRunning =
+  false;
+
+let pomoBreak =
+  false;
+
+let pomoInterval =
+  null;
+
+
+let sessions =
+  Number(
+    localStorage.getItem(
+      "pomodoroSessions"
+    )
+    ||
+    0
+  );
+
+
+document.getElementById(
+  "sessions"
+).textContent =
+  sessions;
+
+
+
+function drawPomodoro(){
+
+  const m =
+    Math.floor(
+      pomoSeconds / 60
+    );
+
+  const s =
+    pomoSeconds % 60;
+
+
+  document.getElementById(
+    "pomoTime"
+  ).textContent =
+    String(m).padStart(
+      2,
+      "0"
+    )
+    +
+    ":"
+    +
+    String(s).padStart(
+      2,
+      "0"
+    );
+
+}
+
+
+
+function togglePomodoro(){
+
+  if(
+    pomoRunning
+  ){
+
+    clearInterval(
+      pomoInterval
+    );
+
+
+    pomoRunning =
       false;
 
-    let pomoInterval =
-      null;
 
-    let pomoSessions =
-      0;
-
-
-    function renderPomodoro(){
-
-      const minutes =
-        Math.floor(
-          pomoSeconds / 60
-        );
-
-      const seconds =
-        pomoSeconds % 60;
-
-      document.getElementById(
-        "pomoTime"
-      ).textContent =
-        `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+    document.getElementById(
+      "playButton"
+    ).textContent =
+      "▶";
 
 
-      document.getElementById(
-        "pomoSessions"
-      ).textContent =
-        pomoSessions;
+    return;
+
+  }
 
 
-      document.getElementById(
-        "pomoPlay"
-      ).textContent =
-        pomoRunning
-          ? "Ⅱ"
-          : "▶";
-
-    }
+  pomoRunning =
+    true;
 
 
-    function togglePomodoro(){
-
-      if(pomoRunning){
-
-        clearInterval(
-          pomoInterval
-        );
-
-        pomoRunning =
-          false;
-
-        renderPomodoro();
-
-        return;
-
-      }
+  document.getElementById(
+    "playButton"
+  ).textContent =
+    "Ⅱ";
 
 
-      pomoRunning =
-        true;
+  pomoInterval =
+    setInterval(
+      () => {
 
-      renderPomodoro();
-
-
-      pomoInterval =
-        setInterval(
-          () => {
-
-            pomoSeconds--;
+        pomoSeconds--;
 
 
-            if(pomoSeconds <= 0){
-
-              clearInterval(
-                pomoInterval
-              );
-
-              pomoRunning =
-                false;
-
-              pomoSessions++;
-
-              pomoSeconds =
-                25 * 60;
-
-            }
+        drawPomodoro();
 
 
-            renderPomodoro();
+        if(
+          pomoSeconds <= 0
+        ){
 
-          },
-          1000
-        );
-
-    }
-
-
-    function resetPomodoro(){
-
-      clearInterval(
-        pomoInterval
-      );
-
-      pomoRunning =
-        false;
-
-      pomoSeconds =
-        25 * 60;
-
-      renderPomodoro();
-
-    }
+          clearInterval(
+            pomoInterval
+          );
 
 
-    renderPomodoro();
+          pomoRunning =
+            false;
 
-  </script>
+
+          if(
+            !pomoBreak
+          ){
+
+            sessions++;
+
+
+            localStorage.setItem(
+              "pomodoroSessions",
+              sessions
+            );
+
+
+            document.getElementById(
+              "sessions"
+            ).textContent =
+              sessions;
+
+
+            pomoBreak =
+              true;
+
+
+            pomoSeconds =
+              5 * 60;
+
+
+            document.getElementById(
+              "pomoState"
+            ).textContent =
+              "● Descanso";
+
+          }
+
+          else{
+
+            pomoBreak =
+              false;
+
+
+            pomoSeconds =
+              25 * 60;
+
+
+            document.getElementById(
+              "pomoState"
+            ).textContent =
+              "● Concentración";
+
+          }
+
+
+          document.getElementById(
+            "playButton"
+          ).textContent =
+            "▶";
+
+
+          drawPomodoro();
+
+        }
+
+      },
+      1000
+    );
+
+}
+
+
+
+function resetPomodoro(){
+
+  clearInterval(
+    pomoInterval
+  );
+
+
+  pomoRunning =
+    false;
+
+  pomoBreak =
+    false;
+
+  pomoSeconds =
+    25 * 60;
+
+
+  document.getElementById(
+    "playButton"
+  ).textContent =
+    "▶";
+
+
+  document.getElementById(
+    "pomoState"
+  ).textContent =
+    "● Concentración";
+
+
+  drawPomodoro();
+
+}
+
+
+
+/* =====================================================
+   BLOQUEO
+===================================================== */
+
+function lockApp(){
+
+  document.getElementById(
+    "lockScreen"
+  ).classList.add(
+    "show"
+  );
+
+}
+
+
+function unlockApp(){
+
+  document.getElementById(
+    "lockScreen"
+  ).classList.remove(
+    "show"
+  );
+
+}
+
+
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+updateClock();
+
+drawPomodoro();
+
+
+setInterval(
+  updateClock,
+  1000
+);
+
+</script>
 
 </body>
 </html>

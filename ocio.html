@@ -1,1 +1,404 @@
-<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'><link rel='stylesheet' href='./css/styles.css'><title>Ocio</title></head><body><header class='routine-header'><a href='./index.html' class='back-button'>‹</a><div><div class='eyebrow'>AMOR AL ARTE</div><h1>📱 Ocio</h1><p>20:30 — 21:30 · Ahora sí puedes enredar.</p></div></header><section class='slot-timer'><div class='slot-timer-header'><div class='slot-title'>Tu rato de ocio</div><div id='ocioStatus' class='slot-status'>20:30 – 21:30</div></div><div id='ocioCountdown' class='slot-countdown'>01:00:00</div><div id='ocioTimerText' class='slot-end'></div></section><section class='card'><div class='ideas'><div class='idea'>📱 Instagram / TikTok</div><div class='idea'>▶️ YouTube</div><div class='idea'>📖 Leer</div><div class='idea'>🌍 Investigar algo curioso</div></div><div class='strong-message'>Después: zapatillas y a andar.</div></section><nav class="bottom-nav"><a href="./index.html" class="nav-item">🏠 <span>Inicio</span></a><a href="./amor-al-arte.html" class="nav-item">🎨 <span>Amor al arte</span></a><a href="./descubrimiento.html" class="nav-item">🪩 <span>Descubrimiento</span></a></nav><script>document.querySelectorAll('.nav-item')[1].classList.add('active')</script><script src='./js/routine.js'></script><script>setupCountdown(20,30,21,30,'ocioCountdown','ocioStatus','ocioTimerText')</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>Ocio · Mi Inicio</title>
+
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+<div id="lockScreen" class="lock-screen">
+  <div>
+    <div style="font-size:50px;">🔒</div>
+    <div class="lock-title">Mi Inicio</div>
+    <button class="unlock-button" onclick="unlockApp()">
+      Volver a entrar
+    </button>
+  </div>
+</div>
+
+<div class="top-actions">
+
+  <button class="top-action" onclick="lockApp()">
+    🔒 Bloquear
+  </button>
+
+  <a
+    class="top-action"
+    href="./amor-al-arte.html"
+    style="display:flex;align-items:center;text-decoration:none;color:inherit;"
+  >
+    ← Salir
+  </a>
+
+</div>
+
+<div class="hero">
+
+  <div>
+
+    <div id="greeting" class="greeting">
+      🌤️ Buenas tardes,
+      <span class="greeting-name">Sandra</span>
+    </div>
+
+    <div id="bigTime" class="big-time">
+      20:30
+    </div>
+
+    <div id="date" class="date"></div>
+
+    <div class="mode-pill">
+      <span class="mode-dot"></span>
+      <span>Ocio</span>
+    </div>
+
+  </div>
+
+  <div class="entertainment-card">
+
+    <div class="entertainment-title">
+      ★ Entretenimiento
+    </div>
+
+    <div class="entertainment-grid">
+
+      <div class="app" onclick="launchDirect('music://')">
+        <div class="icon music-icon">♪</div>
+        <div class="app-name">Música</div>
+      </div>
+
+      <div class="app" onclick="launchDirect('spotify://')">
+        <div class="icon spotify-icon">
+          <img src="https://api.iconify.design/logos/spotify-icon.svg">
+        </div>
+        <div class="app-name">Spotify</div>
+      </div>
+
+      <div class="app" onclick="launchDirect('youtube://')">
+        <div class="icon youtube-icon">
+          <img src="https://api.iconify.design/logos/youtube-icon.svg">
+        </div>
+        <div class="app-name">YouTube</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="slot-timer">
+
+  <div class="slot-timer-header">
+
+    <div class="slot-title">
+      Tu rato de ocio
+    </div>
+
+    <div
+      id="ocioTimerStatus"
+      class="slot-status"
+    >
+      20:30 – 21:30
+    </div>
+
+  </div>
+
+  <div
+    id="ocioCountdown"
+    class="slot-countdown"
+  >
+    01:00:00
+  </div>
+
+  <div
+    id="ocioTimerText"
+    class="slot-end"
+  ></div>
+
+</div>
+
+<div class="card">
+
+  <div class="page-title">
+    Si quieres enredar, es tu momento.
+  </div>
+
+  <div class="page-subtitle">
+    Esta hora es para descansar y enredar sin culpa.
+  </div>
+
+  <div class="app-grid">
+
+    <div class="app" onclick="launchDirect('instagram://')">
+      <div class="icon instagram-icon">
+        <img src="https://api.iconify.design/skill-icons/instagram.svg">
+      </div>
+      <div class="app-name">Instagram</div>
+    </div>
+
+    <div class="app" onclick="launchDirect('tiktok://')">
+      <div class="icon tiktok-icon">
+        <img src="https://api.iconify.design/logos/tiktok-icon.svg">
+      </div>
+      <div class="app-name">TikTok</div>
+    </div>
+
+    <div class="app" onclick="launchDirect('youtube://')">
+      <div class="icon youtube-icon">
+        <img src="https://api.iconify.design/logos/youtube-icon.svg">
+      </div>
+      <div class="app-name">YouTube</div>
+    </div>
+
+    <div class="app" onclick="launchDirect('spotify://')">
+      <div class="icon spotify-icon">
+        <img src="https://api.iconify.design/logos/spotify-icon.svg">
+      </div>
+      <div class="app-name">Spotify</div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div id="ideas" class="ideas"></div>
+
+  <div class="strong-message">
+    Y ve mentalizándote que vas a ir a andar. No es una elección, es una decisión.
+  </div>
+
+</div>
+
+<nav class="bottom-nav">
+
+  <button
+    onclick="window.location.href='./amor-al-arte.html'"
+  >
+    🏠 Inicio
+  </button>
+
+  <button
+    class="current-nav active"
+  >
+    📱 Ocio
+  </button>
+
+</nav>
+
+<script>
+
+const ideaPool=[
+  "Lee 15 páginas de un libro.",
+  "Investiga la moda de un año concreto.",
+  "Descubre cómo se vestía en otra década.",
+  "Investiga una civilización antigua.",
+  "Descubre una ciudad nueva.",
+  "Busca un acontecimiento histórico.",
+  "Investiga sobre arte o arquitectura.",
+  "Descubre algo curioso del mundo."
+];
+
+function navigateExternal(url){
+
+  const link=document.createElement("a");
+
+  link.href=url;
+  link.style.display="none";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  setTimeout(
+    ()=>link.remove(),
+    500
+  );
+}
+
+function launchDirect(url){
+  navigateExternal(url);
+}
+
+function updateClock(){
+
+  const now=new Date();
+
+  document.getElementById(
+    "bigTime"
+  ).textContent=
+    now.toLocaleTimeString(
+      "es-ES",
+      {
+        hour:"2-digit",
+        minute:"2-digit"
+      }
+    );
+
+  document.getElementById(
+    "date"
+  ).textContent=
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+      }
+    );
+
+  updateGreeting(now);
+  updateOcioTimer(now);
+}
+
+function updateGreeting(now){
+
+  const hour=now.getHours();
+
+  let greeting="Buenos días";
+  let icon="☀️";
+
+  if(hour>=14 && hour<21){
+    greeting="Buenas tardes";
+    icon="🌤️";
+  }
+
+  if(hour>=21 || hour<6){
+    greeting="Buenas noches";
+    icon="🌙";
+  }
+
+  document.getElementById(
+    "greeting"
+  ).innerHTML=
+    icon+
+    " "+
+    greeting+
+    ', <span class="greeting-name">Sandra</span>';
+}
+
+function formatDuration(seconds){
+
+  const h=Math.floor(seconds/3600);
+  const m=Math.floor((seconds%3600)/60);
+  const s=seconds%60;
+
+  return(
+    String(h).padStart(2,"0")
+    +":"
+    +String(m).padStart(2,"0")
+    +":"
+    +String(s).padStart(2,"0")
+  );
+}
+
+function updateOcioTimer(now){
+
+  const current=
+    now.getHours()*60+
+    now.getMinutes();
+
+  const start=1230;
+  const end=1290;
+
+  const countdown=
+    document.getElementById("ocioCountdown");
+
+  const status=
+    document.getElementById("ocioTimerStatus");
+
+  const text=
+    document.getElementById("ocioTimerText");
+
+  if(current<start){
+    countdown.textContent="01:00:00";
+    status.textContent="Pendiente";
+    text.textContent="Todavía no ha empezado";
+    return;
+  }
+
+  if(current>=start && current<end){
+
+    const endDate=new Date();
+
+    endDate.setHours(
+      21,
+      30,
+      0,
+      0
+    );
+
+    countdown.textContent=
+      formatDuration(
+        Math.max(
+          0,
+          Math.floor(
+            (endDate-now)/1000
+          )
+        )
+      );
+
+    status.textContent="Ahora";
+    text.textContent="Tiempo restante";
+    return;
+  }
+
+  countdown.textContent="00:00:00";
+  status.textContent="Finalizado";
+  text.textContent="Terminado por hoy";
+}
+
+function renderIdeas(){
+
+  const container=
+    document.getElementById("ideas");
+
+  container.innerHTML="";
+
+  [...ideaPool]
+    .sort(()=>Math.random()-.5)
+    .slice(0,3)
+    .forEach(text=>{
+
+      const item=
+        document.createElement("div");
+
+      item.className="idea";
+      item.textContent=text;
+
+      container.appendChild(item);
+    });
+}
+
+function lockApp(){
+  document.getElementById("lockScreen").classList.add("show");
+}
+
+function unlockApp(){
+  document.getElementById("lockScreen").classList.remove("show");
+}
+
+renderIdeas();
+updateClock();
+
+setInterval(
+  updateClock,
+  1000
+);
+
+</script>
+
+</body>
+</html>

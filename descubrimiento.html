@@ -1,1 +1,4712 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'><link rel='stylesheet' href='./css/styles.css'><title>Descubrimiento</title></head><body><section class='calendar-card'><div class='eyebrow'>DESCUBRIMIENTO</div><h1>🪩 Lo que existe fuera de tu rutina</h1><div class='discovery-grid'><a id='conmigo' class='discovery-card'><span>💗</span><b>Cita conmigo</b><small>Creatividad, libros, arcilla, pintura…</small></a><a id='amigos' class='discovery-card'><span>👯</span><b>Amigos</b><small>Viajes y planes</small></a><a id='familia' class='discovery-card'><span>👨‍👩‍👧</span><b>Familia</b><small>Padres, primos y familia</small></a><a id='viajes' class='discovery-card'><span>🧳</span><b>Escapadas</b><small>Descubrir sitios</small></a></div></section><nav class="bottom-nav"><a href="./index.html" class="nav-item">🏠 <span>Inicio</span></a><a href="./amor-al-arte.html" class="nav-item">🎨 <span>Amor al arte</span></a><a href="./descubrimiento.html" class="nav-item">🪩 <span>Descubrimiento</span></a></nav><script>document.querySelectorAll('.nav-item')[2].classList.add('active')</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
+>
+
+<meta
+  name="apple-mobile-web-app-title"
+  content="Mi Inicio"
+>
+
+<title>Descubrimiento · Mi Inicio</title>
+
+
+<style>
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+
+  --bg:#f8f6fa;
+
+  --card:
+    rgba(255,255,255,.93);
+
+  --text:#171720;
+
+  --muted:#777681;
+
+  --pink:#ff4f7f;
+
+  --purple:#7558dc;
+
+  --purpleSoft:#eee9ff;
+
+  --green:#1ca879;
+
+  --greenSoft:#e5f7f0;
+
+  --orange:#ff7b22;
+
+  --orangeSoft:#fff0e5;
+
+  --blue:#268dd2;
+
+  --blueSoft:#e8f4fc;
+
+  --yellow:#f4c74f;
+
+  --yellowSoft:#fff8dc;
+
+  --red:#e95868;
+
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+*{
+
+  box-sizing:border-box;
+
+  -webkit-tap-highlight-color:
+    transparent;
+
+}
+
+
+html,
+body{
+
+  margin:0;
+
+  min-height:100%;
+
+}
+
+
+body{
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  color:var(--text);
+
+  background:
+
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(255,218,232,.72),
+      transparent 27%
+    ),
+
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(226,217,255,.72),
+      transparent 31%
+    ),
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(215,244,235,.5),
+      transparent 32%
+    ),
+
+    var(--bg);
+
+  padding:
+
+    calc(
+      env(safe-area-inset-top)
+      +
+      20px
+    )
+
+    14px
+
+    calc(
+      env(safe-area-inset-bottom)
+      +
+      125px
+    );
+
+}
+
+
+button,
+input,
+textarea{
+
+  font:inherit;
+
+}
+
+
+/* =====================================================
+   CABECERA
+===================================================== */
+
+.hero{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  gap:15px;
+
+  margin-bottom:18px;
+
+}
+
+
+.hero-kicker{
+
+  color:var(--purple);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1.3px;
+
+}
+
+
+.hero-title{
+
+  margin-top:4px;
+
+  font-size:31px;
+
+  line-height:1.05;
+
+  font-weight:950;
+
+}
+
+
+.hero-title span{
+
+  color:var(--pink);
+
+}
+
+
+.hero-subtitle{
+
+  max-width:260px;
+
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  line-height:1.45;
+
+}
+
+
+.hero-date{
+
+  flex:none;
+
+  padding:10px 12px;
+
+  border-radius:17px;
+
+  background:
+    rgba(255,255,255,.85);
+
+  text-align:center;
+
+  box-shadow:
+    0 6px 20px
+    rgba(0,0,0,.05);
+
+}
+
+
+.hero-day-number{
+
+  font-size:24px;
+
+  font-weight:950;
+
+}
+
+
+.hero-day-name{
+
+  margin-top:2px;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+  font-weight:850;
+
+  text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   TABS
+===================================================== */
+
+.tabs{
+
+  position:sticky;
+
+  z-index:50;
+
+  top:
+    calc(
+      env(safe-area-inset-top)
+      +
+      4px
+    );
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:5px;
+
+  margin-bottom:16px;
+
+  padding:5px;
+
+  border-radius:20px;
+
+  background:
+    rgba(245,244,247,.92);
+
+  backdrop-filter:
+    blur(24px);
+
+  -webkit-backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 6px 22px
+    rgba(0,0,0,.07);
+
+}
+
+
+.tab{
+
+  min-height:45px;
+
+  padding:4px;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:transparent;
+
+  color:#74737b;
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+
+.tab.active{
+
+  background:white;
+
+  color:#16161d;
+
+  box-shadow:
+    0 3px 11px
+    rgba(0,0,0,.06);
+
+}
+
+
+.tab-page{
+
+  display:none;
+
+}
+
+
+.tab-page.active{
+
+  display:block;
+
+}
+
+
+/* =====================================================
+   GENERAL CARDS
+===================================================== */
+
+.card{
+
+  margin-bottom:14px;
+
+  padding:16px;
+
+  border-radius:24px;
+
+  background:var(--card);
+
+  box-shadow:
+    0 8px 27px
+    rgba(0,0,0,.05);
+
+}
+
+
+.eyebrow{
+
+  color:var(--pink);
+
+  font-size:9px;
+
+  font-weight:950;
+
+  letter-spacing:1.1px;
+
+}
+
+
+.card-title{
+
+  margin-top:4px;
+
+  font-size:21px;
+
+  font-weight:950;
+
+}
+
+
+.card-subtitle{
+
+  margin-top:6px;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  line-height:1.45;
+
+}
+
+
+/* =====================================================
+   HOY
+===================================================== */
+
+.today-card{
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f2edff
+    );
+
+}
+
+
+.now-top{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+}
+
+
+.now-icon{
+
+  width:58px;
+
+  height:58px;
+
+  flex:none;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:19px;
+
+  background:#eee8ff;
+
+  font-size:30px;
+
+}
+
+
+.now-label{
+
+  color:var(--purple);
+
+  font-size:9px;
+
+  font-weight:950;
+
+  letter-spacing:1px;
+
+}
+
+
+.now-title{
+
+  margin-top:4px;
+
+  font-size:24px;
+
+  font-weight:950;
+
+}
+
+
+.now-hours{
+
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  font-weight:750;
+
+}
+
+
+.now-countdown{
+
+  margin-top:16px;
+
+  font-size:42px;
+
+  line-height:1;
+
+  letter-spacing:-2px;
+
+}
+
+
+.now-message{
+
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  line-height:1.45;
+
+}
+
+
+.progress{
+
+  height:6px;
+
+  margin-top:15px;
+
+  overflow:hidden;
+
+  border-radius:999px;
+
+  background:#e9e7ed;
+
+}
+
+
+.progress-bar{
+
+  width:0%;
+
+  height:100%;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7558dc,
+      #ff5b8c
+    );
+
+}
+
+
+/* =====================================================
+   HORARIO
+===================================================== */
+
+.schedule{
+
+  display:grid;
+
+  gap:8px;
+
+  margin-top:14px;
+
+}
+
+
+.schedule-row{
+
+  display:grid;
+
+  grid-template-columns:
+    66px
+    1fr;
+
+  gap:10px;
+
+  padding:11px;
+
+  border-radius:16px;
+
+  background:#f8f7f9;
+
+}
+
+
+.schedule-row.current{
+
+  background:#f0ebff;
+
+  outline:
+    2px solid #7558dc;
+
+}
+
+
+.schedule-time{
+
+  color:#55545d;
+
+  font-size:9px;
+
+  font-weight:900;
+
+}
+
+
+.schedule-title{
+
+  font-size:11px;
+
+  font-weight:900;
+
+}
+
+
+.schedule-desc{
+
+  margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:9px;
+
+  line-height:1.35;
+
+}
+
+
+/* =====================================================
+   CREACIÓN
+===================================================== */
+
+.creation-hero{
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #fff,
+      #fff1f5
+    );
+
+}
+
+
+.creation-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:9px;
+
+  margin-top:14px;
+
+}
+
+
+.creation-card{
+
+  min-height:120px;
+
+  padding:14px;
+
+  border:0;
+
+  border-radius:19px;
+
+  text-align:left;
+
+}
+
+
+.creation-card:nth-child(1){
+
+  background:#f0edff;
+
+}
+
+
+.creation-card:nth-child(2){
+
+  background:#fff0f4;
+
+}
+
+
+.creation-card:nth-child(3){
+
+  background:#e9f8f2;
+
+}
+
+
+.creation-card:nth-child(4){
+
+  background:#fff4e8;
+
+}
+
+
+.creation-card:nth-child(5){
+
+  background:#edf5ff;
+
+}
+
+
+.creation-card:nth-child(6){
+
+  background:#fff9df;
+
+}
+
+
+.creation-icon{
+
+  font-size:27px;
+
+}
+
+
+.creation-title{
+
+  margin-top:8px;
+
+  font-size:13px;
+
+  font-weight:900;
+
+}
+
+
+.creation-text{
+
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:9px;
+
+  line-height:1.35;
+
+}
+
+
+.random-idea{
+
+  margin-top:13px;
+
+  padding:15px;
+
+  border-radius:18px;
+
+  background:#111;
+
+  color:white;
+
+}
+
+
+.random-label{
+
+  color:#c8baff;
+
+  font-size:8px;
+
+  font-weight:950;
+
+  letter-spacing:1px;
+
+}
+
+
+.random-text{
+
+  margin-top:6px;
+
+  min-height:38px;
+
+  font-size:14px;
+
+  font-weight:750;
+
+  line-height:1.4;
+
+}
+
+
+.random-button{
+
+  width:100%;
+
+  min-height:43px;
+
+  margin-top:12px;
+
+  border:0;
+
+  border-radius:14px;
+
+  background:white;
+
+  color:#111;
+
+  font-size:10px;
+
+  font-weight:900;
+
+}
+
+
+/* =====================================================
+   ALIMENTACIÓN
+===================================================== */
+
+.food-hero{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #fff,
+      #effaf5
+    );
+
+}
+
+
+.week-selector{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(7,1fr);
+
+  gap:4px;
+
+  margin-top:14px;
+
+}
+
+
+.week-day{
+
+  min-height:40px;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:#f4f3f5;
+
+  font-size:8px;
+
+  font-weight:850;
+
+}
+
+
+.week-day.active{
+
+  background:#1ca879;
+
+  color:white;
+
+}
+
+
+.meal-editor{
+
+  margin-top:13px;
+
+}
+
+
+.meal{
+
+  margin-bottom:8px;
+
+  padding:12px;
+
+  border-radius:17px;
+
+  background:#f8f7f9;
+
+}
+
+
+.meal-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:8px;
+
+  align-items:center;
+
+}
+
+
+.meal-name{
+
+  font-size:10px;
+
+  font-weight:950;
+
+}
+
+
+.meal-kcal{
+
+  color:var(--green);
+
+  font-size:9px;
+
+  font-weight:900;
+
+}
+
+
+.meal input{
+
+  width:100%;
+
+  margin-top:7px;
+
+  padding:10px;
+
+  border:
+    1px solid #e6e4e8;
+
+  border-radius:12px;
+
+  background:white;
+
+  outline:none;
+
+  font-size:10px;
+
+}
+
+
+.meal-calories{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  margin-top:6px;
+
+}
+
+
+.meal-calories input{
+
+  width:70px;
+
+  margin:0;
+
+}
+
+
+.meal-calories span{
+
+  color:var(--muted);
+
+  font-size:9px;
+
+}
+
+
+.food-total{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-top:12px;
+
+  padding:13px;
+
+  border-radius:16px;
+
+  background:#e8f7f1;
+
+}
+
+
+.food-total strong{
+
+  font-size:12px;
+
+}
+
+
+.food-total span{
+
+  color:#16845f;
+
+  font-size:13px;
+
+  font-weight:950;
+
+}
+
+
+.save-button{
+
+  width:100%;
+
+  min-height:46px;
+
+  margin-top:10px;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:11px;
+
+  font-weight:900;
+
+}
+
+
+/* =====================================================
+   COMPRA
+===================================================== */
+
+.shopping-input{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  gap:7px;
+
+  margin-top:13px;
+
+}
+
+
+.shopping-input input{
+
+  min-width:0;
+
+  padding:11px;
+
+  border:
+    1px solid #e6e4e8;
+
+  border-radius:13px;
+
+  background:white;
+
+  outline:none;
+
+  font-size:10px;
+
+}
+
+
+.shopping-input button{
+
+  width:44px;
+
+  border:0;
+
+  border-radius:13px;
+
+  background:#1ca879;
+
+  color:white;
+
+  font-size:20px;
+
+}
+
+
+.shopping-list{
+
+  display:grid;
+
+  gap:7px;
+
+  margin-top:11px;
+
+}
+
+
+.shopping-item{
+
+  padding:10px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  border-radius:14px;
+
+  background:#f7f6f8;
+
+}
+
+
+.shopping-check{
+
+  width:20px;
+
+  height:20px;
+
+  flex:none;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border:
+    2px solid #c9c6cc;
+
+  border-radius:50%;
+
+  font-size:11px;
+
+}
+
+
+.shopping-item.done{
+
+  opacity:.5;
+
+}
+
+
+.shopping-item.done
+.shopping-check{
+
+  border-color:#1ca879;
+
+  background:#1ca879;
+
+  color:white;
+
+}
+
+
+.shopping-text{
+
+  flex:1;
+
+  font-size:10px;
+
+}
+
+
+.shopping-delete{
+
+  border:0;
+
+  background:transparent;
+
+  color:#aaa7ad;
+
+  font-size:15px;
+
+}
+
+
+/* =====================================================
+   CUIDADO
+===================================================== */
+
+.care-summary{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:9px;
+
+  margin-top:14px;
+
+}
+
+
+.care-next{
+
+  min-height:100px;
+
+  padding:13px;
+
+  border-radius:18px;
+
+  background:#f7f6f8;
+
+}
+
+
+.care-next-icon{
+
+  font-size:24px;
+
+}
+
+
+.care-next-title{
+
+  margin-top:7px;
+
+  font-size:10px;
+
+  font-weight:900;
+
+}
+
+
+.care-next-date{
+
+  margin-top:4px;
+
+  color:var(--pink);
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+
+.care-section{
+
+  margin-bottom:14px;
+
+  overflow:hidden;
+
+  border-radius:23px;
+
+  background:white;
+
+  box-shadow:
+    0 8px 27px
+    rgba(0,0,0,.05);
+
+}
+
+
+.care-header{
+
+  width:100%;
+
+  padding:16px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  border:0;
+
+  background:white;
+
+  text-align:left;
+
+}
+
+
+.care-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+}
+
+
+.care-icon{
+
+  width:42px;
+
+  height:42px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:14px;
+
+  background:#fff0f4;
+
+  font-size:22px;
+
+}
+
+
+.care-title{
+
+  font-size:14px;
+
+  font-weight:950;
+
+}
+
+
+.care-mini{
+
+  margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+}
+
+
+.care-arrow{
+
+  font-size:17px;
+
+  transition:.2s;
+
+}
+
+
+.care-content{
+
+  display:none;
+
+  padding:
+    0
+    16px
+    16px;
+
+}
+
+
+.care-section.open
+.care-content{
+
+  display:block;
+
+}
+
+
+.care-section.open
+.care-arrow{
+
+  transform:
+    rotate(180deg);
+
+}
+
+
+.care-block{
+
+  margin-top:8px;
+
+  padding:12px;
+
+  border-radius:16px;
+
+  background:#f8f7f9;
+
+}
+
+
+.care-block-title{
+
+  font-size:10px;
+
+  font-weight:950;
+
+}
+
+
+.care-block-text{
+
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:9px;
+
+  line-height:1.45;
+
+}
+
+
+.date-row{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  gap:7px;
+
+  margin-top:9px;
+
+}
+
+
+.date-row input{
+
+  min-width:0;
+
+  padding:10px;
+
+  border:
+    1px solid #ddd;
+
+  border-radius:12px;
+
+  background:white;
+
+  font-size:10px;
+
+}
+
+
+.date-row button{
+
+  padding:0 12px;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+
+.next-result{
+
+  margin-top:7px;
+
+  color:var(--purple);
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+
+.routine-list{
+
+  display:grid;
+
+  gap:6px;
+
+  margin-top:9px;
+
+}
+
+
+.routine-item{
+
+  padding:9px 10px;
+
+  border-radius:12px;
+
+  background:white;
+
+  font-size:9px;
+
+}
+
+
+.care-shop-title{
+
+  margin-top:13px;
+
+  font-size:9px;
+
+  font-weight:950;
+
+  letter-spacing:.7px;
+
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.bottom-nav{
+
+  position:fixed;
+
+  z-index:100;
+
+  left:13px;
+
+  right:13px;
+
+  bottom:
+    calc(
+      env(safe-area-inset-bottom)
+      +
+      15px
+    );
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:5px;
+
+  padding:6px;
+
+  border-radius:24px;
+
+  background:
+    rgba(250,250,251,.94);
+
+  backdrop-filter:
+    blur(28px);
+
+  -webkit-backdrop-filter:
+    blur(28px);
+
+  box-shadow:
+    0 7px 31px
+    rgba(0,0,0,.12);
+
+}
+
+
+.nav-item{
+
+  min-height:50px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:5px;
+
+  border-radius:18px;
+
+  color:#686873;
+
+  text-decoration:none;
+
+  font-size:9px;
+
+  font-weight:850;
+
+}
+
+
+.nav-item.active{
+
+  color:#7558dc;
+
+  background:#eee9ff;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:390px){
+
+  body{
+
+    padding-left:12px;
+
+    padding-right:12px;
+
+  }
+
+  .hero-title{
+
+    font-size:28px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+  <div>
+
+    <div class="hero-kicker">
+      FIN DE SEMANA
+    </div>
+
+    <div class="hero-title">
+      Tu espacio de
+      <span>
+        descubrimiento.
+      </span>
+    </div>
+
+    <div class="hero-subtitle">
+      Crear, cuidarte, ordenar tu semana,
+      descubrir cosas y dejar espacio
+      para hacer lo que te dé la gana.
+    </div>
+
+  </div>
+
+
+  <div class="hero-date">
+
+    <div
+      id="heroDay"
+      class="hero-day-number"
+    >
+      22
+    </div>
+
+    <div
+      id="heroWeekday"
+      class="hero-day-name"
+    >
+      SÁBADO
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     TABS
+===================================================== -->
+
+<nav class="tabs">
+
+  <button
+    id="tabToday"
+    class="tab active"
+    onclick="showTab('today')"
+  >
+    ✨ Hoy
+  </button>
+
+  <button
+    id="tabCreate"
+    class="tab"
+    onclick="showTab('create')"
+  >
+    🎨 Crear
+  </button>
+
+  <button
+    id="tabFood"
+    class="tab"
+    onclick="showTab('food')"
+  >
+    🍓 Alimentación
+  </button>
+
+  <button
+    id="tabCare"
+    class="tab"
+    onclick="showTab('care')"
+  >
+    🫧 Cuidado
+  </button>
+
+</nav>
+
+
+<!-- =====================================================
+     HOY
+===================================================== -->
+
+<section
+  id="pageToday"
+  class="tab-page active"
+>
+
+
+  <article class="card today-card">
+
+    <div class="now-top">
+
+      <div>
+
+        <div
+          id="nowLabel"
+          class="now-label"
+        >
+          AHORA
+        </div>
+
+        <div
+          id="nowTitle"
+          class="now-title"
+        >
+          Tiempo de creación
+        </div>
+
+        <div
+          id="nowHours"
+          class="now-hours"
+        >
+          10:00 – 13:00
+        </div>
+
+      </div>
+
+
+      <div
+        id="nowIcon"
+        class="now-icon"
+      >
+        🎨
+      </div>
+
+    </div>
+
+
+    <div
+      id="nowCountdown"
+      class="now-countdown"
+    >
+      03:00:00
+    </div>
+
+
+    <div
+      id="nowMessage"
+      class="now-message"
+    >
+      Haz algo que te apetezca.
+    </div>
+
+
+    <div class="progress">
+
+      <div
+        id="nowProgress"
+        class="progress-bar"
+      >
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- HORARIO SÁBADO -->
+
+  <article
+    id="saturdayCard"
+    class="card"
+  >
+
+    <div class="eyebrow">
+      SÁBADO
+    </div>
+
+    <div class="card-title">
+      Día abierto
+    </div>
+
+    <div class="card-subtitle">
+      Estructura suficiente para aprovechar el día,
+      pero con hueco para improvisar.
+    </div>
+
+    <div
+      id="saturdaySchedule"
+      class="schedule"
+    >
+    </div>
+
+  </article>
+
+
+  <!-- HORARIO DOMINGO -->
+
+  <article
+    id="sundayCard"
+    class="card"
+  >
+
+    <div class="eyebrow">
+      DOMINGO
+    </div>
+
+    <div class="card-title">
+      Disfrutar + preparar
+    </div>
+
+    <div class="card-subtitle">
+      Un domingo que sigue siendo tuyo,
+      pero termina dejándote el lunes fácil.
+    </div>
+
+    <div
+      id="sundaySchedule"
+      class="schedule"
+    >
+    </div>
+
+  </article>
+
+</section>
+
+
+<!-- =====================================================
+     CREAR
+===================================================== -->
+
+<section
+  id="pageCreate"
+  class="tab-page"
+>
+
+  <article class="card creation-hero">
+
+    <div class="eyebrow">
+      TIEMPO DE CREACIÓN
+    </div>
+
+    <div class="card-title">
+      No significa “ser productiva”.
+    </div>
+
+    <div class="card-subtitle">
+      Puede ser hacer una app o pintarte las uñas.
+      Crear un plan también cuenta.
+    </div>
+
+
+    <div class="creation-grid">
+
+
+      <button
+        class="creation-card"
+        onclick="giveCreationIdea('digital')"
+      >
+
+        <div class="creation-icon">
+          💻
+        </div>
+
+        <div class="creation-title">
+          Digital
+        </div>
+
+        <div class="creation-text">
+          Apps, webs, automatizaciones,
+          diseños, editar fotos…
+        </div>
+
+      </button>
+
+
+      <button
+        class="creation-card"
+        onclick="giveCreationIdea('manual')"
+      >
+
+        <div class="creation-icon">
+          🏺
+        </div>
+
+        <div class="creation-title">
+          Con las manos
+        </div>
+
+        <div class="creation-text">
+          Cerámica, pintar, collage,
+          joyitas, decorar…
+        </div>
+
+      </button>
+
+
+      <button
+        class="creation-card"
+        onclick="giveCreationIdea('social')"
+      >
+
+        <div class="creation-icon">
+          🥂
+        </div>
+
+        <div class="creation-title">
+          Social
+        </div>
+
+        <div class="creation-text">
+          Quedar, llamar a alguien,
+          organizar un plan.
+        </div>
+
+      </button>
+
+
+      <button
+        class="creation-card"
+        onclick="giveCreationIdea('outside')"
+      >
+
+        <div class="creation-icon">
+          🛍️
+        </div>
+
+        <div class="creation-title">
+          Sal de casa
+        </div>
+
+        <div class="creation-text">
+          Compras, exposición, café,
+          mercadillo, explorar.
+        </div>
+
+      </button>
+
+
+      <button
+        class="creation-card"
+        onclick="giveCreationIdea('beauty')"
+      >
+
+        <div class="creation-icon">
+          💄
+        </div>
+
+        <div class="creation-title">
+          Arreglarme
+        </div>
+
+        <div class="creation-text">
+          Pelo, maquillaje,
+          outfit, fotos.
+        </div>
+
+      </button>
+
+
+      <button
+        class="creation-card"
+        onclick="giveCreationIdea('curiosity')"
+      >
+
+        <div class="creation-icon">
+          🪩
+        </div>
+
+        <div class="creation-title">
+          Rabbit hole
+        </div>
+
+        <div class="creation-text">
+          Historia, moda,
+          cine, ciudades, cultura.
+        </div>
+
+      </button>
+
+    </div>
+
+
+    <div class="random-idea">
+
+      <div class="random-label">
+        ¿Y AHORA QUÉ?
+      </div>
+
+      <div
+        id="creationIdea"
+        class="random-text"
+      >
+        Toca una categoría o deja que el azar decida.
+      </div>
+
+      <button
+        class="random-button"
+        onclick="surpriseCreation()"
+      >
+        ✨ Dame una idea
+      </button>
+
+    </div>
+
+  </article>
+
+</section>
+
+
+<!-- =====================================================
+     ALIMENTACIÓN
+===================================================== -->
+
+<section
+  id="pageFood"
+  class="tab-page"
+>
+
+
+  <article class="card food-hero">
+
+    <div class="eyebrow">
+      MENÚ SEMANAL
+    </div>
+
+    <div class="card-title">
+      ¿Qué comemos esta semana?
+    </div>
+
+    <div class="card-subtitle">
+      Organiza las comidas sin decidir cada día desde cero.
+      Puedes escribir tus platos y las kcal aproximadas.
+    </div>
+
+
+    <div
+      id="weekSelector"
+      class="week-selector"
+    >
+    </div>
+
+
+    <div
+      id="mealEditor"
+      class="meal-editor"
+    >
+    </div>
+
+
+    <div class="food-total">
+
+      <strong>
+        Total del día
+      </strong>
+
+      <span id="dailyCalories">
+        0 kcal
+      </span>
+
+    </div>
+
+
+    <button
+      class="save-button"
+      onclick="saveMeals()"
+    >
+      Guardar menú
+    </button>
+
+  </article>
+
+
+  <article class="card">
+
+    <div class="eyebrow">
+      🛒 LISTA DE LA COMPRA
+    </div>
+
+    <div class="card-title">
+      Carrito
+    </div>
+
+    <div class="card-subtitle">
+      Añade aquí todo lo que haga falta
+      para el menú de la semana.
+    </div>
+
+
+    <div class="shopping-input">
+
+      <input
+        id="foodShoppingInput"
+        type="text"
+        placeholder="Ej. yogur griego, salmón..."
+        onkeydown="
+          if(event.key==='Enter'){
+            addShoppingItem('food');
+          }
+        "
+      >
+
+      <button
+        onclick="addShoppingItem('food')"
+      >
+        +
+      </button>
+
+    </div>
+
+
+    <div
+      id="foodShoppingList"
+      class="shopping-list"
+    >
+    </div>
+
+  </article>
+
+</section>
+
+
+<!-- =====================================================
+     CUIDADO
+===================================================== -->
+
+<section
+  id="pageCare"
+  class="tab-page"
+>
+
+
+  <!-- RESUMEN -->
+
+  <article class="card">
+
+    <div class="eyebrow">
+      PRÓXIMAMENTE
+    </div>
+
+    <div class="card-title">
+      Tu calendario de cuidado
+    </div>
+
+    <div class="card-subtitle">
+      Las rutinas pequeñas son fáciles de olvidar.
+      Aquí se quedan apuntadas.
+    </div>
+
+
+    <div
+      id="careSummary"
+      class="care-summary"
+    >
+    </div>
+
+  </article>
+
+
+  <!-- PELO -->
+
+  <section
+    id="hairSection"
+    class="care-section"
+  >
+
+    <button
+      class="care-header"
+      onclick="toggleCare('hairSection')"
+    >
+
+      <span class="care-left">
+
+        <span class="care-icon">
+          💇🏻‍♀️
+        </span>
+
+        <span>
+
+          <span class="care-title">
+            Pelo
+          </span>
+
+          <span class="care-mini">
+            Hidratación · puntas · rutina
+          </span>
+
+        </span>
+
+      </span>
+
+      <span class="care-arrow">
+        ⌄
+      </span>
+
+    </button>
+
+
+    <div class="care-content">
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          💧 Tratamiento hidratante
+        </div>
+
+        <div class="care-block-text">
+          Cada 3 semanas.
+          Marca la última vez que te lo hiciste.
+        </div>
+
+        <div class="date-row">
+
+          <input
+            id="hairHydrationDate"
+            type="date"
+          >
+
+          <button
+            onclick="
+              saveCareDate(
+                'hairHydration',
+                'hairHydrationDate',
+                21
+              )
+            "
+          >
+            Guardar
+          </button>
+
+        </div>
+
+        <div
+          id="hairHydrationNext"
+          class="next-result"
+        >
+        </div>
+
+      </div>
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          ✂️ Cortar puntas
+        </div>
+
+        <div class="care-block-text">
+          Aproximadamente cada 2 meses.
+        </div>
+
+        <div class="date-row">
+
+          <input
+            id="hairCutDate"
+            type="date"
+          >
+
+          <button
+            onclick="
+              saveCareDate(
+                'hairCut',
+                'hairCutDate',
+                60
+              )
+            "
+          >
+            Guardar
+          </button>
+
+        </div>
+
+        <div
+          id="hairCutNext"
+          class="next-result"
+        >
+        </div>
+
+      </div>
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          ✨ Rutina de pelo
+        </div>
+
+        <div class="routine-list">
+
+          <div class="routine-item">
+            🫧 Champú
+          </div>
+
+          <div class="routine-item">
+            🧴 Mascarilla / acondicionador
+          </div>
+
+          <div class="routine-item">
+            💧 Leave-in / hidratación
+          </div>
+
+          <div class="routine-item">
+            🔥 Protector térmico cuando toque
+          </div>
+
+          <div class="routine-item">
+            🌙 Cuidar el pelo al dormir
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="care-shop-title">
+        🛒 COMPRA · PELO
+      </div>
+
+      <div class="shopping-input">
+
+        <input
+          id="hairShoppingInput"
+          placeholder="Producto para el pelo..."
+          onkeydown="
+            if(event.key==='Enter'){
+              addShoppingItem('hair');
+            }
+          "
+        >
+
+        <button
+          onclick="addShoppingItem('hair')"
+        >
+          +
+        </button>
+
+      </div>
+
+      <div
+        id="hairShoppingList"
+        class="shopping-list"
+      >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKINCARE -->
+
+  <section
+    id="skinSection"
+    class="care-section"
+  >
+
+    <button
+      class="care-header"
+      onclick="toggleCare('skinSection')"
+    >
+
+      <span class="care-left">
+
+        <span class="care-icon">
+          🧴
+        </span>
+
+        <span>
+
+          <span class="care-title">
+            Skincare
+          </span>
+
+          <span class="care-mini">
+            Mañana · noche · extras
+          </span>
+
+        </span>
+
+      </span>
+
+      <span class="care-arrow">
+        ⌄
+      </span>
+
+    </button>
+
+
+    <div class="care-content">
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          ☀️ Mañana
+        </div>
+
+        <div class="routine-list">
+
+          <div class="routine-item">
+            🫧 Limpieza
+          </div>
+
+          <div class="routine-item">
+            💧 Hidratación
+          </div>
+
+          <div class="routine-item">
+            🌞 Protector solar
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          🌙 Noche
+        </div>
+
+        <div class="routine-list">
+
+          <div class="routine-item">
+            🫧 Limpiar / desmaquillar
+          </div>
+
+          <div class="routine-item">
+            ✨ Tratamiento que corresponda
+          </div>
+
+          <div class="routine-item">
+            🧴 Hidratante
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          🎭 Mascarilla
+        </div>
+
+        <div class="care-block-text">
+          La hacemos coincidir con
+          la depilación completa cada 2 semanas.
+        </div>
+
+      </div>
+
+
+      <div class="care-shop-title">
+        🛒 COMPRA · SKINCARE
+      </div>
+
+      <div class="shopping-input">
+
+        <input
+          id="skinShoppingInput"
+          placeholder="Producto de skincare..."
+          onkeydown="
+            if(event.key==='Enter'){
+              addShoppingItem('skin');
+            }
+          "
+        >
+
+        <button
+          onclick="addShoppingItem('skin')"
+        >
+          +
+        </button>
+
+      </div>
+
+      <div
+        id="skinShoppingList"
+        class="shopping-list"
+      >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DEPILACIÓN -->
+
+  <section
+    id="depilationSection"
+    class="care-section"
+  >
+
+    <button
+      class="care-header"
+      onclick="toggleCare('depilationSection')"
+    >
+
+      <span class="care-left">
+
+        <span class="care-icon">
+          🛁
+        </span>
+
+        <span>
+
+          <span class="care-title">
+            Depilación
+          </span>
+
+          <span class="care-mini">
+            Completa cada 2 semanas
+          </span>
+
+        </span>
+
+      </span>
+
+      <span class="care-arrow">
+        ⌄
+      </span>
+
+    </button>
+
+
+    <div class="care-content">
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          🛁 Día completo de cuidado
+        </div>
+
+        <div class="care-block-text">
+          Cada 14 días:
+          depilación completa + cuidado posterior
+          + mascarilla facial.
+        </div>
+
+        <div class="date-row">
+
+          <input
+            id="depilationDate"
+            type="date"
+          >
+
+          <button
+            onclick="
+              saveCareDate(
+                'depilation',
+                'depilationDate',
+                14
+              )
+            "
+          >
+            Guardar
+          </button>
+
+        </div>
+
+        <div
+          id="depilationNext"
+          class="next-result"
+        >
+        </div>
+
+      </div>
+
+
+      <div class="care-block">
+
+        <div class="routine-list">
+
+          <div class="routine-item">
+            🚿 Ducha caliente / preparar piel
+          </div>
+
+          <div class="routine-item">
+            🪒 Depilación
+          </div>
+
+          <div class="routine-item">
+            🧴 Producto calmante
+          </div>
+
+          <div class="routine-item">
+            💧 Hidratación corporal
+          </div>
+
+          <div class="routine-item">
+            🎭 Mascarilla facial
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="care-shop-title">
+        🛒 COMPRA · DEPILACIÓN
+      </div>
+
+      <div class="shopping-input">
+
+        <input
+          id="depilationShoppingInput"
+          placeholder="Cuchillas, crema, exfoliante..."
+          onkeydown="
+            if(event.key==='Enter'){
+              addShoppingItem('depilation');
+            }
+          "
+        >
+
+        <button
+          onclick="addShoppingItem('depilation')"
+        >
+          +
+        </button>
+
+      </div>
+
+      <div
+        id="depilationShoppingList"
+        class="shopping-list"
+      >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ÍNTIMO / REGLA -->
+
+  <section
+    id="intimateSection"
+    class="care-section"
+  >
+
+    <button
+      class="care-header"
+      onclick="toggleCare('intimateSection')"
+    >
+
+      <span class="care-left">
+
+        <span class="care-icon">
+          🌸
+        </span>
+
+        <span>
+
+          <span class="care-title">
+            Íntimo + regla
+          </span>
+
+          <span class="care-mini">
+            Higiene · neceser · reposición
+          </span>
+
+        </span>
+
+      </span>
+
+      <span class="care-arrow">
+        ⌄
+      </span>
+
+    </button>
+
+
+    <div class="care-content">
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          🎒 Neceser preparado
+        </div>
+
+        <div class="routine-list">
+
+          <div class="routine-item">
+            🌸 Productos para la regla
+          </div>
+
+          <div class="routine-item">
+            👙 Ropa interior de repuesto
+          </div>
+
+          <div class="routine-item">
+            🧻 Pañuelos / básicos
+          </div>
+
+          <div class="routine-item">
+            🧴 Productos de higiene habitual
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="care-block">
+
+        <div class="care-block-title">
+          📦 Revisión mensual
+        </div>
+
+        <div class="care-block-text">
+          Una vez al mes revisa existencias
+          para no descubrir que falta algo
+          justo cuando lo necesitas.
+        </div>
+
+      </div>
+
+
+      <div class="care-shop-title">
+        🛒 COMPRA · ÍNTIMO / REGLA
+      </div>
+
+      <div class="shopping-input">
+
+        <input
+          id="intimateShoppingInput"
+          placeholder="Añadir producto..."
+          onkeydown="
+            if(event.key==='Enter'){
+              addShoppingItem('intimate');
+            }
+          "
+        >
+
+        <button
+          onclick="addShoppingItem('intimate')"
+        >
+          +
+        </button>
+
+      </div>
+
+      <div
+        id="intimateShoppingList"
+        class="shopping-list"
+      >
+      </div>
+
+    </div>
+
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
+<nav class="bottom-nav">
+
+  <a
+    href="./index.html"
+    class="nav-item"
+  >
+    🏠
+    <span>
+      Inicio
+    </span>
+  </a>
+
+  <a
+    href="./amor-al-arte.html"
+    class="nav-item"
+  >
+    🎨
+    <span>
+      Amor al arte
+    </span>
+  </a>
+
+  <a
+    href="./descubrimiento.html"
+    class="nav-item active"
+  >
+    🪩
+    <span>
+      Descubrimiento
+    </span>
+  </a>
+
+</nav>
+
+
+<script>
+
+/* =====================================================
+   TABS
+===================================================== */
+
+function showTab(tab){
+
+  document
+    .querySelectorAll(
+      ".tab-page"
+    )
+    .forEach(
+      page =>
+        page.classList.remove(
+          "active"
+        )
+    );
+
+
+  document
+    .querySelectorAll(
+      ".tab"
+    )
+    .forEach(
+      button =>
+        button.classList.remove(
+          "active"
+        )
+    );
+
+
+  const map = {
+
+    today:[
+      "pageToday",
+      "tabToday"
+    ],
+
+    create:[
+      "pageCreate",
+      "tabCreate"
+    ],
+
+    food:[
+      "pageFood",
+      "tabFood"
+    ],
+
+    care:[
+      "pageCare",
+      "tabCare"
+    ]
+
+  };
+
+
+  document.getElementById(
+    map[tab][0]
+  ).classList.add(
+    "active"
+  );
+
+
+  document.getElementById(
+    map[tab][1]
+  ).classList.add(
+    "active"
+  );
+
+
+  window.scrollTo(
+    0,
+    0
+  );
+
+}
+
+
+/* =====================================================
+   HORARIO FIN DE SEMANA
+===================================================== */
+
+const saturdaySchedule = [
+
+  {
+    start:480,
+    end:570,
+    time:"08:00 – 09:30",
+    title:"👟 Andar / correr",
+    desc:"Empieza fuera de casa."
+  },
+
+  {
+    start:570,
+    end:600,
+    time:"09:30 – 10:00",
+    title:"🚿 Ducha + café",
+    desc:"Ducha tranquila y arrancar."
+  },
+
+  {
+    start:600,
+    end:780,
+    time:"10:00 – 13:00",
+    title:"🎨 Tiempo de creación",
+    desc:"Haz literalmente lo que te apetezca."
+  },
+
+  {
+    start:780,
+    end:960,
+    time:"13:00 – 16:00",
+    title:"🥂 Libre",
+    desc:"Familia, amigos, comer, salir."
+  },
+
+  {
+    start:960,
+    end:1260,
+    time:"16:00 – 21:00",
+    title:"✨ Tiempo de creación",
+    desc:"Proyecto, plan, compras, arreglarte, improvisar."
+  },
+
+  {
+    start:1260,
+    end:1350,
+    time:"21:00 – 22:30",
+    title:"👟 Andar + ducha",
+    desc:"Cerrar la tarde y prepararte."
+  },
+
+  {
+    start:1350,
+    end:1440,
+    time:"22:30 →",
+    title:"🍝 Cena / salida",
+    desc:"Noche libre."
+  }
+
+];
+
+
+const sundaySchedule = [
+
+  {
+    start:480,
+    end:570,
+    time:"08:00 – 09:30",
+    title:"👟 Andar / correr",
+    desc:"Empieza el domingo moviéndote."
+  },
+
+  {
+    start:570,
+    end:600,
+    time:"09:30 – 10:00",
+    title:"🚿 Ducha + café",
+    desc:"Ducha tranquila y café."
+  },
+
+  {
+    start:600,
+    end:780,
+    time:"10:00 – 13:00",
+    title:"🎨 Tiempo de creación",
+    desc:"Un bloque largo para tus cosas."
+  },
+
+  {
+    start:780,
+    end:960,
+    time:"13:00 – 16:00",
+    title:"🥂 Libre",
+    desc:"Familia, amigos y comida."
+  },
+
+  {
+    start:960,
+    end:1260,
+    time:"16:00 – 21:00",
+    title:"✨ Tiempo de creación",
+    desc:"Haz algo que te deje buena sensación del finde."
+  },
+
+  {
+    start:1260,
+    end:1350,
+    time:"21:00 – 22:30",
+    title:"👟 Andar + ducha",
+    desc:"Último paseo del fin de semana."
+  },
+
+  {
+    start:1350,
+    end:1440,
+    time:"22:30 →",
+    title:"🌙 Preparar lunes",
+    desc:"Cena, dejar cosas listas, skincare y dormir."
+  }
+
+];
+
+
+/* =====================================================
+   RENDER HORARIOS
+===================================================== */
+
+function renderSchedule(
+  containerId,
+  schedule
+){
+
+  const container =
+    document.getElementById(
+      containerId
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  schedule.forEach(
+    item => {
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+
+      row.className =
+        "schedule-row";
+
+
+      row.dataset.start =
+        item.start;
+
+
+      row.dataset.end =
+        item.end;
+
+
+      row.innerHTML =
+
+        '<div class="schedule-time">'
+        +
+        item.time
+        +
+        "</div>"
+        +
+        "<div>"
+        +
+        '<div class="schedule-title">'
+        +
+        item.title
+        +
+        "</div>"
+        +
+        '<div class="schedule-desc">'
+        +
+        item.desc
+        +
+        "</div>"
+        +
+        "</div>";
+
+
+      container.appendChild(
+        row
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   BLOQUE ACTUAL
+===================================================== */
+
+function getWeekendSchedule(){
+
+  const day =
+    new Date().getDay();
+
+
+  if(
+    day === 0
+  ){
+
+    return sundaySchedule;
+
+  }
+
+
+  return saturdaySchedule;
+
+}
+
+
+function getCurrentWeekendBlock(){
+
+  const now =
+    new Date();
+
+
+  const minutes =
+
+    now.getHours()
+    *
+    60
+
+    +
+
+    now.getMinutes();
+
+
+  const schedule =
+    getWeekendSchedule();
+
+
+  return (
+    schedule.find(
+      item =>
+        minutes >= item.start
+        &&
+        minutes < item.end
+    )
+    ||
+    schedule[0]
+  );
+
+}
+
+
+/* =====================================================
+   CUENTA ATRÁS
+===================================================== */
+
+function formatDuration(seconds){
+
+  const h =
+    Math.floor(
+      seconds / 3600
+    );
+
+
+  const m =
+    Math.floor(
+      (seconds % 3600)
+      /
+      60
+    );
+
+
+  const s =
+    seconds % 60;
+
+
+  return (
+
+    String(h)
+      .padStart(
+        2,
+        "0"
+      )
+
+    +
+    ":"
+
+    +
+
+    String(m)
+      .padStart(
+        2,
+        "0"
+      )
+
+    +
+    ":"
+
+    +
+
+    String(s)
+      .padStart(
+        2,
+        "0"
+      )
+
+  );
+
+}
+
+
+function updateToday(){
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "heroDay"
+  ).textContent =
+    now.getDate();
+
+
+  document.getElementById(
+    "heroWeekday"
+  ).textContent =
+
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long"
+      }
+    );
+
+
+  const block =
+    getCurrentWeekendBlock();
+
+
+  document.getElementById(
+    "nowTitle"
+  ).textContent =
+    block.title;
+
+
+  document.getElementById(
+    "nowHours"
+  ).textContent =
+    block.time;
+
+
+  document.getElementById(
+    "nowMessage"
+  ).textContent =
+    block.desc;
+
+
+  const icon =
+    block.title
+      .split(" ")[0];
+
+
+  document.getElementById(
+    "nowIcon"
+  ).textContent =
+    icon;
+
+
+  const endDate =
+    new Date(
+      now
+    );
+
+
+  endDate.setHours(
+
+    Math.floor(
+      block.end / 60
+    ),
+
+    block.end % 60,
+
+    0,
+
+    0
+
+  );
+
+
+  if(
+    block.end === 1440
+  ){
+
+    endDate.setHours(
+      24,
+      0,
+      0,
+      0
+    );
+
+  }
+
+
+  const seconds =
+
+    Math.max(
+      0,
+      Math.floor(
+        (
+          endDate
+          -
+          now
+        )
+        /
+        1000
+      )
+    );
+
+
+  document.getElementById(
+    "nowCountdown"
+  ).textContent =
+    formatDuration(
+      seconds
+    );
+
+
+  const total =
+
+    (
+      block.end
+      -
+      block.start
+    )
+    *
+    60;
+
+
+  const progress =
+
+    total > 0
+
+    ?
+
+    (
+      (
+        total
+        -
+        seconds
+      )
+      /
+      total
+    )
+    *
+    100
+
+    :
+
+    0;
+
+
+  document.getElementById(
+    "nowProgress"
+  ).style.width =
+
+    Math.min(
+      100,
+      Math.max(
+        0,
+        progress
+      )
+    )
+    +
+    "%";
+
+
+  markCurrentSchedule();
+
+}
+
+
+/* =====================================================
+   MARCAR ACTUAL
+===================================================== */
+
+function markCurrentSchedule(){
+
+  const now =
+    new Date();
+
+
+  const minutes =
+
+    now.getHours()
+    *
+    60
+
+    +
+
+    now.getMinutes();
+
+
+  document
+    .querySelectorAll(
+      ".schedule-row"
+    )
+    .forEach(
+      row => {
+
+        row.classList.toggle(
+
+          "current",
+
+          minutes >=
+            Number(
+              row.dataset.start
+            )
+
+          &&
+
+          minutes <
+            Number(
+              row.dataset.end
+            )
+
+        );
+
+      }
+    );
+
+}
+
+
+/* =====================================================
+   CREACIÓN
+===================================================== */
+
+const creationIdeas = {
+
+  digital:[
+
+    "Haz una mini app absurda pero bonita.",
+
+    "Rediseña una pantalla de una app que uses.",
+
+    "Crea una automatización pequeña que te ahorre tiempo.",
+
+    "Haz un collage digital de una estética concreta.",
+
+    "Ordena y edita una tanda de fotos.",
+
+    "Diseña una portada para algo que ni siquiera existe."
+
+  ],
+
+
+  manual:[
+
+    "Prueba a hacer una pieza de cerámica.",
+
+    "Pinta algo sin preocuparte de que quede bien.",
+
+    "Haz un collage físico con revistas.",
+
+    "Diseña una pulsera o collar.",
+
+    "Personaliza una libreta.",
+
+    "Crea algo decorativo para tu habitación."
+
+  ],
+
+
+  social:[
+
+    "Escribe a alguien y proponle un café espontáneo.",
+
+    "Organiza una cena sencilla con amigas.",
+
+    "Llama a alguien con quien llevas tiempo sin hablar.",
+
+    "Planea una escapada de un día.",
+
+    "Queda para ir a dar una vuelta sin más plan."
+
+  ],
+
+
+  outside:[
+
+    "Ve a mirar tiendas sin obligación de comprar.",
+
+    "Busca un mercadillo o tienda que no conozcas.",
+
+    "Ve a tomar café a un sitio diferente.",
+
+    "Pasea por una zona en la que nunca te paras.",
+
+    "Ve a una exposición o museo.",
+
+    "Coge el coche y visita un pueblo cercano."
+
+  ],
+
+
+  beauty:[
+
+    "Prueba un maquillaje diferente.",
+
+    "Monta tres outfits con ropa que ya tienes.",
+
+    "Hazte el pelo como si fueras a salir aunque no salgas.",
+
+    "Haz fotos de varios outfits para tenerlos guardados.",
+
+    "Prueba una estética de otra década.",
+
+    "Haz una tarde completa de arreglarte con música."
+
+  ],
+
+
+  curiosity:[
+
+    "Investiga cómo vestía la gente en 1974.",
+
+    "Elige una civilización antigua y métete en su vida cotidiana.",
+
+    "Descubre la historia de un edificio famoso.",
+
+    "Busca qué estaba de moda el año en que naciste.",
+
+    "Investiga un misterio histórico.",
+
+    "Elige una ciudad al azar y descubre su historia."
+
+  ]
+
+};
+
+
+function randomFrom(array){
+
+  return array[
+    Math.floor(
+      Math.random()
+      *
+      array.length
+    )
+  ];
+
+}
+
+
+function giveCreationIdea(type){
+
+  document.getElementById(
+    "creationIdea"
+  ).textContent =
+    randomFrom(
+      creationIdeas[type]
+    );
+
+}
+
+
+function surpriseCreation(){
+
+  const all =
+    Object.values(
+      creationIdeas
+    ).flat();
+
+
+  document.getElementById(
+    "creationIdea"
+  ).textContent =
+    randomFrom(
+      all
+    );
+
+}
+
+
+/* =====================================================
+   MENÚ SEMANAL
+===================================================== */
+
+const days = [
+
+  "Lun",
+  "Mar",
+  "Mié",
+  "Jue",
+  "Vie",
+  "Sáb",
+  "Dom"
+
+];
+
+
+const mealTypes = [
+
+  {
+    key:"breakfast",
+    name:"☕ Desayuno"
+  },
+
+  {
+    key:"lunch",
+    name:"🍝 Comida"
+  },
+
+  {
+    key:"snack",
+    name:"🍓 Merienda"
+  },
+
+  {
+    key:"dinner",
+    name:"🥗 Cena"
+  }
+
+];
+
+
+let selectedFoodDay =
+  0;
+
+
+function mealStorageKey(){
+
+  return (
+    "discovery-meals-"
+    +
+    selectedFoodDay
+  );
+
+}
+
+
+function renderWeekSelector(){
+
+  const container =
+    document.getElementById(
+      "weekSelector"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  days.forEach(
+    (
+      day,
+      index
+    )=>{
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.className =
+        "week-day"
+        +
+        (
+          index === selectedFoodDay
+          ?
+          " active"
+          :
+          ""
+        );
+
+
+      button.textContent =
+        day;
+
+
+      button.onclick =
+        ()=>{
+
+          selectedFoodDay =
+            index;
+
+
+          renderWeekSelector();
+
+
+          renderMealEditor();
+
+        };
+
+
+      container.appendChild(
+        button
+      );
+
+    }
+  );
+
+}
+
+
+function getSavedMeals(){
+
+  return JSON.parse(
+
+    localStorage.getItem(
+      mealStorageKey()
+    )
+    ||
+    "{}"
+
+  );
+
+}
+
+
+function renderMealEditor(){
+
+  const data =
+    getSavedMeals();
+
+
+  const container =
+    document.getElementById(
+      "mealEditor"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  mealTypes.forEach(
+    meal => {
+
+      const mealData =
+        data[meal.key]
+        ||
+        {
+          text:"",
+          kcal:""
+        };
+
+
+      const box =
+        document.createElement(
+          "div"
+        );
+
+
+      box.className =
+        "meal";
+
+
+      box.innerHTML =
+
+        '<div class="meal-top">'
+        +
+        '<div class="meal-name">'
+        +
+        meal.name
+        +
+        "</div>"
+        +
+        '<div class="meal-kcal" id="display-'
+        +
+        meal.key
+        +
+        '">'
+        +
+        (
+          mealData.kcal
+          ?
+          mealData.kcal
+          +
+          " kcal"
+          :
+          ""
+        )
+        +
+        "</div>"
+        +
+        "</div>"
+        +
+        '<input id="mealText-'
+        +
+        meal.key
+        +
+        '" value="'
+        +
+        escapeAttribute(
+          mealData.text
+        )
+        +
+        '" placeholder="¿Qué vas a comer?">'
+        +
+        '<div class="meal-calories">'
+        +
+        '<input type="number" min="0" id="mealKcal-'
+        +
+        meal.key
+        +
+        '" value="'
+        +
+        escapeAttribute(
+          mealData.kcal
+        )
+        +
+        '" oninput="updateDailyCalories()">'
+        +
+        "<span>kcal aprox.</span>"
+        +
+        "</div>";
+
+
+      container.appendChild(
+        box
+      );
+
+    }
+  );
+
+
+  updateDailyCalories();
+
+}
+
+
+function escapeAttribute(value){
+
+  return String(
+    value
+    ||
+    ""
+  )
+  .replaceAll(
+    "&",
+    "&amp;"
+  )
+  .replaceAll(
+    '"',
+    "&quot;"
+  )
+  .replaceAll(
+    "<",
+    "&lt;"
+  )
+  .replaceAll(
+    ">",
+    "&gt;"
+  );
+
+}
+
+
+function updateDailyCalories(){
+
+  let total =
+    0;
+
+
+  mealTypes.forEach(
+    meal => {
+
+      const input =
+        document.getElementById(
+          "mealKcal-"
+          +
+          meal.key
+        );
+
+
+      if(
+        input
+      ){
+
+        total +=
+          Number(
+            input.value
+          )
+          ||
+          0;
+
+      }
+
+    }
+  );
+
+
+  document.getElementById(
+    "dailyCalories"
+  ).textContent =
+    total
+    +
+    " kcal";
+
+}
+
+
+function saveMeals(){
+
+  const data = {};
+
+
+  mealTypes.forEach(
+    meal => {
+
+      data[meal.key] = {
+
+        text:
+          document.getElementById(
+            "mealText-"
+            +
+            meal.key
+          ).value,
+
+        kcal:
+          document.getElementById(
+            "mealKcal-"
+            +
+            meal.key
+          ).value
+
+      };
+
+    }
+  );
+
+
+  localStorage.setItem(
+
+    mealStorageKey(),
+
+    JSON.stringify(
+      data
+    )
+
+  );
+
+
+  updateDailyCalories();
+
+}
+
+
+/* =====================================================
+   LISTAS DE COMPRA
+===================================================== */
+
+function shoppingKey(type){
+
+  return (
+    "discovery-shopping-"
+    +
+    type
+  );
+
+}
+
+
+function getShopping(type){
+
+  return JSON.parse(
+
+    localStorage.getItem(
+      shoppingKey(
+        type
+      )
+    )
+    ||
+    "[]"
+
+  );
+
+}
+
+
+function saveShopping(
+  type,
+  list
+){
+
+  localStorage.setItem(
+
+    shoppingKey(
+      type
+    ),
+
+    JSON.stringify(
+      list
+    )
+
+  );
+
+}
+
+
+function addShoppingItem(type){
+
+  const input =
+    document.getElementById(
+      type
+      +
+      "ShoppingInput"
+    );
+
+
+  const text =
+    input.value.trim();
+
+
+  if(
+    !text
+  ){
+
+    return;
+
+  }
+
+
+  const list =
+    getShopping(
+      type
+    );
+
+
+  list.push(
+    {
+      text,
+      done:false
+    }
+  );
+
+
+  saveShopping(
+    type,
+    list
+  );
+
+
+  input.value =
+    "";
+
+
+  renderShopping(
+    type
+  );
+
+}
+
+
+function toggleShopping(
+  type,
+  index
+){
+
+  const list =
+    getShopping(
+      type
+    );
+
+
+  list[index].done =
+    !list[index].done;
+
+
+  saveShopping(
+    type,
+    list
+  );
+
+
+  renderShopping(
+    type
+  );
+
+}
+
+
+function deleteShopping(
+  type,
+  index
+){
+
+  const list =
+    getShopping(
+      type
+    );
+
+
+  list.splice(
+    index,
+    1
+  );
+
+
+  saveShopping(
+    type,
+    list
+  );
+
+
+  renderShopping(
+    type
+  );
+
+}
+
+
+function renderShopping(type){
+
+  const container =
+    document.getElementById(
+      type
+      +
+      "ShoppingList"
+    );
+
+
+  if(
+    !container
+  ){
+
+    return;
+
+  }
+
+
+  const list =
+    getShopping(
+      type
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  list.forEach(
+    (
+      item,
+      index
+    )=>{
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+
+      row.className =
+        "shopping-item"
+        +
+        (
+          item.done
+          ?
+          " done"
+          :
+          ""
+        );
+
+
+      row.innerHTML =
+
+        '<button class="shopping-check" onclick="toggleShopping(\''
+        +
+        type
+        +
+        "',"
+        +
+        index
+        +
+        ')">'
+        +
+        (
+          item.done
+          ?
+          "✓"
+          :
+          ""
+        )
+        +
+        "</button>"
+        +
+        '<div class="shopping-text">'
+        +
+        escapeHtml(
+          item.text
+        )
+        +
+        "</div>"
+        +
+        '<button class="shopping-delete" onclick="deleteShopping(\''
+        +
+        type
+        +
+        "',"
+        +
+        index
+        +
+        ')">×</button>';
+
+
+      container.appendChild(
+        row
+      );
+
+    }
+  );
+
+}
+
+
+function escapeHtml(text){
+
+  const div =
+    document.createElement(
+      "div"
+    );
+
+
+  div.textContent =
+    text;
+
+
+  return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   CUIDADO
+===================================================== */
+
+function careStorageKey(type){
+
+  return (
+    "discovery-care-"
+    +
+    type
+  );
+
+}
+
+
+function addDays(
+  dateString,
+  days
+){
+
+  const date =
+    new Date(
+      dateString
+      +
+      "T12:00:00"
+    );
+
+
+  date.setDate(
+    date.getDate()
+    +
+    days
+  );
+
+
+  return date;
+
+}
+
+
+function formatDate(date){
+
+  return date.toLocaleDateString(
+    "es-ES",
+    {
+      day:"numeric",
+      month:"long"
+    }
+  );
+
+}
+
+
+function saveCareDate(
+  type,
+  inputId,
+  days
+){
+
+  const value =
+    document.getElementById(
+      inputId
+    ).value;
+
+
+  if(
+    !value
+  ){
+
+    return;
+
+  }
+
+
+  localStorage.setItem(
+    careStorageKey(
+      type
+    ),
+    value
+  );
+
+
+  renderCareDates();
+
+}
+
+
+function renderOneCareDate(
+  type,
+  inputId,
+  resultId,
+  days
+){
+
+  const saved =
+    localStorage.getItem(
+      careStorageKey(
+        type
+      )
+    );
+
+
+  if(
+    !saved
+  ){
+
+    document.getElementById(
+      resultId
+    ).textContent =
+      "Aún no has puesto la última fecha.";
+
+    return null;
+
+  }
+
+
+  document.getElementById(
+    inputId
+  ).value =
+    saved;
+
+
+  const next =
+    addDays(
+      saved,
+      days
+    );
+
+
+  const today =
+    new Date();
+
+
+  today.setHours(
+    0,
+    0,
+    0,
+    0
+  );
+
+
+  const diff =
+
+    Math.ceil(
+      (
+        next
+        -
+        today
+      )
+      /
+      86400000
+    );
+
+
+  let message =
+    "Próxima: "
+    +
+    formatDate(
+      next
+    );
+
+
+  if(
+    diff === 0
+  ){
+
+    message +=
+      " · toca hoy ✨";
+
+  }
+
+  else if(
+    diff > 0
+  ){
+
+    message +=
+      " · faltan "
+      +
+      diff
+      +
+      " días";
+
+  }
+
+  else{
+
+    message +=
+      " · pendiente desde hace "
+      +
+      Math.abs(
+        diff
+      )
+      +
+      " días";
+
+  }
+
+
+  document.getElementById(
+    resultId
+  ).textContent =
+    message;
+
+
+  return {
+    next,
+    diff
+  };
+
+}
+
+
+function renderCareDates(){
+
+  const hairHydration =
+    renderOneCareDate(
+      "hairHydration",
+      "hairHydrationDate",
+      "hairHydrationNext",
+      21
+    );
+
+
+  const hairCut =
+    renderOneCareDate(
+      "hairCut",
+      "hairCutDate",
+      "hairCutNext",
+      60
+    );
+
+
+  const depilation =
+    renderOneCareDate(
+      "depilation",
+      "depilationDate",
+      "depilationNext",
+      14
+    );
+
+
+  renderCareSummary(
+    hairHydration,
+    hairCut,
+    depilation
+  );
+
+}
+
+
+function renderCareSummary(
+  hydration,
+  cut,
+  depilation
+){
+
+  const container =
+    document.getElementById(
+      "careSummary"
+    );
+
+
+  const items = [
+
+    {
+      icon:"💧",
+      title:"Hidratación pelo",
+      data:hydration
+    },
+
+    {
+      icon:"✂️",
+      title:"Cortar puntas",
+      data:cut
+    },
+
+    {
+      icon:"🛁",
+      title:"Depilación + mascarilla",
+      data:depilation
+    },
+
+    {
+      icon:"🌸",
+      title:"Revisar neceser",
+      fixed:"Una vez al mes"
+    }
+
+  ];
+
+
+  container.innerHTML =
+    "";
+
+
+  items.forEach(
+    item => {
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+
+      div.className =
+        "care-next";
+
+
+      let text =
+        item.fixed
+        ||
+        "Sin fecha";
+
+
+      if(
+        item.data
+      ){
+
+        if(
+          item.data.diff === 0
+        ){
+
+          text =
+            "Hoy ✨";
+
+        }
+
+        else if(
+          item.data.diff > 0
+        ){
+
+          text =
+            "En "
+            +
+            item.data.diff
+            +
+            " días";
+
+        }
+
+        else{
+
+          text =
+            "Pendiente";
+
+        }
+
+      }
+
+
+      div.innerHTML =
+
+        '<div class="care-next-icon">'
+        +
+        item.icon
+        +
+        "</div>"
+        +
+        '<div class="care-next-title">'
+        +
+        item.title
+        +
+        "</div>"
+        +
+        '<div class="care-next-date">'
+        +
+        text
+        +
+        "</div>";
+
+
+      container.appendChild(
+        div
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   DESPLEGABLE CUIDADO
+===================================================== */
+
+function toggleCare(id){
+
+  document.getElementById(
+    id
+  ).classList.toggle(
+    "open"
+  );
+
+}
+
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+renderSchedule(
+  "saturdaySchedule",
+  saturdaySchedule
+);
+
+
+renderSchedule(
+  "sundaySchedule",
+  sundaySchedule
+);
+
+
+renderWeekSelector();
+
+renderMealEditor();
+
+renderCareDates();
+
+
+[
+  "food",
+  "hair",
+  "skin",
+  "depilation",
+  "intimate"
+]
+.forEach(
+  type =>
+    renderShopping(
+      type
+    )
+);
+
+
+updateToday();
+
+
+setInterval(
+  updateToday,
+  1000
+);
+
+</script>
+
+</body>
+
+</html>

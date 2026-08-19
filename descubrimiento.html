@@ -40,6 +40,7 @@
   --green-soft:#e6f7f0;
   --orange-soft:#fff0e4;
   --blue-soft:#e9f4fd;
+  --yellow-soft:#fff6cf;
 
 }
 
@@ -49,24 +50,15 @@
 ===================================================== */
 
 *{
-
   box-sizing:border-box;
-
-  -webkit-tap-highlight-color:
-    transparent;
-
+  -webkit-tap-highlight-color:transparent;
 }
-
 
 html,
 body{
-
   margin:0;
-
   min-height:100%;
-
 }
-
 
 body{
 
@@ -97,30 +89,17 @@ body{
     var(--bg);
 
   padding:
-
-    calc(
-      env(safe-area-inset-top)
-      +
-      21px
-    )
-
+    calc(env(safe-area-inset-top) + 21px)
     16px
-
-    calc(
-      env(safe-area-inset-bottom)
-      +
-      180px
-    );
+    calc(env(safe-area-inset-bottom) + 180px);
 
 }
 
-
 button,
 input,
-textarea{
-
+textarea,
+select{
   font:inherit;
-
 }
 
 
@@ -131,45 +110,32 @@ textarea{
 .top-actions{
 
   display:flex;
-
   justify-content:flex-end;
-
   gap:8px;
-
   margin-bottom:10px;
 
 }
 
-
 .top-action{
 
   min-height:42px;
-
   padding:0 14px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border:0;
-
   border-radius:15px;
 
-  background:
-    rgba(255,255,255,.84);
+  background:rgba(255,255,255,.84);
 
-  backdrop-filter:
-    blur(22px);
-
-  -webkit-backdrop-filter:
-    blur(22px);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
 
   color:inherit;
 
   font-size:12px;
-
   font-weight:700;
 
   text-decoration:none;
@@ -201,29 +167,20 @@ textarea{
 
 }
 
-
 .greeting{
-
   font-size:18px;
-
 }
-
 
 .greeting-name{
-
   color:var(--purple);
-
   font-weight:800;
-
 }
-
 
 .big-time{
 
   margin-top:7px;
 
   font-size:57px;
-
   line-height:.95;
 
   font-weight:520;
@@ -231,7 +188,6 @@ textarea{
   letter-spacing:-4px;
 
 }
-
 
 .date{
 
@@ -244,7 +200,6 @@ textarea{
   text-transform:capitalize;
 
 }
-
 
 .mode-pill{
 
@@ -272,11 +227,9 @@ textarea{
 
 }
 
-
 .mode-dot{
 
   width:8px;
-
   height:8px;
 
   border-radius:50%;
@@ -299,6 +252,7 @@ textarea{
   border-radius:22px;
 
   background:
+
     linear-gradient(
       145deg,
       #ffffff,
@@ -311,13 +265,9 @@ textarea{
 
 }
 
-
 .hero-card-icon{
-
   font-size:30px;
-
 }
-
 
 .hero-card-label{
 
@@ -326,24 +276,20 @@ textarea{
   color:var(--purple);
 
   font-size:9px;
-
   font-weight:900;
 
   letter-spacing:.8px;
 
 }
 
-
 .hero-card-title{
 
   margin-top:5px;
 
   font-size:15px;
-
   font-weight:900;
 
 }
-
 
 .hero-card-text{
 
@@ -352,7 +298,6 @@ textarea{
   color:var(--secondary);
 
   font-size:9px;
-
   line-height:1.35;
 
 }
@@ -391,18 +336,14 @@ textarea{
   background:
     rgba(246,245,248,.94);
 
-  backdrop-filter:
-    blur(25px);
-
-  -webkit-backdrop-filter:
-    blur(25px);
+  backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);
 
   box-shadow:
     0 6px 23px
     rgba(0,0,0,.07);
 
 }
-
 
 .tab-button{
 
@@ -424,7 +365,6 @@ textarea{
 
 }
 
-
 .tab-button span{
 
   display:block;
@@ -434,7 +374,6 @@ textarea{
   font-size:16px;
 
 }
-
 
 .tab-button.active{
 
@@ -448,18 +387,12 @@ textarea{
 
 }
 
-
 .tab-page{
-
   display:none;
-
 }
 
-
 .tab-page.active{
-
   display:block;
-
 }
 
 
@@ -483,7 +416,6 @@ textarea{
 
 }
 
-
 .eyebrow{
 
   color:var(--purple);
@@ -496,7 +428,6 @@ textarea{
 
 }
 
-
 .card-title{
 
   margin-top:4px;
@@ -507,7 +438,6 @@ textarea{
 
 }
 
-
 .card-subtitle{
 
   margin-top:6px;
@@ -517,6 +447,117 @@ textarea{
   font-size:10px;
 
   line-height:1.45;
+
+}
+
+
+/* =====================================================
+   ASISTENTES
+===================================================== */
+
+.assistant-grid{
+
+  display:grid;
+
+  gap:9px;
+
+  margin-top:14px;
+
+}
+
+.assistant-card{
+
+  width:100%;
+
+  padding:14px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  border:0;
+
+  border-radius:19px;
+
+  background:#f7f6f8;
+
+  text-align:left;
+
+}
+
+.assistant-card.first{
+  background:var(--green-soft);
+}
+
+.assistant-card.weekly{
+  background:var(--purple-soft);
+}
+
+.assistant-card.monthly{
+  background:var(--pink-soft);
+}
+
+.assistant-card.highlight{
+
+  outline:
+    2px solid var(--pink);
+
+  box-shadow:
+    0 6px 20px
+    rgba(255,53,111,.13);
+
+}
+
+.assistant-icon{
+
+  width:45px;
+  height:45px;
+
+  flex:none;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:15px;
+
+  background:white;
+
+  font-size:23px;
+
+}
+
+.assistant-content{
+  flex:1;
+}
+
+.assistant-title{
+
+  font-size:12px;
+
+  font-weight:950;
+
+}
+
+.assistant-text{
+
+  margin-top:3px;
+
+  color:var(--secondary);
+
+  font-size:9px;
+
+  line-height:1.35;
+
+}
+
+.assistant-arrow{
+
+  color:#888;
+
+  font-size:18px;
 
 }
 
@@ -538,7 +579,6 @@ textarea{
 
 }
 
-
 .life-stat{
 
   min-height:105px;
@@ -551,41 +591,25 @@ textarea{
 
 }
 
-
 .life-stat:nth-child(1){
-
   background:var(--pink-soft);
-
 }
-
 
 .life-stat:nth-child(2){
-
   background:var(--green-soft);
-
 }
-
 
 .life-stat:nth-child(3){
-
   background:var(--orange-soft);
-
 }
-
 
 .life-stat:nth-child(4){
-
   background:var(--purple-soft);
-
 }
-
 
 .life-stat-icon{
-
   font-size:23px;
-
 }
-
 
 .life-stat-title{
 
@@ -596,7 +620,6 @@ textarea{
   font-weight:900;
 
 }
-
 
 .life-stat-text{
 
@@ -629,7 +652,6 @@ textarea{
 
 }
 
-
 .now-top{
 
   display:flex;
@@ -642,11 +664,9 @@ textarea{
 
 }
 
-
 .now-icon{
 
   width:58px;
-
   height:58px;
 
   flex:none;
@@ -654,7 +674,6 @@ textarea{
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   border-radius:19px;
@@ -665,7 +684,6 @@ textarea{
 
 }
 
-
 .now-title{
 
   margin-top:4px;
@@ -675,7 +693,6 @@ textarea{
   font-weight:950;
 
 }
-
 
 .now-hours{
 
@@ -689,7 +706,6 @@ textarea{
 
 }
 
-
 .now-countdown{
 
   margin-top:15px;
@@ -702,7 +718,6 @@ textarea{
 
 }
 
-
 .now-message{
 
   margin-top:8px;
@@ -714,7 +729,6 @@ textarea{
   line-height:1.45;
 
 }
-
 
 .progress{
 
@@ -730,7 +744,6 @@ textarea{
 
 }
 
-
 .progress-bar{
 
   height:100%;
@@ -740,12 +753,234 @@ textarea{
   border-radius:999px;
 
   background:
+
     linear-gradient(
       90deg,
       #7657ec,
       #ff5d8b
     );
 
+}
+
+
+/* =====================================================
+   HÁBITOS
+===================================================== */
+
+.habit-summary{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:7px;
+
+  margin-top:14px;
+
+}
+
+.habit-stat{
+
+  padding:11px 7px;
+
+  border-radius:16px;
+
+  background:#f7f6f8;
+
+  text-align:center;
+
+}
+
+.habit-stat-icon{
+  font-size:20px;
+}
+
+.habit-stat-number{
+
+  margin-top:5px;
+
+  font-size:18px;
+
+  font-weight:950;
+
+}
+
+.habit-stat-label{
+
+  margin-top:2px;
+
+  color:var(--secondary);
+
+  font-size:8px;
+
+}
+
+.habit-calendar-header{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  margin-top:16px;
+
+}
+
+.calendar-arrow{
+
+  width:34px;
+  height:34px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:#f2f0f4;
+
+}
+
+.habit-calendar-title{
+
+  font-size:14px;
+
+  font-weight:950;
+
+  text-transform:capitalize;
+
+}
+
+.calendar-weekdays,
+.habit-calendar{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(7,1fr);
+
+  gap:4px;
+
+}
+
+.calendar-weekdays{
+
+  margin-top:12px;
+
+}
+
+.calendar-weekdays span{
+
+  padding:4px;
+
+  text-align:center;
+
+  color:#999;
+
+  font-size:8px;
+
+  font-weight:900;
+
+}
+
+.habit-day{
+
+  position:relative;
+
+  min-height:58px;
+
+  padding:5px;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:#f7f6f8;
+
+  text-align:left;
+
+}
+
+.habit-day.other{
+  opacity:.25;
+}
+
+.habit-day.today{
+
+  outline:
+    2px solid #111;
+
+}
+
+.habit-day-number{
+
+  font-size:9px;
+
+  font-weight:900;
+
+}
+
+.habit-icons{
+
+  margin-top:5px;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:1px;
+
+  font-size:10px;
+
+}
+
+
+/* =====================================================
+   MODAL DÍA HÁBITOS
+===================================================== */
+
+.day-modal-actions{
+
+  display:grid;
+
+  gap:8px;
+
+  margin-top:15px;
+
+}
+
+.habit-toggle{
+
+  padding:12px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:#f7f6f8;
+
+  text-align:left;
+
+}
+
+.habit-toggle.active{
+
+  background:var(--green-soft);
+
+}
+
+.habit-toggle strong{
+  font-size:11px;
+}
+
+.habit-toggle span{
+  font-size:18px;
 }
 
 
@@ -765,7 +1000,6 @@ textarea{
 
 }
 
-
 .weekend-percent{
 
   color:var(--purple);
@@ -776,7 +1010,6 @@ textarea{
 
 }
 
-
 .weekend-checks{
 
   display:grid;
@@ -786,7 +1019,6 @@ textarea{
   margin-top:12px;
 
 }
-
 
 .life-check{
 
@@ -810,19 +1042,15 @@ textarea{
 
 }
 
-
 .life-check-circle{
 
   width:21px;
-
   height:21px;
 
   flex:none;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border:
@@ -838,16 +1066,11 @@ textarea{
 
 }
 
-
 .life-check.done{
-
   opacity:.55;
-
 }
 
-
-.life-check.done
-.life-check-circle{
+.life-check.done .life-check-circle{
 
   border-color:var(--green);
 
@@ -855,13 +1078,8 @@ textarea{
 
 }
 
-
-.life-check.done
-.life-check-text{
-
-  text-decoration:
-    line-through;
-
+.life-check.done .life-check-text{
+  text-decoration:line-through;
 }
 
 
@@ -878,7 +1096,6 @@ textarea{
   margin-top:14px;
 
 }
-
 
 .schedule-row{
 
@@ -898,7 +1115,6 @@ textarea{
 
 }
 
-
 .schedule-row.current{
 
   outline:
@@ -907,7 +1123,6 @@ textarea{
   background:#f0ebff;
 
 }
-
 
 .schedule-time{
 
@@ -919,7 +1134,6 @@ textarea{
 
 }
 
-
 .schedule-title{
 
   font-size:11px;
@@ -927,7 +1141,6 @@ textarea{
   font-weight:900;
 
 }
-
 
 .schedule-description{
 
@@ -938,6 +1151,108 @@ textarea{
   font-size:9px;
 
   line-height:1.35;
+
+}
+
+
+/* =====================================================
+   PLANES SEMANALES
+===================================================== */
+
+.plan-form{
+
+  display:grid;
+
+  gap:8px;
+
+  margin-top:14px;
+
+}
+
+.plan-form-row{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:7px;
+
+}
+
+.plan-form input,
+.plan-form select{
+
+  width:100%;
+
+  padding:10px;
+
+  border:
+    1px solid #e4e2e6;
+
+  border-radius:12px;
+
+  background:white;
+
+  outline:none;
+
+  font-size:10px;
+
+}
+
+.week-plan{
+
+  display:flex;
+
+  gap:10px;
+
+  padding:11px;
+
+  border-radius:15px;
+
+  background:#f7f6f8;
+
+}
+
+.week-plan-icon{
+
+  width:35px;
+  height:35px;
+
+  flex:none;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:12px;
+
+  background:white;
+
+  font-size:18px;
+
+}
+
+.week-plan-content{
+  flex:1;
+}
+
+.week-plan-title{
+
+  font-size:10px;
+
+  font-weight:900;
+
+}
+
+.week-plan-meta{
+
+  margin-top:3px;
+
+  color:var(--secondary);
+
+  font-size:8px;
 
 }
 
@@ -959,7 +1274,6 @@ textarea{
 
 }
 
-
 .life-box{
 
   min-height:125px;
@@ -972,41 +1286,25 @@ textarea{
 
 }
 
-
 .life-box:nth-child(1){
-
   background:#fff0f4;
-
 }
-
 
 .life-box:nth-child(2){
-
   background:#eef9f5;
-
 }
-
 
 .life-box:nth-child(3){
-
   background:#f1edff;
-
 }
-
 
 .life-box:nth-child(4){
-
   background:#fff4e7;
-
 }
-
 
 .life-box-icon{
-
   font-size:26px;
-
 }
-
 
 .life-box-title{
 
@@ -1017,7 +1315,6 @@ textarea{
   font-weight:900;
 
 }
-
 
 .life-box-text{
 
@@ -1030,7 +1327,6 @@ textarea{
   line-height:1.35;
 
 }
-
 
 .quick-add{
 
@@ -1045,7 +1341,6 @@ textarea{
   margin-top:13px;
 
 }
-
 
 .quick-add input{
 
@@ -1066,7 +1361,6 @@ textarea{
 
 }
 
-
 .quick-add button{
 
   width:44px;
@@ -1083,7 +1377,6 @@ textarea{
 
 }
 
-
 .item-list{
 
   display:grid;
@@ -1093,7 +1386,6 @@ textarea{
   margin-top:10px;
 
 }
-
 
 .simple-item{
 
@@ -1111,7 +1403,6 @@ textarea{
 
 }
 
-
 .simple-item-text{
 
   flex:1;
@@ -1119,7 +1410,6 @@ textarea{
   font-size:10px;
 
 }
-
 
 .simple-delete{
 
@@ -1141,6 +1431,7 @@ textarea{
 .food-card{
 
   background:
+
     linear-gradient(
       145deg,
       #fff,
@@ -1148,7 +1439,6 @@ textarea{
     );
 
 }
-
 
 .calorie-top{
 
@@ -1162,7 +1452,6 @@ textarea{
 
 }
 
-
 .calorie-number{
 
   color:var(--green);
@@ -1173,7 +1462,6 @@ textarea{
 
 }
 
-
 .calorie-label{
 
   color:var(--secondary);
@@ -1181,7 +1469,6 @@ textarea{
   font-size:9px;
 
 }
-
 
 .calorie-config{
 
@@ -1194,7 +1481,6 @@ textarea{
   align-items:center;
 
 }
-
 
 .calorie-config input{
 
@@ -1212,7 +1498,6 @@ textarea{
   font-size:10px;
 
 }
-
 
 .calorie-config button{
 
@@ -1232,7 +1517,6 @@ textarea{
 
 }
 
-
 .week-selector{
 
   display:grid;
@@ -1245,7 +1529,6 @@ textarea{
   margin-top:14px;
 
 }
-
 
 .week-day{
 
@@ -1263,7 +1546,6 @@ textarea{
 
 }
 
-
 .week-day.active{
 
   background:var(--green);
@@ -1271,7 +1553,6 @@ textarea{
   color:white;
 
 }
-
 
 .meal{
 
@@ -1285,7 +1566,6 @@ textarea{
 
 }
 
-
 .meal-top{
 
   display:flex;
@@ -1296,7 +1576,6 @@ textarea{
 
 }
 
-
 .meal-name{
 
   font-size:10px;
@@ -1304,7 +1583,6 @@ textarea{
   font-weight:950;
 
 }
-
 
 .meal input{
 
@@ -1327,7 +1605,6 @@ textarea{
 
 }
 
-
 .meal-bottom{
 
   display:flex;
@@ -1340,7 +1617,6 @@ textarea{
 
 }
 
-
 .meal-bottom input{
 
   width:70px;
@@ -1349,7 +1625,6 @@ textarea{
 
 }
 
-
 .meal-bottom span{
 
   color:var(--secondary);
@@ -1357,7 +1632,6 @@ textarea{
   font-size:9px;
 
 }
-
 
 .daily-total{
 
@@ -1375,13 +1649,9 @@ textarea{
 
 }
 
-
 .daily-total strong{
-
   font-size:11px;
-
 }
-
 
 .daily-total span{
 
@@ -1392,7 +1662,6 @@ textarea{
   font-weight:950;
 
 }
-
 
 .primary-button{
 
@@ -1435,7 +1704,6 @@ textarea{
 
 }
 
-
 .shopping-input input{
 
   min-width:0;
@@ -1455,7 +1723,6 @@ textarea{
 
 }
 
-
 .shopping-input button{
 
   width:44px;
@@ -1472,7 +1739,6 @@ textarea{
 
 }
 
-
 .shopping-list{
 
   display:grid;
@@ -1482,7 +1748,6 @@ textarea{
   margin-top:10px;
 
 }
-
 
 .shopping-item{
 
@@ -1500,19 +1765,15 @@ textarea{
 
 }
 
-
 .shopping-check{
 
   width:20px;
-
   height:20px;
 
   flex:none;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border:
@@ -1526,13 +1787,9 @@ textarea{
 
 }
 
-
 .shopping-item.done{
-
   opacity:.5;
-
 }
-
 
 .shopping-item.done
 .shopping-check{
@@ -1545,7 +1802,6 @@ textarea{
 
 }
 
-
 .shopping-text{
 
   flex:1;
@@ -1553,7 +1809,6 @@ textarea{
   font-size:10px;
 
 }
-
 
 .shopping-delete{
 
@@ -1585,7 +1840,6 @@ textarea{
 
 }
 
-
 .care-stat{
 
   min-height:103px;
@@ -1598,13 +1852,9 @@ textarea{
 
 }
 
-
 .care-stat-icon{
-
   font-size:23px;
-
 }
-
 
 .care-stat-title{
 
@@ -1615,7 +1865,6 @@ textarea{
   font-weight:900;
 
 }
-
 
 .care-stat-date{
 
@@ -1628,7 +1877,6 @@ textarea{
   font-weight:850;
 
 }
-
 
 .care-section{
 
@@ -1645,7 +1893,6 @@ textarea{
     rgba(0,0,0,.05);
 
 }
-
 
 .care-header{
 
@@ -1667,7 +1914,6 @@ textarea{
 
 }
 
-
 .care-header-left{
 
   display:flex;
@@ -1678,17 +1924,14 @@ textarea{
 
 }
 
-
 .care-icon{
 
   width:43px;
-
   height:43px;
 
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   border-radius:14px;
@@ -1699,8 +1942,9 @@ textarea{
 
 }
 
-
 .care-title{
+
+  display:block;
 
   font-size:14px;
 
@@ -1708,8 +1952,9 @@ textarea{
 
 }
 
-
 .care-small{
+
+  display:block;
 
   margin-top:3px;
 
@@ -1718,7 +1963,6 @@ textarea{
   font-size:8px;
 
 }
-
 
 .care-content{
 
@@ -1731,30 +1975,19 @@ textarea{
 
 }
 
-
 .care-section.open
 .care-content{
-
   display:block;
-
 }
-
 
 .care-arrow{
-
   transition:.2s;
-
 }
-
 
 .care-section.open
 .care-arrow{
-
-  transform:
-    rotate(180deg);
-
+  transform:rotate(180deg);
 }
-
 
 .care-box{
 
@@ -1768,7 +2001,6 @@ textarea{
 
 }
 
-
 .care-box-title{
 
   font-size:10px;
@@ -1776,7 +2008,6 @@ textarea{
   font-weight:950;
 
 }
-
 
 .care-box-text{
 
@@ -1789,7 +2020,6 @@ textarea{
   line-height:1.45;
 
 }
-
 
 .date-row{
 
@@ -1805,8 +2035,8 @@ textarea{
 
 }
 
-
-.date-row input{
+.date-row input,
+.date-row select{
 
   min-width:0;
 
@@ -1822,7 +2052,6 @@ textarea{
   font-size:10px;
 
 }
-
 
 .date-row button{
 
@@ -1842,7 +2071,6 @@ textarea{
 
 }
 
-
 .next-date{
 
   margin-top:7px;
@@ -1855,7 +2083,6 @@ textarea{
 
 }
 
-
 .routine-list{
 
   display:grid;
@@ -1865,7 +2092,6 @@ textarea{
   margin-top:8px;
 
 }
-
 
 .routine-item{
 
@@ -1898,6 +2124,272 @@ textarea{
 
 
 /* =====================================================
+   WIZARD / MODALES
+===================================================== */
+
+.modal-backdrop{
+
+  position:fixed;
+
+  z-index:5000;
+
+  inset:0;
+
+  display:none;
+
+  align-items:flex-end;
+
+  background:
+    rgba(0,0,0,.28);
+
+  backdrop-filter:blur(7px);
+
+  -webkit-backdrop-filter:blur(7px);
+
+}
+
+.modal-backdrop.show{
+  display:flex;
+}
+
+.modal-sheet{
+
+  width:100%;
+
+  max-height:88vh;
+
+  overflow:auto;
+
+  padding:
+    18px
+    20px
+    calc(env(safe-area-inset-bottom) + 26px);
+
+  border-radius:
+    29px
+    29px
+    0
+    0;
+
+  background:white;
+
+}
+
+.modal-handle{
+
+  width:44px;
+  height:5px;
+
+  margin:
+    0
+    auto
+    18px;
+
+  border-radius:999px;
+
+  background:#ddd;
+
+}
+
+.wizard-step{
+  display:none;
+}
+
+.wizard-step.active{
+  display:block;
+}
+
+.wizard-icon{
+  font-size:37px;
+}
+
+.wizard-eyebrow{
+
+  margin-top:12px;
+
+  color:var(--purple);
+
+  font-size:9px;
+
+  font-weight:950;
+
+  letter-spacing:1px;
+
+}
+
+.wizard-title{
+
+  margin-top:4px;
+
+  font-size:26px;
+
+  font-weight:950;
+
+}
+
+.wizard-text{
+
+  margin-top:7px;
+
+  color:var(--secondary);
+
+  font-size:11px;
+
+  line-height:1.5;
+
+}
+
+.wizard-field{
+
+  width:100%;
+
+  margin-top:15px;
+
+  padding:12px;
+
+  border:
+    1px solid #dedce1;
+
+  border-radius:14px;
+
+  background:#fafafa;
+
+  outline:none;
+
+  font-size:11px;
+
+}
+
+.wizard-options{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:7px;
+
+  margin-top:14px;
+
+}
+
+.wizard-option{
+
+  min-height:48px;
+
+  padding:10px;
+
+  border:0;
+
+  border-radius:14px;
+
+  background:#f5f3f7;
+
+  font-size:10px;
+
+  font-weight:850;
+
+}
+
+.wizard-option.selected{
+
+  background:var(--purple-soft);
+
+  color:#6042c8;
+
+  outline:
+    2px solid var(--purple);
+
+}
+
+.wizard-navigation{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1.4fr;
+
+  gap:8px;
+
+  margin-top:20px;
+
+}
+
+.wizard-navigation button{
+
+  min-height:47px;
+
+  border:0;
+
+  border-radius:15px;
+
+  font-weight:900;
+
+}
+
+.wizard-back{
+  background:#efedf1;
+}
+
+.wizard-next{
+
+  background:#111;
+
+  color:white;
+
+}
+
+
+/* =====================================================
+   REVIEW
+===================================================== */
+
+.review-question{
+
+  margin-top:14px;
+
+  padding:13px;
+
+  border-radius:17px;
+
+  background:#f7f6f8;
+
+}
+
+.review-question-title{
+
+  font-size:11px;
+
+  font-weight:900;
+
+}
+
+.review-question textarea,
+.review-question input,
+.review-question select{
+
+  width:100%;
+
+  margin-top:8px;
+
+  padding:10px;
+
+  border:
+    1px solid #dedce1;
+
+  border-radius:12px;
+
+  background:white;
+
+  outline:none;
+
+  font-size:10px;
+
+}
+
+
+/* =====================================================
    NAV
 ===================================================== */
 
@@ -1908,7 +2400,6 @@ textarea{
   z-index:100;
 
   left:14px;
-
   right:14px;
 
   bottom:
@@ -1932,18 +2423,14 @@ textarea{
   background:
     rgba(248,248,250,.94);
 
-  backdrop-filter:
-    blur(28px);
-
-  -webkit-backdrop-filter:
-    blur(28px);
+  backdrop-filter:blur(28px);
+  -webkit-backdrop-filter:blur(28px);
 
   box-shadow:
     0 7px 31px
     rgba(0,0,0,.12);
 
 }
-
 
 .nav-item{
 
@@ -1969,7 +2456,6 @@ textarea{
 
 }
 
-
 .nav-item.active{
 
   background:var(--purple-soft);
@@ -1988,7 +2474,6 @@ textarea{
   body{
 
     padding-left:13px;
-
     padding-right:13px;
 
   }
@@ -2004,15 +2489,12 @@ textarea{
   }
 
   .big-time{
-
     font-size:50px;
-
   }
 
 }
 
 </style>
-
 </head>
 
 
@@ -2166,6 +2648,128 @@ textarea{
 >
 
 
+  <!-- ASISTENTES -->
+
+  <article class="card">
+
+    <div class="eyebrow">
+      TU CENTRO
+    </div>
+
+    <div class="card-title">
+      Organiza tu vida
+    </div>
+
+    <div class="card-subtitle">
+      La app te ayuda a configurar,
+      revisar y preparar lo que viene.
+    </div>
+
+
+    <div class="assistant-grid">
+
+
+      <button
+        id="firstTimeButton"
+        class="assistant-card first"
+        onclick="openFirstTimeWizard()"
+      >
+
+        <div class="assistant-icon">
+          🌱
+        </div>
+
+        <div class="assistant-content">
+
+          <div
+            id="firstTimeTitle"
+            class="assistant-title"
+          >
+            Primera vez
+          </div>
+
+          <div
+            id="firstTimeText"
+            class="assistant-text"
+          >
+            Recorremos la app y añadimos tus datos.
+          </div>
+
+        </div>
+
+        <div class="assistant-arrow">
+          →
+        </div>
+
+      </button>
+
+
+      <button
+        id="weeklyReviewButton"
+        class="assistant-card weekly"
+        onclick="openWeeklyReview()"
+      >
+
+        <div class="assistant-icon">
+          🌿
+        </div>
+
+        <div class="assistant-content">
+
+          <div class="assistant-title">
+            Preparar mi semana
+          </div>
+
+          <div class="assistant-text">
+            Cierra la anterior y organiza
+            clases, planes y citas.
+          </div>
+
+        </div>
+
+        <div class="assistant-arrow">
+          →
+        </div>
+
+      </button>
+
+
+      <button
+        id="monthlyReviewButton"
+        class="assistant-card monthly"
+        onclick="openMonthlyReview()"
+      >
+
+        <div class="assistant-icon">
+          🌙
+        </div>
+
+        <div class="assistant-content">
+
+          <div class="assistant-title">
+            Cerrar mi mes
+          </div>
+
+          <div class="assistant-text">
+            Revisa lo vivido y prepara
+            el siguiente mes.
+          </div>
+
+        </div>
+
+        <div class="assistant-arrow">
+          →
+        </div>
+
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- CENTRO DE CONTROL -->
+
   <article class="card">
 
     <div class="eyebrow">
@@ -2183,7 +2787,6 @@ textarea{
 
 
     <div class="life-dashboard">
-
 
       <div class="life-stat">
 
@@ -2269,7 +2872,7 @@ textarea{
   </article>
 
 
-  <!-- AHORA SI ES FINDE -->
+  <!-- AHORA -->
 
   <article
     id="nowWeekendCard"
@@ -2279,7 +2882,6 @@ textarea{
     <div class="eyebrow">
       AHORA
     </div>
-
 
     <div class="now-top">
 
@@ -2341,7 +2943,79 @@ textarea{
   </article>
 
 
-  <!-- PRÓXIMO -->
+  <!-- HÁBITOS -->
+
+  <article class="card">
+
+    <div class="eyebrow">
+      MI MES
+    </div>
+
+    <div class="card-title">
+      Lo que estás cumpliendo
+    </div>
+
+    <div class="card-subtitle">
+      Toca cualquier día para marcar
+      Gym, paseo o alimentación.
+    </div>
+
+
+    <div
+      id="habitSummary"
+      class="habit-summary"
+    >
+    </div>
+
+
+    <div class="habit-calendar-header">
+
+      <button
+        class="calendar-arrow"
+        onclick="changeHabitMonth(-1)"
+      >
+        ‹
+      </button>
+
+      <div
+        id="habitCalendarTitle"
+        class="habit-calendar-title"
+      >
+      </div>
+
+      <button
+        class="calendar-arrow"
+        onclick="changeHabitMonth(1)"
+      >
+        ›
+      </button>
+
+    </div>
+
+
+    <div class="calendar-weekdays">
+
+      <span>L</span>
+      <span>M</span>
+      <span>X</span>
+      <span>J</span>
+      <span>V</span>
+      <span>S</span>
+      <span>D</span>
+
+    </div>
+
+
+    <div
+      id="habitCalendar"
+      class="habit-calendar"
+    >
+    </div>
+
+  </article>
+
+
+  <!-- PRÓXIMOS CUIDADOS -->
 
   <article class="card">
 
@@ -2374,7 +3048,99 @@ textarea{
 >
 
 
-  <!-- PREPARACIÓN -->
+  <!-- PLANES DE LA SEMANA -->
+
+  <article class="card">
+
+    <div class="eyebrow">
+      ESTA SEMANA
+    </div>
+
+    <div class="card-title">
+      Clases, planes y citas
+    </div>
+
+    <div class="card-subtitle">
+      Añade cualquier cosa que cambie tu rutina:
+      una clase, quedar con alguien, una cita,
+      una comida o una cena.
+    </div>
+
+
+    <div class="plan-form">
+
+      <input
+        id="planTitle"
+        placeholder="Ej. Pilates / Cena con María"
+      >
+
+      <div class="plan-form-row">
+
+        <select id="planType">
+
+          <option value="class">
+            Clase
+          </option>
+
+          <option value="friends">
+            Amigos
+          </option>
+
+          <option value="appointment">
+            Cita
+          </option>
+
+          <option value="food">
+            Comer / cenar fuera
+          </option>
+
+          <option value="other">
+            Otro
+          </option>
+
+        </select>
+
+        <select id="planDay">
+
+          <option>Lunes</option>
+          <option>Martes</option>
+          <option>Miércoles</option>
+          <option>Jueves</option>
+          <option>Viernes</option>
+          <option>Sábado</option>
+          <option>Domingo</option>
+
+        </select>
+
+      </div>
+
+
+      <input
+        id="planTime"
+        type="time"
+      >
+
+
+      <button
+        class="primary-button"
+        onclick="addWeeklyPlan()"
+      >
+        + Añadir a mi semana
+      </button>
+
+    </div>
+
+
+    <div
+      id="weeklyPlanList"
+      class="item-list"
+    >
+    </div>
+
+  </article>
+
+
+  <!-- PREPARACIÓN FINDE -->
 
   <article class="card">
 
@@ -2523,7 +3289,6 @@ textarea{
   class="tab-page"
 >
 
-
   <article class="card">
 
     <div class="eyebrow">
@@ -2535,8 +3300,7 @@ textarea{
     </div>
 
     <div class="card-subtitle">
-      No son tareas del trabajo.
-      Son proyectos, planes, curiosidades
+      Proyectos, planes, curiosidades
       y cosas que te hacen ilusión.
     </div>
 
@@ -2689,7 +3453,6 @@ textarea{
   class="tab-page"
 >
 
-
   <article class="card food-card">
 
     <div class="eyebrow">
@@ -2701,8 +3464,8 @@ textarea{
     </div>
 
     <div class="card-subtitle">
-      Decide una vez y deja de pensar
-      todos los días qué vas a comer.
+      Organiza tus comidas de la semana.
+      El objetivo energético sigue siendo editable.
     </div>
 
 
@@ -2787,9 +3550,7 @@ textarea{
     </div>
 
 
-    <div
-      id="mealEditor"
-    >
+    <div id="mealEditor">
     </div>
 
 
@@ -2815,8 +3576,6 @@ textarea{
 
   </article>
 
-
-  <!-- COMPRA -->
 
   <article class="card">
 
@@ -2870,7 +3629,6 @@ textarea{
   class="tab-page"
 >
 
-
   <article class="card">
 
     <div class="eyebrow">
@@ -2882,8 +3640,8 @@ textarea{
     </div>
 
     <div class="card-subtitle">
-      Para que las cosas pequeñas
-      no dependan de acordarte.
+      Pelo, piel, uñas, depilación
+      y todo lo que quieras mantener.
     </div>
 
 
@@ -2948,7 +3706,6 @@ textarea{
           Cada 3 semanas.
         </div>
 
-
         <div class="date-row">
 
           <input
@@ -2970,7 +3727,6 @@ textarea{
 
         </div>
 
-
         <div
           id="hairHydrationNext"
           class="next-date"
@@ -2989,7 +3745,6 @@ textarea{
         <div class="care-box-text">
           Aproximadamente cada 2 meses.
         </div>
-
 
         <div class="date-row">
 
@@ -3011,7 +3766,6 @@ textarea{
           </button>
 
         </div>
-
 
         <div
           id="hairCutNext"
@@ -3207,6 +3961,182 @@ textarea{
   </section>
 
 
+  <!-- UÑAS -->
+
+  <section
+    id="nailsSection"
+    class="care-section"
+  >
+
+    <button
+      class="care-header"
+      onclick="toggleCare('nailsSection')"
+    >
+
+      <span class="care-header-left">
+
+        <span class="care-icon">
+          💅
+        </span>
+
+        <span>
+
+          <span class="care-title">
+            Uñas
+          </span>
+
+          <span class="care-small">
+            Sesión · rutina · productos
+          </span>
+
+        </span>
+
+      </span>
+
+      <span class="care-arrow">
+        ⌄
+      </span>
+
+    </button>
+
+
+    <div class="care-content">
+
+
+      <div class="care-box">
+
+        <div class="care-box-title">
+          💅 Hacerme las uñas
+        </div>
+
+        <div class="care-box-text">
+          Elige cada cuánto quieres que vuelva a tocar.
+        </div>
+
+
+        <div class="date-row">
+
+          <input
+            id="nailsDate"
+            type="date"
+          >
+
+          <select
+            id="nailsFrequency"
+          >
+            <option value="14">
+              2 semanas
+            </option>
+
+            <option
+              value="21"
+              selected
+            >
+              3 semanas
+            </option>
+
+            <option value="28">
+              4 semanas
+            </option>
+          </select>
+
+        </div>
+
+
+        <button
+          class="primary-button"
+          onclick="saveNails()"
+        >
+          Guardar uñas
+        </button>
+
+
+        <div
+          id="nailsNext"
+          class="next-date"
+        >
+        </div>
+
+
+        <button
+          class="primary-button"
+          onclick="nailsToday()"
+        >
+          ✓ Me las he hecho hoy
+        </button>
+
+      </div>
+
+
+      <div class="care-box">
+
+        <div class="care-box-title">
+          ✨ Rutina
+        </div>
+
+        <div class="routine-list">
+
+          <div class="routine-item">
+            🧼 Retirar esmalte
+          </div>
+
+          <div class="routine-item">
+            💅 Limar y dar forma
+          </div>
+
+          <div class="routine-item">
+            🌿 Cutículas
+          </div>
+
+          <div class="routine-item">
+            🎨 Base + color
+          </div>
+
+          <div class="routine-item">
+            ✨ Top coat
+          </div>
+
+          <div class="routine-item">
+            🧴 Aceite + crema de manos
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="shopping-input">
+
+        <input
+          id="nailsShoppingInput"
+          placeholder="Comprar para las uñas..."
+          onkeydown="
+            if(event.key==='Enter'){
+              addShoppingItem('nails');
+            }
+          "
+        >
+
+        <button
+          onclick="addShoppingItem('nails')"
+        >
+          +
+        </button>
+
+      </div>
+
+
+      <div
+        id="nailsShoppingList"
+        class="shopping-list"
+      >
+      </div>
+
+    </div>
+
+  </section>
+
+
   <!-- DEPILACIÓN -->
 
   <section
@@ -3261,7 +4191,6 @@ textarea{
           mascarilla facial.
         </div>
 
-
         <div class="date-row">
 
           <input
@@ -3282,7 +4211,6 @@ textarea{
           </button>
 
         </div>
-
 
         <div
           id="depilationNext"
@@ -3387,7 +4315,6 @@ textarea{
 
     <div class="care-content">
 
-
       <div class="care-box">
 
         <div class="care-box-title">
@@ -3452,7 +4379,555 @@ textarea{
 
 
 <!-- =====================================================
-     NAV INFERIOR
+     MODAL HÁBITOS
+===================================================== -->
+
+<div
+  id="habitDayModal"
+  class="modal-backdrop"
+  onclick="closeModalBackdrop(event,'habitDayModal')"
+>
+
+  <div class="modal-sheet">
+
+    <div class="modal-handle">
+    </div>
+
+    <div class="wizard-icon">
+      📅
+    </div>
+
+    <div class="wizard-eyebrow">
+      MI DÍA
+    </div>
+
+    <div
+      id="habitDayTitle"
+      class="wizard-title"
+    >
+      Hoy
+    </div>
+
+    <div class="wizard-text">
+      Marca lo que has cumplido ese día.
+    </div>
+
+
+    <div
+      id="habitDayActions"
+      class="day-modal-actions"
+    >
+    </div>
+
+
+    <button
+      class="primary-button"
+      onclick="closeModal('habitDayModal')"
+    >
+      Listo
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     PRIMERA VEZ
+===================================================== -->
+
+<div
+  id="firstTimeModal"
+  class="modal-backdrop"
+>
+
+  <div class="modal-sheet">
+
+    <div class="modal-handle">
+    </div>
+
+    <div class="wizard-icon">
+      🌱
+    </div>
+
+    <div class="wizard-eyebrow">
+      PRIMERA VEZ
+    </div>
+
+    <div class="wizard-title">
+      Vamos a preparar tu centro
+    </div>
+
+    <div class="wizard-text">
+      Responde unas preguntas rápidas.
+      Podrás cambiar todo después.
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué quieres priorizar en tu vida personal?
+      </div>
+
+      <textarea
+        id="setupPriority"
+        placeholder="Ej. cuidarme, hacer más planes, ser constante..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué actividades te gustaría hacer más?
+      </div>
+
+      <textarea
+        id="setupActivities"
+        placeholder="Pilates, cerámica, correr, leer..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué proyectos personales tienes ahora?
+      </div>
+
+      <textarea
+        id="setupProjects"
+        placeholder="Apps, álbumes, aprender algo..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Con quién quieres intentar hacer más planes?
+      </div>
+
+      <textarea
+        id="setupPeople"
+        placeholder="Amigas, familia..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Cada cuánto quieres hacerte las uñas?
+      </div>
+
+      <select
+        id="setupNailsFrequency"
+        class="wizard-field"
+      >
+
+        <option value="14">
+          Cada 2 semanas
+        </option>
+
+        <option
+          value="21"
+          selected
+        >
+          Cada 3 semanas
+        </option>
+
+        <option value="28">
+          Cada 4 semanas
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Hay algo importante que quieras que la app te ayude a recordar?
+      </div>
+
+      <textarea
+        id="setupRemember"
+        placeholder="Escribe lo que quieras..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="wizard-navigation">
+
+      <button
+        class="wizard-back"
+        onclick="closeModal('firstTimeModal')"
+      >
+        Cerrar
+      </button>
+
+      <button
+        class="wizard-next"
+        onclick="saveFirstTimeSetup()"
+      >
+        Guardar mi vida ✨
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     REVISIÓN SEMANAL
+===================================================== -->
+
+<div
+  id="weeklyModal"
+  class="modal-backdrop"
+>
+
+  <div class="modal-sheet">
+
+    <div class="modal-handle">
+    </div>
+
+    <div class="wizard-icon">
+      🌿
+    </div>
+
+    <div class="wizard-eyebrow">
+      RESET SEMANAL
+    </div>
+
+    <div class="wizard-title">
+      Cerramos y preparamos
+    </div>
+
+    <div class="wizard-text">
+      Mira la semana que termina y decide
+      cómo quieres que sea la siguiente.
+    </div>
+
+
+    <div
+      id="weeklyHabitRecap"
+      class="habit-summary"
+    >
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué ha sido lo mejor de esta semana?
+      </div>
+
+      <textarea id="weeklyBest">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué se ha quedado pendiente?
+      </div>
+
+      <textarea id="weeklyPending">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Te has apuntado a alguna clase la semana que viene?
+      </div>
+
+      <textarea
+        id="weeklyClasses"
+        placeholder="Ej. Pilates · miércoles · 19:00"
+      ></textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Has quedado con alguien?
+      </div>
+
+      <textarea
+        id="weeklyFriends"
+        placeholder="Ej. María · jueves · cena"
+      ></textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Tienes alguna cita o compromiso?
+      </div>
+
+      <textarea
+        id="weeklyAppointments"
+        placeholder="Peluquería, médico, recados..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Vas a comer o cenar fuera algún día?
+      </div>
+
+      <textarea id="weeklyEatingOut">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué quieres reservar para ti esta semana?
+      </div>
+
+      <textarea id="weeklyForMe">
+      </textarea>
+
+    </div>
+
+
+    <div class="wizard-navigation">
+
+      <button
+        class="wizard-back"
+        onclick="closeModal('weeklyModal')"
+      >
+        Ahora no
+      </button>
+
+      <button
+        class="wizard-next"
+        onclick="saveWeeklyReview()"
+      >
+        Preparar semana
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     CIERRE MENSUAL
+===================================================== -->
+
+<div
+  id="monthlyModal"
+  class="modal-backdrop"
+>
+
+  <div class="modal-sheet">
+
+    <div class="modal-handle">
+    </div>
+
+    <div class="wizard-icon">
+      🌙
+    </div>
+
+    <div class="wizard-eyebrow">
+      CIERRE DE MES
+    </div>
+
+    <div
+      id="monthlyReviewTitle"
+      class="wizard-title"
+    >
+      Cerramos el mes
+    </div>
+
+    <div class="wizard-text">
+      Revisa, suelta lo pendiente
+      y decide qué quieres llevar contigo
+      al mes siguiente.
+    </div>
+
+
+    <div
+      id="monthlyHabitRecap"
+      class="habit-summary"
+    >
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué ha sido lo mejor de este mes?
+      </div>
+
+      <textarea id="monthBest">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué quieres recordar?
+      </div>
+
+      <textarea id="monthMemory">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué querías hacer y se quedó pendiente?
+      </div>
+
+      <textarea id="monthPending">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué te ha sentado especialmente bien?
+      </div>
+
+      <textarea id="monthGood">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué no quieres repetir?
+      </div>
+
+      <textarea id="monthNoRepeat">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué plan, viaje o evento importante tienes el mes que viene?
+      </div>
+
+      <textarea id="monthNextPlans">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué proyecto personal quieres mover?
+      </div>
+
+      <textarea id="monthNextProject">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        ¿Qué quieres hacer simplemente por diversión?
+      </div>
+
+      <textarea id="monthFun">
+      </textarea>
+
+    </div>
+
+
+    <div class="review-question">
+
+      <div class="review-question-title">
+        Tus 3 intenciones del próximo mes
+      </div>
+
+      <input
+        id="monthGoal1"
+        placeholder="1."
+      >
+
+      <input
+        id="monthGoal2"
+        placeholder="2."
+      >
+
+      <input
+        id="monthGoal3"
+        placeholder="3."
+      >
+
+    </div>
+
+
+    <div class="wizard-navigation">
+
+      <button
+        class="wizard-back"
+        onclick="closeModal('monthlyModal')"
+      >
+        Ahora no
+      </button>
+
+      <button
+        class="wizard-next"
+        onclick="saveMonthlyReview()"
+      >
+        Empezar nuevo mes ✨
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     NAV
 ===================================================== -->
 
 <nav class="bottom-nav">
@@ -3462,25 +4937,29 @@ textarea{
     class="nav-item"
   >
     🏠
-    <span>Inicio</span>
+    <span>
+      Inicio
+    </span>
   </a>
-
 
   <a
     href="./amor-al-arte.html"
     class="nav-item"
   >
     🎨
-    <span>Amor al arte</span>
+    <span>
+      Amor al arte
+    </span>
   </a>
-
 
   <a
     href="./descubrimiento.html"
     class="nav-item active"
   >
     🪩
-    <span>Descubrimiento</span>
+    <span>
+      Descubrimiento
+    </span>
   </a>
 
 </nav>
@@ -3489,7 +4968,7 @@ textarea{
 <script>
 
 /* =====================================================
-   HORARIOS FINDE
+   HORARIOS
 ===================================================== */
 
 const saturdaySchedule = [
@@ -3500,8 +4979,7 @@ const saturdaySchedule = [
     time:"08:00 – 09:30",
     icon:"👟",
     title:"Andar / correr",
-    description:
-      "Empieza el día moviéndote."
+    description:"Empieza el día moviéndote."
   },
 
   {
@@ -3510,8 +4988,7 @@ const saturdaySchedule = [
     time:"09:30 – 10:00",
     icon:"☕",
     title:"Ducha + café",
-    description:
-      "Ducha tranquila, café y empezar."
+    description:"Ducha tranquila, café y empezar."
   },
 
   {
@@ -3520,8 +4997,7 @@ const saturdaySchedule = [
     time:"10:00 – 13:00",
     icon:"🎨",
     title:"Tiempo de creación",
-    description:
-      "App, cerámica, compras, plan, arreglarte, explorar…"
+    description:"App, cerámica, compras, plan, arreglarte, explorar…"
   },
 
   {
@@ -3530,8 +5006,7 @@ const saturdaySchedule = [
     time:"13:00 – 16:00",
     icon:"🥂",
     title:"Libre",
-    description:
-      "Familia, amigos, comer, salir."
+    description:"Familia, amigos, comer, salir."
   },
 
   {
@@ -3540,8 +5015,7 @@ const saturdaySchedule = [
     time:"16:00 – 21:00",
     icon:"✨",
     title:"Tiempo de creación",
-    description:
-      "Todo lo que te apetezca hacer con la tarde."
+    description:"Todo lo que te apetezca hacer con la tarde."
   },
 
   {
@@ -3550,8 +5024,7 @@ const saturdaySchedule = [
     time:"21:00 – 22:30",
     icon:"👟",
     title:"Andar + ducha",
-    description:
-      "Paseo, ducha y cambio de ritmo."
+    description:"Paseo, ducha y cambio de ritmo."
   },
 
   {
@@ -3560,8 +5033,7 @@ const saturdaySchedule = [
     time:"22:30 →",
     icon:"🍝",
     title:"Cena / salida",
-    description:
-      "Noche libre."
+    description:"Noche libre."
   }
 
 ];
@@ -3575,8 +5047,7 @@ const sundaySchedule = [
     time:"08:00 – 09:30",
     icon:"👟",
     title:"Andar / correr",
-    description:
-      "Empieza el domingo moviéndote."
+    description:"Empieza el domingo moviéndote."
   },
 
   {
@@ -3585,8 +5056,7 @@ const sundaySchedule = [
     time:"09:30 – 10:00",
     icon:"☕",
     title:"Ducha + café",
-    description:
-      "Ducha tranquila y café."
+    description:"Ducha tranquila y café."
   },
 
   {
@@ -3595,8 +5065,7 @@ const sundaySchedule = [
     time:"10:00 – 13:00",
     icon:"🎨",
     title:"Tiempo de creación",
-    description:
-      "Un bloque largo para tus cosas."
+    description:"Un bloque largo para tus cosas."
   },
 
   {
@@ -3605,8 +5074,7 @@ const sundaySchedule = [
     time:"13:00 – 16:00",
     icon:"🥂",
     title:"Libre",
-    description:
-      "Familia, amigos y comida."
+    description:"Familia, amigos y comida."
   },
 
   {
@@ -3615,8 +5083,7 @@ const sundaySchedule = [
     time:"16:00 – 21:00",
     icon:"✨",
     title:"Tiempo de creación",
-    description:
-      "Haz algo que te deje buena sensación del finde."
+    description:"Haz algo que te deje buena sensación del finde."
   },
 
   {
@@ -3625,8 +5092,7 @@ const sundaySchedule = [
     time:"21:00 – 22:30",
     icon:"👟",
     title:"Andar + ducha",
-    description:
-      "Último paseo del fin de semana."
+    description:"Último paseo del fin de semana."
   },
 
   {
@@ -3635,33 +5101,25 @@ const sundaySchedule = [
     time:"22:30 →",
     icon:"🌙",
     title:"Reset del domingo",
-    description:
-      "Cena, preparar lunes, skincare y dormir."
+    description:"Cena, preparar lunes, skincare y dormir."
   }
 
 ];
 
 
 /* =====================================================
-   PREPARACIÓN FINDE
+   CHECKLISTS
 ===================================================== */
 
 const weekendPrepTasks = [
 
   "Decidir si hay algún plan fijo",
-
   "Ver si voy a comer o cenar fuera",
-
   "Escribir a quien quiera ver",
-
   "Pensar algo que me apetezca crear",
-
   "Revisar si toca algún cuidado",
-
   "Revisar lista de la compra",
-
   "Pensar outfits si voy a salir",
-
   "Dejar huecos libres para improvisar"
 
 ];
@@ -3670,24 +5128,62 @@ const weekendPrepTasks = [
 const sundayResetTasks = [
 
   "Preparar ropa del lunes",
-
   "Revisar agenda",
-
   "Preparar bolso / mochila",
-
   "Poner dispositivos a cargar",
-
   "Dejar desayuno / comida pensado",
-
   "Preparar lo que necesite para trabajar",
-
   "Skincare",
-
   "Poner alarma",
-
   "A dormir"
 
 ];
+
+
+/* =====================================================
+   MODALES
+===================================================== */
+
+function openModal(id){
+
+  document.getElementById(
+    id
+  ).classList.add(
+    "show"
+  );
+
+}
+
+
+function closeModal(id){
+
+  document.getElementById(
+    id
+  ).classList.remove(
+    "show"
+  );
+
+}
+
+
+function closeModalBackdrop(
+  event,
+  id
+){
+
+  if(
+    event.target.id
+    ===
+    id
+  ){
+
+    closeModal(
+      id
+    );
+
+  }
+
+}
 
 
 /* =====================================================
@@ -3807,6 +5303,11 @@ function updateClock(){
 
 
   updateWeekendNow(
+    now
+  );
+
+
+  updateAssistantHighlights(
     now
   );
 
@@ -3956,7 +5457,7 @@ function renderSchedule(
 
 
 /* =====================================================
-   AHORA
+   FINDE AHORA
 ===================================================== */
 
 function formatDuration(seconds){
@@ -3979,7 +5480,7 @@ function formatDuration(seconds){
     seconds % 60;
 
 
-  return (
+  return(
 
     String(h)
       .padStart(
@@ -4031,12 +5532,6 @@ function getWeekendSchedule(now){
 
 
 function updateWeekendNow(now){
-
-  const card =
-    document.getElementById(
-      "nowWeekendCard"
-    );
-
 
   const day =
     now.getDay();
@@ -4264,10 +5759,6 @@ function updateWeekendNow(now){
 }
 
 
-/* =====================================================
-   MARCAR HORARIO
-===================================================== */
-
 function markCurrentSchedule(minutes){
 
   document
@@ -4294,9 +5785,7 @@ function markCurrentSchedule(minutes){
           "current",
 
           minutes >= start
-
           &&
-
           minutes < end
 
         );
@@ -4308,7 +5797,7 @@ function markCurrentSchedule(minutes){
 
 
 /* =====================================================
-   CHECKLIST GENERAL
+   CHECKLIST
 ===================================================== */
 
 function renderChecklist(
@@ -4449,10 +5938,6 @@ function renderChecklist(
 }
 
 
-/* =====================================================
-   PROGRESO FINDE
-===================================================== */
-
 function updateWeekendProgress(){
 
   let done =
@@ -4515,10 +6000,1508 @@ function updateWeekendProgress(){
   document.getElementById(
     "todayWeekendStatus"
   ).textContent =
-
     percent
     +
     "% preparado";
+
+}
+
+
+/* =====================================================
+   PRIMERA VEZ
+===================================================== */
+
+function openFirstTimeWizard(){
+
+  const saved =
+    JSON.parse(
+      localStorage.getItem(
+        "discovery-setup"
+      )
+      ||
+      "{}"
+    );
+
+
+  document.getElementById(
+    "setupPriority"
+  ).value =
+    saved.priority
+    ||
+    "";
+
+
+  document.getElementById(
+    "setupActivities"
+  ).value =
+    saved.activities
+    ||
+    "";
+
+
+  document.getElementById(
+    "setupProjects"
+  ).value =
+    saved.projects
+    ||
+    "";
+
+
+  document.getElementById(
+    "setupPeople"
+  ).value =
+    saved.people
+    ||
+    "";
+
+
+  document.getElementById(
+    "setupRemember"
+  ).value =
+    saved.remember
+    ||
+    "";
+
+
+  document.getElementById(
+    "setupNailsFrequency"
+  ).value =
+    saved.nailsFrequency
+    ||
+    "21";
+
+
+  openModal(
+    "firstTimeModal"
+  );
+
+}
+
+
+function saveFirstTimeSetup(){
+
+  const data = {
+
+    priority:
+      document.getElementById(
+        "setupPriority"
+      ).value.trim(),
+
+    activities:
+      document.getElementById(
+        "setupActivities"
+      ).value.trim(),
+
+    projects:
+      document.getElementById(
+        "setupProjects"
+      ).value.trim(),
+
+    people:
+      document.getElementById(
+        "setupPeople"
+      ).value.trim(),
+
+    remember:
+      document.getElementById(
+        "setupRemember"
+      ).value.trim(),
+
+    nailsFrequency:
+      document.getElementById(
+        "setupNailsFrequency"
+      ).value,
+
+    completed:true
+
+  };
+
+
+  localStorage.setItem(
+
+    "discovery-setup",
+
+    JSON.stringify(
+      data
+    )
+
+  );
+
+
+  localStorage.setItem(
+    "discovery-nails-frequency",
+    data.nailsFrequency
+  );
+
+
+  updateFirstTimeButton();
+
+
+  closeModal(
+    "firstTimeModal"
+  );
+
+}
+
+
+function updateFirstTimeButton(){
+
+  const data =
+    JSON.parse(
+
+      localStorage.getItem(
+        "discovery-setup"
+      )
+      ||
+      "{}"
+
+    );
+
+
+  if(
+    data.completed
+  ){
+
+    document.getElementById(
+      "firstTimeTitle"
+    ).textContent =
+      "Actualizar mis datos";
+
+
+    document.getElementById(
+      "firstTimeText"
+    ).textContent =
+      "Cambia preferencias, actividades o prioridades.";
+
+  }
+
+}
+
+
+/* =====================================================
+   DOMINGO / MES
+===================================================== */
+
+function isLastSunday(date){
+
+  if(
+    date.getDay() !== 0
+  ){
+
+    return false;
+
+  }
+
+
+  const nextSunday =
+    new Date(
+      date
+    );
+
+
+  nextSunday.setDate(
+    date.getDate()
+    +
+    7
+  );
+
+
+  return (
+    nextSunday.getMonth()
+    !==
+    date.getMonth()
+  );
+
+}
+
+
+function updateAssistantHighlights(now){
+
+  const weekly =
+    document.getElementById(
+      "weeklyReviewButton"
+    );
+
+
+  const monthly =
+    document.getElementById(
+      "monthlyReviewButton"
+    );
+
+
+  weekly.classList.toggle(
+    "highlight",
+    now.getDay() === 0
+  );
+
+
+  monthly.classList.toggle(
+    "highlight",
+    isLastSunday(
+      now
+    )
+  );
+
+}
+
+
+/* =====================================================
+   REVISIÓN SEMANAL
+===================================================== */
+
+function openWeeklyReview(){
+
+  renderReviewHabitSummary(
+    "weeklyHabitRecap",
+    "week"
+  );
+
+
+  const saved =
+    JSON.parse(
+
+      localStorage.getItem(
+        "discovery-weekly-review"
+      )
+      ||
+      "{}"
+
+    );
+
+
+  [
+    "weeklyBest",
+    "weeklyPending",
+    "weeklyClasses",
+    "weeklyFriends",
+    "weeklyAppointments",
+    "weeklyEatingOut",
+    "weeklyForMe"
+  ]
+  .forEach(
+    id => {
+
+      document.getElementById(
+        id
+      ).value =
+        saved[id]
+        ||
+        "";
+
+    }
+  );
+
+
+  openModal(
+    "weeklyModal"
+  );
+
+}
+
+
+function saveWeeklyReview(){
+
+  const ids = [
+
+    "weeklyBest",
+    "weeklyPending",
+    "weeklyClasses",
+    "weeklyFriends",
+    "weeklyAppointments",
+    "weeklyEatingOut",
+    "weeklyForMe"
+
+  ];
+
+
+  const data = {
+
+    date:
+      new Date().toISOString()
+
+  };
+
+
+  ids.forEach(
+    id => {
+
+      data[id] =
+        document.getElementById(
+          id
+        ).value.trim();
+
+    }
+  );
+
+
+  localStorage.setItem(
+
+    "discovery-weekly-review",
+
+    JSON.stringify(
+      data
+    )
+
+  );
+
+
+  closeModal(
+    "weeklyModal"
+  );
+
+}
+
+
+/* =====================================================
+   REVISIÓN MENSUAL
+===================================================== */
+
+function openMonthlyReview(){
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "monthlyReviewTitle"
+  ).textContent =
+
+    "Cerramos "
+    +
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        month:"long"
+      }
+    );
+
+
+  renderReviewHabitSummary(
+    "monthlyHabitRecap",
+    "month"
+  );
+
+
+  openModal(
+    "monthlyModal"
+  );
+
+}
+
+
+function saveMonthlyReview(){
+
+  const now =
+    new Date();
+
+
+  const monthKey =
+
+    now.getFullYear()
+    +
+    "-"
+    +
+    String(
+      now.getMonth()+1
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  const ids = [
+
+    "monthBest",
+    "monthMemory",
+    "monthPending",
+    "monthGood",
+    "monthNoRepeat",
+    "monthNextPlans",
+    "monthNextProject",
+    "monthFun",
+    "monthGoal1",
+    "monthGoal2",
+    "monthGoal3"
+
+  ];
+
+
+  const data = {
+
+    date:
+      new Date().toISOString()
+
+  };
+
+
+  ids.forEach(
+    id => {
+
+      data[id] =
+        document.getElementById(
+          id
+        ).value.trim();
+
+    }
+  );
+
+
+  localStorage.setItem(
+
+    "discovery-month-review-"
+    +
+    monthKey,
+
+    JSON.stringify(
+      data
+    )
+
+  );
+
+
+  closeModal(
+    "monthlyModal"
+  );
+
+}
+
+
+/* =====================================================
+   HÁBITOS
+===================================================== */
+
+const habitDefinitions = {
+
+  gym:{
+    icon:"🏋️",
+    label:"Gym"
+  },
+
+  walk:{
+    icon:"👟",
+    label:"Andar"
+  },
+
+  food:{
+    icon:"🥗",
+    label:"Alimentación"
+  }
+
+};
+
+
+let habitViewDate =
+  new Date();
+
+
+let selectedHabitDate =
+  null;
+
+
+function dateKey(date){
+
+  return (
+
+    date.getFullYear()
+    +
+    "-"
+    +
+    String(
+      date.getMonth()+1
+    ).padStart(
+      2,
+      "0"
+    )
+    +
+    "-"
+    +
+    String(
+      date.getDate()
+    ).padStart(
+      2,
+      "0"
+    )
+
+  );
+
+}
+
+
+function habitKey(
+  dateString,
+  habit
+){
+
+  return (
+
+    "discovery-habit-"
+    +
+    dateString
+    +
+    "-"
+    +
+    habit
+
+  );
+
+}
+
+
+function getHabit(
+  dateString,
+  habit
+){
+
+  return (
+
+    localStorage.getItem(
+      habitKey(
+        dateString,
+        habit
+      )
+    )
+    ===
+    "1"
+
+  );
+
+}
+
+
+function setHabit(
+  dateString,
+  habit,
+  value
+){
+
+  const key =
+    habitKey(
+      dateString,
+      habit
+    );
+
+
+  if(
+    value
+  ){
+
+    localStorage.setItem(
+      key,
+      "1"
+    );
+
+  }
+
+  else{
+
+    localStorage.removeItem(
+      key
+    );
+
+  }
+
+}
+
+
+function renderHabitCalendar(){
+
+  const year =
+    habitViewDate.getFullYear();
+
+
+  const month =
+    habitViewDate.getMonth();
+
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "habitCalendarTitle"
+  ).textContent =
+
+    new Date(
+      year,
+      month,
+      1
+    )
+    .toLocaleDateString(
+      "es-ES",
+      {
+        month:"long",
+        year:"numeric"
+      }
+    );
+
+
+  const first =
+    new Date(
+      year,
+      month,
+      1
+    );
+
+
+  const start =
+    (
+      first.getDay()
+      +
+      6
+    )
+    %
+    7;
+
+
+  const days =
+    new Date(
+      year,
+      month+1,
+      0
+    ).getDate();
+
+
+  const previousDays =
+    new Date(
+      year,
+      month,
+      0
+    ).getDate();
+
+
+  const container =
+    document.getElementById(
+      "habitCalendar"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  for(
+    let index=0;
+    index<42;
+    index++
+  ){
+
+    let day;
+    let cellMonth=month;
+    let cellYear=year;
+    let outside=false;
+
+
+    if(
+      index < start
+    ){
+
+      day =
+        previousDays
+        -
+        start
+        +
+        index
+        +
+        1;
+
+
+      cellMonth--;
+
+      outside=true;
+
+    }
+
+    else if(
+      index >=
+      start+days
+    ){
+
+      day =
+        index
+        -
+        start
+        -
+        days
+        +
+        1;
+
+
+      cellMonth++;
+
+      outside=true;
+
+    }
+
+    else{
+
+      day =
+        index
+        -
+        start
+        +
+        1;
+
+    }
+
+
+    if(
+      cellMonth < 0
+    ){
+
+      cellMonth=11;
+      cellYear--;
+
+    }
+
+
+    if(
+      cellMonth > 11
+    ){
+
+      cellMonth=0;
+      cellYear++;
+
+    }
+
+
+    const date =
+      new Date(
+        cellYear,
+        cellMonth,
+        day
+      );
+
+
+    const key =
+      dateKey(
+        date
+      );
+
+
+    const button =
+      document.createElement(
+        "button"
+      );
+
+
+    button.className =
+      "habit-day";
+
+
+    if(
+      outside
+    ){
+
+      button.classList.add(
+        "other"
+      );
+
+    }
+
+
+    if(
+      date.toDateString()
+      ===
+      now.toDateString()
+    ){
+
+      button.classList.add(
+        "today"
+      );
+
+    }
+
+
+    let icons =
+      "";
+
+
+    Object.keys(
+      habitDefinitions
+    )
+    .forEach(
+      habit => {
+
+        if(
+          getHabit(
+            key,
+            habit
+          )
+        ){
+
+          icons +=
+            habitDefinitions[habit].icon;
+
+        }
+
+      }
+    );
+
+
+    button.innerHTML =
+
+      '<div class="habit-day-number">'
+      +
+      day
+      +
+      "</div>"
+      +
+      '<div class="habit-icons">'
+      +
+      icons
+      +
+      "</div>";
+
+
+    button.onclick =
+      ()=>openHabitDay(
+        date
+      );
+
+
+    container.appendChild(
+      button
+    );
+
+  }
+
+
+  renderHabitSummary();
+
+}
+
+
+function changeHabitMonth(change){
+
+  habitViewDate.setMonth(
+    habitViewDate.getMonth()
+    +
+    change
+  );
+
+
+  renderHabitCalendar();
+
+}
+
+
+function openHabitDay(date){
+
+  selectedHabitDate =
+    dateKey(
+      date
+    );
+
+
+  document.getElementById(
+    "habitDayTitle"
+  ).textContent =
+
+    date.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+      }
+    );
+
+
+  renderHabitDayActions();
+
+
+  openModal(
+    "habitDayModal"
+  );
+
+}
+
+
+function renderHabitDayActions(){
+
+  const container =
+    document.getElementById(
+      "habitDayActions"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  Object.keys(
+    habitDefinitions
+  )
+  .forEach(
+    habit => {
+
+      const definition =
+        habitDefinitions[habit];
+
+
+      const active =
+        getHabit(
+          selectedHabitDate,
+          habit
+        );
+
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.className =
+        "habit-toggle"
+        +
+        (
+          active
+          ?
+          " active"
+          :
+          ""
+        );
+
+
+      button.innerHTML =
+
+        "<strong>"
+        +
+        definition.icon
+        +
+        " "
+        +
+        definition.label
+        +
+        "</strong>"
+        +
+        "<span>"
+        +
+        (
+          active
+          ?
+          "✓"
+          :
+          "○"
+        )
+        +
+        "</span>";
+
+
+      button.onclick =
+        ()=>{
+
+          setHabit(
+            selectedHabitDate,
+            habit,
+            !active
+          );
+
+
+          renderHabitDayActions();
+
+          renderHabitCalendar();
+
+        };
+
+
+      container.appendChild(
+        button
+      );
+
+    }
+  );
+
+}
+
+
+function countHabitInMonth(
+  year,
+  month,
+  habit
+){
+
+  const days =
+    new Date(
+      year,
+      month+1,
+      0
+    ).getDate();
+
+
+  let count =
+    0;
+
+
+  for(
+    let day=1;
+    day<=days;
+    day++
+  ){
+
+    const key =
+      dateKey(
+        new Date(
+          year,
+          month,
+          day
+        )
+      );
+
+
+    if(
+      getHabit(
+        key,
+        habit
+      )
+    ){
+
+      count++;
+
+    }
+
+  }
+
+
+  return count;
+
+}
+
+
+function renderHabitSummary(){
+
+  const year =
+    habitViewDate.getFullYear();
+
+
+  const month =
+    habitViewDate.getMonth();
+
+
+  const container =
+    document.getElementById(
+      "habitSummary"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  Object.keys(
+    habitDefinitions
+  )
+  .forEach(
+    habit => {
+
+      const definition =
+        habitDefinitions[habit];
+
+
+      const count =
+        countHabitInMonth(
+          year,
+          month,
+          habit
+        );
+
+
+      const item =
+        document.createElement(
+          "div"
+        );
+
+
+      item.className =
+        "habit-stat";
+
+
+      item.innerHTML =
+
+        '<div class="habit-stat-icon">'
+        +
+        definition.icon
+        +
+        "</div>"
+        +
+        '<div class="habit-stat-number">'
+        +
+        count
+        +
+        "</div>"
+        +
+        '<div class="habit-stat-label">'
+        +
+        definition.label
+        +
+        "</div>";
+
+
+      container.appendChild(
+        item
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   RESUMEN PARA REVISIONES
+===================================================== */
+
+function renderReviewHabitSummary(
+  containerId,
+  mode
+){
+
+  const container =
+    document.getElementById(
+      containerId
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  const now =
+    new Date();
+
+
+  Object.keys(
+    habitDefinitions
+  )
+  .forEach(
+    habit => {
+
+      let count =
+        0;
+
+
+      if(
+        mode === "month"
+      ){
+
+        count =
+          countHabitInMonth(
+            now.getFullYear(),
+            now.getMonth(),
+            habit
+          );
+
+      }
+
+      else{
+
+        for(
+          let i=0;
+          i<7;
+          i++
+        ){
+
+          const date =
+            new Date(
+              now
+            );
+
+
+          date.setDate(
+            now.getDate()
+            -
+            i
+          );
+
+
+          if(
+            getHabit(
+              dateKey(date),
+              habit
+            )
+          ){
+
+            count++;
+
+          }
+
+        }
+
+      }
+
+
+      const definition =
+        habitDefinitions[habit];
+
+
+      const box =
+        document.createElement(
+          "div"
+        );
+
+
+      box.className =
+        "habit-stat";
+
+
+      box.innerHTML =
+
+        '<div class="habit-stat-icon">'
+        +
+        definition.icon
+        +
+        "</div>"
+        +
+        '<div class="habit-stat-number">'
+        +
+        count
+        +
+        "</div>"
+        +
+        '<div class="habit-stat-label">'
+        +
+        definition.label
+        +
+        "</div>";
+
+
+      container.appendChild(
+        box
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   PLANES SEMANA
+===================================================== */
+
+function getWeeklyPlans(){
+
+  return JSON.parse(
+
+    localStorage.getItem(
+      "discovery-weekly-plans"
+    )
+    ||
+    "[]"
+
+  );
+
+}
+
+
+function saveWeeklyPlans(plans){
+
+  localStorage.setItem(
+
+    "discovery-weekly-plans",
+
+    JSON.stringify(
+      plans
+    )
+
+  );
+
+}
+
+
+function planIcon(type){
+
+  const icons = {
+
+    class:"🧘",
+    friends:"🥂",
+    appointment:"📅",
+    food:"🍝",
+    other:"✨"
+
+  };
+
+
+  return icons[type]
+  ||
+  "✨";
+
+}
+
+
+function addWeeklyPlan(){
+
+  const title =
+    document.getElementById(
+      "planTitle"
+    ).value.trim();
+
+
+  if(
+    !title
+  ){
+
+    return;
+
+  }
+
+
+  const plans =
+    getWeeklyPlans();
+
+
+  plans.push(
+    {
+
+      title,
+
+      type:
+        document.getElementById(
+          "planType"
+        ).value,
+
+      day:
+        document.getElementById(
+          "planDay"
+        ).value,
+
+      time:
+        document.getElementById(
+          "planTime"
+        ).value
+
+    }
+  );
+
+
+  saveWeeklyPlans(
+    plans
+  );
+
+
+  document.getElementById(
+    "planTitle"
+  ).value =
+    "";
+
+
+  document.getElementById(
+    "planTime"
+  ).value =
+    "";
+
+
+  renderWeeklyPlans();
+
+}
+
+
+function deleteWeeklyPlan(index){
+
+  const plans =
+    getWeeklyPlans();
+
+
+  plans.splice(
+    index,
+    1
+  );
+
+
+  saveWeeklyPlans(
+    plans
+  );
+
+
+  renderWeeklyPlans();
+
+}
+
+
+function renderWeeklyPlans(){
+
+  const container =
+    document.getElementById(
+      "weeklyPlanList"
+    );
+
+
+  const plans =
+    getWeeklyPlans();
+
+
+  container.innerHTML =
+    "";
+
+
+  plans.forEach(
+    (
+      plan,
+      index
+    )=>{
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+
+      row.className =
+        "week-plan";
+
+
+      row.innerHTML =
+
+        '<div class="week-plan-icon">'
+        +
+        planIcon(
+          plan.type
+        )
+        +
+        "</div>"
+        +
+        '<div class="week-plan-content">'
+        +
+        '<div class="week-plan-title">'
+        +
+        escapeHtml(
+          plan.title
+        )
+        +
+        "</div>"
+        +
+        '<div class="week-plan-meta">'
+        +
+        plan.day
+        +
+        (
+          plan.time
+          ?
+          " · "
+          +
+          plan.time
+          :
+          ""
+        )
+        +
+        "</div>"
+        +
+        "</div>"
+        +
+        '<button class="simple-delete" onclick="deleteWeeklyPlan('
+        +
+        index
+        +
+        ')">×</button>';
+
+
+      container.appendChild(
+        row
+      );
+
+    }
+  );
 
 }
 
@@ -4747,11 +7730,10 @@ function renderLifeItems(){
 
 
 /* =====================================================
-   MENÚ
+   MENÚ SEMANAL
 ===================================================== */
 
 const foodDays = [
-
   "L",
   "M",
   "X",
@@ -4759,7 +7741,6 @@ const foodDays = [
   "V",
   "S",
   "D"
-
 ];
 
 
@@ -5458,7 +8439,9 @@ function addDays(
   date.setDate(
     date.getDate()
     +
-    days
+    Number(
+      days
+    )
   );
 
 
@@ -5533,10 +8516,20 @@ function renderCareDate(
     !saved
   ){
 
-    document.getElementById(
-      resultId
-    ).textContent =
-      "Sin fecha todavía";
+    const result =
+      document.getElementById(
+        resultId
+      );
+
+
+    if(
+      result
+    ){
+
+      result.textContent =
+        "Sin fecha todavía";
+
+    }
 
 
     return null;
@@ -5544,10 +8537,20 @@ function renderCareDate(
   }
 
 
-  document.getElementById(
-    inputId
-  ).value =
-    saved;
+  const input =
+    document.getElementById(
+      inputId
+    );
+
+
+  if(
+    input
+  ){
+
+    input.value =
+      saved;
+
+  }
 
 
   const next =
@@ -5620,10 +8623,20 @@ function renderCareDate(
   }
 
 
-  document.getElementById(
-    resultId
-  ).textContent =
-    text;
+  const result =
+    document.getElementById(
+      resultId
+    );
+
+
+  if(
+    result
+  ){
+
+    result.textContent =
+      text;
+
+  }
 
 
   return {
@@ -5634,6 +8647,93 @@ function renderCareDate(
 
 }
 
+
+/* =====================================================
+   UÑAS
+===================================================== */
+
+function saveNails(){
+
+  const date =
+    document.getElementById(
+      "nailsDate"
+    ).value;
+
+
+  const frequency =
+    document.getElementById(
+      "nailsFrequency"
+    ).value;
+
+
+  if(
+    date
+  ){
+
+    localStorage.setItem(
+      careKey(
+        "nails"
+      ),
+      date
+    );
+
+  }
+
+
+  localStorage.setItem(
+    "discovery-nails-frequency",
+    frequency
+  );
+
+
+  renderCare();
+
+}
+
+
+function nailsToday(){
+
+  const now =
+    new Date();
+
+
+  const value =
+
+    now.getFullYear()
+    +
+    "-"
+    +
+    String(
+      now.getMonth()+1
+    ).padStart(
+      2,
+      "0"
+    )
+    +
+    "-"
+    +
+    String(
+      now.getDate()
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  document.getElementById(
+    "nailsDate"
+  ).value =
+    value;
+
+
+  saveNails();
+
+}
+
+
+/* =====================================================
+   RENDER CUIDADO
+===================================================== */
 
 function renderCare(){
 
@@ -5664,10 +8764,38 @@ function renderCare(){
     );
 
 
+  const nailsFrequency =
+    Number(
+      localStorage.getItem(
+        "discovery-nails-frequency"
+      )
+      ||
+      21
+    );
+
+
+  document.getElementById(
+    "nailsFrequency"
+  ).value =
+    String(
+      nailsFrequency
+    );
+
+
+  const nails =
+    renderCareDate(
+      "nails",
+      "nailsDate",
+      "nailsNext",
+      nailsFrequency
+    );
+
+
   renderCareDashboard(
     hydration,
     cut,
-    depilation
+    depilation,
+    nails
   );
 
 
@@ -5679,7 +8807,8 @@ function renderCare(){
 function renderCareDashboard(
   hydration,
   cut,
-  depilation
+  depilation,
+  nails
 ){
 
   const items = [
@@ -5697,15 +8826,15 @@ function renderCareDashboard(
     },
 
     {
-      icon:"🛁",
-      title:"Depilación",
-      data:depilation
+      icon:"💅",
+      title:"Uñas",
+      data:nails
     },
 
     {
-      icon:"🌸",
-      title:"Neceser",
-      text:"Revisión mensual"
+      icon:"🛁",
+      title:"Depilación",
+      data:depilation
     }
 
   ];
@@ -5742,8 +8871,6 @@ function renderCareDashboard(
 
 
           let text =
-            item.text
-            ||
             "Sin fecha";
 
 
@@ -5932,6 +9059,18 @@ function updateDashboard(){
       "depilation",
       14,
       "Depilación"
+    ],
+
+    [
+      "nails",
+      Number(
+        localStorage.getItem(
+          "discovery-nails-frequency"
+        )
+        ||
+        21
+      ),
+      "Uñas"
     ]
 
   ];
@@ -6086,6 +9225,12 @@ renderChecklist(
 updateWeekendProgress();
 
 
+updateFirstTimeButton();
+
+
+renderWeeklyPlans();
+
+
 renderLifeItems();
 
 
@@ -6098,6 +9243,7 @@ renderMeals();
   "food",
   "hair",
   "skin",
+  "nails",
   "depilation",
   "intimate"
 ]
@@ -6112,7 +9258,15 @@ renderMeals();
 renderCare();
 
 
+habitViewDate =
+  new Date();
+
+
+renderHabitCalendar();
+
+
 updateDashboard();
+
 
 updateClock();
 

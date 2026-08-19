@@ -10,19 +10,10 @@
 >
 
 <meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta
-  name="apple-mobile-web-app-status-bar-style"
-  content="black-translucent"
->
-
-<meta
-  name="apple-mobile-web-app-title"
-  content="Mi Inicio"
->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mi Inicio">
 
 <title>Descubrimiento · Mi Inicio</title>
-
 
 <style>
 
@@ -32,38 +23,23 @@
 
 :root{
 
-  --bg:#f8f6fa;
+  --bg:#f7f5f8;
+  --card:rgba(255,255,255,.92);
 
-  --card:
-    rgba(255,255,255,.93);
+  --text:#151622;
+  --secondary:#73737d;
 
-  --text:#171720;
+  --pink:#ff356f;
+  --purple:#7657ec;
+  --green:#20ae7c;
+  --orange:#ff7200;
+  --blue:#178bd6;
 
-  --muted:#777681;
-
-  --pink:#ff4f7f;
-
-  --purple:#7558dc;
-
-  --purpleSoft:#eee9ff;
-
-  --green:#1ca879;
-
-  --greenSoft:#e5f7f0;
-
-  --orange:#ff7b22;
-
-  --orangeSoft:#fff0e5;
-
-  --blue:#268dd2;
-
-  --blueSoft:#e8f4fc;
-
-  --yellow:#f4c74f;
-
-  --yellowSoft:#fff8dc;
-
-  --red:#e95868;
+  --purple-soft:#eee9ff;
+  --pink-soft:#ffe8ef;
+  --green-soft:#e6f7f0;
+  --orange-soft:#fff0e4;
+  --blue-soft:#e9f4fd;
 
 }
 
@@ -107,21 +83,15 @@ body{
   background:
 
     radial-gradient(
-      circle at 0% 0%,
-      rgba(255,218,232,.72),
+      circle at 2% 0%,
+      rgba(255,218,230,.78),
       transparent 27%
     ),
 
     radial-gradient(
-      circle at 100% 0%,
-      rgba(226,217,255,.72),
+      circle at 98% 2%,
+      rgba(226,218,255,.76),
       transparent 31%
-    ),
-
-    radial-gradient(
-      circle at 50% 100%,
-      rgba(215,244,235,.5),
-      transparent 32%
     ),
 
     var(--bg);
@@ -131,15 +101,15 @@ body{
     calc(
       env(safe-area-inset-top)
       +
-      20px
+      21px
     )
 
-    14px
+    16px
 
     calc(
       env(safe-area-inset-bottom)
       +
-      125px
+      180px
     );
 
 }
@@ -155,108 +125,146 @@ textarea{
 
 
 /* =====================================================
-   CABECERA
+   ARRIBA
 ===================================================== */
 
-.hero{
+.top-actions{
 
   display:flex;
 
-  justify-content:space-between;
+  justify-content:flex-end;
 
-  align-items:flex-start;
+  gap:8px;
 
-  gap:15px;
-
-  margin-bottom:18px;
+  margin-bottom:10px;
 
 }
 
 
-.hero-kicker{
+.top-action{
 
-  color:var(--purple);
+  min-height:42px;
 
-  font-size:10px;
+  padding:0 14px;
 
-  font-weight:900;
+  display:flex;
 
-  letter-spacing:1.3px;
+  align-items:center;
 
-}
+  justify-content:center;
 
+  border:0;
 
-.hero-title{
-
-  margin-top:4px;
-
-  font-size:31px;
-
-  line-height:1.05;
-
-  font-weight:950;
-
-}
-
-
-.hero-title span{
-
-  color:var(--pink);
-
-}
-
-
-.hero-subtitle{
-
-  max-width:260px;
-
-  margin-top:8px;
-
-  color:var(--muted);
-
-  font-size:11px;
-
-  line-height:1.45;
-
-}
-
-
-.hero-date{
-
-  flex:none;
-
-  padding:10px 12px;
-
-  border-radius:17px;
+  border-radius:15px;
 
   background:
-    rgba(255,255,255,.85);
+    rgba(255,255,255,.84);
 
-  text-align:center;
+  backdrop-filter:
+    blur(22px);
+
+  -webkit-backdrop-filter:
+    blur(22px);
+
+  color:inherit;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  text-decoration:none;
 
   box-shadow:
-    0 6px 20px
+    0 5px 18px
     rgba(0,0,0,.05);
 
 }
 
 
-.hero-day-number{
+/* =====================================================
+   HERO
+===================================================== */
 
-  font-size:24px;
+.hero{
 
-  font-weight:950;
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    142px;
+
+  gap:13px;
+
+  align-items:start;
+
+  margin-bottom:17px;
 
 }
 
 
-.hero-day-name{
+.greeting{
 
-  margin-top:2px;
+  font-size:18px;
 
-  color:var(--muted);
+}
 
-  font-size:8px;
+
+.greeting-name{
+
+  color:var(--purple);
+
+  font-weight:800;
+
+}
+
+
+.big-time{
+
+  margin-top:7px;
+
+  font-size:57px;
+
+  line-height:.95;
+
+  font-weight:520;
+
+  letter-spacing:-4px;
+
+}
+
+
+.date{
+
+  margin-top:11px;
+
+  color:#33343d;
+
+  font-size:14px;
+
+  text-transform:capitalize;
+
+}
+
+
+.mode-pill{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  margin-top:12px;
+
+  padding:7px 12px;
+
+  border-radius:999px;
+
+  background:var(--purple-soft);
+
+  color:#6544d5;
+
+  font-size:11px;
 
   font-weight:850;
 
@@ -265,8 +273,93 @@ textarea{
 }
 
 
+.mode-dot{
+
+  width:8px;
+
+  height:8px;
+
+  border-radius:50%;
+
+  background:var(--purple);
+
+}
+
+
 /* =====================================================
-   TABS
+   MINI TARJETA HERO
+===================================================== */
+
+.hero-card{
+
+  min-height:150px;
+
+  padding:14px;
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f3efff
+    );
+
+  box-shadow:
+    0 7px 24px
+    rgba(0,0,0,.055);
+
+}
+
+
+.hero-card-icon{
+
+  font-size:30px;
+
+}
+
+
+.hero-card-label{
+
+  margin-top:9px;
+
+  color:var(--purple);
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:.8px;
+
+}
+
+
+.hero-card-title{
+
+  margin-top:5px;
+
+  font-size:15px;
+
+  font-weight:900;
+
+}
+
+
+.hero-card-text{
+
+  margin-top:5px;
+
+  color:var(--secondary);
+
+  font-size:9px;
+
+  line-height:1.35;
+
+}
+
+
+/* =====================================================
+   PESTAÑAS
 ===================================================== */
 
 .tabs{
@@ -279,67 +372,78 @@ textarea{
     calc(
       env(safe-area-inset-top)
       +
-      4px
+      5px
     );
 
   display:grid;
 
   grid-template-columns:
-    repeat(4,1fr);
+    repeat(5,1fr);
 
-  gap:5px;
+  gap:4px;
 
-  margin-bottom:16px;
+  margin-bottom:15px;
 
   padding:5px;
 
-  border-radius:20px;
+  border-radius:22px;
 
   background:
-    rgba(245,244,247,.92);
+    rgba(246,245,248,.94);
 
   backdrop-filter:
-    blur(24px);
+    blur(25px);
 
   -webkit-backdrop-filter:
-    blur(24px);
+    blur(25px);
 
   box-shadow:
-    0 6px 22px
+    0 6px 23px
     rgba(0,0,0,.07);
 
 }
 
 
-.tab{
+.tab-button{
 
-  min-height:45px;
+  min-height:47px;
 
   padding:4px;
 
   border:0;
 
-  border-radius:15px;
+  border-radius:16px;
 
   background:transparent;
 
-  color:#74737b;
+  color:#777680;
 
-  font-size:9px;
+  font-size:8px;
 
   font-weight:850;
 
 }
 
 
-.tab.active{
+.tab-button span{
+
+  display:block;
+
+  margin-bottom:2px;
+
+  font-size:16px;
+
+}
+
+
+.tab-button.active{
 
   background:white;
 
-  color:#16161d;
+  color:#111;
 
   box-shadow:
-    0 3px 11px
+    0 3px 10px
     rgba(0,0,0,.06);
 
 }
@@ -360,12 +464,12 @@ textarea{
 
 
 /* =====================================================
-   GENERAL CARDS
+   TARJETAS
 ===================================================== */
 
 .card{
 
-  margin-bottom:14px;
+  margin-bottom:15px;
 
   padding:16px;
 
@@ -382,13 +486,13 @@ textarea{
 
 .eyebrow{
 
-  color:var(--pink);
+  color:var(--purple);
 
   font-size:9px;
 
   font-weight:950;
 
-  letter-spacing:1.1px;
+  letter-spacing:1px;
 
 }
 
@@ -408,7 +512,7 @@ textarea{
 
   margin-top:6px;
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:10px;
 
@@ -418,10 +522,100 @@ textarea{
 
 
 /* =====================================================
-   HOY
+   DASHBOARD HOY
 ===================================================== */
 
-.today-card{
+.life-dashboard{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:9px;
+
+  margin-top:14px;
+
+}
+
+
+.life-stat{
+
+  min-height:105px;
+
+  padding:13px;
+
+  border-radius:19px;
+
+  background:#f8f7fa;
+
+}
+
+
+.life-stat:nth-child(1){
+
+  background:var(--pink-soft);
+
+}
+
+
+.life-stat:nth-child(2){
+
+  background:var(--green-soft);
+
+}
+
+
+.life-stat:nth-child(3){
+
+  background:var(--orange-soft);
+
+}
+
+
+.life-stat:nth-child(4){
+
+  background:var(--purple-soft);
+
+}
+
+
+.life-stat-icon{
+
+  font-size:23px;
+
+}
+
+
+.life-stat-title{
+
+  margin-top:7px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+}
+
+
+.life-stat-text{
+
+  margin-top:4px;
+
+  color:var(--secondary);
+
+  font-size:9px;
+
+  line-height:1.35;
+
+}
+
+
+/* =====================================================
+   AHORA FINDE
+===================================================== */
+
+.now-card{
 
   overflow:hidden;
 
@@ -430,7 +624,7 @@ textarea{
     linear-gradient(
       145deg,
       #ffffff,
-      #f2edff
+      #f3efff
     );
 
 }
@@ -440,9 +634,9 @@ textarea{
 
   display:flex;
 
-  align-items:flex-start;
-
   justify-content:space-between;
+
+  align-items:flex-start;
 
   gap:12px;
 
@@ -472,24 +666,11 @@ textarea{
 }
 
 
-.now-label{
-
-  color:var(--purple);
-
-  font-size:9px;
-
-  font-weight:950;
-
-  letter-spacing:1px;
-
-}
-
-
 .now-title{
 
   margin-top:4px;
 
-  font-size:24px;
+  font-size:23px;
 
   font-weight:950;
 
@@ -498,22 +679,22 @@ textarea{
 
 .now-hours{
 
-  margin-top:4px;
+  margin-top:5px;
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:10px;
 
-  font-weight:750;
+  font-weight:800;
 
 }
 
 
 .now-countdown{
 
-  margin-top:16px;
+  margin-top:15px;
 
-  font-size:42px;
+  font-size:43px;
 
   line-height:1;
 
@@ -526,7 +707,7 @@ textarea{
 
   margin-top:8px;
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:11px;
 
@@ -539,7 +720,7 @@ textarea{
 
   height:6px;
 
-  margin-top:15px;
+  margin-top:14px;
 
   overflow:hidden;
 
@@ -552,24 +733,140 @@ textarea{
 
 .progress-bar{
 
-  width:0%;
-
   height:100%;
+
+  width:0%;
 
   border-radius:999px;
 
   background:
     linear-gradient(
       90deg,
-      #7558dc,
-      #ff5b8c
+      #7657ec,
+      #ff5d8b
     );
 
 }
 
 
 /* =====================================================
-   HORARIO
+   PREPARAR FINDE
+===================================================== */
+
+.weekend-progress-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-top:14px;
+
+}
+
+
+.weekend-percent{
+
+  color:var(--purple);
+
+  font-size:21px;
+
+  font-weight:950;
+
+}
+
+
+.weekend-checks{
+
+  display:grid;
+
+  gap:7px;
+
+  margin-top:12px;
+
+}
+
+
+.life-check{
+
+  width:100%;
+
+  padding:11px 12px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  border:0;
+
+  border-radius:15px;
+
+  background:#f7f6f8;
+
+  text-align:left;
+
+}
+
+
+.life-check-circle{
+
+  width:21px;
+
+  height:21px;
+
+  flex:none;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border:
+    2px solid #c9c7cd;
+
+  border-radius:50%;
+
+  color:white;
+
+  font-size:11px;
+
+  font-weight:900;
+
+}
+
+
+.life-check.done{
+
+  opacity:.55;
+
+}
+
+
+.life-check.done
+.life-check-circle{
+
+  border-color:var(--green);
+
+  background:var(--green);
+
+}
+
+
+.life-check.done
+.life-check-text{
+
+  text-decoration:
+    line-through;
+
+}
+
+
+/* =====================================================
+   HORARIO FINDE
 ===================================================== */
 
 .schedule{
@@ -588,7 +885,7 @@ textarea{
   display:grid;
 
   grid-template-columns:
-    66px
+    68px
     1fr;
 
   gap:10px;
@@ -604,10 +901,10 @@ textarea{
 
 .schedule-row.current{
 
-  background:#f0ebff;
-
   outline:
-    2px solid #7558dc;
+    2px solid var(--purple);
+
+  background:#f0ebff;
 
 }
 
@@ -632,11 +929,11 @@ textarea{
 }
 
 
-.schedule-desc{
+.schedule-description{
 
   margin-top:3px;
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:9px;
 
@@ -646,23 +943,10 @@ textarea{
 
 
 /* =====================================================
-   CREACIÓN
+   MI VIDA
 ===================================================== */
 
-.creation-hero{
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #fff,
-      #fff1f5
-    );
-
-}
-
-
-.creation-grid{
+.life-grid{
 
   display:grid;
 
@@ -676,86 +960,70 @@ textarea{
 }
 
 
-.creation-card{
+.life-box{
 
-  min-height:120px;
+  min-height:125px;
 
   padding:14px;
 
-  border:0;
-
   border-radius:19px;
 
-  text-align:left;
+  background:#f8f7fa;
 
 }
 
 
-.creation-card:nth-child(1){
-
-  background:#f0edff;
-
-}
-
-
-.creation-card:nth-child(2){
+.life-box:nth-child(1){
 
   background:#fff0f4;
 
 }
 
 
-.creation-card:nth-child(3){
+.life-box:nth-child(2){
 
-  background:#e9f8f2;
-
-}
-
-
-.creation-card:nth-child(4){
-
-  background:#fff4e8;
+  background:#eef9f5;
 
 }
 
 
-.creation-card:nth-child(5){
+.life-box:nth-child(3){
 
-  background:#edf5ff;
-
-}
-
-
-.creation-card:nth-child(6){
-
-  background:#fff9df;
+  background:#f1edff;
 
 }
 
 
-.creation-icon{
+.life-box:nth-child(4){
 
-  font-size:27px;
+  background:#fff4e7;
 
 }
 
 
-.creation-title{
+.life-box-icon{
 
-  margin-top:8px;
+  font-size:26px;
 
-  font-size:13px;
+}
+
+
+.life-box-title{
+
+  margin-top:7px;
+
+  font-size:12px;
 
   font-weight:900;
 
 }
 
 
-.creation-text{
+.life-box-text{
 
   margin-top:4px;
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:9px;
 
@@ -764,68 +1032,104 @@ textarea{
 }
 
 
-.random-idea{
+.quick-add{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  gap:7px;
 
   margin-top:13px;
 
-  padding:15px;
+}
 
-  border-radius:18px;
+
+.quick-add input{
+
+  min-width:0;
+
+  padding:11px;
+
+  border:
+    1px solid #e4e2e6;
+
+  border-radius:13px;
+
+  background:white;
+
+  outline:none;
+
+  font-size:10px;
+
+}
+
+
+.quick-add button{
+
+  width:44px;
+
+  border:0;
+
+  border-radius:13px;
 
   background:#111;
 
   color:white;
 
-}
-
-
-.random-label{
-
-  color:#c8baff;
-
-  font-size:8px;
-
-  font-weight:950;
-
-  letter-spacing:1px;
+  font-size:20px;
 
 }
 
 
-.random-text{
+.item-list{
 
-  margin-top:6px;
+  display:grid;
 
-  min-height:38px;
+  gap:7px;
 
-  font-size:14px;
-
-  font-weight:750;
-
-  line-height:1.4;
+  margin-top:10px;
 
 }
 
 
-.random-button{
+.simple-item{
 
-  width:100%;
+  padding:10px;
 
-  min-height:43px;
+  display:flex;
 
-  margin-top:12px;
+  align-items:center;
 
-  border:0;
+  gap:8px;
 
   border-radius:14px;
 
-  background:white;
+  background:#f7f6f8;
 
-  color:#111;
+}
+
+
+.simple-item-text{
+
+  flex:1;
 
   font-size:10px;
 
-  font-weight:900;
+}
+
+
+.simple-delete{
+
+  border:0;
+
+  background:transparent;
+
+  color:#aaa;
+
+  font-size:16px;
 
 }
 
@@ -834,15 +1138,97 @@ textarea{
    ALIMENTACIÓN
 ===================================================== */
 
-.food-hero{
+.food-card{
 
   background:
-
     linear-gradient(
       145deg,
       #fff,
-      #effaf5
+      #eef9f5
     );
+
+}
+
+
+.calorie-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  margin-top:13px;
+
+}
+
+
+.calorie-number{
+
+  color:var(--green);
+
+  font-size:28px;
+
+  font-weight:950;
+
+}
+
+
+.calorie-label{
+
+  color:var(--secondary);
+
+  font-size:9px;
+
+}
+
+
+.calorie-config{
+
+  margin-top:9px;
+
+  display:flex;
+
+  gap:7px;
+
+  align-items:center;
+
+}
+
+
+.calorie-config input{
+
+  width:80px;
+
+  padding:8px;
+
+  border:
+    1px solid #ddd;
+
+  border-radius:11px;
+
+  background:white;
+
+  font-size:10px;
+
+}
+
+
+.calorie-config button{
+
+  padding:9px 11px;
+
+  border:0;
+
+  border-radius:11px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:9px;
+
+  font-weight:850;
 
 }
 
@@ -869,7 +1255,7 @@ textarea{
 
   border-radius:12px;
 
-  background:#f4f3f5;
+  background:#f3f2f5;
 
   font-size:8px;
 
@@ -880,23 +1266,16 @@ textarea{
 
 .week-day.active{
 
-  background:#1ca879;
+  background:var(--green);
 
   color:white;
 
 }
 
 
-.meal-editor{
-
-  margin-top:13px;
-
-}
-
-
 .meal{
 
-  margin-bottom:8px;
+  margin-top:8px;
 
   padding:12px;
 
@@ -913,8 +1292,6 @@ textarea{
 
   justify-content:space-between;
 
-  gap:8px;
-
   align-items:center;
 
 }
@@ -929,27 +1306,16 @@ textarea{
 }
 
 
-.meal-kcal{
-
-  color:var(--green);
-
-  font-size:9px;
-
-  font-weight:900;
-
-}
-
-
 .meal input{
 
   width:100%;
 
   margin-top:7px;
 
-  padding:10px;
+  padding:9px;
 
   border:
-    1px solid #e6e4e8;
+    1px solid #e5e3e7;
 
   border-radius:12px;
 
@@ -962,20 +1328,20 @@ textarea{
 }
 
 
-.meal-calories{
+.meal-bottom{
 
   display:flex;
 
-  align-items:center;
-
   gap:7px;
+
+  align-items:center;
 
   margin-top:6px;
 
 }
 
 
-.meal-calories input{
+.meal-bottom input{
 
   width:70px;
 
@@ -984,40 +1350,40 @@ textarea{
 }
 
 
-.meal-calories span{
+.meal-bottom span{
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:9px;
 
 }
 
 
-.food-total{
-
-  display:flex;
-
-  justify-content:space-between;
+.daily-total{
 
   margin-top:12px;
 
   padding:13px;
 
+  display:flex;
+
+  justify-content:space-between;
+
   border-radius:16px;
 
-  background:#e8f7f1;
+  background:var(--green-soft);
 
 }
 
 
-.food-total strong{
+.daily-total strong{
 
-  font-size:12px;
+  font-size:11px;
 
 }
 
 
-.food-total span{
+.daily-total span{
 
   color:#16845f;
 
@@ -1028,7 +1394,7 @@ textarea{
 }
 
 
-.save-button{
+.primary-button{
 
   width:100%;
 
@@ -1052,7 +1418,7 @@ textarea{
 
 
 /* =====================================================
-   COMPRA
+   LISTAS DE COMPRA
 ===================================================== */
 
 .shopping-input{
@@ -1077,7 +1443,7 @@ textarea{
   padding:11px;
 
   border:
-    1px solid #e6e4e8;
+    1px solid #e4e2e6;
 
   border-radius:13px;
 
@@ -1098,7 +1464,7 @@ textarea{
 
   border-radius:13px;
 
-  background:#1ca879;
+  background:var(--green);
 
   color:white;
 
@@ -1113,7 +1479,7 @@ textarea{
 
   gap:7px;
 
-  margin-top:11px;
+  margin-top:10px;
 
 }
 
@@ -1150,11 +1516,13 @@ textarea{
   justify-content:center;
 
   border:
-    2px solid #c9c6cc;
+    2px solid #c9c7cd;
 
   border-radius:50%;
 
-  font-size:11px;
+  background:transparent;
+
+  font-size:10px;
 
 }
 
@@ -1169,9 +1537,9 @@ textarea{
 .shopping-item.done
 .shopping-check{
 
-  border-color:#1ca879;
+  border-color:var(--green);
 
-  background:#1ca879;
+  background:var(--green);
 
   color:white;
 
@@ -1193,9 +1561,9 @@ textarea{
 
   background:transparent;
 
-  color:#aaa7ad;
+  color:#aaa;
 
-  font-size:15px;
+  font-size:16px;
 
 }
 
@@ -1204,7 +1572,7 @@ textarea{
    CUIDADO
 ===================================================== */
 
-.care-summary{
+.care-dashboard{
 
   display:grid;
 
@@ -1218,27 +1586,27 @@ textarea{
 }
 
 
-.care-next{
+.care-stat{
 
-  min-height:100px;
+  min-height:103px;
 
   padding:13px;
 
   border-radius:18px;
 
-  background:#f7f6f8;
+  background:#f8f7f9;
 
 }
 
 
-.care-next-icon{
+.care-stat-icon{
 
-  font-size:24px;
+  font-size:23px;
 
 }
 
 
-.care-next-title{
+.care-stat-title{
 
   margin-top:7px;
 
@@ -1249,7 +1617,7 @@ textarea{
 }
 
 
-.care-next-date{
+.care-stat-date{
 
   margin-top:4px;
 
@@ -1287,9 +1655,9 @@ textarea{
 
   display:flex;
 
-  justify-content:space-between;
-
   align-items:center;
+
+  justify-content:space-between;
 
   border:0;
 
@@ -1300,7 +1668,7 @@ textarea{
 }
 
 
-.care-left{
+.care-header-left{
 
   display:flex;
 
@@ -1313,9 +1681,9 @@ textarea{
 
 .care-icon{
 
-  width:42px;
+  width:43px;
 
-  height:42px;
+  height:43px;
 
   display:flex;
 
@@ -1325,7 +1693,7 @@ textarea{
 
   border-radius:14px;
 
-  background:#fff0f4;
+  background:var(--pink-soft);
 
   font-size:22px;
 
@@ -1341,22 +1709,13 @@ textarea{
 }
 
 
-.care-mini{
+.care-small{
 
   margin-top:3px;
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:8px;
-
-}
-
-
-.care-arrow{
-
-  font-size:17px;
-
-  transition:.2s;
 
 }
 
@@ -1381,6 +1740,13 @@ textarea{
 }
 
 
+.care-arrow{
+
+  transition:.2s;
+
+}
+
+
 .care-section.open
 .care-arrow{
 
@@ -1390,7 +1756,7 @@ textarea{
 }
 
 
-.care-block{
+.care-box{
 
   margin-top:8px;
 
@@ -1403,7 +1769,7 @@ textarea{
 }
 
 
-.care-block-title{
+.care-box-title{
 
   font-size:10px;
 
@@ -1412,11 +1778,11 @@ textarea{
 }
 
 
-.care-block-text{
+.care-box-text{
 
   margin-top:5px;
 
-  color:var(--muted);
+  color:var(--secondary);
 
   font-size:9px;
 
@@ -1444,7 +1810,7 @@ textarea{
 
   min-width:0;
 
-  padding:10px;
+  padding:9px;
 
   border:
     1px solid #ddd;
@@ -1460,7 +1826,7 @@ textarea{
 
 .date-row button{
 
-  padding:0 12px;
+  padding:0 11px;
 
   border:0;
 
@@ -1477,7 +1843,7 @@ textarea{
 }
 
 
-.next-result{
+.next-date{
 
   margin-top:7px;
 
@@ -1496,7 +1862,7 @@ textarea{
 
   gap:6px;
 
-  margin-top:9px;
+  margin-top:8px;
 
 }
 
@@ -1514,15 +1880,19 @@ textarea{
 }
 
 
-.care-shop-title{
+/* =====================================================
+   DOMINGO RESET
+===================================================== */
 
-  margin-top:13px;
+.reset-card{
 
-  font-size:9px;
+  background:
 
-  font-weight:950;
-
-  letter-spacing:.7px;
+    linear-gradient(
+      145deg,
+      #fff,
+      #edf1ff
+    );
 
 }
 
@@ -1537,15 +1907,15 @@ textarea{
 
   z-index:100;
 
-  left:13px;
+  left:14px;
 
-  right:13px;
+  right:14px;
 
   bottom:
     calc(
       env(safe-area-inset-bottom)
       +
-      15px
+      18px
     );
 
   display:grid;
@@ -1557,10 +1927,10 @@ textarea{
 
   padding:6px;
 
-  border-radius:24px;
+  border-radius:25px;
 
   background:
-    rgba(250,250,251,.94);
+    rgba(248,248,250,.94);
 
   backdrop-filter:
     blur(28px);
@@ -1577,7 +1947,7 @@ textarea{
 
 .nav-item{
 
-  min-height:50px;
+  min-height:52px;
 
   display:flex;
 
@@ -1587,7 +1957,7 @@ textarea{
 
   gap:5px;
 
-  border-radius:18px;
+  border-radius:19px;
 
   color:#686873;
 
@@ -1602,9 +1972,9 @@ textarea{
 
 .nav-item.active{
 
-  color:#7558dc;
+  background:var(--purple-soft);
 
-  background:#eee9ff;
+  color:#6544d5;
 
 }
 
@@ -1617,15 +1987,25 @@ textarea{
 
   body{
 
-    padding-left:12px;
+    padding-left:13px;
 
-    padding-right:12px;
+    padding-right:13px;
 
   }
 
-  .hero-title{
+  .hero{
 
-    font-size:28px;
+    grid-template-columns:
+      minmax(0,1fr)
+      133px;
+
+    gap:9px;
+
+  }
+
+  .big-time{
+
+    font-size:50px;
 
   }
 
@@ -1640,6 +2020,22 @@ textarea{
 
 
 <!-- =====================================================
+     ARRIBA
+===================================================== -->
+
+<div class="top-actions">
+
+  <a
+    href="./index.html"
+    class="top-action"
+  >
+    ← Salir
+  </a>
+
+</div>
+
+
+<!-- =====================================================
      HERO
 ===================================================== -->
 
@@ -1647,40 +2043,58 @@ textarea{
 
   <div>
 
-    <div class="hero-kicker">
-      FIN DE SEMANA
-    </div>
-
-    <div class="hero-title">
-      Tu espacio de
-      <span>
-        descubrimiento.
+    <div
+      id="greeting"
+      class="greeting"
+    >
+      ☀️ Buenos días,
+      <span class="greeting-name">
+        Sandra
       </span>
     </div>
 
-    <div class="hero-subtitle">
-      Crear, cuidarte, ordenar tu semana,
-      descubrir cosas y dejar espacio
-      para hacer lo que te dé la gana.
+    <div
+      id="bigTime"
+      class="big-time"
+    >
+      09:00
+    </div>
+
+    <div
+      id="date"
+      class="date"
+    >
+    </div>
+
+    <div class="mode-pill">
+
+      <span class="mode-dot">
+      </span>
+
+      Descubrimiento
+
     </div>
 
   </div>
 
 
-  <div class="hero-date">
+  <div class="hero-card">
 
-    <div
-      id="heroDay"
-      class="hero-day-number"
-    >
-      22
+    <div class="hero-card-icon">
+      🪩
     </div>
 
-    <div
-      id="heroWeekday"
-      class="hero-day-name"
-    >
-      SÁBADO
+    <div class="hero-card-label">
+      TU VIDA
+    </div>
+
+    <div class="hero-card-title">
+      Fuera del trabajo
+    </div>
+
+    <div class="hero-card-text">
+      Organiza, crea,
+      cuídate y vive.
     </div>
 
   </div>
@@ -1696,34 +2110,47 @@ textarea{
 
   <button
     id="tabToday"
-    class="tab active"
+    class="tab-button active"
     onclick="showTab('today')"
   >
-    ✨ Hoy
+    <span>✨</span>
+    Hoy
   </button>
 
   <button
-    id="tabCreate"
-    class="tab"
-    onclick="showTab('create')"
+    id="tabWeekend"
+    class="tab-button"
+    onclick="showTab('weekend')"
   >
-    🎨 Crear
+    <span>🪩</span>
+    Finde
+  </button>
+
+  <button
+    id="tabLife"
+    class="tab-button"
+    onclick="showTab('life')"
+  >
+    <span>💫</span>
+    Mi vida
   </button>
 
   <button
     id="tabFood"
-    class="tab"
+    class="tab-button"
     onclick="showTab('food')"
   >
-    🍓 Alimentación
+    <span>🍓</span>
+    Comidas
   </button>
 
   <button
     id="tabCare"
-    class="tab"
+    class="tab-button"
     onclick="showTab('care')"
   >
-    🫧 Cuidado
+    <span>🫧</span>
+    Cuidado
   </button>
 
 </nav>
@@ -1739,28 +2166,134 @@ textarea{
 >
 
 
-  <article class="card today-card">
+  <article class="card">
+
+    <div class="eyebrow">
+      CENTRO DE CONTROL
+    </div>
+
+    <div class="card-title">
+      Tu vida ahora mismo
+    </div>
+
+    <div class="card-subtitle">
+      Lo importante de tu vida personal
+      reunido en un solo sitio.
+    </div>
+
+
+    <div class="life-dashboard">
+
+
+      <div class="life-stat">
+
+        <div class="life-stat-icon">
+          🪩
+        </div>
+
+        <div class="life-stat-title">
+          Fin de semana
+        </div>
+
+        <div
+          id="todayWeekendStatus"
+          class="life-stat-text"
+        >
+          Preparándolo…
+        </div>
+
+      </div>
+
+
+      <div class="life-stat">
+
+        <div class="life-stat-icon">
+          🛒
+        </div>
+
+        <div class="life-stat-title">
+          Compra
+        </div>
+
+        <div
+          id="todayShoppingStatus"
+          class="life-stat-text"
+        >
+          Revisando lista…
+        </div>
+
+      </div>
+
+
+      <div class="life-stat">
+
+        <div class="life-stat-icon">
+          💇🏻‍♀️
+        </div>
+
+        <div class="life-stat-title">
+          Próximo cuidado
+        </div>
+
+        <div
+          id="todayCareStatus"
+          class="life-stat-text"
+        >
+          Calculando…
+        </div>
+
+      </div>
+
+
+      <div class="life-stat">
+
+        <div class="life-stat-icon">
+          💡
+        </div>
+
+        <div class="life-stat-title">
+          Cosas pendientes
+        </div>
+
+        <div
+          id="todayLifeStatus"
+          class="life-stat-text"
+        >
+          Revisando…
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- AHORA SI ES FINDE -->
+
+  <article
+    id="nowWeekendCard"
+    class="card now-card"
+  >
+
+    <div class="eyebrow">
+      AHORA
+    </div>
+
 
     <div class="now-top">
 
       <div>
 
         <div
-          id="nowLabel"
-          class="now-label"
-        >
-          AHORA
-        </div>
-
-        <div
-          id="nowTitle"
+          id="nowWeekendTitle"
           class="now-title"
         >
           Tiempo de creación
         </div>
 
         <div
-          id="nowHours"
+          id="nowWeekendHours"
           class="now-hours"
         >
           10:00 – 13:00
@@ -1770,7 +2303,7 @@ textarea{
 
 
       <div
-        id="nowIcon"
+        id="nowWeekendIcon"
         class="now-icon"
       >
         🎨
@@ -1780,7 +2313,7 @@ textarea{
 
 
     <div
-      id="nowCountdown"
+      id="nowWeekendCountdown"
       class="now-countdown"
     >
       03:00:00
@@ -1788,17 +2321,17 @@ textarea{
 
 
     <div
-      id="nowMessage"
+      id="nowWeekendMessage"
       class="now-message"
     >
-      Haz algo que te apetezca.
+      Haz lo que te apetezca.
     </div>
 
 
     <div class="progress">
 
       <div
-        id="nowProgress"
+        id="nowWeekendProgress"
         class="progress-bar"
       >
       </div>
@@ -1808,12 +2341,101 @@ textarea{
   </article>
 
 
-  <!-- HORARIO SÁBADO -->
+  <!-- PRÓXIMO -->
 
-  <article
-    id="saturdayCard"
-    class="card"
-  >
+  <article class="card">
+
+    <div class="eyebrow">
+      NO TE OLVIDES
+    </div>
+
+    <div class="card-title">
+      Próximamente
+    </div>
+
+    <div
+      id="todayCareSummary"
+      class="care-dashboard"
+    >
+    </div>
+
+  </article>
+
+</section>
+
+
+<!-- =====================================================
+     FIN DE SEMANA
+===================================================== -->
+
+<section
+  id="pageWeekend"
+  class="tab-page"
+>
+
+
+  <!-- PREPARACIÓN -->
+
+  <article class="card">
+
+    <div class="eyebrow">
+      PREPARAR FINDE
+    </div>
+
+    <div class="card-title">
+      Que llegue el sábado con todo hecho
+    </div>
+
+    <div class="card-subtitle">
+      La idea no es organizar cada minuto,
+      sino quitarte decisiones de encima.
+    </div>
+
+
+    <div class="weekend-progress-row">
+
+      <span
+        style="
+          font-size:10px;
+          font-weight:850;
+        "
+      >
+        Preparación
+      </span>
+
+      <span
+        id="weekendPercent"
+        class="weekend-percent"
+      >
+        0%
+      </span>
+
+    </div>
+
+
+    <div class="progress">
+
+      <div
+        id="weekendPrepProgress"
+        class="progress-bar"
+      >
+      </div>
+
+    </div>
+
+
+    <div
+      id="weekendPrepList"
+      class="weekend-checks"
+    >
+    </div>
+
+  </article>
+
+
+  <!-- SÁBADO -->
+
+  <article class="card">
 
     <div class="eyebrow">
       SÁBADO
@@ -1824,8 +2446,8 @@ textarea{
     </div>
 
     <div class="card-subtitle">
-      Estructura suficiente para aprovechar el día,
-      pero con hueco para improvisar.
+      Movimiento, creación, gente,
+      planes y espacio para improvisar.
     </div>
 
     <div
@@ -1837,24 +2459,21 @@ textarea{
   </article>
 
 
-  <!-- HORARIO DOMINGO -->
+  <!-- DOMINGO -->
 
-  <article
-    id="sundayCard"
-    class="card"
-  >
+  <article class="card">
 
     <div class="eyebrow">
       DOMINGO
     </div>
 
     <div class="card-title">
-      Disfrutar + preparar
+      Disfrutar + reset
     </div>
 
     <div class="card-subtitle">
-      Un domingo que sigue siendo tuyo,
-      pero termina dejándote el lunes fácil.
+      Sigue siendo fin de semana,
+      pero acaba dejándote el lunes fácil.
     </div>
 
     <div
@@ -1865,185 +2484,195 @@ textarea{
 
   </article>
 
+
+  <!-- RESET DOMINGO -->
+
+  <article class="card reset-card">
+
+    <div class="eyebrow">
+      DOMINGO · 22:30
+    </div>
+
+    <div class="card-title">
+      Reset para el lunes
+    </div>
+
+    <div class="card-subtitle">
+      Cierra el fin de semana y deja
+      el lunes lo más fácil posible.
+    </div>
+
+
+    <div
+      id="sundayResetList"
+      class="weekend-checks"
+    >
+    </div>
+
+  </article>
+
 </section>
 
 
 <!-- =====================================================
-     CREAR
+     MI VIDA
 ===================================================== -->
 
 <section
-  id="pageCreate"
+  id="pageLife"
   class="tab-page"
 >
 
-  <article class="card creation-hero">
+
+  <article class="card">
 
     <div class="eyebrow">
-      TIEMPO DE CREACIÓN
+      MI VIDA
     </div>
 
     <div class="card-title">
-      No significa “ser productiva”.
+      Cosas que quiero hacer
     </div>
 
     <div class="card-subtitle">
-      Puede ser hacer una app o pintarte las uñas.
-      Crear un plan también cuenta.
+      No son tareas del trabajo.
+      Son proyectos, planes, curiosidades
+      y cosas que te hacen ilusión.
     </div>
 
 
-    <div class="creation-grid">
+    <div class="life-grid">
 
 
-      <button
-        class="creation-card"
-        onclick="giveCreationIdea('digital')"
+      <div
+        class="life-box"
+        onclick="selectLifeList('create')"
       >
 
-        <div class="creation-icon">
-          💻
+        <div class="life-box-icon">
+          🎨
         </div>
 
-        <div class="creation-title">
-          Digital
+        <div class="life-box-title">
+          Crear
         </div>
 
-        <div class="creation-text">
-          Apps, webs, automatizaciones,
-          diseños, editar fotos…
+        <div class="life-box-text">
+          Apps, cerámica, fotos,
+          escribir, diseñar…
         </div>
 
-      </button>
+      </div>
 
 
-      <button
-        class="creation-card"
-        onclick="giveCreationIdea('manual')"
+      <div
+        class="life-box"
+        onclick="selectLifeList('plans')"
       >
 
-        <div class="creation-icon">
-          🏺
-        </div>
-
-        <div class="creation-title">
-          Con las manos
-        </div>
-
-        <div class="creation-text">
-          Cerámica, pintar, collage,
-          joyitas, decorar…
-        </div>
-
-      </button>
-
-
-      <button
-        class="creation-card"
-        onclick="giveCreationIdea('social')"
-      >
-
-        <div class="creation-icon">
+        <div class="life-box-icon">
           🥂
         </div>
 
-        <div class="creation-title">
-          Social
+        <div class="life-box-title">
+          Planes
         </div>
 
-        <div class="creation-text">
-          Quedar, llamar a alguien,
-          organizar un plan.
+        <div class="life-box-text">
+          Gente, escapadas,
+          sitios, cenas…
         </div>
 
-      </button>
+      </div>
 
 
-      <button
-        class="creation-card"
-        onclick="giveCreationIdea('outside')"
+      <div
+        class="life-box"
+        onclick="selectLifeList('discover')"
       >
 
-        <div class="creation-icon">
-          🛍️
+        <div class="life-box-icon">
+          🔎
         </div>
 
-        <div class="creation-title">
-          Sal de casa
+        <div class="life-box-title">
+          Descubrir
         </div>
 
-        <div class="creation-text">
-          Compras, exposición, café,
-          mercadillo, explorar.
+        <div class="life-box-text">
+          Historia, moda, cine,
+          cultura, curiosidades…
         </div>
 
-      </button>
+      </div>
 
 
-      <button
-        class="creation-card"
-        onclick="giveCreationIdea('beauty')"
+      <div
+        class="life-box"
+        onclick="selectLifeList('someday')"
       >
 
-        <div class="creation-icon">
-          💄
+        <div class="life-box-icon">
+          💡
         </div>
 
-        <div class="creation-title">
-          Arreglarme
+        <div class="life-box-title">
+          Algún día
         </div>
 
-        <div class="creation-text">
-          Pelo, maquillaje,
-          outfit, fotos.
+        <div class="life-box-text">
+          Todo eso que no quieres olvidar.
         </div>
 
-      </button>
+      </div>
+
+    </div>
+
+  </article>
 
 
-      <button
-        class="creation-card"
-        onclick="giveCreationIdea('curiosity')"
+  <article class="card">
+
+    <div class="eyebrow">
+      <span id="lifeListLabel">
+        CREAR
+      </span>
+    </div>
+
+    <div
+      id="lifeListTitle"
+      class="card-title"
+    >
+      Cosas que quiero crear
+    </div>
+
+
+    <div class="quick-add">
+
+      <input
+        id="lifeInput"
+        type="text"
+        placeholder="Añadir algo..."
+        onkeydown="
+          if(event.key==='Enter'){
+            addLifeItem();
+          }
+        "
       >
 
-        <div class="creation-icon">
-          🪩
-        </div>
-
-        <div class="creation-title">
-          Rabbit hole
-        </div>
-
-        <div class="creation-text">
-          Historia, moda,
-          cine, ciudades, cultura.
-        </div>
-
+      <button
+        onclick="addLifeItem()"
+      >
+        +
       </button>
 
     </div>
 
 
-    <div class="random-idea">
-
-      <div class="random-label">
-        ¿Y AHORA QUÉ?
-      </div>
-
-      <div
-        id="creationIdea"
-        class="random-text"
-      >
-        Toca una categoría o deja que el azar decida.
-      </div>
-
-      <button
-        class="random-button"
-        onclick="surpriseCreation()"
-      >
-        ✨ Dame una idea
-      </button>
-
+    <div
+      id="lifeItemList"
+      class="item-list"
+    >
     </div>
 
   </article>
@@ -2061,19 +2690,93 @@ textarea{
 >
 
 
-  <article class="card food-hero">
+  <article class="card food-card">
 
     <div class="eyebrow">
-      MENÚ SEMANAL
+      ALIMENTACIÓN
     </div>
 
     <div class="card-title">
-      ¿Qué comemos esta semana?
+      Menú semanal
     </div>
 
     <div class="card-subtitle">
-      Organiza las comidas sin decidir cada día desde cero.
-      Puedes escribir tus platos y las kcal aproximadas.
+      Decide una vez y deja de pensar
+      todos los días qué vas a comer.
+    </div>
+
+
+    <div class="calorie-top">
+
+      <div>
+
+        <div
+          id="currentCalories"
+          class="calorie-number"
+        >
+          0 kcal
+        </div>
+
+        <div class="calorie-label">
+          planificadas hoy
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div
+          id="calorieGoalText"
+          style="
+            font-size:11px;
+            font-weight:900;
+            text-align:right;
+          "
+        >
+          Objetivo 1200
+        </div>
+
+        <div
+          id="remainingCalories"
+          class="calorie-label"
+          style="
+            text-align:right;
+            margin-top:3px;
+          "
+        >
+          1200 disponibles
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="calorie-config">
+
+      <span
+        style="
+          font-size:9px;
+          color:var(--secondary);
+        "
+      >
+        Objetivo:
+      </span>
+
+      <input
+        id="calorieGoalInput"
+        type="number"
+        min="1"
+        value="1200"
+      >
+
+      <button
+        onclick="saveCalorieGoal()"
+      >
+        Guardar
+      </button>
+
     </div>
 
 
@@ -2086,12 +2789,11 @@ textarea{
 
     <div
       id="mealEditor"
-      class="meal-editor"
     >
     </div>
 
 
-    <div class="food-total">
+    <div class="daily-total">
 
       <strong>
         Total del día
@@ -2105,7 +2807,7 @@ textarea{
 
 
     <button
-      class="save-button"
+      class="primary-button"
       onclick="saveMeals()"
     >
       Guardar menú
@@ -2114,19 +2816,16 @@ textarea{
   </article>
 
 
+  <!-- COMPRA -->
+
   <article class="card">
 
     <div class="eyebrow">
-      🛒 LISTA DE LA COMPRA
+      🛒 SUPERMERCADO
     </div>
 
     <div class="card-title">
-      Carrito
-    </div>
-
-    <div class="card-subtitle">
-      Añade aquí todo lo que haga falta
-      para el menú de la semana.
+      Lista de la compra
     </div>
 
 
@@ -2134,8 +2833,7 @@ textarea{
 
       <input
         id="foodShoppingInput"
-        type="text"
-        placeholder="Ej. yogur griego, salmón..."
+        placeholder="Añade algo..."
         onkeydown="
           if(event.key==='Enter'){
             addShoppingItem('food');
@@ -2173,27 +2871,25 @@ textarea{
 >
 
 
-  <!-- RESUMEN -->
-
   <article class="card">
 
     <div class="eyebrow">
-      PRÓXIMAMENTE
+      GLOW UP
     </div>
 
     <div class="card-title">
-      Tu calendario de cuidado
+      Calendario de cuidado
     </div>
 
     <div class="card-subtitle">
-      Las rutinas pequeñas son fáciles de olvidar.
-      Aquí se quedan apuntadas.
+      Para que las cosas pequeñas
+      no dependan de acordarte.
     </div>
 
 
     <div
-      id="careSummary"
-      class="care-summary"
+      id="careDashboard"
+      class="care-dashboard"
     >
     </div>
 
@@ -2212,7 +2908,7 @@ textarea{
       onclick="toggleCare('hairSection')"
     >
 
-      <span class="care-left">
+      <span class="care-header-left">
 
         <span class="care-icon">
           💇🏻‍♀️
@@ -2224,8 +2920,8 @@ textarea{
             Pelo
           </span>
 
-          <span class="care-mini">
-            Hidratación · puntas · rutina
+          <span class="care-small">
+            Hidratación · puntas · compra
           </span>
 
         </span>
@@ -2242,16 +2938,16 @@ textarea{
     <div class="care-content">
 
 
-      <div class="care-block">
+      <div class="care-box">
 
-        <div class="care-block-title">
+        <div class="care-box-title">
           💧 Tratamiento hidratante
         </div>
 
-        <div class="care-block-text">
+        <div class="care-box-text">
           Cada 3 semanas.
-          Marca la última vez que te lo hiciste.
         </div>
+
 
         <div class="date-row">
 
@@ -2274,24 +2970,26 @@ textarea{
 
         </div>
 
+
         <div
           id="hairHydrationNext"
-          class="next-result"
+          class="next-date"
         >
         </div>
 
       </div>
 
 
-      <div class="care-block">
+      <div class="care-box">
 
-        <div class="care-block-title">
+        <div class="care-box-title">
           ✂️ Cortar puntas
         </div>
 
-        <div class="care-block-text">
+        <div class="care-box-text">
           Aproximadamente cada 2 meses.
         </div>
+
 
         <div class="date-row">
 
@@ -2314,19 +3012,20 @@ textarea{
 
         </div>
 
+
         <div
           id="hairCutNext"
-          class="next-result"
+          class="next-date"
         >
         </div>
 
       </div>
 
 
-      <div class="care-block">
+      <div class="care-box">
 
-        <div class="care-block-title">
-          ✨ Rutina de pelo
+        <div class="care-box-title">
+          ✨ Rutina
         </div>
 
         <div class="routine-list">
@@ -2344,11 +3043,7 @@ textarea{
           </div>
 
           <div class="routine-item">
-            🔥 Protector térmico cuando toque
-          </div>
-
-          <div class="routine-item">
-            🌙 Cuidar el pelo al dormir
+            🔥 Protector térmico
           </div>
 
         </div>
@@ -2356,15 +3051,11 @@ textarea{
       </div>
 
 
-      <div class="care-shop-title">
-        🛒 COMPRA · PELO
-      </div>
-
       <div class="shopping-input">
 
         <input
           id="hairShoppingInput"
-          placeholder="Producto para el pelo..."
+          placeholder="Comprar para el pelo..."
           onkeydown="
             if(event.key==='Enter'){
               addShoppingItem('hair');
@@ -2379,6 +3070,7 @@ textarea{
         </button>
 
       </div>
+
 
       <div
         id="hairShoppingList"
@@ -2403,7 +3095,7 @@ textarea{
       onclick="toggleCare('skinSection')"
     >
 
-      <span class="care-left">
+      <span class="care-header-left">
 
         <span class="care-icon">
           🧴
@@ -2415,8 +3107,8 @@ textarea{
             Skincare
           </span>
 
-          <span class="care-mini">
-            Mañana · noche · extras
+          <span class="care-small">
+            Mañana · noche · mascarilla
           </span>
 
         </span>
@@ -2433,9 +3125,9 @@ textarea{
     <div class="care-content">
 
 
-      <div class="care-block">
+      <div class="care-box">
 
-        <div class="care-block-title">
+        <div class="care-box-title">
           ☀️ Mañana
         </div>
 
@@ -2458,9 +3150,9 @@ textarea{
       </div>
 
 
-      <div class="care-block">
+      <div class="care-box">
 
-        <div class="care-block-title">
+        <div class="care-box-title">
           🌙 Noche
         </div>
 
@@ -2471,7 +3163,7 @@ textarea{
           </div>
 
           <div class="routine-item">
-            ✨ Tratamiento que corresponda
+            ✨ Tratamiento
           </div>
 
           <div class="routine-item">
@@ -2483,29 +3175,11 @@ textarea{
       </div>
 
 
-      <div class="care-block">
-
-        <div class="care-block-title">
-          🎭 Mascarilla
-        </div>
-
-        <div class="care-block-text">
-          La hacemos coincidir con
-          la depilación completa cada 2 semanas.
-        </div>
-
-      </div>
-
-
-      <div class="care-shop-title">
-        🛒 COMPRA · SKINCARE
-      </div>
-
       <div class="shopping-input">
 
         <input
           id="skinShoppingInput"
-          placeholder="Producto de skincare..."
+          placeholder="Comprar skincare..."
           onkeydown="
             if(event.key==='Enter'){
               addShoppingItem('skin');
@@ -2520,6 +3194,7 @@ textarea{
         </button>
 
       </div>
+
 
       <div
         id="skinShoppingList"
@@ -2544,7 +3219,7 @@ textarea{
       onclick="toggleCare('depilationSection')"
     >
 
-      <span class="care-left">
+      <span class="care-header-left">
 
         <span class="care-icon">
           🛁
@@ -2556,7 +3231,7 @@ textarea{
             Depilación
           </span>
 
-          <span class="care-mini">
+          <span class="care-small">
             Completa cada 2 semanas
           </span>
 
@@ -2573,17 +3248,19 @@ textarea{
 
     <div class="care-content">
 
-      <div class="care-block">
 
-        <div class="care-block-title">
-          🛁 Día completo de cuidado
+      <div class="care-box">
+
+        <div class="care-box-title">
+          🛁 Sesión completa
         </div>
 
-        <div class="care-block-text">
-          Cada 14 días:
-          depilación completa + cuidado posterior
-          + mascarilla facial.
+        <div class="care-box-text">
+          Depilación completa +
+          hidratación corporal +
+          mascarilla facial.
         </div>
+
 
         <div class="date-row">
 
@@ -2606,53 +3283,42 @@ textarea{
 
         </div>
 
+
         <div
           id="depilationNext"
-          class="next-result"
+          class="next-date"
         >
         </div>
 
       </div>
 
 
-      <div class="care-block">
+      <div class="routine-list">
 
-        <div class="routine-list">
+        <div class="routine-item">
+          🚿 Preparar piel
+        </div>
 
-          <div class="routine-item">
-            🚿 Ducha caliente / preparar piel
-          </div>
+        <div class="routine-item">
+          🪒 Depilación
+        </div>
 
-          <div class="routine-item">
-            🪒 Depilación
-          </div>
+        <div class="routine-item">
+          🧴 Calmante + hidratación
+        </div>
 
-          <div class="routine-item">
-            🧴 Producto calmante
-          </div>
-
-          <div class="routine-item">
-            💧 Hidratación corporal
-          </div>
-
-          <div class="routine-item">
-            🎭 Mascarilla facial
-          </div>
-
+        <div class="routine-item">
+          🎭 Mascarilla facial
         </div>
 
       </div>
 
 
-      <div class="care-shop-title">
-        🛒 COMPRA · DEPILACIÓN
-      </div>
-
       <div class="shopping-input">
 
         <input
           id="depilationShoppingInput"
-          placeholder="Cuchillas, crema, exfoliante..."
+          placeholder="Comprar depilación..."
           onkeydown="
             if(event.key==='Enter'){
               addShoppingItem('depilation');
@@ -2668,6 +3334,7 @@ textarea{
 
       </div>
 
+
       <div
         id="depilationShoppingList"
         class="shopping-list"
@@ -2679,7 +3346,7 @@ textarea{
   </section>
 
 
-  <!-- ÍNTIMO / REGLA -->
+  <!-- ÍNTIMO -->
 
   <section
     id="intimateSection"
@@ -2691,7 +3358,7 @@ textarea{
       onclick="toggleCare('intimateSection')"
     >
 
-      <span class="care-left">
+      <span class="care-header-left">
 
         <span class="care-icon">
           🌸
@@ -2703,8 +3370,8 @@ textarea{
             Íntimo + regla
           </span>
 
-          <span class="care-mini">
-            Higiene · neceser · reposición
+          <span class="care-small">
+            Neceser · higiene · reposición
           </span>
 
         </span>
@@ -2721,10 +3388,10 @@ textarea{
     <div class="care-content">
 
 
-      <div class="care-block">
+      <div class="care-box">
 
-        <div class="care-block-title">
-          🎒 Neceser preparado
+        <div class="care-box-title">
+          🎒 Revisar neceser
         </div>
 
         <div class="routine-list">
@@ -2742,7 +3409,7 @@ textarea{
           </div>
 
           <div class="routine-item">
-            🧴 Productos de higiene habitual
+            🧴 Higiene habitual
           </div>
 
         </div>
@@ -2750,30 +3417,11 @@ textarea{
       </div>
 
 
-      <div class="care-block">
-
-        <div class="care-block-title">
-          📦 Revisión mensual
-        </div>
-
-        <div class="care-block-text">
-          Una vez al mes revisa existencias
-          para no descubrir que falta algo
-          justo cuando lo necesitas.
-        </div>
-
-      </div>
-
-
-      <div class="care-shop-title">
-        🛒 COMPRA · ÍNTIMO / REGLA
-      </div>
-
       <div class="shopping-input">
 
         <input
           id="intimateShoppingInput"
-          placeholder="Añadir producto..."
+          placeholder="Comprar..."
           onkeydown="
             if(event.key==='Enter'){
               addShoppingItem('intimate');
@@ -2789,6 +3437,7 @@ textarea{
 
       </div>
 
+
       <div
         id="intimateShoppingList"
         class="shopping-list"
@@ -2803,7 +3452,7 @@ textarea{
 
 
 <!-- =====================================================
-     NAV
+     NAV INFERIOR
 ===================================================== -->
 
 <nav class="bottom-nav">
@@ -2813,29 +3462,25 @@ textarea{
     class="nav-item"
   >
     🏠
-    <span>
-      Inicio
-    </span>
+    <span>Inicio</span>
   </a>
+
 
   <a
     href="./amor-al-arte.html"
     class="nav-item"
   >
     🎨
-    <span>
-      Amor al arte
-    </span>
+    <span>Amor al arte</span>
   </a>
+
 
   <a
     href="./descubrimiento.html"
     class="nav-item active"
   >
     🪩
-    <span>
-      Descubrimiento
-    </span>
+    <span>Descubrimiento</span>
   </a>
 
 </nav>
@@ -2844,10 +3489,234 @@ textarea{
 <script>
 
 /* =====================================================
+   HORARIOS FINDE
+===================================================== */
+
+const saturdaySchedule = [
+
+  {
+    start:480,
+    end:570,
+    time:"08:00 – 09:30",
+    icon:"👟",
+    title:"Andar / correr",
+    description:
+      "Empieza el día moviéndote."
+  },
+
+  {
+    start:570,
+    end:600,
+    time:"09:30 – 10:00",
+    icon:"☕",
+    title:"Ducha + café",
+    description:
+      "Ducha tranquila, café y empezar."
+  },
+
+  {
+    start:600,
+    end:780,
+    time:"10:00 – 13:00",
+    icon:"🎨",
+    title:"Tiempo de creación",
+    description:
+      "App, cerámica, compras, plan, arreglarte, explorar…"
+  },
+
+  {
+    start:780,
+    end:960,
+    time:"13:00 – 16:00",
+    icon:"🥂",
+    title:"Libre",
+    description:
+      "Familia, amigos, comer, salir."
+  },
+
+  {
+    start:960,
+    end:1260,
+    time:"16:00 – 21:00",
+    icon:"✨",
+    title:"Tiempo de creación",
+    description:
+      "Todo lo que te apetezca hacer con la tarde."
+  },
+
+  {
+    start:1260,
+    end:1350,
+    time:"21:00 – 22:30",
+    icon:"👟",
+    title:"Andar + ducha",
+    description:
+      "Paseo, ducha y cambio de ritmo."
+  },
+
+  {
+    start:1350,
+    end:1440,
+    time:"22:30 →",
+    icon:"🍝",
+    title:"Cena / salida",
+    description:
+      "Noche libre."
+  }
+
+];
+
+
+const sundaySchedule = [
+
+  {
+    start:480,
+    end:570,
+    time:"08:00 – 09:30",
+    icon:"👟",
+    title:"Andar / correr",
+    description:
+      "Empieza el domingo moviéndote."
+  },
+
+  {
+    start:570,
+    end:600,
+    time:"09:30 – 10:00",
+    icon:"☕",
+    title:"Ducha + café",
+    description:
+      "Ducha tranquila y café."
+  },
+
+  {
+    start:600,
+    end:780,
+    time:"10:00 – 13:00",
+    icon:"🎨",
+    title:"Tiempo de creación",
+    description:
+      "Un bloque largo para tus cosas."
+  },
+
+  {
+    start:780,
+    end:960,
+    time:"13:00 – 16:00",
+    icon:"🥂",
+    title:"Libre",
+    description:
+      "Familia, amigos y comida."
+  },
+
+  {
+    start:960,
+    end:1260,
+    time:"16:00 – 21:00",
+    icon:"✨",
+    title:"Tiempo de creación",
+    description:
+      "Haz algo que te deje buena sensación del finde."
+  },
+
+  {
+    start:1260,
+    end:1350,
+    time:"21:00 – 22:30",
+    icon:"👟",
+    title:"Andar + ducha",
+    description:
+      "Último paseo del fin de semana."
+  },
+
+  {
+    start:1350,
+    end:1440,
+    time:"22:30 →",
+    icon:"🌙",
+    title:"Reset del domingo",
+    description:
+      "Cena, preparar lunes, skincare y dormir."
+  }
+
+];
+
+
+/* =====================================================
+   PREPARACIÓN FINDE
+===================================================== */
+
+const weekendPrepTasks = [
+
+  "Decidir si hay algún plan fijo",
+
+  "Ver si voy a comer o cenar fuera",
+
+  "Escribir a quien quiera ver",
+
+  "Pensar algo que me apetezca crear",
+
+  "Revisar si toca algún cuidado",
+
+  "Revisar lista de la compra",
+
+  "Pensar outfits si voy a salir",
+
+  "Dejar huecos libres para improvisar"
+
+];
+
+
+const sundayResetTasks = [
+
+  "Preparar ropa del lunes",
+
+  "Revisar agenda",
+
+  "Preparar bolso / mochila",
+
+  "Poner dispositivos a cargar",
+
+  "Dejar desayuno / comida pensado",
+
+  "Preparar lo que necesite para trabajar",
+
+  "Skincare",
+
+  "Poner alarma",
+
+  "A dormir"
+
+];
+
+
+/* =====================================================
    TABS
 ===================================================== */
 
 function showTab(tab){
+
+  const pages = {
+
+    today:"pageToday",
+    weekend:"pageWeekend",
+    life:"pageLife",
+    food:"pageFood",
+    care:"pageCare"
+
+  };
+
+
+  const buttons = {
+
+    today:"tabToday",
+    weekend:"tabWeekend",
+    life:"tabLife",
+    food:"tabFood",
+    care:"tabCare"
+
+  };
+
 
   document
     .querySelectorAll(
@@ -2863,7 +3732,7 @@ function showTab(tab){
 
   document
     .querySelectorAll(
-      ".tab"
+      ".tab-button"
     )
     .forEach(
       button =>
@@ -2873,40 +3742,15 @@ function showTab(tab){
     );
 
 
-  const map = {
-
-    today:[
-      "pageToday",
-      "tabToday"
-    ],
-
-    create:[
-      "pageCreate",
-      "tabCreate"
-    ],
-
-    food:[
-      "pageFood",
-      "tabFood"
-    ],
-
-    care:[
-      "pageCare",
-      "tabCare"
-    ]
-
-  };
-
-
   document.getElementById(
-    map[tab][0]
+    pages[tab]
   ).classList.add(
     "active"
   );
 
 
   document.getElementById(
-    map[tab][1]
+    buttons[tab]
   ).classList.add(
     "active"
   );
@@ -2921,143 +3765,129 @@ function showTab(tab){
 
 
 /* =====================================================
-   HORARIO FIN DE SEMANA
+   RELOJ
 ===================================================== */
 
-const saturdaySchedule = [
+function updateClock(){
 
-  {
-    start:480,
-    end:570,
-    time:"08:00 – 09:30",
-    title:"👟 Andar / correr",
-    desc:"Empieza fuera de casa."
-  },
-
-  {
-    start:570,
-    end:600,
-    time:"09:30 – 10:00",
-    title:"🚿 Ducha + café",
-    desc:"Ducha tranquila y arrancar."
-  },
-
-  {
-    start:600,
-    end:780,
-    time:"10:00 – 13:00",
-    title:"🎨 Tiempo de creación",
-    desc:"Haz literalmente lo que te apetezca."
-  },
-
-  {
-    start:780,
-    end:960,
-    time:"13:00 – 16:00",
-    title:"🥂 Libre",
-    desc:"Familia, amigos, comer, salir."
-  },
-
-  {
-    start:960,
-    end:1260,
-    time:"16:00 – 21:00",
-    title:"✨ Tiempo de creación",
-    desc:"Proyecto, plan, compras, arreglarte, improvisar."
-  },
-
-  {
-    start:1260,
-    end:1350,
-    time:"21:00 – 22:30",
-    title:"👟 Andar + ducha",
-    desc:"Cerrar la tarde y prepararte."
-  },
-
-  {
-    start:1350,
-    end:1440,
-    time:"22:30 →",
-    title:"🍝 Cena / salida",
-    desc:"Noche libre."
-  }
-
-];
+  const now =
+    new Date();
 
 
-const sundaySchedule = [
+  document.getElementById(
+    "bigTime"
+  ).textContent =
 
-  {
-    start:480,
-    end:570,
-    time:"08:00 – 09:30",
-    title:"👟 Andar / correr",
-    desc:"Empieza el domingo moviéndote."
-  },
+    now.toLocaleTimeString(
+      "es-ES",
+      {
+        hour:"2-digit",
+        minute:"2-digit"
+      }
+    );
 
-  {
-    start:570,
-    end:600,
-    time:"09:30 – 10:00",
-    title:"🚿 Ducha + café",
-    desc:"Ducha tranquila y café."
-  },
 
-  {
-    start:600,
-    end:780,
-    time:"10:00 – 13:00",
-    title:"🎨 Tiempo de creación",
-    desc:"Un bloque largo para tus cosas."
-  },
+  document.getElementById(
+    "date"
+  ).textContent =
 
-  {
-    start:780,
-    end:960,
-    time:"13:00 – 16:00",
-    title:"🥂 Libre",
-    desc:"Familia, amigos y comida."
-  },
+    now.toLocaleDateString(
+      "es-ES",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+      }
+    );
 
-  {
-    start:960,
-    end:1260,
-    time:"16:00 – 21:00",
-    title:"✨ Tiempo de creación",
-    desc:"Haz algo que te deje buena sensación del finde."
-  },
 
-  {
-    start:1260,
-    end:1350,
-    time:"21:00 – 22:30",
-    title:"👟 Andar + ducha",
-    desc:"Último paseo del fin de semana."
-  },
+  updateGreeting(
+    now
+  );
 
-  {
-    start:1350,
-    end:1440,
-    time:"22:30 →",
-    title:"🌙 Preparar lunes",
-    desc:"Cena, dejar cosas listas, skincare y dormir."
-  }
 
-];
+  updateWeekendNow(
+    now
+  );
+
+}
 
 
 /* =====================================================
-   RENDER HORARIOS
+   SALUDO
+===================================================== */
+
+function updateGreeting(now){
+
+  const hour =
+    now.getHours();
+
+
+  let greeting =
+    "Buenos días";
+
+
+  let icon =
+    "☀️";
+
+
+  if(
+    hour >= 14
+    &&
+    hour < 21
+  ){
+
+    greeting =
+      "Buenas tardes";
+
+    icon =
+      "🌤️";
+
+  }
+
+
+  if(
+    hour >= 21
+    ||
+    hour < 6
+  ){
+
+    greeting =
+      "Buenas noches";
+
+    icon =
+      "🌙";
+
+  }
+
+
+  document.getElementById(
+    "greeting"
+  ).innerHTML =
+
+    icon
+    +
+    " "
+    +
+    greeting
+    +
+    ', <span class="greeting-name">Sandra</span>';
+
+}
+
+
+/* =====================================================
+   HORARIOS
 ===================================================== */
 
 function renderSchedule(
-  containerId,
+  id,
   schedule
 ){
 
   const container =
     document.getElementById(
-      containerId
+      id
     );
 
 
@@ -3098,13 +3928,17 @@ function renderSchedule(
         +
         '<div class="schedule-title">'
         +
+        item.icon
+        +
+        " "
+        +
         item.title
         +
         "</div>"
         +
-        '<div class="schedule-desc">'
+        '<div class="schedule-description">'
         +
-        item.desc
+        item.description
         +
         "</div>"
         +
@@ -3122,66 +3956,7 @@ function renderSchedule(
 
 
 /* =====================================================
-   BLOQUE ACTUAL
-===================================================== */
-
-function getWeekendSchedule(){
-
-  const day =
-    new Date().getDay();
-
-
-  if(
-    day === 0
-  ){
-
-    return sundaySchedule;
-
-  }
-
-
-  return saturdaySchedule;
-
-}
-
-
-function getCurrentWeekendBlock(){
-
-  const now =
-    new Date();
-
-
-  const minutes =
-
-    now.getHours()
-    *
-    60
-
-    +
-
-    now.getMinutes();
-
-
-  const schedule =
-    getWeekendSchedule();
-
-
-  return (
-    schedule.find(
-      item =>
-        minutes >= item.start
-        &&
-        minutes < item.end
-    )
-    ||
-    schedule[0]
-  );
-
-}
-
-
-/* =====================================================
-   CUENTA ATRÁS
+   AHORA
 ===================================================== */
 
 function formatDuration(seconds){
@@ -3239,61 +4014,139 @@ function formatDuration(seconds){
 }
 
 
-function updateToday(){
+function getWeekendSchedule(now){
 
-  const now =
-    new Date();
+  if(
+    now.getDay() === 0
+  ){
+
+    return sundaySchedule;
+
+  }
 
 
-  document.getElementById(
-    "heroDay"
-  ).textContent =
-    now.getDate();
+  return saturdaySchedule;
+
+}
 
 
-  document.getElementById(
-    "heroWeekday"
-  ).textContent =
+function updateWeekendNow(now){
 
-    now.toLocaleDateString(
-      "es-ES",
-      {
-        weekday:"long"
-      }
+  const card =
+    document.getElementById(
+      "nowWeekendCard"
     );
 
 
-  const block =
-    getCurrentWeekendBlock();
+  const day =
+    now.getDay();
+
+
+  if(
+    day !== 6
+    &&
+    day !== 0
+  ){
+
+    document.getElementById(
+      "nowWeekendTitle"
+    ).textContent =
+      "Preparando el fin de semana";
+
+
+    document.getElementById(
+      "nowWeekendHours"
+    ).textContent =
+      "Entre semana";
+
+
+    document.getElementById(
+      "nowWeekendIcon"
+    ).textContent =
+      "🪩";
+
+
+    document.getElementById(
+      "nowWeekendCountdown"
+    ).textContent =
+      "--:--:--";
+
+
+    document.getElementById(
+      "nowWeekendMessage"
+    ).textContent =
+      "Puedes usar esta sección para dejar preparado el próximo finde.";
+
+
+    document.getElementById(
+      "nowWeekendProgress"
+    ).style.width =
+      "0%";
+
+
+    return;
+
+  }
+
+
+  const minutes =
+
+    now.getHours()
+    *
+    60
+
+    +
+
+    now.getMinutes();
+
+
+  const schedule =
+    getWeekendSchedule(
+      now
+    );
+
+
+  let block =
+    schedule.find(
+      item =>
+        minutes >= item.start
+        &&
+        minutes < item.end
+    );
+
+
+  if(
+    !block
+  ){
+
+    block =
+      schedule[0];
+
+  }
 
 
   document.getElementById(
-    "nowTitle"
+    "nowWeekendTitle"
   ).textContent =
     block.title;
 
 
   document.getElementById(
-    "nowHours"
+    "nowWeekendHours"
   ).textContent =
     block.time;
 
 
   document.getElementById(
-    "nowMessage"
+    "nowWeekendIcon"
   ).textContent =
-    block.desc;
-
-
-  const icon =
-    block.title
-      .split(" ")[0];
+    block.icon;
 
 
   document.getElementById(
-    "nowIcon"
+    "nowWeekendMessage"
   ).textContent =
-    icon;
+    block.description;
 
 
   const endDate =
@@ -3348,7 +4201,7 @@ function updateToday(){
 
 
   document.getElementById(
-    "nowCountdown"
+    "nowWeekendCountdown"
   ).textContent =
     formatDuration(
       seconds
@@ -3390,7 +4243,7 @@ function updateToday(){
 
 
   document.getElementById(
-    "nowProgress"
+    "nowWeekendProgress"
   ).style.width =
 
     Math.min(
@@ -3404,31 +4257,18 @@ function updateToday(){
     "%";
 
 
-  markCurrentSchedule();
+  markCurrentSchedule(
+    minutes
+  );
 
 }
 
 
 /* =====================================================
-   MARCAR ACTUAL
+   MARCAR HORARIO
 ===================================================== */
 
-function markCurrentSchedule(){
-
-  const now =
-    new Date();
-
-
-  const minutes =
-
-    now.getHours()
-    *
-    60
-
-    +
-
-    now.getMinutes();
-
+function markCurrentSchedule(minutes){
 
   document
     .querySelectorAll(
@@ -3437,21 +4277,27 @@ function markCurrentSchedule(){
     .forEach(
       row => {
 
+        const start =
+          Number(
+            row.dataset.start
+          );
+
+
+        const end =
+          Number(
+            row.dataset.end
+          );
+
+
         row.classList.toggle(
 
           "current",
 
-          minutes >=
-            Number(
-              row.dataset.start
-            )
+          minutes >= start
 
           &&
 
-          minutes <
-            Number(
-              row.dataset.end
-            )
+          minutes < end
 
         );
 
@@ -3462,174 +4308,462 @@ function markCurrentSchedule(){
 
 
 /* =====================================================
-   CREACIÓN
+   CHECKLIST GENERAL
 ===================================================== */
 
-const creationIdeas = {
+function renderChecklist(
+  containerId,
+  tasks,
+  storagePrefix,
+  callback=null
+){
 
-  digital:[
-
-    "Haz una mini app absurda pero bonita.",
-
-    "Rediseña una pantalla de una app que uses.",
-
-    "Crea una automatización pequeña que te ahorre tiempo.",
-
-    "Haz un collage digital de una estética concreta.",
-
-    "Ordena y edita una tanda de fotos.",
-
-    "Diseña una portada para algo que ni siquiera existe."
-
-  ],
-
-
-  manual:[
-
-    "Prueba a hacer una pieza de cerámica.",
-
-    "Pinta algo sin preocuparte de que quede bien.",
-
-    "Haz un collage físico con revistas.",
-
-    "Diseña una pulsera o collar.",
-
-    "Personaliza una libreta.",
-
-    "Crea algo decorativo para tu habitación."
-
-  ],
-
-
-  social:[
-
-    "Escribe a alguien y proponle un café espontáneo.",
-
-    "Organiza una cena sencilla con amigas.",
-
-    "Llama a alguien con quien llevas tiempo sin hablar.",
-
-    "Planea una escapada de un día.",
-
-    "Queda para ir a dar una vuelta sin más plan."
-
-  ],
-
-
-  outside:[
-
-    "Ve a mirar tiendas sin obligación de comprar.",
-
-    "Busca un mercadillo o tienda que no conozcas.",
-
-    "Ve a tomar café a un sitio diferente.",
-
-    "Pasea por una zona en la que nunca te paras.",
-
-    "Ve a una exposición o museo.",
-
-    "Coge el coche y visita un pueblo cercano."
-
-  ],
-
-
-  beauty:[
-
-    "Prueba un maquillaje diferente.",
-
-    "Monta tres outfits con ropa que ya tienes.",
-
-    "Hazte el pelo como si fueras a salir aunque no salgas.",
-
-    "Haz fotos de varios outfits para tenerlos guardados.",
-
-    "Prueba una estética de otra década.",
-
-    "Haz una tarde completa de arreglarte con música."
-
-  ],
-
-
-  curiosity:[
-
-    "Investiga cómo vestía la gente en 1974.",
-
-    "Elige una civilización antigua y métete en su vida cotidiana.",
-
-    "Descubre la historia de un edificio famoso.",
-
-    "Busca qué estaba de moda el año en que naciste.",
-
-    "Investiga un misterio histórico.",
-
-    "Elige una ciudad al azar y descubre su historia."
-
-  ]
-
-};
-
-
-function randomFrom(array){
-
-  return array[
-    Math.floor(
-      Math.random()
-      *
-      array.length
-    )
-  ];
-
-}
-
-
-function giveCreationIdea(type){
-
-  document.getElementById(
-    "creationIdea"
-  ).textContent =
-    randomFrom(
-      creationIdeas[type]
+  const container =
+    document.getElementById(
+      containerId
     );
 
-}
+
+  container.innerHTML =
+    "";
 
 
-function surpriseCreation(){
+  tasks.forEach(
+    (
+      task,
+      index
+    )=>{
 
-  const all =
-    Object.values(
-      creationIdeas
-    ).flat();
+      const key =
+        storagePrefix
+        +
+        "-"
+        +
+        index;
 
 
-  document.getElementById(
-    "creationIdea"
-  ).textContent =
-    randomFrom(
-      all
-    );
+      const done =
+        localStorage.getItem(
+          key
+        )
+        ===
+        "1";
+
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.className =
+        "life-check"
+        +
+        (
+          done
+          ?
+          " done"
+          :
+          ""
+        );
+
+
+      button.innerHTML =
+
+        '<span class="life-check-circle">'
+        +
+        (
+          done
+          ?
+          "✓"
+          :
+          ""
+        )
+        +
+        "</span>"
+        +
+        '<span class="life-check-text">'
+        +
+        task
+        +
+        "</span>";
+
+
+      button.onclick =
+        ()=>{
+
+          const current =
+            localStorage.getItem(
+              key
+            )
+            ===
+            "1";
+
+
+          if(
+            current
+          ){
+
+            localStorage.removeItem(
+              key
+            );
+
+          }
+
+          else{
+
+            localStorage.setItem(
+              key,
+              "1"
+            );
+
+          }
+
+
+          renderChecklist(
+            containerId,
+            tasks,
+            storagePrefix,
+            callback
+          );
+
+
+          if(
+            callback
+          ){
+
+            callback();
+
+          }
+
+        };
+
+
+      container.appendChild(
+        button
+      );
+
+    }
+  );
 
 }
 
 
 /* =====================================================
-   MENÚ SEMANAL
+   PROGRESO FINDE
 ===================================================== */
 
-const days = [
+function updateWeekendProgress(){
 
-  "Lun",
-  "Mar",
-  "Mié",
-  "Jue",
-  "Vie",
-  "Sáb",
-  "Dom"
+  let done =
+    0;
+
+
+  weekendPrepTasks.forEach(
+    (
+      task,
+      index
+    )=>{
+
+      if(
+        localStorage.getItem(
+          "weekend-prep-"
+          +
+          index
+        )
+        ===
+        "1"
+      ){
+
+        done++;
+
+      }
+
+    }
+  );
+
+
+  const percent =
+
+    Math.round(
+      (
+        done
+        /
+        weekendPrepTasks.length
+      )
+      *
+      100
+    );
+
+
+  document.getElementById(
+    "weekendPercent"
+  ).textContent =
+    percent
+    +
+    "%";
+
+
+  document.getElementById(
+    "weekendPrepProgress"
+  ).style.width =
+    percent
+    +
+    "%";
+
+
+  document.getElementById(
+    "todayWeekendStatus"
+  ).textContent =
+
+    percent
+    +
+    "% preparado";
+
+}
+
+
+/* =====================================================
+   MI VIDA
+===================================================== */
+
+let currentLifeList =
+  "create";
+
+
+const lifeListTitles = {
+
+  create:[
+    "CREAR",
+    "Cosas que quiero crear"
+  ],
+
+  plans:[
+    "PLANES",
+    "Planes que quiero hacer"
+  ],
+
+  discover:[
+    "DESCUBRIR",
+    "Cosas que quiero descubrir"
+  ],
+
+  someday:[
+    "ALGÚN DÍA",
+    "No quiero olvidarme de esto"
+  ]
+
+};
+
+
+function lifeStorageKey(){
+
+  return (
+    "discovery-life-"
+    +
+    currentLifeList
+  );
+
+}
+
+
+function getLifeItems(){
+
+  return JSON.parse(
+
+    localStorage.getItem(
+      lifeStorageKey()
+    )
+    ||
+    "[]"
+
+  );
+
+}
+
+
+function selectLifeList(type){
+
+  currentLifeList =
+    type;
+
+
+  document.getElementById(
+    "lifeListLabel"
+  ).textContent =
+    lifeListTitles[type][0];
+
+
+  document.getElementById(
+    "lifeListTitle"
+  ).textContent =
+    lifeListTitles[type][1];
+
+
+  renderLifeItems();
+
+}
+
+
+function addLifeItem(){
+
+  const input =
+    document.getElementById(
+      "lifeInput"
+    );
+
+
+  const text =
+    input.value.trim();
+
+
+  if(
+    !text
+  ){
+
+    return;
+
+  }
+
+
+  const items =
+    getLifeItems();
+
+
+  items.push(
+    text
+  );
+
+
+  localStorage.setItem(
+
+    lifeStorageKey(),
+
+    JSON.stringify(
+      items
+    )
+
+  );
+
+
+  input.value =
+    "";
+
+
+  renderLifeItems();
+
+  updateDashboard();
+
+}
+
+
+function deleteLifeItem(index){
+
+  const items =
+    getLifeItems();
+
+
+  items.splice(
+    index,
+    1
+  );
+
+
+  localStorage.setItem(
+
+    lifeStorageKey(),
+
+    JSON.stringify(
+      items
+    )
+
+  );
+
+
+  renderLifeItems();
+
+  updateDashboard();
+
+}
+
+
+function renderLifeItems(){
+
+  const items =
+    getLifeItems();
+
+
+  const container =
+    document.getElementById(
+      "lifeItemList"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  items.forEach(
+    (
+      item,
+      index
+    )=>{
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+
+      row.className =
+        "simple-item";
+
+
+      row.innerHTML =
+
+        '<div class="simple-item-text">'
+        +
+        escapeHtml(
+          item
+        )
+        +
+        "</div>"
+        +
+        '<button class="simple-delete" onclick="deleteLifeItem('
+        +
+        index
+        +
+        ')">×</button>';
+
+
+      container.appendChild(
+        row
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   MENÚ
+===================================================== */
+
+const foodDays = [
+
+  "L",
+  "M",
+  "X",
+  "J",
+  "V",
+  "S",
+  "D"
 
 ];
 
 
-const mealTypes = [
+const meals = [
 
   {
     key:"breakfast",
@@ -3658,7 +4792,7 @@ let selectedFoodDay =
   0;
 
 
-function mealStorageKey(){
+function mealKey(){
 
   return (
     "discovery-meals-"
@@ -3681,7 +4815,7 @@ function renderWeekSelector(){
     "";
 
 
-  days.forEach(
+  foodDays.forEach(
     (
       day,
       index
@@ -3697,7 +4831,7 @@ function renderWeekSelector(){
         "week-day"
         +
         (
-          index === selectedFoodDay
+          selectedFoodDay === index
           ?
           " active"
           :
@@ -3718,8 +4852,7 @@ function renderWeekSelector(){
 
           renderWeekSelector();
 
-
-          renderMealEditor();
+          renderMeals();
 
         };
 
@@ -3734,12 +4867,12 @@ function renderWeekSelector(){
 }
 
 
-function getSavedMeals(){
+function getMeals(){
 
   return JSON.parse(
 
     localStorage.getItem(
-      mealStorageKey()
+      mealKey()
     )
     ||
     "{}"
@@ -3749,10 +4882,10 @@ function getSavedMeals(){
 }
 
 
-function renderMealEditor(){
+function renderMeals(){
 
   const data =
-    getSavedMeals();
+    getMeals();
 
 
   const container =
@@ -3765,10 +4898,10 @@ function renderMealEditor(){
     "";
 
 
-  mealTypes.forEach(
+  meals.forEach(
     meal => {
 
-      const mealData =
+      const saved =
         data[meal.key]
         ||
         {
@@ -3797,24 +4930,6 @@ function renderMealEditor(){
         +
         "</div>"
         +
-        '<div class="meal-kcal" id="display-'
-        +
-        meal.key
-        +
-        '">'
-        +
-        (
-          mealData.kcal
-          ?
-          mealData.kcal
-          +
-          " kcal"
-          :
-          ""
-        )
-        +
-        "</div>"
-        +
         "</div>"
         +
         '<input id="mealText-'
@@ -3824,24 +4939,24 @@ function renderMealEditor(){
         '" value="'
         +
         escapeAttribute(
-          mealData.text
+          saved.text
         )
         +
         '" placeholder="¿Qué vas a comer?">'
         +
-        '<div class="meal-calories">'
+        '<div class="meal-bottom">'
         +
-        '<input type="number" min="0" id="mealKcal-'
+        '<input id="mealKcal-'
         +
         meal.key
         +
-        '" value="'
+        '" type="number" min="0" value="'
         +
         escapeAttribute(
-          mealData.kcal
+          saved.kcal
         )
         +
-        '" oninput="updateDailyCalories()">'
+        '" oninput="updateCalories()">'
         +
         "<span>kcal aprox.</span>"
         +
@@ -3856,45 +4971,108 @@ function renderMealEditor(){
   );
 
 
-  updateDailyCalories();
+  updateCalories();
 
 }
 
 
-function escapeAttribute(value){
+function saveMeals(){
 
-  return String(
-    value
+  const data = {};
+
+
+  meals.forEach(
+    meal => {
+
+      data[meal.key] = {
+
+        text:
+          document.getElementById(
+            "mealText-"
+            +
+            meal.key
+          ).value,
+
+        kcal:
+          document.getElementById(
+            "mealKcal-"
+            +
+            meal.key
+          ).value
+
+      };
+
+    }
+  );
+
+
+  localStorage.setItem(
+
+    mealKey(),
+
+    JSON.stringify(
+      data
+    )
+
+  );
+
+
+  updateCalories();
+
+}
+
+
+function getCalorieGoal(){
+
+  return Number(
+    localStorage.getItem(
+      "discovery-calorie-goal"
+    )
     ||
-    ""
-  )
-  .replaceAll(
-    "&",
-    "&amp;"
-  )
-  .replaceAll(
-    '"',
-    "&quot;"
-  )
-  .replaceAll(
-    "<",
-    "&lt;"
-  )
-  .replaceAll(
-    ">",
-    "&gt;"
+    1200
   );
 
 }
 
 
-function updateDailyCalories(){
+function saveCalorieGoal(){
+
+  const input =
+    document.getElementById(
+      "calorieGoalInput"
+    );
+
+
+  const value =
+    Number(
+      input.value
+    );
+
+
+  if(
+    value > 0
+  ){
+
+    localStorage.setItem(
+      "discovery-calorie-goal",
+      value
+    );
+
+  }
+
+
+  updateCalories();
+
+}
+
+
+function updateCalories(){
 
   let total =
     0;
 
 
-  mealTypes.forEach(
+  meals.forEach(
     meal => {
 
       const input =
@@ -3922,6 +5100,16 @@ function updateDailyCalories(){
   );
 
 
+  const goal =
+    getCalorieGoal();
+
+
+  document.getElementById(
+    "calorieGoalInput"
+  ).value =
+    goal;
+
+
   document.getElementById(
     "dailyCalories"
   ).textContent =
@@ -3929,51 +5117,35 @@ function updateDailyCalories(){
     +
     " kcal";
 
-}
+
+  document.getElementById(
+    "currentCalories"
+  ).textContent =
+    total
+    +
+    " kcal";
 
 
-function saveMeals(){
-
-  const data = {};
-
-
-  mealTypes.forEach(
-    meal => {
-
-      data[meal.key] = {
-
-        text:
-          document.getElementById(
-            "mealText-"
-            +
-            meal.key
-          ).value,
-
-        kcal:
-          document.getElementById(
-            "mealKcal-"
-            +
-            meal.key
-          ).value
-
-      };
-
-    }
-  );
+  document.getElementById(
+    "calorieGoalText"
+  ).textContent =
+    "Objetivo "
+    +
+    goal;
 
 
-  localStorage.setItem(
+  document.getElementById(
+    "remainingCalories"
+  ).textContent =
 
-    mealStorageKey(),
-
-    JSON.stringify(
-      data
+    Math.max(
+      0,
+      goal
+      -
+      total
     )
-
-  );
-
-
-  updateDailyCalories();
+    +
+    " disponibles";
 
 }
 
@@ -4081,6 +5253,9 @@ function addShoppingItem(type){
     type
   );
 
+
+  updateDashboard();
+
 }
 
 
@@ -4108,6 +5283,9 @@ function toggleShopping(
   renderShopping(
     type
   );
+
+
+  updateDashboard();
 
 }
 
@@ -4138,6 +5316,9 @@ function deleteShopping(
   renderShopping(
     type
   );
+
+
+  updateDashboard();
 
 }
 
@@ -4246,28 +5427,11 @@ function renderShopping(type){
 }
 
 
-function escapeHtml(text){
-
-  const div =
-    document.createElement(
-      "div"
-    );
-
-
-  div.textContent =
-    text;
-
-
-  return div.innerHTML;
-
-}
-
-
 /* =====================================================
    CUIDADO
 ===================================================== */
 
-function careStorageKey(type){
+function careKey(type){
 
   return (
     "discovery-care-"
@@ -4338,19 +5502,19 @@ function saveCareDate(
 
 
   localStorage.setItem(
-    careStorageKey(
+    careKey(
       type
     ),
     value
   );
 
 
-  renderCareDates();
+  renderCare();
 
 }
 
 
-function renderOneCareDate(
+function renderCareDate(
   type,
   inputId,
   resultId,
@@ -4359,7 +5523,7 @@ function renderOneCareDate(
 
   const saved =
     localStorage.getItem(
-      careStorageKey(
+      careKey(
         type
       )
     );
@@ -4372,7 +5536,8 @@ function renderOneCareDate(
     document.getElementById(
       resultId
     ).textContent =
-      "Aún no has puesto la última fecha.";
+      "Sin fecha todavía";
+
 
     return null;
 
@@ -4417,7 +5582,7 @@ function renderOneCareDate(
     );
 
 
-  let message =
+  let text =
     "Próxima: "
     +
     formatDate(
@@ -4429,7 +5594,7 @@ function renderOneCareDate(
     diff === 0
   ){
 
-    message +=
+    text +=
       " · toca hoy ✨";
 
   }
@@ -4438,8 +5603,8 @@ function renderOneCareDate(
     diff > 0
   ){
 
-    message +=
-      " · faltan "
+    text +=
+      " · en "
       +
       diff
       +
@@ -4449,14 +5614,8 @@ function renderOneCareDate(
 
   else{
 
-    message +=
-      " · pendiente desde hace "
-      +
-      Math.abs(
-        diff
-      )
-      +
-      " días";
+    text +=
+      " · pendiente";
 
   }
 
@@ -4464,10 +5623,11 @@ function renderOneCareDate(
   document.getElementById(
     resultId
   ).textContent =
-    message;
+    text;
 
 
   return {
+    name:type,
     next,
     diff
   };
@@ -4475,10 +5635,10 @@ function renderOneCareDate(
 }
 
 
-function renderCareDates(){
+function renderCare(){
 
-  const hairHydration =
-    renderOneCareDate(
+  const hydration =
+    renderCareDate(
       "hairHydration",
       "hairHydrationDate",
       "hairHydrationNext",
@@ -4486,8 +5646,8 @@ function renderCareDates(){
     );
 
 
-  const hairCut =
-    renderOneCareDate(
+  const cut =
+    renderCareDate(
       "hairCut",
       "hairCutDate",
       "hairCutNext",
@@ -4496,7 +5656,7 @@ function renderCareDates(){
 
 
   const depilation =
-    renderOneCareDate(
+    renderCareDate(
       "depilation",
       "depilationDate",
       "depilationNext",
@@ -4504,138 +5664,151 @@ function renderCareDates(){
     );
 
 
-  renderCareSummary(
-    hairHydration,
-    hairCut,
+  renderCareDashboard(
+    hydration,
+    cut,
     depilation
   );
+
+
+  updateDashboard();
 
 }
 
 
-function renderCareSummary(
+function renderCareDashboard(
   hydration,
   cut,
   depilation
 ){
 
-  const container =
-    document.getElementById(
-      "careSummary"
-    );
-
-
   const items = [
 
     {
       icon:"💧",
-      title:"Hidratación pelo",
+      title:"Hidratación",
       data:hydration
     },
 
     {
       icon:"✂️",
-      title:"Cortar puntas",
+      title:"Puntas",
       data:cut
     },
 
     {
       icon:"🛁",
-      title:"Depilación + mascarilla",
+      title:"Depilación",
       data:depilation
     },
 
     {
       icon:"🌸",
-      title:"Revisar neceser",
-      fixed:"Una vez al mes"
+      title:"Neceser",
+      text:"Revisión mensual"
     }
 
   ];
 
 
-  container.innerHTML =
-    "";
+  [
+    "careDashboard",
+    "todayCareSummary"
+  ]
+  .forEach(
+    containerId => {
 
-
-  items.forEach(
-    item => {
-
-      const div =
-        document.createElement(
-          "div"
+      const container =
+        document.getElementById(
+          containerId
         );
 
 
-      div.className =
-        "care-next";
+      container.innerHTML =
+        "";
 
 
-      let text =
-        item.fixed
-        ||
-        "Sin fecha";
+      items.forEach(
+        item => {
+
+          const box =
+            document.createElement(
+              "div"
+            );
 
 
-      if(
-        item.data
-      ){
+          box.className =
+            "care-stat";
 
-        if(
-          item.data.diff === 0
-        ){
 
-          text =
-            "Hoy ✨";
+          let text =
+            item.text
+            ||
+            "Sin fecha";
 
-        }
 
-        else if(
-          item.data.diff > 0
-        ){
+          if(
+            item.data
+          ){
 
-          text =
-            "En "
+            if(
+              item.data.diff === 0
+            ){
+
+              text =
+                "Hoy ✨";
+
+            }
+
+            else if(
+              item.data.diff > 0
+            ){
+
+              text =
+                "En "
+                +
+                item.data.diff
+                +
+                " días";
+
+            }
+
+            else{
+
+              text =
+                "Pendiente";
+
+            }
+
+          }
+
+
+          box.innerHTML =
+
+            '<div class="care-stat-icon">'
             +
-            item.data.diff
+            item.icon
             +
-            " días";
+            "</div>"
+            +
+            '<div class="care-stat-title">'
+            +
+            item.title
+            +
+            "</div>"
+            +
+            '<div class="care-stat-date">'
+            +
+            text
+            +
+            "</div>";
+
+
+          container.appendChild(
+            box
+          );
 
         }
-
-        else{
-
-          text =
-            "Pendiente";
-
-        }
-
-      }
-
-
-      div.innerHTML =
-
-        '<div class="care-next-icon">'
-        +
-        item.icon
-        +
-        "</div>"
-        +
-        '<div class="care-next-title">'
-        +
-        item.title
-        +
-        "</div>"
-        +
-        '<div class="care-next-date">'
-        +
-        text
-        +
-        "</div>";
-
-
-      container.appendChild(
-        div
       );
 
     }
@@ -4643,10 +5816,6 @@ function renderCareSummary(
 
 }
 
-
-/* =====================================================
-   DESPLEGABLE CUIDADO
-===================================================== */
 
 function toggleCare(id){
 
@@ -4660,7 +5829,231 @@ function toggleCare(id){
 
 
 /* =====================================================
-   INICIO
+   DASHBOARD
+===================================================== */
+
+function updateDashboard(){
+
+  const food =
+    getShopping(
+      "food"
+    );
+
+
+  const pendingFood =
+    food.filter(
+      item =>
+        !item.done
+    ).length;
+
+
+  document.getElementById(
+    "todayShoppingStatus"
+  ).textContent =
+
+    pendingFood === 0
+
+    ?
+    "Lista al día"
+
+    :
+    pendingFood
+    +
+    " cosas pendientes";
+
+
+  let lifeTotal =
+    0;
+
+
+  [
+    "create",
+    "plans",
+    "discover",
+    "someday"
+  ]
+  .forEach(
+    type => {
+
+      const list =
+        JSON.parse(
+
+          localStorage.getItem(
+            "discovery-life-"
+            +
+            type
+          )
+          ||
+          "[]"
+
+        );
+
+
+      lifeTotal +=
+        list.length;
+
+    }
+  );
+
+
+  document.getElementById(
+    "todayLifeStatus"
+  ).textContent =
+
+    lifeTotal === 0
+
+    ?
+    "Añade alguna idea"
+
+    :
+    lifeTotal
+    +
+    " cosas guardadas";
+
+
+  const careItems = [];
+
+
+  const definitions = [
+
+    [
+      "hairHydration",
+      21,
+      "Hidratación de pelo"
+    ],
+
+    [
+      "hairCut",
+      60,
+      "Cortar puntas"
+    ],
+
+    [
+      "depilation",
+      14,
+      "Depilación"
+    ]
+
+  ];
+
+
+  definitions.forEach(
+    item => {
+
+      const saved =
+        localStorage.getItem(
+          careKey(
+            item[0]
+          )
+        );
+
+
+      if(
+        saved
+      ){
+
+        const next =
+          addDays(
+            saved,
+            item[1]
+          );
+
+
+        careItems.push(
+          {
+            title:item[2],
+            next
+          }
+        );
+
+      }
+
+    }
+  );
+
+
+  careItems.sort(
+    (
+      a,
+      b
+    )=>
+      a.next
+      -
+      b.next
+  );
+
+
+  document.getElementById(
+    "todayCareStatus"
+  ).textContent =
+
+    careItems.length
+
+    ?
+    careItems[0].title
+    +
+    " · "
+    +
+    formatDate(
+      careItems[0].next
+    )
+
+    :
+    "Añade tus últimas fechas";
+
+}
+
+
+/* =====================================================
+   UTILIDADES
+===================================================== */
+
+function escapeHtml(text){
+
+  const div =
+    document.createElement(
+      "div"
+    );
+
+
+  div.textContent =
+    text;
+
+
+  return div.innerHTML;
+
+}
+
+
+function escapeAttribute(value){
+
+  return String(
+    value
+    ||
+    ""
+  )
+  .replaceAll(
+    "&",
+    "&amp;"
+  )
+  .replaceAll(
+    '"',
+    "&quot;"
+  )
+  .replaceAll(
+    "<",
+    "&lt;"
+  )
+  .replaceAll(
+    ">",
+    "&gt;"
+  );
+
+}
+
+
+/* =====================================================
+   ARRANQUE
 ===================================================== */
 
 renderSchedule(
@@ -4675,11 +6068,30 @@ renderSchedule(
 );
 
 
+renderChecklist(
+  "weekendPrepList",
+  weekendPrepTasks,
+  "weekend-prep",
+  updateWeekendProgress
+);
+
+
+renderChecklist(
+  "sundayResetList",
+  sundayResetTasks,
+  "sunday-reset"
+);
+
+
+updateWeekendProgress();
+
+
+renderLifeItems();
+
+
 renderWeekSelector();
 
-renderMealEditor();
-
-renderCareDates();
+renderMeals();
 
 
 [
@@ -4697,16 +6109,20 @@ renderCareDates();
 );
 
 
-updateToday();
+renderCare();
+
+
+updateDashboard();
+
+updateClock();
 
 
 setInterval(
-  updateToday,
+  updateClock,
   1000
 );
 
 </script>
 
 </body>
-
 </html>
